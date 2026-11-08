@@ -1,0 +1,902 @@
+{
+  "reviewer": "Codex",
+  "independent_review": false,
+  "candidates_sha256": "43f31abdf675f3710d8624eb1de6e4176badf4f9ec734cd7b9f1f3c99cb5c813",
+  "concepts": {
+    "C_data_element": {
+      "canonical_name": "data element",
+      "name_pt": "elemento de dado",
+      "category": "general",
+      "description_pt": "Fato que representa informação do mundo real.",
+      "aliases": [
+        "data elements"
+      ]
+    },
+    "C_database": {
+      "canonical_name": "database",
+      "name_pt": "banco de dados",
+      "category": "general",
+      "description_pt": "Coleção compartilhada de dados relacionados usada para apoiar atividades de uma organização.",
+      "aliases": []
+    },
+    "C_dbms": {
+      "canonical_name": "database management system",
+      "name_pt": "sistema gerenciador de banco de dados",
+      "category": "general",
+      "description_pt": "Conjunto de programas para criar e manter bancos de dados e controlar seu acesso.",
+      "aliases": [
+        "database management system (DBMS)",
+        "DBMS"
+      ]
+    },
+    "C_table": {
+      "canonical_name": "table",
+      "name_pt": "tabela",
+      "category": "structure",
+      "description_pt": "Estrutura descrita no glossário como uma combinação de campos; a definição é introdutória.",
+      "aliases": []
+    },
+    "C_alternate_key": {
+      "canonical_name": "alternate key",
+      "name_pt": "chave alternativa",
+      "category": "structure",
+      "description_pt": "Chave candidata que não foi escolhida como chave primária.",
+      "aliases": []
+    },
+    "C_candidate_key": {
+      "canonical_name": "candidate key",
+      "name_pt": "chave candidata",
+      "category": "structure",
+      "description_pt": "Chave simples ou composta que é única e mínima.",
+      "aliases": []
+    },
+    "C_characteristic_entity": {
+      "canonical_name": "characteristic entity",
+      "name_pt": "entidade característica",
+      "category": "structure",
+      "description_pt": "Entidade que fornece informação adicional sobre outra tabela, na terminologia da fonte.",
+      "aliases": [
+        "characteristic entities"
+      ]
+    },
+    "C_composite_attribute": {
+      "canonical_name": "composite attribute",
+      "name_pt": "atributo composto",
+      "category": "structure",
+      "description_pt": "Atributo formado por uma hierarquia de atributos.",
+      "aliases": [
+        "composite attributes"
+      ]
+    },
+    "C_composite_key": {
+      "canonical_name": "composite key",
+      "name_pt": "chave composta",
+      "category": "structure",
+      "description_pt": "Chave formada por dois ou mais atributos e que deve ser mínima.",
+      "aliases": []
+    },
+    "C_dependent_entity": {
+      "canonical_name": "dependent entity",
+      "name_pt": "entidade dependente",
+      "category": "structure",
+      "description_pt": "Entidade cujo significado depende de outras tabelas, conforme a fonte.",
+      "aliases": [
+        "dependent entities",
+        "derived entities"
+      ]
+    },
+    "C_derived_attribute": {
+      "canonical_name": "derived attribute",
+      "name_pt": "atributo derivado",
+      "category": "structure",
+      "description_pt": "Atributo cujo valor é calculado a partir de outros atributos.",
+      "aliases": [
+        "derived attributes"
+      ]
+    },
+    "C_entity": {
+      "canonical_name": "entity",
+      "name_pt": "entidade",
+      "category": "structure",
+      "description_pt": "Objeto com existência independente que pode ser distinguido de outros objetos.",
+      "aliases": []
+    },
+    "C_entity_relationship_data_model": {
+      "canonical_name": "entity relationship data model",
+      "name_pt": "modelo de dados entidade-relacionamento",
+      "category": "general",
+      "description_pt": "Modelo representado por diagramas entidade-relacionamento para modelagem de dados.",
+      "aliases": [
+        "entity relationship (ER) data model"
+      ]
+    },
+    "C_entity_set": {
+      "canonical_name": "entity set",
+      "name_pt": "conjunto de entidades",
+      "category": "structure",
+      "description_pt": "Coleção de entidades de um tipo em um dado instante.",
+      "aliases": []
+    },
+    "C_entity_type": {
+      "canonical_name": "entity type",
+      "name_pt": "tipo de entidade",
+      "category": "structure",
+      "description_pt": "Tipo que reúne entidades semelhantes, na caracterização do glossário.",
+      "aliases": []
+    },
+    "C_foreign_key": {
+      "canonical_name": "foreign key",
+      "name_pt": "chave estrangeira",
+      "category": "structure",
+      "description_pt": "Chave que estabelece uma referência entre tabelas; a fonte apresenta uma formulação introdutória com referência à PK e possibilidade de nulo.",
+      "aliases": [
+        "foreign key (FK)",
+        "FK"
+      ]
+    },
+    "C_independent_entity": {
+      "canonical_name": "independent entity",
+      "name_pt": "entidade independente",
+      "category": "structure",
+      "description_pt": "Entidade apresentada como base sobre a qual outras tabelas são construídas.",
+      "aliases": [
+        "kernel"
+      ]
+    },
+    "C_key": {
+      "canonical_name": "key",
+      "name_pt": "chave",
+      "category": "structure",
+      "description_pt": "Atributo ou grupo de atributos cujos valores identificam uma entidade em um conjunto.",
+      "aliases": []
+    },
+    "C_multivalued_attribute": {
+      "canonical_name": "multivalued attribute",
+      "name_pt": "atributo multivalorado",
+      "category": "structure",
+      "description_pt": "Atributo que pode ter um conjunto de valores para cada entidade.",
+      "aliases": [
+        "multivalued attributes"
+      ]
+    },
+    "C_null": {
+      "canonical_name": "null",
+      "name_pt": "nulo",
+      "category": "general",
+      "description_pt": "Símbolo para informação desconhecida ou não aplicável, distinto de zero e de texto vazio.",
+      "aliases": []
+    },
+    "C_relationship": {
+      "canonical_name": "relationship",
+      "name_pt": "relacionamento",
+      "category": "structure",
+      "description_pt": "Associação ou interação entre entidades para conectar informações relacionadas.",
+      "aliases": [
+        "relationships"
+      ]
+    },
+    "C_relationship_strength": {
+      "canonical_name": "relationship strength",
+      "name_pt": "força do relacionamento",
+      "category": "structure",
+      "description_pt": "Característica ligada à maneira como a chave primária da entidade relacionada é definida.",
+      "aliases": []
+    },
+    "C_simple_attribute": {
+      "canonical_name": "simple attribute",
+      "name_pt": "atributo simples",
+      "category": "structure",
+      "description_pt": "Atributo proveniente de um domínio de valores atômicos; não foi equiparado automaticamente a atributo monovalorado.",
+      "aliases": [
+        "simple attributes"
+      ]
+    },
+    "C_stored_attribute": {
+      "canonical_name": "stored attribute",
+      "name_pt": "atributo armazenado",
+      "category": "structure",
+      "description_pt": "Atributo salvo fisicamente no banco de dados.",
+      "aliases": []
+    },
+    "C_unary_relationship": {
+      "canonical_name": "unary relationship",
+      "name_pt": "relacionamento unário",
+      "category": "structure",
+      "description_pt": "Relacionamento entre ocorrências do mesmo conjunto de entidades.",
+      "aliases": [
+        "recursive relationship"
+      ]
+    },
+    "C_business_rule": {
+      "canonical_name": "business rule",
+      "name_pt": "regra de negócio",
+      "category": "constraint",
+      "description_pt": "Regra obtida dos usuários durante o levantamento de requisitos e usada para determinar cardinalidade.",
+      "aliases": [
+        "business rules"
+      ]
+    },
+    "C_cardinality": {
+      "canonical_name": "cardinality",
+      "name_pt": "cardinalidade",
+      "category": "structure",
+      "description_pt": "Expressa números mínimo e máximo de ocorrências associadas a uma ocorrência de entidade relacionada.",
+      "aliases": []
+    },
+    "C_connectivity": {
+      "canonical_name": "connectivity",
+      "name_pt": "conectividade",
+      "category": "structure",
+      "description_pt": "Classificação da conexão entre tabelas como um para um ou um para muitos na notação da fonte.",
+      "aliases": []
+    },
+    "C_constraint": {
+      "canonical_name": "constraint",
+      "name_pt": "restrição",
+      "category": "constraint",
+      "description_pt": "Regra que exige do SGBD a verificação da semântica dos dados.",
+      "aliases": [
+        "constraints"
+      ]
+    },
+    "C_entity_integrity": {
+      "canonical_name": "entity integrity",
+      "name_pt": "integridade de entidade",
+      "category": "constraint",
+      "description_pt": "Regra conceitual de chave primária sem valores nulos em seus componentes.",
+      "aliases": []
+    },
+    "C_identifying_relationship": {
+      "canonical_name": "identifying relationship",
+      "name_pt": "relacionamento identificador",
+      "category": "structure",
+      "description_pt": "Relacionamento em que a PK contém a FK, representado na fonte por linha contínua.",
+      "aliases": []
+    },
+    "C_integrity_constraint": {
+      "canonical_name": "integrity constraint",
+      "name_pt": "restrição de integridade",
+      "category": "constraint",
+      "description_pt": "Declaração lógica de valores e formatos permitidos para um atributo.",
+      "aliases": [
+        "integrity constraints"
+      ]
+    },
+    "C_mandatory_relationship": {
+      "canonical_name": "mandatory relationship",
+      "name_pt": "relacionamento obrigatório",
+      "category": "structure",
+      "description_pt": "Relacionamento em que uma ocorrência exige uma ocorrência correspondente.",
+      "aliases": []
+    },
+    "C_non_identifying_relationship": {
+      "canonical_name": "non-identifying relationship",
+      "name_pt": "relacionamento não identificador",
+      "category": "structure",
+      "description_pt": "Relacionamento em que a FK não integra a PK, representado na fonte por linha pontilhada.",
+      "aliases": []
+    },
+    "C_optional_relationship": {
+      "canonical_name": "optional relationship",
+      "name_pt": "relacionamento opcional",
+      "category": "structure",
+      "description_pt": "Relacionamento que permite ausência de uma ocorrência correspondente, conforme as alternativas descritas na fonte.",
+      "aliases": []
+    },
+    "C_orphan_record": {
+      "canonical_name": "orphan record",
+      "name_pt": "registro órfão",
+      "category": "structure",
+      "description_pt": "Registro cujo valor de FK não é encontrado na entidade correspondente, segundo a definição da fonte.",
+      "aliases": []
+    },
+    "C_referential_integrity": {
+      "canonical_name": "referential integrity",
+      "name_pt": "integridade referencial",
+      "category": "constraint",
+      "description_pt": "Regra de validade das referências; a fonte descreve correspondência com a chave referenciada ou nulo.",
+      "aliases": []
+    },
+    "C_relational_dbms": {
+      "canonical_name": "relational database management system",
+      "name_pt": "sistema gerenciador de banco de dados relacional",
+      "category": "general",
+      "description_pt": "Sistema de banco de dados baseado no modelo relacional.",
+      "aliases": [
+        "relational database management system (RDBMS)",
+        "RDBMS"
+      ]
+    },
+    "C_relationship_type": {
+      "canonical_name": "relationship type",
+      "name_pt": "tipo de relacionamento",
+      "category": "structure",
+      "description_pt": "Tipo de relacionamento entre tabelas em um DER, identificado na fonte como identificador ou não identificador.",
+      "aliases": []
+    },
+    "C_armstrong_s_axioms": {
+      "canonical_name": "Armstrong’s axioms",
+      "name_pt": "axiomas de Armstrong",
+      "category": "normalization",
+      "description_pt": "Regras de inferência usadas para obter dependências funcionais.",
+      "aliases": []
+    },
+    "C_database_administrator": {
+      "canonical_name": "database administrator",
+      "name_pt": "administrador de banco de dados",
+      "category": "general",
+      "description_pt": "Profissional indicado pela sigla DBA no glossário.",
+      "aliases": [
+        "DBA"
+      ]
+    },
+    "C_fd_dependent": {
+      "canonical_name": "dependent",
+      "name_pt": "dependente de uma dependência funcional",
+      "category": "normalization",
+      "description_pt": "Elemento apresentado no lado direito do diagrama de dependência funcional.",
+      "aliases": []
+    },
+    "C_determinant": {
+      "canonical_name": "determinant",
+      "name_pt": "determinante",
+      "category": "normalization",
+      "description_pt": "Elemento apresentado no lado esquerdo do diagrama de dependência funcional.",
+      "aliases": []
+    },
+    "C_functional_dependency": {
+      "canonical_name": "functional dependency",
+      "name_pt": "dependência funcional",
+      "category": "normalization",
+      "description_pt": "Relação de determinação entre atributos; a fonte apresenta como caso típico a PK e atributos não chave.",
+      "aliases": [
+        "functional dependency (FD)",
+        "FD"
+      ]
+    },
+    "C_non_normalized_table": {
+      "canonical_name": "non-normalized table",
+      "name_pt": "tabela não normalizada",
+      "category": "normalization",
+      "description_pt": "Tabela caracterizada no glossário pela presença de redundância de dados.",
+      "aliases": []
+    },
+    "C_first_normal_form": {
+      "canonical_name": "first normal form",
+      "name_pt": "primeira forma normal",
+      "category": "normalization",
+      "description_pt": "Forma em que as interseções de linhas e colunas têm valores únicos, sem grupos repetidos, na apresentação didática da fonte.",
+      "aliases": [
+        "first normal form (1NF)"
+      ]
+    },
+    "C_normalization": {
+      "canonical_name": "normalization",
+      "name_pt": "normalização",
+      "category": "normalization",
+      "description_pt": "Processo descrito no glossário pela avaliação da redundância em uma tabela.",
+      "aliases": []
+    },
+    "C_semantic_rule": {
+      "canonical_name": "semantic rule",
+      "name_pt": "regra semântica",
+      "category": "constraint",
+      "description_pt": "Regra de negócio aplicada ao banco de dados.",
+      "aliases": [
+        "semantic rules"
+      ]
+    },
+    "C_third_normal_form": {
+      "canonical_name": "third normal form",
+      "name_pt": "terceira forma normal",
+      "category": "normalization",
+      "description_pt": "Forma apresentada pela fonte como baseada em 2FN e na remoção de dependências transitivas.",
+      "aliases": [
+        "third normal form (3NF)"
+      ]
+    },
+    "C_atomic_value": {
+      "canonical_name": "atomic value",
+      "name_pt": "valor atômico",
+      "category": "structure",
+      "description_pt": "Valor considerado indivisível no contexto do modelo relacional.",
+      "aliases": []
+    },
+    "C_attribute": {
+      "canonical_name": "attribute",
+      "name_pt": "atributo",
+      "category": "structure",
+      "description_pt": "Elemento de armazenamento descrito pelo glossário; coluna e campo são aliases apenas no contexto relacional da fonte.",
+      "aliases": [
+        "column",
+        "field"
+      ]
+    },
+    "C_degree": {
+      "canonical_name": "degree",
+      "name_pt": "grau de uma tabela",
+      "category": "structure",
+      "description_pt": "Número de atributos de uma tabela.",
+      "aliases": []
+    },
+    "C_domain": {
+      "canonical_name": "domain",
+      "name_pt": "domínio",
+      "category": "structure",
+      "description_pt": "Conjunto de valores aceitáveis para uma coluna.",
+      "aliases": []
+    },
+    "C_relation": {
+      "canonical_name": "relation",
+      "name_pt": "relação do modelo relacional",
+      "category": "structure",
+      "description_pt": "Subconjunto de produto cartesiano de domínios, segundo a definição formal do glossário; mantido distinto de tabela no registro canônico.",
+      "aliases": []
+    },
+    "C_row": {
+      "canonical_name": "row",
+      "name_pt": "linha",
+      "category": "structure",
+      "description_pt": "Ocorrência em uma tabela relacional; registro e tupla são tratados como aliases no contexto deste glossário.",
+      "aliases": [
+        "record",
+        "tuple"
+      ]
+    },
+    "C_structured_query_language": {
+      "canonical_name": "structured query language",
+      "name_pt": "linguagem de consulta estruturada",
+      "category": "operation",
+      "description_pt": "Linguagem de acesso a bancos de dados identificada pela sigla SQL.",
+      "aliases": [
+        "structured query language (SQL)",
+        "SQL"
+      ]
+    }
+  },
+  "decisions": [
+    {
+      "candidate_id": "D01_C002_G1331",
+      "decision": "accept",
+      "concept_id": "C_data_element",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D01_C002_G1408",
+      "decision": "accept",
+      "concept_id": "C_database",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D01_C002_G1532",
+      "decision": "accept",
+      "concept_id": "C_dbms",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D01_C002_G1693",
+      "decision": "accept",
+      "concept_id": "C_table",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente. Tabela e relação formal permanecem com IDs diferentes; remissão da fonte preservada como evidência."
+    },
+    {
+      "candidate_id": "D02_C007_G890",
+      "decision": "accept",
+      "concept_id": "C_alternate_key",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D02_C007_G970",
+      "decision": "accept",
+      "concept_id": "C_candidate_key",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D02_C007_G1133",
+      "decision": "accept",
+      "concept_id": "C_characteristic_entity",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D02_C007_G1235",
+      "decision": "accept",
+      "concept_id": "C_composite_attribute",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D02_C007_G1328",
+      "decision": "accept",
+      "concept_id": "C_composite_key",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D02_C007_G1420",
+      "decision": "accept",
+      "concept_id": "C_dependent_entity",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D02_C007_G1514",
+      "decision": "accept",
+      "concept_id": "C_derived_attribute",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D02_C007_G1616",
+      "decision": "accept",
+      "concept_id": "C_dependent_entity",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente. Equivalência lexical restrita ao contexto deste glossário; não é identidade universal entre modelos ou domínios."
+    },
+    {
+      "candidate_id": "D02_C007_G1684",
+      "decision": "exclude",
+      "note": "Identificador de funcionário usado nos exemplos, não conceito geral desta base."
+    },
+    {
+      "candidate_id": "D02_C007_G1736",
+      "decision": "accept",
+      "concept_id": "C_entity",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D02_C007_G1874",
+      "decision": "accept",
+      "concept_id": "C_entity_relationship_data_model",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D02_C007_G2051",
+      "decision": "flag",
+      "note": "A remissão ao modelo ER pode confundir modelo e esquema; não fundir automaticamente."
+    },
+    {
+      "candidate_id": "D02_C007_G2141",
+      "decision": "accept",
+      "concept_id": "C_entity_set",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D02_C007_G2232",
+      "decision": "accept",
+      "concept_id": "C_entity_type",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D02_C007_G2296",
+      "decision": "accept",
+      "concept_id": "C_foreign_key",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente. Formulação didática da fonte, sem afirmar que toda FK deve referenciar exclusivamente PK ou aceitar nulos."
+    },
+    {
+      "candidate_id": "D02_C007_G2423",
+      "decision": "accept",
+      "concept_id": "C_independent_entity",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D02_C007_G2549",
+      "decision": "accept",
+      "concept_id": "C_independent_entity",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente. Equivalência lexical restrita ao contexto deste glossário; não é identidade universal entre modelos ou domínios."
+    },
+    {
+      "candidate_id": "D02_C007_G2607",
+      "decision": "accept",
+      "concept_id": "C_key",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D02_C007_G2750",
+      "decision": "accept",
+      "concept_id": "C_multivalued_attribute",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D02_C007_G2845",
+      "decision": "flag",
+      "note": "A definição em termos de tabelas é imprecisa para aridade de relacionamentos; requer revisão conceitual."
+    },
+    {
+      "candidate_id": "D02_C007_G2904",
+      "decision": "accept",
+      "concept_id": "C_null",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D02_C007_G3047",
+      "decision": "accept",
+      "concept_id": "C_unary_relationship",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente. Equivalência lexical restrita ao contexto deste glossário; não é identidade universal entre modelos ou domínios."
+    },
+    {
+      "candidate_id": "D02_C007_G3121",
+      "decision": "accept",
+      "concept_id": "C_relationship",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D02_C007_G3256",
+      "decision": "accept",
+      "concept_id": "C_relationship_strength",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D02_C007_G3439",
+      "decision": "accept",
+      "concept_id": "C_simple_attribute",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D02_C007_G3512",
+      "decision": "exclude",
+      "note": "Identificador pessoal dos exemplos, fora do escopo de conceitos gerais."
+    },
+    {
+      "candidate_id": "D02_C007_G3559",
+      "decision": "flag",
+      "note": "Monovalorado e simples dizem respeito a propriedades diferentes; a remissão da fonte não basta para fundi-los."
+    },
+    {
+      "candidate_id": "D02_C007_G3634",
+      "decision": "accept",
+      "concept_id": "C_stored_attribute",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D02_C007_G3703",
+      "decision": "flag",
+      "note": "A definição restringe o relacionamento ternário a muitos-para-muitos; precisa de revisão antes de generalizar."
+    },
+    {
+      "candidate_id": "D02_C007_G3826",
+      "decision": "accept",
+      "concept_id": "C_unary_relationship",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D03_C005_G809",
+      "decision": "accept",
+      "concept_id": "C_business_rule",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D03_C005_G929",
+      "decision": "accept",
+      "concept_id": "C_cardinality",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D03_C005_G1074",
+      "decision": "accept",
+      "concept_id": "C_connectivity",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D03_C005_G1175",
+      "decision": "accept",
+      "concept_id": "C_constraint",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D03_C005_G1276",
+      "decision": "accept",
+      "concept_id": "C_entity_integrity",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D03_C005_G1427",
+      "decision": "accept",
+      "concept_id": "C_identifying_relationship",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D03_C005_G1555",
+      "decision": "accept",
+      "concept_id": "C_integrity_constraint",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D03_C005_G1712",
+      "decision": "accept",
+      "concept_id": "C_mandatory_relationship",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D03_C005_G1819",
+      "decision": "accept",
+      "concept_id": "C_non_identifying_relationship",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D03_C005_G1957",
+      "decision": "accept",
+      "concept_id": "C_optional_relationship",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D03_C005_G2098",
+      "decision": "accept",
+      "concept_id": "C_orphan_record",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D03_C005_G2251",
+      "decision": "accept",
+      "concept_id": "C_referential_integrity",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente. Formulação didática da fonte, sem afirmar que toda FK deve referenciar exclusivamente PK ou aceitar nulos."
+    },
+    {
+      "candidate_id": "D03_C005_G2372",
+      "decision": "accept",
+      "concept_id": "C_relational_dbms",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D03_C005_G2556",
+      "decision": "accept",
+      "concept_id": "C_relationship_type",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D04_C003_G1261",
+      "decision": "accept",
+      "concept_id": "C_armstrong_s_axioms",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente. Citações de regras no documento têm pendências registradas; não foram criadas novas inferências ou corrigidas as fontes."
+    },
+    {
+      "candidate_id": "D04_C003_G1393",
+      "decision": "accept",
+      "concept_id": "C_database_administrator",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D04_C003_G1439",
+      "decision": "flag",
+      "note": "A definição é uma regra prática de projeto, não uma definição geral de decomposição."
+    },
+    {
+      "candidate_id": "D04_C003_G1628",
+      "decision": "accept",
+      "concept_id": "C_fd_dependent",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D04_C003_G1709",
+      "decision": "accept",
+      "concept_id": "C_determinant",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D04_C003_G1791",
+      "decision": "accept",
+      "concept_id": "C_functional_dependency",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D04_C003_G1945",
+      "decision": "accept",
+      "concept_id": "C_non_normalized_table",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D04_C003_G2024",
+      "decision": "flag",
+      "note": "Union pode se referir a regras de dependências, combinação de tabelas ou SQL UNION; sentido ambíguo."
+    },
+    {
+      "candidate_id": "D05_C004_G487",
+      "decision": "exclude",
+      "note": "BCNF está além do recorte inicial de normalização até 3FN; preservada na fonte, não incluída nesta entrega."
+    },
+    {
+      "candidate_id": "D05_C004_G561",
+      "decision": "accept",
+      "concept_id": "C_first_normal_form",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D05_C004_G713",
+      "decision": "accept",
+      "concept_id": "C_normalization",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D05_C004_G811",
+      "decision": "flag",
+      "note": "A definição resumida omite o caso de chave composta sem dependência parcial, que o próprio capítulo também discute."
+    },
+    {
+      "candidate_id": "D05_C004_G923",
+      "decision": "accept",
+      "concept_id": "C_semantic_rule",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D05_C004_G996",
+      "decision": "accept",
+      "concept_id": "C_third_normal_form",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D09_C003_G661",
+      "decision": "accept",
+      "concept_id": "C_atomic_value",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D09_C003_G775",
+      "decision": "accept",
+      "concept_id": "C_attribute",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D09_C003_G841",
+      "decision": "accept",
+      "concept_id": "C_attribute",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente. Equivalência lexical restrita ao contexto deste glossário; não é identidade universal entre modelos ou domínios."
+    },
+    {
+      "candidate_id": "D09_C003_G890",
+      "decision": "accept",
+      "concept_id": "C_degree",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D09_C003_G948",
+      "decision": "accept",
+      "concept_id": "C_domain",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D09_C003_G1092",
+      "decision": "accept",
+      "concept_id": "C_attribute",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente. Equivalência lexical restrita ao contexto deste glossário; não é identidade universal entre modelos ou domínios."
+    },
+    {
+      "candidate_id": "D09_C003_G1140",
+      "decision": "flag",
+      "note": "File é uma remissão contextual a relation; manter pendente para não confundir arquivo físico e relação formal."
+    },
+    {
+      "candidate_id": "D09_C003_G1185",
+      "decision": "accept",
+      "concept_id": "C_row",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente. Equivalência lexical restrita ao contexto deste glossário; não é identidade universal entre modelos ou domínios."
+    },
+    {
+      "candidate_id": "D09_C003_G1264",
+      "decision": "accept",
+      "concept_id": "C_relation",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente. Tabela e relação formal permanecem com IDs diferentes; remissão da fonte preservada como evidência."
+    },
+    {
+      "candidate_id": "D09_C003_G1409",
+      "decision": "accept",
+      "concept_id": "C_row",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D09_C003_G1451",
+      "decision": "accept",
+      "concept_id": "C_structured_query_language",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "candidate_id": "D09_C003_G1540",
+      "decision": "accept",
+      "concept_id": "C_table",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente. Equivalência lexical restrita ao contexto deste glossário; não é identidade universal entre modelos ou domínios. Tabela e relação formal permanecem com IDs diferentes; remissão da fonte preservada como evidência."
+    },
+    {
+      "candidate_id": "D09_C003_G1586",
+      "decision": "accept",
+      "concept_id": "C_row",
+      "note": "Conceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente. Equivalência lexical restrita ao contexto deste glossário; não é identidade universal entre modelos ou domínios."
+    }
+  ],
+  "legacy_id_suggestions": {
+    "C_record": "C_row"
+  },
+  "note": "Mapeamentos são curadoria explícita, não agrupamento automático por semelhança. A sugestão C_record refere-se a um piloto local anterior; nenhum banco foi alterado."
+}

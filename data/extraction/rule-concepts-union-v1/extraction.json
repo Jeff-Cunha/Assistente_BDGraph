@@ -1,0 +1,1434 @@
+{
+  "schema_version": "0.1.1",
+  "extraction_method": "rule_candidates",
+  "input_chunk_ids": [
+    "D01_C002",
+    "D02_C007",
+    "D03_C005",
+    "D04_C003",
+    "D05_C004",
+    "D06_C001",
+    "D07_C001",
+    "D07_C002",
+    "D08_C001",
+    "D08_C002",
+    "D09_C003"
+  ],
+  "concepts": [
+    {
+      "concept_id": "C_alternate_key",
+      "canonical_name": "alternate key",
+      "name_pt": "chave alternativa",
+      "category": "structure",
+      "description_pt": "Chave candidata que não foi escolhida como chave primária.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D02_C007",
+          "quote": "<strong>alternate key</strong>: all candidate keys not chosen as the primary key"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_and",
+      "canonical_name": "AND",
+      "name_pt": "operador AND",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Operador booleano permitido nas condições de seleção da fonte.",
+      "evidence": [
+        {
+          "chunk_id": "D06_C001",
+          "quote": "A query can be “qualified” by adding a `WHERE` clause that specifies which rows are wanted. The `WHERE` clause contains a Boolean (truth value) expression, and only rows for which the Boolean expression is true are returned. The usual Boolean operators (`AND`, `OR`, and `NOT`) are allowed in the qualification. For example, the following retrieves the weather of San Francisco on rainy days:"
+        },
+        {
+          "chunk_id": "D07_C002",
+          "quote": "```sql\nSELECT w1.city, w1.temp_lo AS low, w1.temp_hi AS high,\n       w2.city, w2.temp_lo AS low, w2.temp_hi AS high\n    FROM weather w1 JOIN weather w2\n        ON w1.temp_lo < w2.temp_lo AND w1.temp_hi > w2.temp_hi;\n```"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Vocabulário e resumo em português curados por Codex com as páginas D06/D07/D08; ocorrências detectadas por regras. Não houve revisão humana independente nem execução das consultas. Não representa extração de relações pelo LLM."
+    },
+    {
+      "concept_id": "C_armstrong_s_axioms",
+      "canonical_name": "Armstrong’s axioms",
+      "name_pt": "axiomas de Armstrong",
+      "category": "normalization",
+      "description_pt": "Regras de inferência usadas para obter dependências funcionais.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D04_C003",
+          "quote": "<strong>Armstrong’s axioms</strong>: a set of inference rules used to infer all the functional dependencies on a relational database"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente. Citações de regras no documento têm pendências registradas; não foram criadas novas inferências ou corrigidas as fontes."
+    },
+    {
+      "concept_id": "C_as",
+      "canonical_name": "AS",
+      "name_pt": "cláusula AS",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Palavra usada para atribuir outro nome a uma coluna de saída nos exemplos.",
+      "evidence": [
+        {
+          "chunk_id": "D06_C001",
+          "quote": "```sql\nSELECT city, (temp_hi+temp_lo)/2 AS temp_avg, date FROM weather;\n```"
+        },
+        {
+          "chunk_id": "D07_C002",
+          "quote": "```sql\nSELECT w1.city, w1.temp_lo AS low, w1.temp_hi AS high,\n       w2.city, w2.temp_lo AS low, w2.temp_hi AS high\n    FROM weather w1 JOIN weather w2\n        ON w1.temp_lo < w2.temp_lo AND w1.temp_hi > w2.temp_hi;\n```"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Vocabulário e resumo em português curados por Codex com as páginas D06/D07/D08; ocorrências detectadas por regras. Não houve revisão humana independente nem execução das consultas. Não representa extração de relações pelo LLM."
+    },
+    {
+      "concept_id": "C_atomic_value",
+      "canonical_name": "atomic value",
+      "name_pt": "valor atômico",
+      "category": "structure",
+      "description_pt": "Valor considerado indivisível no contexto do modelo relacional.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D09_C003",
+          "quote": "<strong>atomic value</strong>: each value in the domain is indivisible as far as the relational model is concerned"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_attribute",
+      "canonical_name": "attribute",
+      "name_pt": "atributo",
+      "category": "structure",
+      "description_pt": "Elemento de armazenamento descrito pelo glossário; coluna e campo são aliases apenas no contexto relacional da fonte.",
+      "aliases": [
+        "column",
+        "field"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D09_C003",
+          "quote": "<strong>attribute</strong>: principle storage unit in a database"
+        },
+        {
+          "chunk_id": "D09_C003",
+          "quote": "<strong>column: </strong>see <em>attribute</em>"
+        },
+        {
+          "chunk_id": "D09_C003",
+          "quote": "<strong>field</strong>: see <em>attribute</em>"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente. Equivalência lexical restrita ao contexto deste glossário; não é identidade universal entre modelos ou domínios.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente. Equivalência lexical restrita ao contexto deste glossário; não é identidade universal entre modelos ou domínios."
+    },
+    {
+      "concept_id": "C_avg",
+      "canonical_name": "avg",
+      "name_pt": "função AVG",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Função de média citada pela fonte entre as funções agregadoras.",
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "Like most other relational database products, PostgreSQL supports <em>aggregate functions</em>. An aggregate function computes a single result from multiple input rows. For example, there are aggregates to compute the `count`, `sum`, `avg` (average), `max` (maximum) and `min` (minimum) over a set of rows."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Vocabulário e resumo em português curados por Codex com as páginas D06/D07/D08; ocorrências detectadas por regras. Não houve revisão humana independente nem execução das consultas. Não representa extração de relações pelo LLM."
+    },
+    {
+      "concept_id": "C_business_rule",
+      "canonical_name": "business rule",
+      "name_pt": "regra de negócio",
+      "category": "constraint",
+      "description_pt": "Regra obtida dos usuários durante o levantamento de requisitos e usada para determinar cardinalidade.",
+      "aliases": [
+        "business rules"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D03_C005",
+          "quote": "<strong>business rules</strong>: obtained from users when gathering requirements and are used to determine cardinality"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_candidate_key",
+      "canonical_name": "candidate key",
+      "name_pt": "chave candidata",
+      "category": "structure",
+      "description_pt": "Chave simples ou composta que é única e mínima.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D02_C007",
+          "quote": "<strong>candidate key</strong>: a simple or composite key that is unique (no two rows in a table may have the same value) and minimal (every column is necessary)"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_cardinality",
+      "canonical_name": "cardinality",
+      "name_pt": "cardinalidade",
+      "category": "structure",
+      "description_pt": "Expressa números mínimo e máximo de ocorrências associadas a uma ocorrência de entidade relacionada.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D03_C005",
+          "quote": "<strong>cardinality</strong>: expresses the minimum and maximum number of entity occurrences associated with one occurrence of a related entity"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_characteristic_entity",
+      "canonical_name": "characteristic entity",
+      "name_pt": "entidade característica",
+      "category": "structure",
+      "description_pt": "Entidade que fornece informação adicional sobre outra tabela, na terminologia da fonte.",
+      "aliases": [
+        "characteristic entities"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D02_C007",
+          "quote": "<strong>characteristic entities</strong>: entities that provide more information about another table"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_composite_attribute",
+      "canonical_name": "composite attribute",
+      "name_pt": "atributo composto",
+      "category": "structure",
+      "description_pt": "Atributo formado por uma hierarquia de atributos.",
+      "aliases": [
+        "composite attributes"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D02_C007",
+          "quote": "<strong>composite attributes</strong>: attributes that consist of a hierarchy of attributes"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_composite_key",
+      "canonical_name": "composite key",
+      "name_pt": "chave composta",
+      "category": "structure",
+      "description_pt": "Chave formada por dois ou mais atributos e que deve ser mínima.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D02_C007",
+          "quote": "<strong>composite key</strong>: composed of two or more attributes, but it must be minimal"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_connectivity",
+      "canonical_name": "connectivity",
+      "name_pt": "conectividade",
+      "category": "structure",
+      "description_pt": "Classificação da conexão entre tabelas como um para um ou um para muitos na notação da fonte.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D03_C005",
+          "quote": "<strong>connectivity</strong>: the relationship between two tables, e.g., one to one or one to many"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_constraint",
+      "canonical_name": "constraint",
+      "name_pt": "restrição",
+      "category": "constraint",
+      "description_pt": "Regra que exige do SGBD a verificação da semântica dos dados.",
+      "aliases": [
+        "constraints"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D03_C005",
+          "quote": "<strong>constraints</strong>: the rules that force DBMSs to check that data satisfies the semantics"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_count",
+      "canonical_name": "count",
+      "name_pt": "função COUNT",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Função agregadora de contagem apresentada nos exemplos com count(*).",
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "Like most other relational database products, PostgreSQL supports <em>aggregate functions</em>. An aggregate function computes a single result from multiple input rows. For example, there are aggregates to compute the `count`, `sum`, `avg` (average), `max` (maximum) and `min` (minimum) over a set of rows."
+        },
+        {
+          "chunk_id": "D08_C002",
+          "quote": "```sql\nSELECT city, count(*), max(temp_lo)\n    FROM weather\n    WHERE city LIKE 'S%'            -- (1)\n    GROUP BY city;\n```"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Vocabulário e resumo em português curados por Codex com as páginas D06/D07/D08; ocorrências detectadas por regras. Não houve revisão humana independente nem execução das consultas. Não representa extração de relações pelo LLM."
+    },
+    {
+      "concept_id": "C_data_element",
+      "canonical_name": "data element",
+      "name_pt": "elemento de dado",
+      "category": "general",
+      "description_pt": "Fato que representa informação do mundo real.",
+      "aliases": [
+        "data elements"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D01_C002",
+          "quote": "<strong>data elements</strong>: facts that represent real-world information"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_database",
+      "canonical_name": "database",
+      "name_pt": "banco de dados",
+      "category": "general",
+      "description_pt": "Coleção compartilhada de dados relacionados usada para apoiar atividades de uma organização.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D01_C002",
+          "quote": "<strong>database</strong>: a shared collection of related data used to support the activities of a particular organization"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_database_administrator",
+      "canonical_name": "database administrator",
+      "name_pt": "administrador de banco de dados",
+      "category": "general",
+      "description_pt": "Profissional indicado pela sigla DBA no glossário.",
+      "aliases": [
+        "DBA"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D04_C003",
+          "quote": "<strong>DBA</strong>: database administrator"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_dbms",
+      "canonical_name": "database management system",
+      "name_pt": "sistema gerenciador de banco de dados",
+      "category": "general",
+      "description_pt": "Conjunto de programas para criar e manter bancos de dados e controlar seu acesso.",
+      "aliases": [
+        "database management system (DBMS)",
+        "DBMS"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D01_C002",
+          "quote": "<strong>database management system (DBMS)</strong>: a collection of programs that enables users to create and maintain databases and control all access to them"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_degree",
+      "canonical_name": "degree",
+      "name_pt": "grau de uma tabela",
+      "category": "structure",
+      "description_pt": "Número de atributos de uma tabela.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D09_C003",
+          "quote": "<strong>degree</strong>: number of attributes in a table"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_dependent_entity",
+      "canonical_name": "dependent entity",
+      "name_pt": "entidade dependente",
+      "category": "structure",
+      "description_pt": "Entidade cujo significado depende de outras tabelas, conforme a fonte.",
+      "aliases": [
+        "dependent entities",
+        "derived entities"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D02_C007",
+          "quote": "<strong>dependent entities</strong>: these entities depend on other tables for their meaning"
+        },
+        {
+          "chunk_id": "D02_C007",
+          "quote": "<strong>derived entities</strong>: see<em> dependent entities</em>"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente. Equivalência lexical restrita ao contexto deste glossário; não é identidade universal entre modelos ou domínios."
+    },
+    {
+      "concept_id": "C_derived_attribute",
+      "canonical_name": "derived attribute",
+      "name_pt": "atributo derivado",
+      "category": "structure",
+      "description_pt": "Atributo cujo valor é calculado a partir de outros atributos.",
+      "aliases": [
+        "derived attributes"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D02_C007",
+          "quote": "<strong>derived attributes</strong>: attributes that contain values calculated from other attributes"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_determinant",
+      "canonical_name": "determinant",
+      "name_pt": "determinante",
+      "category": "normalization",
+      "description_pt": "Elemento apresentado no lado esquerdo do diagrama de dependência funcional.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D04_C003",
+          "quote": "<strong>determinant</strong>: the left side of the functional dependency diagram"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_distinct",
+      "canonical_name": "DISTINCT",
+      "name_pt": "modificador DISTINCT",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Modificador usado para remover linhas duplicadas do resultado, sem garantir ordenação por si só.",
+      "evidence": [
+        {
+          "chunk_id": "D06_C001",
+          "quote": "```sql\nSELECT DISTINCT city\n    FROM weather;\n```"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Vocabulário e resumo em português curados por Codex com as páginas D06/D07/D08; ocorrências detectadas por regras. Não houve revisão humana independente nem execução das consultas. Não representa extração de relações pelo LLM."
+    },
+    {
+      "concept_id": "C_domain",
+      "canonical_name": "domain",
+      "name_pt": "domínio",
+      "category": "structure",
+      "description_pt": "Conjunto de valores aceitáveis para uma coluna.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D09_C003",
+          "quote": "<strong>domain</strong>: the original sets of atomic values used to model data; a set of acceptable values that a column is allowed to contain"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_entity",
+      "canonical_name": "entity",
+      "name_pt": "entidade",
+      "category": "structure",
+      "description_pt": "Objeto com existência independente que pode ser distinguido de outros objetos.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D02_C007",
+          "quote": "<strong>entity</strong>: a thing or object in the real world with an independent existence that can be differentiated from other objects"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_entity_integrity",
+      "canonical_name": "entity integrity",
+      "name_pt": "integridade de entidade",
+      "category": "constraint",
+      "description_pt": "Regra conceitual de chave primária sem valores nulos em seus componentes.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D03_C005",
+          "quote": "<strong>entity integrity</strong>: requires that every table have a primary key; neither the primary key, nor any part of it, can contain null values"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_entity_relationship_data_model",
+      "canonical_name": "entity relationship data model",
+      "name_pt": "modelo de dados entidade-relacionamento",
+      "category": "general",
+      "description_pt": "Modelo representado por diagramas entidade-relacionamento para modelagem de dados.",
+      "aliases": [
+        "entity relationship (ER) data model"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D02_C007",
+          "quote": "<strong>entity relationship (ER) data model</strong>: also called an ER schema, are represented by ER diagrams. These are well suited to data modelling for use with databases."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_entity_set",
+      "canonical_name": "entity set",
+      "name_pt": "conjunto de entidades",
+      "category": "structure",
+      "description_pt": "Coleção de entidades de um tipo em um dado instante.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D02_C007",
+          "quote": "<strong>entity set</strong>:a collection of entities of an entity type at a point of time"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_entity_type",
+      "canonical_name": "entity type",
+      "name_pt": "tipo de entidade",
+      "category": "structure",
+      "description_pt": "Tipo que reúne entidades semelhantes, na caracterização do glossário.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D02_C007",
+          "quote": "<strong>entity type</strong>: a collection of similar entities"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_fd_dependent",
+      "canonical_name": "dependent",
+      "name_pt": "dependente de uma dependência funcional",
+      "category": "normalization",
+      "description_pt": "Elemento apresentado no lado direito do diagrama de dependência funcional.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D04_C003",
+          "quote": "<strong>dependent</strong>: the right side of the functional dependency diagram"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_filter",
+      "canonical_name": "FILTER",
+      "name_pt": "opção FILTER",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Opção que seleciona entradas de uma função agregadora específica, sem filtrar necessariamente as demais.",
+      "evidence": [
+        {
+          "chunk_id": "D08_C002",
+          "quote": "Another way to select the rows that go into an aggregate computation is to use `FILTER`, which is a per-aggregate option:"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Vocabulário e resumo em português curados por Codex com as páginas D06/D07/D08; ocorrências detectadas por regras. Não houve revisão humana independente nem execução das consultas. Não representa extração de relações pelo LLM."
+    },
+    {
+      "concept_id": "C_first_normal_form",
+      "canonical_name": "first normal form",
+      "name_pt": "primeira forma normal",
+      "category": "normalization",
+      "description_pt": "Forma em que as interseções de linhas e colunas têm valores únicos, sem grupos repetidos, na apresentação didática da fonte.",
+      "aliases": [
+        "first normal form (1NF)"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D05_C004",
+          "quote": "<strong>first normal form (1NF): </strong>only single values are permitted at the intersection of each row and column so there are no repeating groups"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_foreign_key",
+      "canonical_name": "foreign key",
+      "name_pt": "chave estrangeira",
+      "category": "structure",
+      "description_pt": "Chave que estabelece uma referência entre tabelas; a fonte apresenta uma formulação introdutória com referência à PK e possibilidade de nulo.",
+      "aliases": [
+        "foreign key (FK)",
+        "FK"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D02_C007",
+          "quote": "<strong>foreign key (FK)</strong>: an attribute in a table that references the primary key in another table OR it can be null"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente. Formulação didática da fonte, sem afirmar que toda FK deve referenciar exclusivamente PK ou aceitar nulos."
+    },
+    {
+      "concept_id": "C_from",
+      "canonical_name": "FROM",
+      "name_pt": "cláusula FROM",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Cláusula que indica as fontes de dados nos exemplos de consulta.",
+      "evidence": [
+        {
+          "chunk_id": "D06_C001",
+          "quote": "```sql\nSELECT * FROM weather;\n```"
+        },
+        {
+          "chunk_id": "D07_C001",
+          "quote": "```sql\nSELECT * FROM weather JOIN cities ON city = name;\n```"
+        },
+        {
+          "chunk_id": "D07_C002",
+          "quote": "```sql\nSELECT *\n    FROM weather LEFT OUTER JOIN cities ON weather.city = cities.name;\n```"
+        },
+        {
+          "chunk_id": "D08_C001",
+          "quote": "```sql\nSELECT max(temp_lo) FROM weather;\n```"
+        },
+        {
+          "chunk_id": "D08_C002",
+          "quote": "```sql\nSELECT city, count(*), max(temp_lo)\n    FROM weather\n    WHERE city LIKE 'S%'            -- (1)\n    GROUP BY city;\n```"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Vocabulário e resumo em português curados por Codex com as páginas D06/D07/D08; ocorrências detectadas por regras. Não houve revisão humana independente nem execução das consultas. Não representa extração de relações pelo LLM."
+    },
+    {
+      "concept_id": "C_functional_dependency",
+      "canonical_name": "functional dependency",
+      "name_pt": "dependência funcional",
+      "category": "normalization",
+      "description_pt": "Relação de determinação entre atributos; a fonte apresenta como caso típico a PK e atributos não chave.",
+      "aliases": [
+        "functional dependency (FD)",
+        "FD"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D04_C003",
+          "quote": "<strong>functional dependency (FD):</strong> a relationship between two attributes, typically between the PK and other non-key attributes within a table"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_group_by",
+      "canonical_name": "GROUP BY",
+      "name_pt": "cláusula GROUP BY",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Cláusula usada nos exemplos para formar grupos sobre os quais agregações são calculadas.",
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "Aggregates are also very useful in combination with `GROUP BY` clauses. For example, we can get the number of readings and the maximum low temperature observed in each city with:"
+        },
+        {
+          "chunk_id": "D08_C002",
+          "quote": "```sql\nSELECT city, count(*), max(temp_lo)\n    FROM weather\n    WHERE city LIKE 'S%'            -- (1)\n    GROUP BY city;\n```"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Vocabulário e resumo em português curados por Codex com as páginas D06/D07/D08; ocorrências detectadas por regras. Não houve revisão humana independente nem execução das consultas. Não representa extração de relações pelo LLM."
+    },
+    {
+      "concept_id": "C_having",
+      "canonical_name": "HAVING",
+      "name_pt": "cláusula HAVING",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Cláusula que filtra linhas de grupos após o agrupamento e a agregação; não exige sempre uma função agregadora.",
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "which gives us one output row per city. Each aggregate result is computed over the table rows matching that city. We can filter these grouped rows using `HAVING`:"
+        },
+        {
+          "chunk_id": "D08_C002",
+          "quote": "It is important to understand the interaction between aggregates and SQL's `WHERE` and `HAVING` clauses. The fundamental difference between `WHERE` and `HAVING` is this: `WHERE` selects input rows before groups and aggregates are computed (thus, it controls which rows go into the aggregate computation), whereas `HAVING` selects group rows after groups and aggregates are computed. Thus, the `WHERE` clause must not contain aggregate functions; it makes no sense to try to use an aggregate to determine which rows will be inputs to the aggregates. On the other hand, the `HAVING` clause always contains aggregate functions. (Strictly speaking, you are allowed to write a `HAVING` clause that doesn't use aggregates, but it's seldom useful. The same condition could be used more efficiently at the `WHERE` stage.)"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Vocabulário e resumo em português curados por Codex com as páginas D06/D07/D08; ocorrências detectadas por regras. Não houve revisão humana independente nem execução das consultas. Não representa extração de relações pelo LLM."
+    },
+    {
+      "concept_id": "C_identifying_relationship",
+      "canonical_name": "identifying relationship",
+      "name_pt": "relacionamento identificador",
+      "category": "structure",
+      "description_pt": "Relacionamento em que a PK contém a FK, representado na fonte por linha contínua.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D03_C005",
+          "quote": "<strong>identifying relationship</strong>: where the primary key contains the foreign key; indicated in an ERD by a solid line"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_independent_entity",
+      "canonical_name": "independent entity",
+      "name_pt": "entidade independente",
+      "category": "structure",
+      "description_pt": "Entidade apresentada como base sobre a qual outras tabelas são construídas.",
+      "aliases": [
+        "kernel"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D02_C007",
+          "quote": "<strong>independent entity</strong>: as the building blocks of a database, these entities are what other tables are based on"
+        },
+        {
+          "chunk_id": "D02_C007",
+          "quote": "<strong>kernel</strong>: see<em> independent entity</em>"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente. Equivalência lexical restrita ao contexto deste glossário; não é identidade universal entre modelos ou domínios."
+    },
+    {
+      "concept_id": "C_inner_join",
+      "canonical_name": "inner join",
+      "name_pt": "junção interna",
+      "aliases": [
+        "inner joins"
+      ],
+      "category": "operation",
+      "description_pt": "Forma de junção identificada na comparação com as junções externas da fonte.",
+      "evidence": [
+        {
+          "chunk_id": "D07_C002",
+          "quote": "Now we will figure out how we can get the Hayward records back in. What we want the query to do is to scan the `weather` table and for each row to find the matching `cities` row(s). If no matching row is found we want some “empty values” to be substituted for the `cities` table's columns. This kind of query is called an <em>outer join</em>. (The joins we have seen so far are <em>inner joins</em>.) The command looks like this:"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Vocabulário e resumo em português curados por Codex com as páginas D06/D07/D08; ocorrências detectadas por regras. Não houve revisão humana independente nem execução das consultas. Não representa extração de relações pelo LLM."
+    },
+    {
+      "concept_id": "C_integrity_constraint",
+      "canonical_name": "integrity constraint",
+      "name_pt": "restrição de integridade",
+      "category": "constraint",
+      "description_pt": "Declaração lógica de valores e formatos permitidos para um atributo.",
+      "aliases": [
+        "integrity constraints"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D03_C005",
+          "quote": "<strong>integrity constraints</strong>: logical statements that state what data values are or are not allowed and which format is suitable for an attribute"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_join",
+      "canonical_name": "join",
+      "name_pt": "junção",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Operação que combina linhas de tabelas conforme uma expressão.",
+      "evidence": [
+        {
+          "chunk_id": "D07_C001",
+          "quote": "Thus far, our queries have only accessed one table at a time. Queries can access multiple tables at once, or access the same table in such a way that multiple rows of the table are being processed at the same time. Queries that access multiple tables (or multiple instances of the same table) at one time are called <em>join</em> queries. They combine rows from one table with rows from a second table, with an expression specifying which rows are to be paired. For example, to return all the weather records together with the location of the associated city, the database needs to compare the `city` column of each row of the `weather` table with the `name` column of all rows in the `cities` table, and select the pairs of rows where these values match.[<sup>\\[4\\]</sup>](https://www.postgresql.org/docs/18/tutorial-join.html#ftn.id-1.4.4.7.3.6) This would be accomplished by the following query:"
+        },
+        {
+          "chunk_id": "D07_C002",
+          "quote": "Now we will figure out how we can get the Hayward records back in. What we want the query to do is to scan the `weather` table and for each row to find the matching `cities` row(s). If no matching row is found we want some “empty values” to be substituted for the `cities` table's columns. This kind of query is called an <em>outer join</em>. (The joins we have seen so far are <em>inner joins</em>.) The command looks like this:"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Vocabulário e resumo em português curados por Codex com as páginas D06/D07/D08; ocorrências detectadas por regras. Não houve revisão humana independente nem execução das consultas. Não representa extração de relações pelo LLM."
+    },
+    {
+      "concept_id": "C_key",
+      "canonical_name": "key",
+      "name_pt": "chave",
+      "category": "structure",
+      "description_pt": "Atributo ou grupo de atributos cujos valores identificam uma entidade em um conjunto.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D02_C007",
+          "quote": "<strong>key</strong>: an attribute or group of attributes whose values can be used to uniquely identify an individual entity in an entity set"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_left_outer_join",
+      "canonical_name": "left outer join",
+      "name_pt": "junção externa à esquerda",
+      "aliases": [
+        "LEFT OUTER JOIN"
+      ],
+      "category": "operation",
+      "description_pt": "Junção que preserva as linhas da tabela à esquerda, conforme a descrição da fonte.",
+      "evidence": [
+        {
+          "chunk_id": "D07_C002",
+          "quote": "```sql\nSELECT *\n    FROM weather LEFT OUTER JOIN cities ON weather.city = cities.name;\n```"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Vocabulário e resumo em português curados por Codex com as páginas D06/D07/D08; ocorrências detectadas por regras. Não houve revisão humana independente nem execução das consultas. Não representa extração de relações pelo LLM."
+    },
+    {
+      "concept_id": "C_like",
+      "canonical_name": "LIKE",
+      "name_pt": "operador LIKE",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Operador de correspondência de padrões citado na explicação dos exemplos.",
+      "evidence": [
+        {
+          "chunk_id": "D08_C002",
+          "quote": "```sql\nSELECT city, count(*), max(temp_lo)\n    FROM weather\n    WHERE city LIKE 'S%'            -- (1)\n    GROUP BY city;\n```"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Vocabulário e resumo em português curados por Codex com as páginas D06/D07/D08; ocorrências detectadas por regras. Não houve revisão humana independente nem execução das consultas. Não representa extração de relações pelo LLM."
+    },
+    {
+      "concept_id": "C_mandatory_relationship",
+      "canonical_name": "mandatory relationship",
+      "name_pt": "relacionamento obrigatório",
+      "category": "structure",
+      "description_pt": "Relacionamento em que uma ocorrência exige uma ocorrência correspondente.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D03_C005",
+          "quote": "<strong>mandatory relationship</strong>:one entity occurrence requires a corresponding entity occurrence."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_max",
+      "canonical_name": "max",
+      "name_pt": "função MAX",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Função que calcula um máximo nos exemplos de agregação.",
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "Like most other relational database products, PostgreSQL supports <em>aggregate functions</em>. An aggregate function computes a single result from multiple input rows. For example, there are aggregates to compute the `count`, `sum`, `avg` (average), `max` (maximum) and `min` (minimum) over a set of rows."
+        },
+        {
+          "chunk_id": "D08_C002",
+          "quote": "```sql\nSELECT city, count(*), max(temp_lo)\n    FROM weather\n    WHERE city LIKE 'S%'            -- (1)\n    GROUP BY city;\n```"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Vocabulário e resumo em português curados por Codex com as páginas D06/D07/D08; ocorrências detectadas por regras. Não houve revisão humana independente nem execução das consultas. Não representa extração de relações pelo LLM."
+    },
+    {
+      "concept_id": "C_min",
+      "canonical_name": "min",
+      "name_pt": "função MIN",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Função de mínimo citada pela fonte entre as funções agregadoras.",
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "Like most other relational database products, PostgreSQL supports <em>aggregate functions</em>. An aggregate function computes a single result from multiple input rows. For example, there are aggregates to compute the `count`, `sum`, `avg` (average), `max` (maximum) and `min` (minimum) over a set of rows."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Vocabulário e resumo em português curados por Codex com as páginas D06/D07/D08; ocorrências detectadas por regras. Não houve revisão humana independente nem execução das consultas. Não representa extração de relações pelo LLM."
+    },
+    {
+      "concept_id": "C_multivalued_attribute",
+      "canonical_name": "multivalued attribute",
+      "name_pt": "atributo multivalorado",
+      "category": "structure",
+      "description_pt": "Atributo que pode ter um conjunto de valores para cada entidade.",
+      "aliases": [
+        "multivalued attributes"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D02_C007",
+          "quote": "<strong>multivalued attributes</strong>: attributes that have a set of values for each entity"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_non_identifying_relationship",
+      "canonical_name": "non-identifying relationship",
+      "name_pt": "relacionamento não identificador",
+      "category": "structure",
+      "description_pt": "Relacionamento em que a FK não integra a PK, representado na fonte por linha pontilhada.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D03_C005",
+          "quote": "<strong>non-identifying relationship</strong>: does not contain the foreign key in the primary key; indicated in an ERD by a dotted line"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_non_normalized_table",
+      "canonical_name": "non-normalized table",
+      "name_pt": "tabela não normalizada",
+      "category": "normalization",
+      "description_pt": "Tabela caracterizada no glossário pela presença de redundância de dados.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D04_C003",
+          "quote": "<strong>non-normalized table</strong>: a table that has data redundancy in it"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_normalization",
+      "canonical_name": "normalization",
+      "name_pt": "normalização",
+      "category": "normalization",
+      "description_pt": "Processo descrito no glossário pela avaliação da redundância em uma tabela.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D05_C004",
+          "quote": "<strong>normalization</strong>: the process of determining how much redundancy exists in a table"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_not",
+      "canonical_name": "NOT",
+      "name_pt": "operador NOT",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Operador booleano permitido nas condições de seleção da fonte.",
+      "evidence": [
+        {
+          "chunk_id": "D06_C001",
+          "quote": "A query can be “qualified” by adding a `WHERE` clause that specifies which rows are wanted. The `WHERE` clause contains a Boolean (truth value) expression, and only rows for which the Boolean expression is true are returned. The usual Boolean operators (`AND`, `OR`, and `NOT`) are allowed in the qualification. For example, the following retrieves the weather of San Francisco on rainy days:"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Vocabulário e resumo em português curados por Codex com as páginas D06/D07/D08; ocorrências detectadas por regras. Não houve revisão humana independente nem execução das consultas. Não representa extração de relações pelo LLM."
+    },
+    {
+      "concept_id": "C_null",
+      "canonical_name": "null",
+      "name_pt": "nulo",
+      "category": "general",
+      "description_pt": "Símbolo para informação desconhecida ou não aplicável, distinto de zero e de texto vazio.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D02_C007",
+          "quote": "<strong>null</strong>: a special symbol, independent of data type, which means either unknown or inapplicable; it does not mean zero or blank"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_optional_relationship",
+      "canonical_name": "optional relationship",
+      "name_pt": "relacionamento opcional",
+      "category": "structure",
+      "description_pt": "Relacionamento que permite ausência de uma ocorrência correspondente, conforme as alternativas descritas na fonte.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D03_C005",
+          "quote": "<strong>optional relationship</strong>: the FK can be null or the parent table does not need to have a corresponding child table occurrence"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_or",
+      "canonical_name": "OR",
+      "name_pt": "operador OR",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Operador booleano permitido nas condições de seleção da fonte.",
+      "evidence": [
+        {
+          "chunk_id": "D06_C001",
+          "quote": "A query can be “qualified” by adding a `WHERE` clause that specifies which rows are wanted. The `WHERE` clause contains a Boolean (truth value) expression, and only rows for which the Boolean expression is true are returned. The usual Boolean operators (`AND`, `OR`, and `NOT`) are allowed in the qualification. For example, the following retrieves the weather of San Francisco on rainy days:"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Vocabulário e resumo em português curados por Codex com as páginas D06/D07/D08; ocorrências detectadas por regras. Não houve revisão humana independente nem execução das consultas. Não representa extração de relações pelo LLM."
+    },
+    {
+      "concept_id": "C_order_by",
+      "canonical_name": "ORDER BY",
+      "name_pt": "cláusula ORDER BY",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Cláusula usada para ordenar os resultados nos exemplos.",
+      "evidence": [
+        {
+          "chunk_id": "D06_C001",
+          "quote": "```sql\nSELECT * FROM weather\n    ORDER BY city;\n```"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Vocabulário e resumo em português curados por Codex com as páginas D06/D07/D08; ocorrências detectadas por regras. Não houve revisão humana independente nem execução das consultas. Não representa extração de relações pelo LLM."
+    },
+    {
+      "concept_id": "C_orphan_record",
+      "canonical_name": "orphan record",
+      "name_pt": "registro órfão",
+      "category": "structure",
+      "description_pt": "Registro cujo valor de FK não é encontrado na entidade correspondente, segundo a definição da fonte.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D03_C005",
+          "quote": "<strong>orphan record</strong>: a record whose foreign key value is not found in the corresponding entity – the entity where the primary key is located"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_outer_join",
+      "canonical_name": "outer join",
+      "name_pt": "junção externa",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Forma de junção que representa ausência de correspondência com valores nulos, conforme os exemplos.",
+      "evidence": [
+        {
+          "chunk_id": "D07_C002",
+          "quote": "Now we will figure out how we can get the Hayward records back in. What we want the query to do is to scan the `weather` table and for each row to find the matching `cities` row(s). If no matching row is found we want some “empty values” to be substituted for the `cities` table's columns. This kind of query is called an <em>outer join</em>. (The joins we have seen so far are <em>inner joins</em>.) The command looks like this:"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Vocabulário e resumo em português curados por Codex com as páginas D06/D07/D08; ocorrências detectadas por regras. Não houve revisão humana independente nem execução das consultas. Não representa extração de relações pelo LLM."
+    },
+    {
+      "concept_id": "C_referential_integrity",
+      "canonical_name": "referential integrity",
+      "name_pt": "integridade referencial",
+      "category": "constraint",
+      "description_pt": "Regra de validade das referências; a fonte descreve correspondência com a chave referenciada ou nulo.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D03_C005",
+          "quote": "<strong>referential integrity</strong>: requires that a foreign key must have a matching primary key or it must be null"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente. Formulação didática da fonte, sem afirmar que toda FK deve referenciar exclusivamente PK ou aceitar nulos."
+    },
+    {
+      "concept_id": "C_relation",
+      "canonical_name": "relation",
+      "name_pt": "relação do modelo relacional",
+      "category": "structure",
+      "description_pt": "Subconjunto de produto cartesiano de domínios, segundo a definição formal do glossário; mantido distinto de tabela no registro canônico.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D09_C003",
+          "quote": "<strong>relation</strong>: a subset of the Cartesian product of a list of domains characterized by a name; the technical term for table or file"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente. Tabela e relação formal permanecem com IDs diferentes; remissão da fonte preservada como evidência."
+    },
+    {
+      "concept_id": "C_relational_dbms",
+      "canonical_name": "relational database management system",
+      "name_pt": "sistema gerenciador de banco de dados relacional",
+      "category": "general",
+      "description_pt": "Sistema de banco de dados baseado no modelo relacional.",
+      "aliases": [
+        "relational database management system (RDBMS)",
+        "RDBMS"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D03_C005",
+          "quote": "<strong>relational database management system (RDBMS)</strong>: a popular database system based on the relational model introduced by E. F. Codd of IBM’s San Jose Research Laboratory"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_relationship",
+      "canonical_name": "relationship",
+      "name_pt": "relacionamento",
+      "category": "structure",
+      "description_pt": "Associação ou interação entre entidades para conectar informações relacionadas.",
+      "aliases": [
+        "relationships"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D02_C007",
+          "quote": "<strong>relationships</strong>: the associations or interactions between entities; used to connect related information between tables"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_relationship_strength",
+      "canonical_name": "relationship strength",
+      "name_pt": "força do relacionamento",
+      "category": "structure",
+      "description_pt": "Característica ligada à maneira como a chave primária da entidade relacionada é definida.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D02_C007",
+          "quote": "<strong>relationship strength</strong>: based on how the primary key of a related entity is defined"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_relationship_type",
+      "canonical_name": "relationship type",
+      "name_pt": "tipo de relacionamento",
+      "category": "structure",
+      "description_pt": "Tipo de relacionamento entre tabelas em um DER, identificado na fonte como identificador ou não identificador.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D03_C005",
+          "quote": "<strong>relationship type</strong>: the type of relationship between two tables in an ERD (either identifying or non-identifying); this relationship is indicated by a line drawn between the two tables."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_row",
+      "canonical_name": "row",
+      "name_pt": "linha",
+      "category": "structure",
+      "description_pt": "Ocorrência em uma tabela relacional; registro e tupla são tratados como aliases no contexto deste glossário.",
+      "aliases": [
+        "record",
+        "tuple"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D09_C003",
+          "quote": "<strong>record</strong>: contains fields that are related; <em>see tuple</em>"
+        },
+        {
+          "chunk_id": "D09_C003",
+          "quote": "<strong>row</strong>: <em>see tuple</em>"
+        },
+        {
+          "chunk_id": "D09_C003",
+          "quote": "<strong>tuple</strong>: a technical term for row or record"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente. Equivalência lexical restrita ao contexto deste glossário; não é identidade universal entre modelos ou domínios.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente. Equivalência lexical restrita ao contexto deste glossário; não é identidade universal entre modelos ou domínios."
+    },
+    {
+      "concept_id": "C_select",
+      "canonical_name": "SELECT",
+      "name_pt": "consulta SELECT",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Consulta usada para recuperar dados de tabelas.",
+      "evidence": [
+        {
+          "chunk_id": "D06_C001",
+          "quote": "To retrieve data from a table, the table is <em>queried</em>. An SQL `SELECT` statement is used to do this. The statement is divided into a select list (the part that lists the columns to be returned), a table list (the part that lists the tables from which to retrieve the data), and an optional qualification (the part that specifies any restrictions). For example, to retrieve all the rows of table `weather`, type:"
+        },
+        {
+          "chunk_id": "D07_C001",
+          "quote": "```sql\nSELECT * FROM weather JOIN cities ON city = name;\n```"
+        },
+        {
+          "chunk_id": "D07_C002",
+          "quote": "```sql\nSELECT *\n    FROM weather LEFT OUTER JOIN cities ON weather.city = cities.name;\n```"
+        },
+        {
+          "chunk_id": "D08_C001",
+          "quote": "```sql\nSELECT max(temp_lo) FROM weather;\n```"
+        },
+        {
+          "chunk_id": "D08_C002",
+          "quote": "```sql\nSELECT city, count(*), max(temp_lo)\n    FROM weather\n    WHERE city LIKE 'S%'            -- (1)\n    GROUP BY city;\n```"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Vocabulário e resumo em português curados por Codex com as páginas D06/D07/D08; ocorrências detectadas por regras. Não houve revisão humana independente nem execução das consultas. Não representa extração de relações pelo LLM."
+    },
+    {
+      "concept_id": "C_semantic_rule",
+      "canonical_name": "semantic rule",
+      "name_pt": "regra semântica",
+      "category": "constraint",
+      "description_pt": "Regra de negócio aplicada ao banco de dados.",
+      "aliases": [
+        "semantic rules"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D05_C004",
+          "quote": "<strong>semantic rules</strong>: business rules applied to the database"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_simple_attribute",
+      "canonical_name": "simple attribute",
+      "name_pt": "atributo simples",
+      "category": "structure",
+      "description_pt": "Atributo proveniente de um domínio de valores atômicos; não foi equiparado automaticamente a atributo monovalorado.",
+      "aliases": [
+        "simple attributes"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D02_C007",
+          "quote": "<strong>simple attributes</strong>: drawn from the atomic value domains"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_stored_attribute",
+      "canonical_name": "stored attribute",
+      "name_pt": "atributo armazenado",
+      "category": "structure",
+      "description_pt": "Atributo salvo fisicamente no banco de dados.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D02_C007",
+          "quote": "<strong>stored attribute</strong>: saved physically to the database"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_structured_query_language",
+      "canonical_name": "structured query language",
+      "name_pt": "linguagem de consulta estruturada",
+      "category": "operation",
+      "description_pt": "Linguagem de acesso a bancos de dados identificada pela sigla SQL.",
+      "aliases": [
+        "structured query language (SQL)",
+        "SQL"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D09_C003",
+          "quote": "<strong>structured query language (SQL)</strong>: the standard database access language"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_sum",
+      "canonical_name": "sum",
+      "name_pt": "função SUM",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Função de soma citada pela fonte entre as funções agregadoras.",
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "Like most other relational database products, PostgreSQL supports <em>aggregate functions</em>. An aggregate function computes a single result from multiple input rows. For example, there are aggregates to compute the `count`, `sum`, `avg` (average), `max` (maximum) and `min` (minimum) over a set of rows."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Vocabulário e resumo em português curados por Codex com as páginas D06/D07/D08; ocorrências detectadas por regras. Não houve revisão humana independente nem execução das consultas. Não representa extração de relações pelo LLM."
+    },
+    {
+      "concept_id": "C_table",
+      "canonical_name": "table",
+      "name_pt": "tabela",
+      "category": "structure",
+      "description_pt": "Estrutura descrita no glossário como uma combinação de campos; a definição é introdutória.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D01_C002",
+          "quote": "<strong>table</strong>: a combination of fields"
+        },
+        {
+          "chunk_id": "D09_C003",
+          "quote": "<strong>table:</strong>see<em> relation</em>"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente. Tabela e relação formal permanecem com IDs diferentes; remissão da fonte preservada como evidência.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente. Equivalência lexical restrita ao contexto deste glossário; não é identidade universal entre modelos ou domínios. Tabela e relação formal permanecem com IDs diferentes; remissão da fonte preservada como evidência."
+    },
+    {
+      "concept_id": "C_third_normal_form",
+      "canonical_name": "third normal form",
+      "name_pt": "terceira forma normal",
+      "category": "normalization",
+      "description_pt": "Forma apresentada pela fonte como baseada em 2FN e na remoção de dependências transitivas.",
+      "aliases": [
+        "third normal form (3NF)"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D05_C004",
+          "quote": "<strong>third normal form (3NF)</strong>: the relation must be in 2NF and all transitive dependencies must be removed; a non-key attribute may not be functionally dependent on another non-key attribute"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_unary_relationship",
+      "canonical_name": "unary relationship",
+      "name_pt": "relacionamento unário",
+      "category": "structure",
+      "description_pt": "Relacionamento entre ocorrências do mesmo conjunto de entidades.",
+      "aliases": [
+        "recursive relationship"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D02_C007",
+          "quote": "<strong>recursive relationship</strong>: see<em> unary relationship</em>"
+        },
+        {
+          "chunk_id": "D02_C007",
+          "quote": "<strong>unary relationship</strong>: one in which a relationship exists between occurrences of the same entity set."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source glossary extraction by rules; concept naming, Portuguese summaries and scope reviewed by Codex. No independent human review.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente. Equivalência lexical restrita ao contexto deste glossário; não é identidade universal entre modelos ou domínios.\nConceito e resumo em português conferidos com a definição da fonte. Revisão por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_where",
+      "canonical_name": "WHERE",
+      "name_pt": "cláusula WHERE",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Cláusula que seleciona linhas por uma condição; a fonte explica sua aplicação antes da agregação.",
+      "evidence": [
+        {
+          "chunk_id": "D06_C001",
+          "quote": "A query can be “qualified” by adding a `WHERE` clause that specifies which rows are wanted. The `WHERE` clause contains a Boolean (truth value) expression, and only rows for which the Boolean expression is true are returned. The usual Boolean operators (`AND`, `OR`, and `NOT`) are allowed in the qualification. For example, the following retrieves the weather of San Francisco on rainy days:"
+        },
+        {
+          "chunk_id": "D07_C001",
+          "quote": "```sql\nSELECT *\n    FROM weather, cities\n    WHERE city = name;\n```"
+        },
+        {
+          "chunk_id": "D08_C001",
+          "quote": "```sql\nSELECT city FROM weather WHERE temp_lo = max(temp_lo);     -- WRONG\n```"
+        },
+        {
+          "chunk_id": "D08_C002",
+          "quote": "```sql\nSELECT city, count(*), max(temp_lo)\n    FROM weather\n    WHERE city LIKE 'S%'            -- (1)\n    GROUP BY city;\n```"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Vocabulário e resumo em português curados por Codex com as páginas D06/D07/D08; ocorrências detectadas por regras. Não houve revisão humana independente nem execução das consultas. Não representa extração de relações pelo LLM."
+    }
+  ],
+  "relations": []
+}

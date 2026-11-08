@@ -31,7 +31,7 @@ O script não sobrescreve um diretório não vazio. Para um novo teste, usar `--
 - O corpus é público, mas a faixa gratuita pode utilizar dados para melhoria de produtos conforme as condições do provedor. Não enviar documentos privados sem avaliar as condições.
 - Os resultados continuam pending ou flagged: não são fatos aprovados para ingestão.
 - A resolução de entidades e a conversão ao contrato consolidado ainda serão implementadas.
-- A integração ainda não produziu uma extração real validada. Nas tentativas iniciais, o modelo 2.5 Flash foi recusado para novos usuários e o 3.8 Flash retornou alta demanda; credenciais e logs dessas tentativas não fazem parte do repositório.
+- As tentativas de API não produziram extração validada: 2.5 Flash foi recusado para novos usuários e 3.8 Flash apresentou alta demanda. A extração revisada desta entrega foi executada localmente no Ollama. Credenciais e logs de falha de transporte não são entradas para o grafo.
 
 ## Referências consultadas
 

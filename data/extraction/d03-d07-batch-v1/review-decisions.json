@@ -1,0 +1,456 @@
+{
+  "reviewer": "Codex",
+  "independent_review": false,
+  "concepts": {
+    "C_entity_integrity": {
+      "canonical_name": "entity integrity",
+      "name_pt": "integridade de entidade",
+      "aliases": [],
+      "category": "constraint",
+      "description_pt": "Regra conceitual descrita pela exigência de chave primária sem nulos."
+    },
+    "C_primary_key": {
+      "canonical_name": "primary key",
+      "name_pt": "chave primária",
+      "aliases": [
+        "PK"
+      ],
+      "category": "structure",
+      "description_pt": "Chave usada para identificar registros no contexto da integridade de entidade."
+    },
+    "C_relational_dbms": {
+      "canonical_name": "relational database management system",
+      "name_pt": "sistema gerenciador de banco de dados relacional",
+      "aliases": [
+        "relational database management system (RDBMS)",
+        "RDBMS",
+        "SGBDR"
+      ],
+      "category": "general",
+      "description_pt": "Sistema de banco de dados baseado no modelo relacional, conforme a definição da fonte."
+    },
+    "C_database_system": {
+      "canonical_name": "database system",
+      "name_pt": "sistema de banco de dados",
+      "aliases": [],
+      "category": "general",
+      "description_pt": "Categoria de sistema à qual a fonte associa os sistemas relacionais."
+    },
+    "C_join": {
+      "canonical_name": "join",
+      "name_pt": "junção",
+      "aliases": [
+        "JOIN"
+      ],
+      "category": "operation",
+      "description_pt": "Operação que combina linhas de tabelas conforme uma expressão."
+    },
+    "C_row": {
+      "canonical_name": "row",
+      "name_pt": "linha",
+      "aliases": [
+        "rows"
+      ],
+      "category": "structure",
+      "description_pt": "Linha de tabela descrita como elemento combinado na operação de junção."
+    }
+  },
+  "decisions": [
+    {
+      "passage_id": "D03_C001_P003",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C001_P005",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C001_P008",
+      "decision": "accept",
+      "source_concept_id": "C_entity_integrity",
+      "target_concept_id": "C_primary_key",
+      "note": "Regra de integridade de entidade no modelo conceitual da fonte; não declara proibição física universal de tabelas sem PK. Revisão por Codex, sem revisão humana independente.",
+      "expected_type": "REQUIRES"
+    },
+    {
+      "passage_id": "D03_C001_P010",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C001_P014",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C001_P015",
+      "decision": "flag",
+      "note": "valid CustID é elemento de um exemplo, não conceito geral. A relação também perde a condição de correspondência entre valores. Conferência por Codex."
+    },
+    {
+      "passage_id": "D03_C001_P019",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C001_P020",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C002_P002",
+      "decision": "flag",
+      "note": "O destino é uma ação na tela do Access, não conceito geral; SUPPORTS não preserva a descrição de configuração da fonte. Conferência por Codex."
+    },
+    {
+      "passage_id": "D03_C002_P006",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C002_P010",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C002_P011",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C002_P013",
+      "decision": "flag",
+      "note": "A fonte apresenta semantic constraints como nome alternativo de enterprise constraints. Registrar equivalência, não IS_A. Conferência por Codex."
+    },
+    {
+      "passage_id": "D03_C003_P002",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C003_P009",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C003_P012",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C003_P016",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C004_P002",
+      "decision": "flag",
+      "note": "O destino é uma disjunção de dois tipos e a direção IS_A não corresponde à categorização correta. Conferência por Codex."
+    },
+    {
+      "passage_id": "D03_C004_P006",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C004_P009",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C004_P011",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C004_P013",
+      "decision": "flag",
+      "note": "Relação entre entidades do exemplo de pedidos/clientes, não entre conceitos gerais do esquema desta versão. Conferência por Codex."
+    },
+    {
+      "passage_id": "D03_C004_P014",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C004_P015",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C004_P018",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C004_P020",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C004_P022",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C004_P025",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C004_P027",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C004_P028",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C004_P031",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C004_P034",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C004_P037",
+      "decision": "flag",
+      "note": "1 é um valor, não conceito; o contexto de símbolos também exige revisão antes de generalizar a frase. Conferência por Codex."
+    },
+    {
+      "passage_id": "D03_C004_P040",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C004_P041",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C005_P001",
+      "decision": "flag",
+      "note": "CustID e Customer table são elementos do exemplo; o texto inclui mínimo zero, perdido na relação REQUIRES. Conferência por Codex."
+    },
+    {
+      "passage_id": "D03_C005_P003",
+      "decision": "flag",
+      "note": "Elementos de exemplo e regra condicionada a existir CustID; a tripla elimina essa condição. Conferência por Codex."
+    },
+    {
+      "passage_id": "D03_C005_P004",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C005_P006",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C005_P008",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C005_P011",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C005_P014",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C005_P015",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C005_P016",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C005_P018",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C005_P019",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C005_P020",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C005_P021",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C005_P022",
+      "decision": "accept",
+      "source_concept_id": "C_relational_dbms",
+      "target_concept_id": "C_database_system",
+      "note": "Classificação explícita de RDBMS como sistema de banco de dados; a citação e seu contexto foram conferidos. Revisão por Codex, sem revisão humana independente.",
+      "expected_type": "IS_A"
+    },
+    {
+      "passage_id": "D03_C005_P023",
+      "decision": "flag",
+      "note": "Destino é paráfrase extensa da definição, não uma categoria canônica útil; manter para revisão de granularidade. Conferência por Codex."
+    },
+    {
+      "passage_id": "D03_C006_P003",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C006_P006",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C006_P007",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C006_P008",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C006_P009",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C006_P010",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C006_P011",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C006_P012",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C006_P013",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C006_P014",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D03_C006_P023",
+      "decision": "flag",
+      "note": "Regra de exemplo/exercício sobre turmas e níveis; não pertence à camada de conceitos gerais deste lote. Conferência por Codex."
+    },
+    {
+      "passage_id": "D07_C001_P002",
+      "decision": "accept",
+      "source_concept_id": "C_join",
+      "target_concept_id": "C_row",
+      "note": "Junção combina linhas de tabelas conforme uma expressão de pareamento; não exige FK declarada. Revisão por Codex, sem revisão humana independente.",
+      "expected_type": "COMBINES"
+    },
+    {
+      "passage_id": "D07_C001_P006",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D07_C001_P007",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D07_C001_P008",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D07_C001_P009",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D07_C001_P011",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D07_C001_P012",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D07_C001_P014",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D07_C002_P001",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D07_C002_P004",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D07_C002_P005",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D07_C002_P006",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D07_C002_P009",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "D07_C002_P012",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos."
+    },
+    {
+      "passage_id": "CONTROL_1",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos. Controle sintético não integra o corpus."
+    },
+    {
+      "passage_id": "CONTROL_2",
+      "decision": "reject",
+      "note": "Exclusão mantida pela triagem, sem revisão conceitual detalhada de toda recusa. Consultar logs; podem existir falsos negativos. Controle sintético não integra o corpus."
+    }
+  ],
+  "note": "Foram revisadas as 13 propostas que passaram pela triagem; recusas preservadas, não todas julgadas manualmente. Traduções e nomes canônicos são curadoria separada das citações.",
+  "batch_sha256": "c33b774c409c1055bc3df96875a36ee851d5c91f392492059ce9515e2a946d83"
+}

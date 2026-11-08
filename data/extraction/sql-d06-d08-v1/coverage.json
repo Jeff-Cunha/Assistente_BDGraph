@@ -1,0 +1,27 @@
+{
+  "documents": [
+    "D06",
+    "D08"
+  ],
+  "chunks": [
+    {
+      "chunk_id": "D06_C001",
+      "characters": 4019,
+      "selected_passages": 9,
+      "selected_characters": 2226
+    },
+    {
+      "chunk_id": "D08_C001",
+      "characters": 2148,
+      "selected_passages": 6,
+      "selected_characters": 1285
+    },
+    {
+      "chunk_id": "D08_C002",
+      "characters": 2647,
+      "selected_passages": 6,
+      "selected_characters": 2150
+    }
+  ],
+  "policy": "Page paragraphs with at least 15 whitespace-delimited words, excluding headings, opening fences and image-link paragraphs. Not exhaustive concept coverage; figure supplements excluded."
+}

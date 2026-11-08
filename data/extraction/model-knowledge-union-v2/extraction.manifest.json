@@ -1,0 +1,14 @@
+{
+  "inputs": [
+    {
+      "path": "data\\extraction\\reviewed-union-v1\\extraction.json",
+      "sha256": "954e0c4235d867a11ab4acb025913f190d19a56deb5217005a995b1c83e7159a"
+    },
+    {
+      "path": "data\\extraction\\sql-d06-d08-v1\\extraction-reviewed.json",
+      "sha256": "a10a52281b641d84a25f89b2a3ff37340feb4ddc53b270f987d610d212f6c046"
+    }
+  ],
+  "output_sha256": "a0918dee7ff202f7eccaa3529df6f6dfea8bcc3f632f69745a455a2cfff337f2",
+  "note": "Only previously reviewed model-derived outputs combined; manual sample not copied. First description retained when a concept appears twice; original descriptions remain in source files."
+}

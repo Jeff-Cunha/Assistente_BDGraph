@@ -1,0 +1,145 @@
+{
+  "method": "local_passage_precision_pilot",
+  "model": "qwen3:8b",
+  "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+  "created_at": "2026-11-08T21:29:20.656866+00:00",
+  "runs": [
+    {
+      "passage_id": "D03_C001_P003",
+      "seconds": 1.46,
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Endpoint is not a literal concept surface in this passage: target"
+    },
+    {
+      "passage_id": "D03_C001_P008",
+      "seconds": 1.03,
+      "verification_seconds": 2.07,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage explicitly states that 'to ensure entity integrity, it is required that every table have a primary key,' which directly supports the proposed relationship that 'entity integrity' requires a 'primary key.' The direction of the relationship is correct, and both endpoints are concepts. The condition that the primary key cannot contain null values is preserved as part of the rule."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "entity integrity",
+          "type": "REQUIRES",
+          "target": "primary key",
+          "passage_id": "D03_C001_P008",
+          "evidence": {
+            "chunk_id": "D03_C001",
+            "quote": "To ensure <em>entity integrity</em>, it is required that every table have a primary key. Neither the PK nor any part of it can contain null values. This is because null values for the primary key mean we cannot identify some rows. For example, in the EMPLOYEE table, Phone cannot be a primary key since some people may not have a telephone.",
+            "start": 1106,
+            "end": 1446
+          },
+          "review_status": "pending"
+        }
+      ],
+      "is_synthetic_control": false
+    },
+    {
+      "passage_id": "D03_C001_P010",
+      "seconds": 1.1,
+      "verification_seconds": 1.79,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage states that referential integrity requires a foreign key to have a matching primary key or be null, which directly supports the proposed relationship that referential integrity requires a foreign key. The direction is correct, both endpoints are concepts, and the conditions (matching primary key or null) are preserved."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "Referential integrity",
+          "type": "REQUIRES",
+          "target": "foreign key",
+          "passage_id": "D03_C001_P010",
+          "evidence": {
+            "chunk_id": "D03_C001",
+            "quote": "<em>Referential integrity</em> requires that a foreign key must have a matching primary key or it must be null. This constraint is specified between two tables (parent and child); it maintains the correspondence between rows in these tables. It means the reference from a row in one table to another table must be valid.",
+            "start": 1475,
+            "end": 1795
+          },
+          "review_status": "pending"
+        }
+      ],
+      "is_synthetic_control": false
+    },
+    {
+      "passage_id": "D03_C001_P014",
+      "seconds": 1.11,
+      "verification_seconds": 2.25,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": false,
+        "conditions_preserved": false,
+        "reason": "The proposal incorrectly suggests that an 'orphan record' requires 'referential integrity'. In reality, referential integrity is a constraint that prevents orphan records, not a requirement of an orphan record. The endpoints 'orphan record' and 'referential integrity' are not concepts in the same logical sense, and the direction of the relationship is reversed. Additionally, the passage does not imply that an orphan record requires referential integrity."
+      },
+      "proposal": {
+        "source": "orphan record",
+        "type": "REQUIRES",
+        "target": "referential integrity",
+        "passage_id": "D03_C001_P014"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D07_C002_P004",
+      "seconds": 1.19,
+      "verification_seconds": 1.69,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage states that empty (null) values are substituted for the right-table columns when there is no match, but it does not explicitly state that the 'left outer join' operation preserves these empty (null) values. The relationship is not directly entailed."
+      },
+      "proposal": {
+        "source": "left outer join",
+        "type": "PRESERVES",
+        "target": "empty (null) values",
+        "passage_id": "D07_C002_P004"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "CONTROL_1",
+      "seconds": 0.92,
+      "verification_seconds": 2.22,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": false,
+        "conditions_preserved": false,
+        "reason": "The passage describes the layout of a textbook page, but the proposed relationship 'HAS_FORM' between 'textbook page' and 'layout' is not entailed. The passage does not describe a form or structure that can be interpreted as a general operation to a specific form. Additionally, 'layout' is not a concept but a description of the page's structure, and the direction of the relationship is not clearly supported by the passage."
+      },
+      "proposal": {
+        "source": "textbook page",
+        "type": "HAS_FORM",
+        "target": "layout",
+        "passage_id": "CONTROL_1"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "CONTROL_2",
+      "seconds": 0.24,
+      "status": "abstained",
+      "relations": [],
+      "is_synthetic_control": true
+    }
+  ],
+  "semantic_check_enabled": true,
+  "note": "Selected passages and labeled controls; not exhaustive or independently evaluated. The same model verifies itself; manual review remains required."
+}

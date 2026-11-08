@@ -1,0 +1,8 @@
+{
+  "input_sha256": "71a46d39933679b92cdf4dd04026627fe58147d84d428bedede274431f7b861e",
+  "script_sha256": "a3b5c18e890963cb740a4b8727186f1f2d9df29946138c390e0e1d04342d75a8",
+  "method": "reviewed_sql_vocabulary_rules",
+  "concepts": 22,
+  "occurrences": 40,
+  "note": "Curated vocabulary and summaries; source occurrences detected by rules. Semantic edges are not generated."
+}

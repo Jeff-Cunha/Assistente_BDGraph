@@ -1,0 +1,442 @@
+{
+  "schema_version": "0.1.1",
+  "extraction_method": "rule_candidates",
+  "input_chunk_ids": [
+    "D06_C001",
+    "D07_C001",
+    "D07_C002",
+    "D08_C001",
+    "D08_C002"
+  ],
+  "concepts": [
+    {
+      "concept_id": "C_and",
+      "canonical_name": "AND",
+      "name_pt": "operador AND",
+      "category": "operation",
+      "description_pt": "Operador booleano permitido nas condições de seleção da fonte.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D06_C001",
+          "quote": "A query can be “qualified” by adding a `WHERE` clause that specifies which rows are wanted. The `WHERE` clause contains a Boolean (truth value) expression, and only rows for which the Boolean expression is true are returned. The usual Boolean operators (`AND`, `OR`, and `NOT`) are allowed in the qualification. For example, the following retrieves the weather of San Francisco on rainy days:"
+        },
+        {
+          "chunk_id": "D07_C002",
+          "quote": "```sql\nSELECT w1.city, w1.temp_lo AS low, w1.temp_hi AS high,\n       w2.city, w2.temp_lo AS low, w2.temp_hi AS high\n    FROM weather w1 JOIN weather w2\n        ON w1.temp_lo < w2.temp_lo AND w1.temp_hi > w2.temp_hi;\n```"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source SQL-vocabulary occurrences extracted by rules; naming and summaries reviewed by Codex. No independent human review or SQL execution. Occurrence does not certify that an example query is valid.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "concept_id": "C_as",
+      "canonical_name": "AS",
+      "name_pt": "cláusula AS",
+      "category": "operation",
+      "description_pt": "Palavra usada para atribuir outro nome a uma coluna de saída nos exemplos.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D06_C001",
+          "quote": "```sql\nSELECT city, (temp_hi+temp_lo)/2 AS temp_avg, date FROM weather;\n```"
+        },
+        {
+          "chunk_id": "D07_C002",
+          "quote": "```sql\nSELECT w1.city, w1.temp_lo AS low, w1.temp_hi AS high,\n       w2.city, w2.temp_lo AS low, w2.temp_hi AS high\n    FROM weather w1 JOIN weather w2\n        ON w1.temp_lo < w2.temp_lo AND w1.temp_hi > w2.temp_hi;\n```"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source SQL-vocabulary occurrences extracted by rules; naming and summaries reviewed by Codex. No independent human review or SQL execution. Occurrence does not certify that an example query is valid.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "concept_id": "C_avg",
+      "canonical_name": "avg",
+      "name_pt": "função AVG",
+      "category": "operation",
+      "description_pt": "Função de média citada pela fonte entre as funções agregadoras.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "Like most other relational database products, PostgreSQL supports <em>aggregate functions</em>. An aggregate function computes a single result from multiple input rows. For example, there are aggregates to compute the `count`, `sum`, `avg` (average), `max` (maximum) and `min` (minimum) over a set of rows."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source SQL-vocabulary occurrences extracted by rules; naming and summaries reviewed by Codex. No independent human review or SQL execution. Occurrence does not certify that an example query is valid.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "concept_id": "C_count",
+      "canonical_name": "count",
+      "name_pt": "função COUNT",
+      "category": "operation",
+      "description_pt": "Função agregadora de contagem apresentada nos exemplos com count(*).",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "Like most other relational database products, PostgreSQL supports <em>aggregate functions</em>. An aggregate function computes a single result from multiple input rows. For example, there are aggregates to compute the `count`, `sum`, `avg` (average), `max` (maximum) and `min` (minimum) over a set of rows."
+        },
+        {
+          "chunk_id": "D08_C002",
+          "quote": "```sql\nSELECT city, count(*), max(temp_lo)\n    FROM weather\n    WHERE city LIKE 'S%'            -- (1)\n    GROUP BY city;\n```"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source SQL-vocabulary occurrences extracted by rules; naming and summaries reviewed by Codex. No independent human review or SQL execution. Occurrence does not certify that an example query is valid.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "concept_id": "C_distinct",
+      "canonical_name": "DISTINCT",
+      "name_pt": "modificador DISTINCT",
+      "category": "operation",
+      "description_pt": "Modificador usado para remover linhas duplicadas do resultado, sem garantir ordenação por si só.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D06_C001",
+          "quote": "```sql\nSELECT DISTINCT city\n    FROM weather;\n```"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source SQL-vocabulary occurrences extracted by rules; naming and summaries reviewed by Codex. No independent human review or SQL execution. Occurrence does not certify that an example query is valid.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "concept_id": "C_filter",
+      "canonical_name": "FILTER",
+      "name_pt": "opção FILTER",
+      "category": "operation",
+      "description_pt": "Opção que seleciona entradas de uma função agregadora específica, sem filtrar necessariamente as demais.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D08_C002",
+          "quote": "Another way to select the rows that go into an aggregate computation is to use `FILTER`, which is a per-aggregate option:"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source SQL-vocabulary occurrences extracted by rules; naming and summaries reviewed by Codex. No independent human review or SQL execution. Occurrence does not certify that an example query is valid.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "concept_id": "C_from",
+      "canonical_name": "FROM",
+      "name_pt": "cláusula FROM",
+      "category": "operation",
+      "description_pt": "Cláusula que indica as fontes de dados nos exemplos de consulta.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D06_C001",
+          "quote": "```sql\nSELECT * FROM weather;\n```"
+        },
+        {
+          "chunk_id": "D07_C001",
+          "quote": "```sql\nSELECT * FROM weather JOIN cities ON city = name;\n```"
+        },
+        {
+          "chunk_id": "D07_C002",
+          "quote": "```sql\nSELECT *\n    FROM weather LEFT OUTER JOIN cities ON weather.city = cities.name;\n```"
+        },
+        {
+          "chunk_id": "D08_C001",
+          "quote": "```sql\nSELECT max(temp_lo) FROM weather;\n```"
+        },
+        {
+          "chunk_id": "D08_C002",
+          "quote": "```sql\nSELECT city, count(*), max(temp_lo)\n    FROM weather\n    WHERE city LIKE 'S%'            -- (1)\n    GROUP BY city;\n```"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source SQL-vocabulary occurrences extracted by rules; naming and summaries reviewed by Codex. No independent human review or SQL execution. Occurrence does not certify that an example query is valid.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "concept_id": "C_group_by",
+      "canonical_name": "GROUP BY",
+      "name_pt": "cláusula GROUP BY",
+      "category": "operation",
+      "description_pt": "Cláusula usada nos exemplos para formar grupos sobre os quais agregações são calculadas.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "Aggregates are also very useful in combination with `GROUP BY` clauses. For example, we can get the number of readings and the maximum low temperature observed in each city with:"
+        },
+        {
+          "chunk_id": "D08_C002",
+          "quote": "```sql\nSELECT city, count(*), max(temp_lo)\n    FROM weather\n    WHERE city LIKE 'S%'            -- (1)\n    GROUP BY city;\n```"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source SQL-vocabulary occurrences extracted by rules; naming and summaries reviewed by Codex. No independent human review or SQL execution. Occurrence does not certify that an example query is valid.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "concept_id": "C_having",
+      "canonical_name": "HAVING",
+      "name_pt": "cláusula HAVING",
+      "category": "operation",
+      "description_pt": "Cláusula que filtra linhas de grupos após o agrupamento e a agregação; não exige sempre uma função agregadora.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "which gives us one output row per city. Each aggregate result is computed over the table rows matching that city. We can filter these grouped rows using `HAVING`:"
+        },
+        {
+          "chunk_id": "D08_C002",
+          "quote": "It is important to understand the interaction between aggregates and SQL's `WHERE` and `HAVING` clauses. The fundamental difference between `WHERE` and `HAVING` is this: `WHERE` selects input rows before groups and aggregates are computed (thus, it controls which rows go into the aggregate computation), whereas `HAVING` selects group rows after groups and aggregates are computed. Thus, the `WHERE` clause must not contain aggregate functions; it makes no sense to try to use an aggregate to determine which rows will be inputs to the aggregates. On the other hand, the `HAVING` clause always contains aggregate functions. (Strictly speaking, you are allowed to write a `HAVING` clause that doesn't use aggregates, but it's seldom useful. The same condition could be used more efficiently at the `WHERE` stage.)"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source SQL-vocabulary occurrences extracted by rules; naming and summaries reviewed by Codex. No independent human review or SQL execution. Occurrence does not certify that an example query is valid.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "concept_id": "C_inner_join",
+      "canonical_name": "inner join",
+      "name_pt": "junção interna",
+      "category": "operation",
+      "description_pt": "Forma de junção identificada na comparação com as junções externas da fonte.",
+      "aliases": [
+        "inner joins"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D07_C002",
+          "quote": "Now we will figure out how we can get the Hayward records back in. What we want the query to do is to scan the `weather` table and for each row to find the matching `cities` row(s). If no matching row is found we want some “empty values” to be substituted for the `cities` table's columns. This kind of query is called an <em>outer join</em>. (The joins we have seen so far are <em>inner joins</em>.) The command looks like this:"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source SQL-vocabulary occurrences extracted by rules; naming and summaries reviewed by Codex. No independent human review or SQL execution. Occurrence does not certify that an example query is valid.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "concept_id": "C_join",
+      "canonical_name": "join",
+      "name_pt": "junção",
+      "category": "operation",
+      "description_pt": "Operação que combina linhas de tabelas conforme uma expressão.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D07_C001",
+          "quote": "Thus far, our queries have only accessed one table at a time. Queries can access multiple tables at once, or access the same table in such a way that multiple rows of the table are being processed at the same time. Queries that access multiple tables (or multiple instances of the same table) at one time are called <em>join</em> queries. They combine rows from one table with rows from a second table, with an expression specifying which rows are to be paired. For example, to return all the weather records together with the location of the associated city, the database needs to compare the `city` column of each row of the `weather` table with the `name` column of all rows in the `cities` table, and select the pairs of rows where these values match.[<sup>\\[4\\]</sup>](https://www.postgresql.org/docs/18/tutorial-join.html#ftn.id-1.4.4.7.3.6) This would be accomplished by the following query:"
+        },
+        {
+          "chunk_id": "D07_C002",
+          "quote": "Now we will figure out how we can get the Hayward records back in. What we want the query to do is to scan the `weather` table and for each row to find the matching `cities` row(s). If no matching row is found we want some “empty values” to be substituted for the `cities` table's columns. This kind of query is called an <em>outer join</em>. (The joins we have seen so far are <em>inner joins</em>.) The command looks like this:"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source SQL-vocabulary occurrences extracted by rules; naming and summaries reviewed by Codex. No independent human review or SQL execution. Occurrence does not certify that an example query is valid.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "concept_id": "C_left_outer_join",
+      "canonical_name": "left outer join",
+      "name_pt": "junção externa à esquerda",
+      "category": "operation",
+      "description_pt": "Junção que preserva as linhas da tabela à esquerda, conforme a descrição da fonte.",
+      "aliases": [
+        "LEFT OUTER JOIN"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "D07_C002",
+          "quote": "```sql\nSELECT *\n    FROM weather LEFT OUTER JOIN cities ON weather.city = cities.name;\n```"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source SQL-vocabulary occurrences extracted by rules; naming and summaries reviewed by Codex. No independent human review or SQL execution. Occurrence does not certify that an example query is valid.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "concept_id": "C_like",
+      "canonical_name": "LIKE",
+      "name_pt": "operador LIKE",
+      "category": "operation",
+      "description_pt": "Operador de correspondência de padrões citado na explicação dos exemplos.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D08_C002",
+          "quote": "```sql\nSELECT city, count(*), max(temp_lo)\n    FROM weather\n    WHERE city LIKE 'S%'            -- (1)\n    GROUP BY city;\n```"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source SQL-vocabulary occurrences extracted by rules; naming and summaries reviewed by Codex. No independent human review or SQL execution. Occurrence does not certify that an example query is valid.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "concept_id": "C_max",
+      "canonical_name": "max",
+      "name_pt": "função MAX",
+      "category": "operation",
+      "description_pt": "Função que calcula um máximo nos exemplos de agregação.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "Like most other relational database products, PostgreSQL supports <em>aggregate functions</em>. An aggregate function computes a single result from multiple input rows. For example, there are aggregates to compute the `count`, `sum`, `avg` (average), `max` (maximum) and `min` (minimum) over a set of rows."
+        },
+        {
+          "chunk_id": "D08_C002",
+          "quote": "```sql\nSELECT city, count(*), max(temp_lo)\n    FROM weather\n    WHERE city LIKE 'S%'            -- (1)\n    GROUP BY city;\n```"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source SQL-vocabulary occurrences extracted by rules; naming and summaries reviewed by Codex. No independent human review or SQL execution. Occurrence does not certify that an example query is valid.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "concept_id": "C_min",
+      "canonical_name": "min",
+      "name_pt": "função MIN",
+      "category": "operation",
+      "description_pt": "Função de mínimo citada pela fonte entre as funções agregadoras.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "Like most other relational database products, PostgreSQL supports <em>aggregate functions</em>. An aggregate function computes a single result from multiple input rows. For example, there are aggregates to compute the `count`, `sum`, `avg` (average), `max` (maximum) and `min` (minimum) over a set of rows."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source SQL-vocabulary occurrences extracted by rules; naming and summaries reviewed by Codex. No independent human review or SQL execution. Occurrence does not certify that an example query is valid.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "concept_id": "C_not",
+      "canonical_name": "NOT",
+      "name_pt": "operador NOT",
+      "category": "operation",
+      "description_pt": "Operador booleano permitido nas condições de seleção da fonte.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D06_C001",
+          "quote": "A query can be “qualified” by adding a `WHERE` clause that specifies which rows are wanted. The `WHERE` clause contains a Boolean (truth value) expression, and only rows for which the Boolean expression is true are returned. The usual Boolean operators (`AND`, `OR`, and `NOT`) are allowed in the qualification. For example, the following retrieves the weather of San Francisco on rainy days:"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source SQL-vocabulary occurrences extracted by rules; naming and summaries reviewed by Codex. No independent human review or SQL execution. Occurrence does not certify that an example query is valid.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "concept_id": "C_or",
+      "canonical_name": "OR",
+      "name_pt": "operador OR",
+      "category": "operation",
+      "description_pt": "Operador booleano permitido nas condições de seleção da fonte.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D06_C001",
+          "quote": "A query can be “qualified” by adding a `WHERE` clause that specifies which rows are wanted. The `WHERE` clause contains a Boolean (truth value) expression, and only rows for which the Boolean expression is true are returned. The usual Boolean operators (`AND`, `OR`, and `NOT`) are allowed in the qualification. For example, the following retrieves the weather of San Francisco on rainy days:"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source SQL-vocabulary occurrences extracted by rules; naming and summaries reviewed by Codex. No independent human review or SQL execution. Occurrence does not certify that an example query is valid.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "concept_id": "C_order_by",
+      "canonical_name": "ORDER BY",
+      "name_pt": "cláusula ORDER BY",
+      "category": "operation",
+      "description_pt": "Cláusula usada para ordenar os resultados nos exemplos.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D06_C001",
+          "quote": "```sql\nSELECT * FROM weather\n    ORDER BY city;\n```"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source SQL-vocabulary occurrences extracted by rules; naming and summaries reviewed by Codex. No independent human review or SQL execution. Occurrence does not certify that an example query is valid.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "concept_id": "C_outer_join",
+      "canonical_name": "outer join",
+      "name_pt": "junção externa",
+      "category": "operation",
+      "description_pt": "Forma de junção que representa ausência de correspondência com valores nulos, conforme os exemplos.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D07_C002",
+          "quote": "Now we will figure out how we can get the Hayward records back in. What we want the query to do is to scan the `weather` table and for each row to find the matching `cities` row(s). If no matching row is found we want some “empty values” to be substituted for the `cities` table's columns. This kind of query is called an <em>outer join</em>. (The joins we have seen so far are <em>inner joins</em>.) The command looks like this:"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source SQL-vocabulary occurrences extracted by rules; naming and summaries reviewed by Codex. No independent human review or SQL execution. Occurrence does not certify that an example query is valid.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "concept_id": "C_select",
+      "canonical_name": "SELECT",
+      "name_pt": "consulta SELECT",
+      "category": "operation",
+      "description_pt": "Consulta usada para recuperar dados de tabelas.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D06_C001",
+          "quote": "To retrieve data from a table, the table is <em>queried</em>. An SQL `SELECT` statement is used to do this. The statement is divided into a select list (the part that lists the columns to be returned), a table list (the part that lists the tables from which to retrieve the data), and an optional qualification (the part that specifies any restrictions). For example, to retrieve all the rows of table `weather`, type:"
+        },
+        {
+          "chunk_id": "D07_C001",
+          "quote": "```sql\nSELECT * FROM weather JOIN cities ON city = name;\n```"
+        },
+        {
+          "chunk_id": "D07_C002",
+          "quote": "```sql\nSELECT *\n    FROM weather LEFT OUTER JOIN cities ON weather.city = cities.name;\n```"
+        },
+        {
+          "chunk_id": "D08_C001",
+          "quote": "```sql\nSELECT max(temp_lo) FROM weather;\n```"
+        },
+        {
+          "chunk_id": "D08_C002",
+          "quote": "```sql\nSELECT city, count(*), max(temp_lo)\n    FROM weather\n    WHERE city LIKE 'S%'            -- (1)\n    GROUP BY city;\n```"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source SQL-vocabulary occurrences extracted by rules; naming and summaries reviewed by Codex. No independent human review or SQL execution. Occurrence does not certify that an example query is valid.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "concept_id": "C_sum",
+      "canonical_name": "sum",
+      "name_pt": "função SUM",
+      "category": "operation",
+      "description_pt": "Função de soma citada pela fonte entre as funções agregadoras.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "Like most other relational database products, PostgreSQL supports <em>aggregate functions</em>. An aggregate function computes a single result from multiple input rows. For example, there are aggregates to compute the `count`, `sum`, `avg` (average), `max` (maximum) and `min` (minimum) over a set of rows."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source SQL-vocabulary occurrences extracted by rules; naming and summaries reviewed by Codex. No independent human review or SQL execution. Occurrence does not certify that an example query is valid.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "concept_id": "C_where",
+      "canonical_name": "WHERE",
+      "name_pt": "cláusula WHERE",
+      "category": "operation",
+      "description_pt": "Cláusula que seleciona linhas por uma condição; a fonte explica sua aplicação antes da agregação.",
+      "aliases": [],
+      "evidence": [
+        {
+          "chunk_id": "D06_C001",
+          "quote": "A query can be “qualified” by adding a `WHERE` clause that specifies which rows are wanted. The `WHERE` clause contains a Boolean (truth value) expression, and only rows for which the Boolean expression is true are returned. The usual Boolean operators (`AND`, `OR`, and `NOT`) are allowed in the qualification. For example, the following retrieves the weather of San Francisco on rainy days:"
+        },
+        {
+          "chunk_id": "D07_C001",
+          "quote": "```sql\nSELECT *\n    FROM weather, cities\n    WHERE city = name;\n```"
+        },
+        {
+          "chunk_id": "D08_C001",
+          "quote": "```sql\nSELECT city FROM weather WHERE temp_lo = max(temp_lo);     -- WRONG\n```"
+        },
+        {
+          "chunk_id": "D08_C002",
+          "quote": "```sql\nSELECT city, count(*), max(temp_lo)\n    FROM weather\n    WHERE city LIKE 'S%'            -- (1)\n    GROUP BY city;\n```"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source SQL-vocabulary occurrences extracted by rules; naming and summaries reviewed by Codex. No independent human review or SQL execution. Occurrence does not certify that an example query is valid.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas.\nOcorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    }
+  ],
+  "relations": []
+}

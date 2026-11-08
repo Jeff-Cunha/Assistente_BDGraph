@@ -1,0 +1,1681 @@
+{
+  "method": "local_passage_precision_pilot",
+  "model": "qwen3:8b",
+  "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+  "created_at": "2026-11-08T21:40:08.634636+00:00",
+  "runs": [
+    {
+      "passage_id": "D03_C001_P003",
+      "is_synthetic_control": false,
+      "seconds": 1.33,
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Endpoint is not a literal concept surface in this passage: target"
+    },
+    {
+      "passage_id": "D03_C001_P005",
+      "is_synthetic_control": false,
+      "seconds": 1.07,
+      "proposal": {
+        "source": "Employee ID",
+        "type": "REQUIRES",
+        "target": "integrity constraints",
+        "passage_id": "D03_C001_P005"
+      },
+      "precision_policy_flag": "Requirement contains alternatives or explicit conditions; do not flatten automatically.",
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Qualified requirement needs manual review; no relation released."
+    },
+    {
+      "passage_id": "D03_C001_P008",
+      "is_synthetic_control": false,
+      "seconds": 1.03,
+      "verification_seconds": 1.97,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage explicitly states that 'to ensure entity integrity, it is required that every table have a primary key,' which directly supports the proposed relationship that 'entity integrity' requires a 'primary key.' The direction of the relationship is correct, and both endpoints are concepts. The condition that the primary key cannot contain null values is preserved as part of the rule."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "entity integrity",
+          "type": "REQUIRES",
+          "target": "primary key",
+          "passage_id": "D03_C001_P008",
+          "evidence": {
+            "chunk_id": "D03_C001",
+            "quote": "To ensure <em>entity integrity</em>, it is required that every table have a primary key. Neither the PK nor any part of it can contain null values. This is because null values for the primary key mean we cannot identify some rows. For example, in the EMPLOYEE table, Phone cannot be a primary key since some people may not have a telephone.",
+            "start": 1106,
+            "end": 1446
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D03_C001_P010",
+      "is_synthetic_control": false,
+      "seconds": 1.08,
+      "proposal": {
+        "source": "Referential integrity",
+        "type": "REQUIRES",
+        "target": "foreign key",
+        "passage_id": "D03_C001_P010"
+      },
+      "precision_policy_flag": "REQUIRES with a subordinate proposition must be reviewed as a statement with conditions, not flattened into a requirement that the target exists.",
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Qualified requirement needs manual review; no relation released."
+    },
+    {
+      "passage_id": "D03_C001_P014",
+      "is_synthetic_control": false,
+      "seconds": 1.06,
+      "verification_seconds": 1.82,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": false,
+        "conditions_preserved": false,
+        "reason": "The proposal incorrectly suggests that an 'orphan record' requires 'referential integrity'. In reality, referential integrity is a constraint that prevents orphan records, not a requirement of an orphan record. The endpoints are not concepts but rather a record and a constraint. The direction of the relationship is also incorrect."
+      },
+      "proposal": {
+        "source": "orphan record",
+        "type": "REQUIRES",
+        "target": "referential integrity",
+        "passage_id": "D03_C001_P014"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C001_P015",
+      "is_synthetic_control": false,
+      "seconds": 1.12,
+      "verification_seconds": 1.67,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage explicitly states that the referential integrity constraint requires the customer ID (CustID) in the Order table to match a valid CustID in the Customer table. This directly supports the proposed relationship where the referential integrity constraint requires a valid CustID."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "referential integrity constraint",
+          "type": "REQUIRES",
+          "target": "valid CustID",
+          "passage_id": "D03_C001_P015",
+          "evidence": {
+            "chunk_id": "D03_C001",
+            "quote": "The referential integrity constraint states that the customer ID (CustID) in the Order table must match a valid CustID in the Customer table. Most relational databases have declarative referential integrity. In other words, when the tables are created the referential integrity constraints are set up.",
+            "start": 2268,
+            "end": 2569
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D03_C001_P019",
+      "is_synthetic_control": false,
+      "seconds": 1.1,
+      "verification_seconds": 1.89,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": false,
+        "conditions_preserved": false,
+        "reason": "The proposal incorrectly interprets the relationship. 'CrsCode' is a value, not a concept, and 'referential integrity' is a constraint, not a concept. The passage describes a requirement for referential integrity, not that 'CrsCode' requires 'referential integrity'. The direction of the relationship is also incorrect."
+      },
+      "proposal": {
+        "source": "CrsCode",
+        "type": "REQUIRES",
+        "target": "referential integrity",
+        "passage_id": "D03_C001_P019"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C001_P020",
+      "is_synthetic_control": false,
+      "seconds": 1.15,
+      "verification_seconds": 1.87,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage states that RDBMS is based on the relational model, but it does not explicitly state that the relational model is preserved by RDBMS. The relationship is implied but not directly entailed. Additionally, the condition that RDBMS preserves the relational model is not explicitly stated or preserved in the passage."
+      },
+      "proposal": {
+        "source": "RDBMS",
+        "type": "PRESERVES",
+        "target": "relational model",
+        "passage_id": "D03_C001_P020"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C002_P002",
+      "is_synthetic_control": false,
+      "seconds": 1.31,
+      "verification_seconds": 2.25,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage explicitly states that referential integrity in Microsoft Access is set up by joining the PK in the Customer table to the CustID in the Order table. This directly supports the proposed relationship where 'referential integrity' supports the action of 'joining the PK in the Customer table to the CustID in the Order table'. The direction is correct, both endpoints are concepts, and no conditions, negations, or exceptions are violated."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "referential integrity",
+          "type": "SUPPORTS",
+          "target": "joining the PK in the Customer table to the CustID in the Order table",
+          "passage_id": "D03_C002_P002",
+          "evidence": {
+            "chunk_id": "D03_C002",
+            "quote": "In Microsoft (MS) Access, referential integrity is set up by joining the PK in the Customer table to the CustID in the Order table. See Figure 9.1 for a view of how this is done on the Edit Relationships screen in MS Access.",
+            "start": 47,
+            "end": 271
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D03_C002_P006",
+      "is_synthetic_control": false,
+      "seconds": 1.03,
+      "verification_seconds": 2.05,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": false,
+        "conditions_preserved": false,
+        "reason": "The proposal incorrectly implies a direct relationship between the 'Order table' and 'FK' where the 'FK' is a foreign key constraint, not a concept. The passage describes the relationship between the Order table and the Customer table, not the FK itself. The 'REQUIRES' predicate is not accurately represented in the passage, and the direction of the relationship is not clear or correct."
+      },
+      "proposal": {
+        "source": "Order table",
+        "type": "REQUIRES",
+        "target": "FK",
+        "passage_id": "D03_C002_P006"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C002_P010",
+      "is_synthetic_control": false,
+      "seconds": 1.12,
+      "verification_seconds": 2.53,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage describes that 'Cascade Update' is an option for FK rules, but it does not explicitly state that 'Cascade Update' supports or is a feature of 'FK rules'. The relationship is not entailed as it is not clearly stated that 'Cascade Update' supports 'FK rules'. The direction of the relationship is incorrect as the passage does not indicate that 'Cascade Update' supports 'FK rules'. The conditions and exceptions are not preserved as the passage does not provide enough information to confirm the relationship."
+      },
+      "proposal": {
+        "source": "Cascade Update",
+        "type": "SUPPORTS",
+        "target": "FK rules",
+        "passage_id": "D03_C002_P010"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C002_P011",
+      "is_synthetic_control": false,
+      "seconds": 1.13,
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Endpoint is not a literal concept surface in this passage: target"
+    },
+    {
+      "passage_id": "D03_C002_P013",
+      "is_synthetic_control": false,
+      "seconds": 1.03,
+      "verification_seconds": 2.02,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage states that 'Enterprise constraints – sometimes referred to as semantic constraints – are additional rules...', which implies that 'Enterprise constraints' is a specific concept and 'semantic constraints' is its general category. The direction of the relationship (source to target) is correct, and both endpoints are concepts, not verbs or examples. The conditions and context are preserved as described."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "Enterprise constraints",
+          "type": "IS_A",
+          "target": "semantic constraints",
+          "passage_id": "D03_C002_P013",
+          "evidence": {
+            "chunk_id": "D03_C002",
+            "quote": "Enterprise constraints – sometimes referred to as semantic constraints – are additional rules specified by users or database administrators and can be based on multiple tables.",
+            "start": 1904,
+            "end": 2080
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D03_C003_P002",
+      "is_synthetic_control": false,
+      "seconds": 1.08,
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Endpoint is not a literal concept surface in this passage: target"
+    },
+    {
+      "passage_id": "D03_C003_P009",
+      "is_synthetic_control": false,
+      "seconds": 1.09,
+      "verification_seconds": 2.01,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage describes cardinality as a property that defines the relationship between entity occurrences, but it does not explicitly state that cardinality 'preserves' entity occurrences. The proposed relationship implies a preservation operation, which is not directly supported by the passage. Additionally, the direction of the relationship (cardinality -> entity occurrences) is not clearly entailed by the passage."
+      },
+      "proposal": {
+        "source": "cardinality",
+        "type": "PRESERVES",
+        "target": "entity occurrences",
+        "passage_id": "D03_C003_P009"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C003_P012",
+      "is_synthetic_control": false,
+      "seconds": 1.13,
+      "verification_seconds": 2.55,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage discusses 'Connectivity' as a property of a relationship between tables, and 'FK' (foreign key) is mentioned in the context of nullability. However, the proposed relationship 'PRESERVES' is not explicitly stated or implied in the passage. The passage does not indicate that 'Connectivity' preserves or is preserved by 'FK', nor does it describe a direct relationship in the required direction. Additionally, the passage does not provide any conditions or exceptions that would support the proposed relationship."
+      },
+      "proposal": {
+        "source": "Connectivity",
+        "type": "PRESERVES",
+        "target": "FK",
+        "passage_id": "D03_C003_P012"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C003_P016",
+      "is_synthetic_control": false,
+      "seconds": 1.18,
+      "verification_seconds": 2.17,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage states that the left side of the symbol is read as 'minimum 1 and maximum 1', which directly matches the target endpoint. However, the proposal claims the relationship is 'PRESERVES', which is not explicitly stated or implied in the passage. The passage does not describe any operation or preservation of elements, so the predicate meaning 'operation -> preserved element' is not entailed."
+      },
+      "proposal": {
+        "source": "left side",
+        "type": "PRESERVES",
+        "target": "minimum 1 and maximum 1",
+        "passage_id": "D03_C003_P016"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C004_P002",
+      "is_synthetic_control": false,
+      "seconds": 1.17,
+      "verification_seconds": 2.17,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage explicitly states that the 'relationship type' between tables in an ERD is either 'identifying or non-identifying', which aligns with the proposed 'IS_A' relationship. The direction from 'relationship type' to 'identifying or non-identifying' is correct as it reflects a general-to-specific relationship. Both endpoints are concepts, and the conditions from the passage are preserved."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "relationship type",
+          "type": "IS_A",
+          "target": "identifying or non-identifying",
+          "passage_id": "D03_C004_P002",
+          "evidence": {
+            "chunk_id": "D03_C004",
+            "quote": "The line that connects two tables, in an ERD, indicates the <em>relationship type </em>between the tables<em>:</em> either identifying or non-identifying. An <em>identifying relationship</em> will have a solid line (where the PK contains the FK). A <em>non-identifying relationship</em> is indicated by a broken line and does not contain the FK in the PK. See the section in Chapter 8 that discusses weak and strong relationships for more explanation.",
+            "start": 23,
+            "end": 474
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D03_C004_P006",
+      "is_synthetic_control": false,
+      "seconds": 1.12,
+      "verification_seconds": 2.22,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage describes an 'optional relationship' and explains that it can be interpreted as 'zero OR many'. However, the proposed relationship 'PRESERVES' does not accurately reflect the logical or directional relationship between the endpoints. The passage does not indicate that the 'optional relationship' preserves the 'zero OR many' state, nor does it imply a directional relationship from 'optional relationship' to 'zero OR many'."
+      },
+      "proposal": {
+        "source": "optional relationship",
+        "type": "PRESERVES",
+        "target": "zero OR many",
+        "passage_id": "D03_C004_P006"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C004_P009",
+      "is_synthetic_control": false,
+      "seconds": 1.08,
+      "verification_seconds": 2.09,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage states that the 'many side' is optional, but it does not explicitly establish a directional relationship between 'many side' and 'customer'. The term 'many side' refers to a relationship in the Order table, and the passage does not indicate that the 'many side' preserves or operates on the 'customer' entity. The proposed relationship is not entailed by the passage."
+      },
+      "proposal": {
+        "source": "many side",
+        "type": "PRESERVES",
+        "target": "customer",
+        "passage_id": "D03_C004_P009"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C004_P011",
+      "is_synthetic_control": false,
+      "seconds": 1.15,
+      "verification_seconds": 1.64,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage states that the zero to many optional relationship symbol is used in an example, but it does not explicitly state that the symbol supports the example usage. The relationship is not clearly entailed, and the conditions or context of the support are not preserved."
+      },
+      "proposal": {
+        "source": "zero to many optional relationship symbol",
+        "type": "SUPPORTS",
+        "target": "example usage",
+        "passage_id": "D03_C004_P011"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C004_P013",
+      "is_synthetic_control": false,
+      "seconds": 1.13,
+      "verification_seconds": 2.06,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage explicitly states that the 'order entity' must contain a minimum of one related entity in the Customer table, which directly supports the proposed relationship that the 'order entity' requires a 'related entity in the Customer table'. The direction of the relationship is correct, and both endpoints are concepts rather than verbs or examples. The condition of a minimum of one is preserved in the rule."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "order entity",
+          "type": "REQUIRES",
+          "target": "related entity in the Customer table",
+          "passage_id": "D03_C004_P013",
+          "evidence": {
+            "chunk_id": "D03_C004",
+            "quote": "- Left side: The order entity must contain a minimum of one related entity in the Customer table and a maximum of one related entity.",
+            "start": 1799,
+            "end": 1932
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D03_C004_P014",
+      "is_synthetic_control": false,
+      "seconds": 1.02,
+      "verification_seconds": 1.66,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage describes a customer's ability to place orders, but it does not establish a direct 'REQUIRES' relationship from customer to orders. The passage only states a capability, not a requirement. Additionally, the direction of the relationship is not supported by the passage."
+      },
+      "proposal": {
+        "source": "customer",
+        "type": "REQUIRES",
+        "target": "orders",
+        "passage_id": "D03_C004_P014"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C004_P015",
+      "is_synthetic_control": false,
+      "seconds": 1.1,
+      "verification_seconds": 2.17,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": false,
+        "conditions_preserved": false,
+        "reason": "The passage states that the 'one side' is optional, but the proposed relationship implies a direction from 'one side' to 'zero and one', which is not supported by the passage. Additionally, 'one side' and 'zero and one' are not concepts but rather descriptions of the relationship. The passage does not support the idea that 'one side' preserves 'zero and one' in the proposed manner."
+      },
+      "proposal": {
+        "source": "one side",
+        "type": "PRESERVES",
+        "target": "zero and one",
+        "passage_id": "D03_C004_P015"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C004_P018",
+      "is_synthetic_control": false,
+      "seconds": 1.22,
+      "verification_seconds": 2.4,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage states that Figure 9.9 gives an example of how a zero to one symbol might be used, which implies a usage example rather than a typical usage. The direction of the relationship (zero to one symbol -> Figure 9.9) is not consistent with the idea of 'typically used in.' Additionally, the passage does not establish a general rule or condition that the symbol is typically used in Figure 9.9, so the relationship is not entailed."
+      },
+      "proposal": {
+        "source": "zero to one symbol",
+        "type": "TYPICALLY_USED_IN",
+        "target": "Figure 9.9",
+        "passage_id": "D03_C004_P018"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C004_P020",
+      "is_synthetic_control": false,
+      "seconds": 1.13,
+      "verification_seconds": 1.91,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage states that the 'zero to one optional relationship symbol' is used in an 'example usage' context, but it does not explicitly state that the symbol 'supports' the example usage. The relationship is not clearly entailed as a 'supports' relationship, and the conditions or context of the relationship are not preserved in the proposal."
+      },
+      "proposal": {
+        "source": "zero to one optional relationship symbol",
+        "type": "SUPPORTS",
+        "target": "example usage",
+        "passage_id": "D03_C004_P020"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C004_P022",
+      "is_synthetic_control": false,
+      "seconds": 1.11,
+      "verification_seconds": 1.83,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage describes a mandatory relationship where one entity occurrence requires a corresponding entity occurrence, but it does not explicitly state that the 'mandatory relationship' directly requires the 'corresponding entity occurrence'. The relationship is described as a rule, but the proposal implies a direct entailment that is not clearly supported by the passage."
+      },
+      "proposal": {
+        "source": "mandatory relationship",
+        "type": "REQUIRES",
+        "target": "corresponding entity occurrence",
+        "passage_id": "D03_C004_P022"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C004_P025",
+      "is_synthetic_control": false,
+      "seconds": 1.25,
+      "verification_seconds": 2.83,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage states that Figure 9.11 is an example of how the 'one and only one mandatory symbol' is used, which implies that the symbol is used in the figure. However, the proposed relationship suggests that the symbol is 'typically used in' the figure, which is not explicitly stated. The passage does not provide enough information to confirm that the symbol is typically used in the figure, only that it is used as an example. Additionally, the direction of the relationship is incorrect, as the passage indicates the figure is an example of the symbol, not the symbol being used in the figure."
+      },
+      "proposal": {
+        "source": "one and only one mandatory symbol",
+        "type": "TYPICALLY_USED_IN",
+        "target": "Figure 9.11",
+        "passage_id": "D03_C004_P025"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C004_P027",
+      "is_synthetic_control": false,
+      "seconds": 0.22,
+      "status": "abstained",
+      "relations": []
+    },
+    {
+      "passage_id": "D03_C004_P028",
+      "is_synthetic_control": false,
+      "seconds": 1.0,
+      "verification_seconds": 2.28,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage describes a one-to-many relationship where the 'many side' is mandatory, but it does not establish a direct rule or requirement from the 'many side' to the 'mandatory' concept. The relationship is described in terms of a diagram, not as a rule or constraint. The 'mandatory' is a property of the 'many side', not a required element from it. Therefore, the proposed relationship is not entailed by the passage."
+      },
+      "proposal": {
+        "source": "many side",
+        "type": "REQUIRES",
+        "target": "mandatory",
+        "passage_id": "D03_C004_P028"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C004_P031",
+      "is_synthetic_control": false,
+      "seconds": 1.23,
+      "verification_seconds": 2.49,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage states that Figure 9.13 is an example of how the one to many symbol may be used, which implies a usage example rather than a direct relationship. The proposal suggests a 'TYPICALLY_USED_IN' relationship, which is not explicitly stated in the passage. The passage does not confirm that the one to many symbol is typically used in Figure 9.13, only that it is an example of how it may be used. Therefore, the relationship is not entailed."
+      },
+      "proposal": {
+        "source": "one to many symbol",
+        "type": "TYPICALLY_USED_IN",
+        "target": "Figure 9.13",
+        "passage_id": "D03_C004_P031"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C004_P034",
+      "is_synthetic_control": false,
+      "seconds": 1.31,
+      "verification_seconds": 2.11,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage states that the innermost side of a relationship symbol can have 0 cardinality and a connectivity of many, but it does not explicitly state that the innermost side 'HAS_FORM' 0 cardinality and a connectivity of many. The relationship is implied rather than directly entailed. Additionally, the passage does not preserve the conditions or exceptions that might apply to this form."
+      },
+      "proposal": {
+        "source": "innermost side of a relationship symbol",
+        "type": "HAS_FORM",
+        "target": "0 (zero) cardinality and a connectivity of many",
+        "passage_id": "D03_C004_P034"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C004_P037",
+      "is_synthetic_control": false,
+      "seconds": 1.06,
+      "verification_seconds": 1.72,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage explicitly states that connectivity cannot be 0 and must be 1, which directly supports the proposed relationship that connectivity 'REQUIRES' the value 1. The direction is correct, both endpoints are concepts, and the condition (connectivity must be 1) is preserved."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "connectivity",
+          "type": "REQUIRES",
+          "target": "1",
+          "passage_id": "D03_C004_P037",
+          "evidence": {
+            "chunk_id": "D03_C004",
+            "quote": "However, it cannot have a connectivity of 0 (zero), as displayed in Figure 9.15. The connectivity can only be 1.",
+            "start": 4506,
+            "end": 4618
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D03_C004_P040",
+      "is_synthetic_control": false,
+      "seconds": 1.16,
+      "verification_seconds": 2.38,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage states that a connectivity symbol showing 0 (zero) implies no connection between tables, but the proposal incorrectly suggests a 'PRESERVES' relationship. The passage does not support that the connectivity symbol preserves the connection between tables; rather, it indicates the absence of a connection when the symbol is zero. The direction of the relationship is also incorrect, as the passage does not imply that the connectivity symbol preserves the connection, but rather that it indicates the lack of one."
+      },
+      "proposal": {
+        "source": "connectivity symbol",
+        "type": "PRESERVES",
+        "target": "connection between the tables",
+        "passage_id": "D03_C004_P040"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C004_P041",
+      "is_synthetic_control": false,
+      "seconds": 0.82,
+      "verification_seconds": 1.93,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": false,
+        "conditions_preserved": false,
+        "reason": "The passage does not provide sufficient information to confirm the proposed relationship. The passage only describes how to read a relationship symbol, but it does not establish that the 'relationship symbol' is a specific concept that is a general category of 'symbol'. The endpoints are not clearly defined as concepts, and the direction of the relationship is not supported by the passage."
+      },
+      "proposal": {
+        "source": "relationship symbol",
+        "type": "IS_A",
+        "target": "symbol",
+        "passage_id": "D03_C004_P041"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C005_P001",
+      "is_synthetic_control": false,
+      "seconds": 1.07,
+      "verification_seconds": 1.91,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage states that the CustID in the Order table must be found in the Customer table a minimum of 0 and a maximum of 1 time, which directly supports the REQUIRES relationship from CustID to the Customer table. The direction is correct, both endpoints are concepts, and the conditions (minimum and maximum occurrences) are preserved."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "CustID",
+          "type": "REQUIRES",
+          "target": "Customer table",
+          "passage_id": "D03_C005_P001",
+          "evidence": {
+            "chunk_id": "D03_C005",
+            "quote": "- The CustID in the Order table must also be found in the Customer table a minimum of 0 and a maximum of 1 times.",
+            "start": 0,
+            "end": 113
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D03_C005_P003",
+      "is_synthetic_control": false,
+      "seconds": 1.07,
+      "verification_seconds": 1.95,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage states that if there is a CustID in the Order table, it can only be in the Customer table once, which implies a requirement that CustID must exist in the Customer table. The direction from CustID to the Customer table is correct, and both endpoints are concepts. The condition that CustID must exist in the Customer table is preserved."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "CustID",
+          "type": "REQUIRES",
+          "target": "Customer table",
+          "passage_id": "D03_C005_P003",
+          "evidence": {
+            "chunk_id": "D03_C005",
+            "quote": "- The left-most 1 (right before the 0 representing connectivity) says that if there is a CustID in the Order table, it can only be in the Customer table once.",
+            "start": 178,
+            "end": 336
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D03_C005_P004",
+      "is_synthetic_control": false,
+      "seconds": 0.85,
+      "verification_seconds": 1.86,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": false,
+        "conditions_preserved": false,
+        "reason": "The passage does not provide sufficient information to confirm the proposed relationship. The '0' symbol is mentioned in the context of cardinality, but it is not clear if it is an entity or a concept. The passage does not explicitly state that the '0' symbol preserves cardinality, and the relationship is not clearly entailed."
+      },
+      "proposal": {
+        "source": "0",
+        "type": "PRESERVES",
+        "target": "cardinality",
+        "passage_id": "D03_C005_P004"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C005_P006",
+      "is_synthetic_control": false,
+      "seconds": 1.04,
+      "verification_seconds": 1.81,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage states that the FK is not part of the PK, which implies a restriction rather than a requirement. The proposed relationship 'REQUIRES' does not align with the passage's statement, which is a negation. The direction of the relationship is also incorrect as the passage does not imply that FK requires PK."
+      },
+      "proposal": {
+        "source": "FK",
+        "type": "REQUIRES",
+        "target": "PK",
+        "passage_id": "D03_C005_P006"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C005_P008",
+      "is_synthetic_control": false,
+      "seconds": 1.06,
+      "verification_seconds": 2.15,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage describes a relationship between a Customer table and an Order table, but it does not explicitly state or imply that the Customer table 'combines' the Order table. The term 'COMBINES' is not supported by the passage, and the direction of the relationship (Customer to Order) is not clearly entailed. Additionally, the passage does not provide any conditions or exceptions that would support the proposed relationship."
+      },
+      "proposal": {
+        "source": "Customer table",
+        "type": "COMBINES",
+        "target": "Order table",
+        "passage_id": "D03_C005_P008"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C005_P011",
+      "is_synthetic_control": false,
+      "seconds": 1.1,
+      "verification_seconds": 1.95,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": false,
+        "conditions_preserved": false,
+        "reason": "The passage defines 'cardinality' as expressing the minimum and maximum number of entity occurrences, but it does not establish a direct relationship or operation between 'cardinality' and 'entity occurrences' as a preserved element. The endpoints are not concepts in the context of a directed relationship, and the passage does not explicitly preserve or define an operation between them."
+      },
+      "proposal": {
+        "source": "cardinality",
+        "type": "PRESERVES",
+        "target": "entity occurrences",
+        "passage_id": "D03_C005_P011"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C005_P014",
+      "is_synthetic_control": false,
+      "seconds": 1.07,
+      "proposal": {
+        "source": "entity integrity",
+        "type": "REQUIRES",
+        "target": "primary key",
+        "passage_id": "D03_C005_P014"
+      },
+      "precision_policy_flag": "REQUIRES with a subordinate proposition must be reviewed as a statement with conditions, not flattened into a requirement that the target exists.",
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Qualified requirement needs manual review; no relation released."
+    },
+    {
+      "passage_id": "D03_C005_P015",
+      "is_synthetic_control": false,
+      "seconds": 1.02,
+      "verification_seconds": 2.17,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage describes an identifying relationship where the primary key contains the foreign key, and this is indicated by a solid line in an ERD. The proposal incorrectly states that the primary key is a specific concept and the foreign key is its general category, which misrepresents the relationship. The direction of the relationship in the proposal is not consistent with the passage, and the conditions about containment and ERD representation are not preserved."
+      },
+      "proposal": {
+        "source": "primary key",
+        "type": "IS_A",
+        "target": "foreign key",
+        "passage_id": "D03_C005_P015"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C005_P016",
+      "is_synthetic_control": false,
+      "seconds": 1.1,
+      "verification_seconds": 2.56,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage defines 'integrity constraints' as logical statements that specify allowed data values and formats. The proposed relationship 'PRESERVES' between 'integrity constraints' and 'data values' is not entailed because the passage does not explicitly state that integrity constraints preserve data values. Instead, it describes constraints that define what data values are allowed. The direction of the relationship is also not correct, as the passage does not indicate that data values preserve integrity constraints. Additionally, the conditions and exceptions are not preserved in the proposed relationship."
+      },
+      "proposal": {
+        "source": "integrity constraints",
+        "type": "PRESERVES",
+        "target": "data values",
+        "passage_id": "D03_C005_P016"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C005_P018",
+      "is_synthetic_control": false,
+      "seconds": 1.18,
+      "verification_seconds": 2.4,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": false,
+        "conditions_preserved": false,
+        "reason": "The passage describes a non-identifying relationship as one that does not contain the foreign key in the primary key and is indicated by a dotted line in an ERD. The proposal incorrectly implies a direct relationship between 'non-identifying relationship' and 'foreign key' with the meaning of 'preserved element,' which is not entailed by the passage. The endpoints are not concepts but rather a relationship and an element, and the direction of the relationship is not accurately represented."
+      },
+      "proposal": {
+        "source": "non-identifying relationship",
+        "type": "PRESERVES",
+        "target": "foreign key",
+        "passage_id": "D03_C005_P018"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C005_P019",
+      "is_synthetic_control": false,
+      "seconds": 1.22,
+      "verification_seconds": 2.09,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": false,
+        "conditions_preserved": false,
+        "reason": "The passage describes an optional relationship where the FK can be null or the parent table does not need to have a corresponding child table occurrence. The proposal incorrectly frames this as a 'REQUIRES' relationship, which contradicts the passage's description of an optional relationship. Additionally, the endpoints are not concepts but rather elements of a database structure, and the passage does not support the proposed direction or conditions."
+      },
+      "proposal": {
+        "source": "FK",
+        "type": "REQUIRES",
+        "target": "parent table does not need to have a corresponding child table occurrence",
+        "passage_id": "D03_C005_P019"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C005_P020",
+      "is_synthetic_control": false,
+      "seconds": 1.05,
+      "verification_seconds": 2.07,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage defines 'orphan record' as a specific type of record, not as a general category of 'record'. The proposed relationship 'IS_A' implies a general-to-specific relationship, but the passage describes a specific-to-general relationship. The direction of the relationship is incorrect, and the conditions (e.g., foreign key value not found) are not preserved in the proposed relationship."
+      },
+      "proposal": {
+        "source": "orphan record",
+        "type": "IS_A",
+        "target": "record",
+        "passage_id": "D03_C005_P020"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C005_P021",
+      "is_synthetic_control": false,
+      "seconds": 1.07,
+      "proposal": {
+        "source": "referential integrity",
+        "type": "REQUIRES",
+        "target": "foreign key",
+        "passage_id": "D03_C005_P021"
+      },
+      "precision_policy_flag": "REQUIRES with a subordinate proposition must be reviewed as a statement with conditions, not flattened into a requirement that the target exists.",
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Qualified requirement needs manual review; no relation released."
+    },
+    {
+      "passage_id": "D03_C005_P022",
+      "is_synthetic_control": false,
+      "seconds": 1.15,
+      "verification_seconds": 1.63,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage explicitly describes the relational database management system (RDBMS) as a 'popular database system based on the relational model'. This directly supports the proposed relationship that RDBMS is a type of database system, preserving the meaning and direction of the relationship."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "relational database management system (RDBMS)",
+          "type": "IS_A",
+          "target": "database system",
+          "passage_id": "D03_C005_P022",
+          "evidence": {
+            "chunk_id": "D03_C005",
+            "quote": "<strong>relational database management system (RDBMS)</strong>: a popular database system based on the relational model introduced by E. F. Codd of IBM’s San Jose Research Laboratory",
+            "start": 2372,
+            "end": 2554
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D03_C005_P023",
+      "is_synthetic_control": false,
+      "seconds": 1.19,
+      "verification_seconds": 1.88,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage defines 'relationship type' as the type of relationship between two tables in an ERD, which directly supports the proposal that 'relationship type' is a specific concept and 'type of relationship between two tables in an ERD' is its general category. The direction of the relationship is correct, and both endpoints are concepts."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "relationship type",
+          "type": "IS_A",
+          "target": "type of relationship between two tables in an ERD",
+          "passage_id": "D03_C005_P023",
+          "evidence": {
+            "chunk_id": "D03_C005",
+            "quote": "<strong>relationship type</strong>: the type of relationship between two tables in an ERD (either identifying or non-identifying); this relationship is indicated by a line drawn between the two tables.",
+            "start": 2556,
+            "end": 2757
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D03_C006_P003",
+      "is_synthetic_control": false,
+      "seconds": 1.14,
+      "verification_seconds": 1.9,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage states that the swim club database holds information about students, but it does not explicitly state that the database 'preserves' students or that there is an operational relationship between the database and students. The term 'preserves' is not defined or implied in the passage, and the direction of the relationship is not clearly supported."
+      },
+      "proposal": {
+        "source": "swim club database",
+        "type": "PRESERVES",
+        "target": "students",
+        "passage_id": "D03_C006_P003"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C006_P006",
+      "is_synthetic_control": false,
+      "seconds": 1.07,
+      "verification_seconds": 1.65,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": false,
+        "conditions_preserved": false,
+        "reason": "The passage does not establish a relationship between 'primary keys' and 'data types'. The passage only mentions that primary keys are identified and that data types are defined in SQL Server, but there is no explicit or implicit directed relationship between the two concepts as proposed."
+      },
+      "proposal": {
+        "source": "primary keys",
+        "type": "IS_A",
+        "target": "data types",
+        "passage_id": "D03_C006_P006"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C006_P007",
+      "is_synthetic_control": false,
+      "seconds": 1.02,
+      "verification_seconds": 2.39,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": false,
+        "conditions_preserved": false,
+        "reason": "The passage describes 'ClassName' as a field with a data type of 'text' and constraints, but it does not establish a conceptual relationship between 'ClassName' and 'text'. The 'IS_A' relationship implies a general-to-specific conceptual hierarchy, which is not supported by the passage. Additionally, 'text' is a data type, not a concept, and 'ClassName' is a field, not a concept. The passage does not provide sufficient information to support the proposed relationship."
+      },
+      "proposal": {
+        "source": "ClassName",
+        "type": "IS_A",
+        "target": "text",
+        "passage_id": "D03_C006_P007"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C006_P008",
+      "is_synthetic_control": false,
+      "seconds": 1.1,
+      "verification_seconds": 2.3,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": false,
+        "conditions_preserved": false,
+        "reason": "The proposal suggests a relationship between 'PoolName' and 'text 20', implying a form relationship. However, 'text 20' is not a concept but a data type constraint. The passage describes 'PoolName' as a field with a data type of text and a length of 20, which does not establish a directed relationship as proposed. The endpoints are not both concepts, and the relationship is not entailed by the passage."
+      },
+      "proposal": {
+        "source": "PoolName",
+        "type": "HAS_FORM",
+        "target": "text 20",
+        "passage_id": "D03_C006_P008"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C006_P009",
+      "is_synthetic_control": false,
+      "seconds": 1.07,
+      "verification_seconds": 2.31,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": false,
+        "conditions_preserved": false,
+        "reason": "The passage describes a table 'tblStaff' with a column 'StaffID' defined as an Identity PK. The term 'HAS_FORM' implies a relationship between a general operation and a specific form of that operation, which is not supported by the passage. 'StaffID' is a column, not a concept, and 'tblStaff' is a table, not an operation. The passage does not provide any information to support the proposed relationship."
+      },
+      "proposal": {
+        "source": "tblStaff",
+        "type": "HAS_FORM",
+        "target": "StaffID",
+        "passage_id": "D03_C006_P009"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C006_P010",
+      "is_synthetic_control": false,
+      "seconds": 1.11,
+      "verification_seconds": 2.21,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": false,
+        "conditions_preserved": false,
+        "reason": "The passage describes 'LessonIndex' as an identity PK (primary key) in the 'tblClasses' table, which implies it is a unique identifier rather than a form of an operation. The proposed relationship 'HAS_FORM' suggests a general operation to a specific form, which is not supported by the passage. Additionally, 'LessonIndex' is a field, not a concept, and the relationship direction is incorrect."
+      },
+      "proposal": {
+        "source": "tblClasses",
+        "type": "HAS_FORM",
+        "target": "LessonIndex",
+        "passage_id": "D03_C006_P010"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C006_P011",
+      "is_synthetic_control": false,
+      "seconds": 1.09,
+      "verification_seconds": 2.64,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": false,
+        "conditions_preserved": false,
+        "reason": "The proposal suggests a relationship between 'tblEnrollment' and 'LessonIndex' with the type 'HAS_FORM', implying a general operation to a specific form. However, 'LessonIndex' is a foreign key in the 'tblEnrollment' table, not a form or a specific instance of an operation. The passage does not support the idea of 'tblEnrollment' having a form or being a general operation. Additionally, the direction of the relationship is not correct as 'LessonIndex' is not a form of 'tblEnrollment'."
+      },
+      "proposal": {
+        "source": "tblEnrollment",
+        "type": "HAS_FORM",
+        "target": "LessonIndex",
+        "passage_id": "D03_C006_P011"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C006_P012",
+      "is_synthetic_control": false,
+      "seconds": 1.13,
+      "verification_seconds": 2.15,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": false,
+        "conditions_preserved": false,
+        "reason": "The proposal suggests a relationship between 'tblStudents' and 'SID – Identity PK', but the passage describes 'SID – Identity PK' as a field within the 'tblStudents' table, not as a separate concept. The relationship 'HAS_FORM' is not supported by the passage, and the endpoints are not distinct concepts. The passage does not imply a directional relationship between the table and its field."
+      },
+      "proposal": {
+        "source": "tblStudents",
+        "type": "HAS_FORM",
+        "target": "SID – Identity PK",
+        "passage_id": "D03_C006_P012"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C006_P013",
+      "is_synthetic_control": false,
+      "seconds": 1.08,
+      "verification_seconds": 2.02,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": false,
+        "conditions_preserved": false,
+        "reason": "The passage does not explicitly state that 'schema' requires 'SQL Server or access'. The passage only mentions implementing the schema in SQL Server or Access, which is a directive, not a requirement. The endpoints 'schema' and 'SQL Server or access' are not concepts but rather a directive and a tool. The passage does not preserve conditions, negation, or exceptions."
+      },
+      "proposal": {
+        "source": "schema",
+        "type": "REQUIRES",
+        "target": "SQL Server or access",
+        "passage_id": "D03_C006_P013"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C006_P014",
+      "is_synthetic_control": false,
+      "seconds": 1.06,
+      "verification_seconds": 2.07,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage describes a relationship where a student can enroll in many classes, implying a one-to-many relationship from tblStudents to tblEnrollment. The proposal incorrectly states that tblEnrollment REQUIRES tblStudents, which reverses the direction. Additionally, the passage does not explicitly state that tblEnrollment requires tblStudents, and the 'REQUIRES' predicate is not directly supported by the passage."
+      },
+      "proposal": {
+        "source": "tblEnrollment",
+        "type": "REQUIRES",
+        "target": "tblStudents",
+        "passage_id": "D03_C006_P014"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D03_C006_P023",
+      "is_synthetic_control": false,
+      "seconds": 1.03,
+      "verification_seconds": 1.59,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage explicitly states that 'the class must always be associated with an existing level,' which directly supports the proposed relationship that 'class REQUIRES existing level.' The direction is correct, both endpoints are concepts, and the condition of association is preserved."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "class",
+          "type": "REQUIRES",
+          "target": "existing level",
+          "passage_id": "D03_C006_P023",
+          "evidence": {
+            "chunk_id": "D03_C006",
+            "quote": "   - The class must always be associated with an existing level.\n3. Which tables are weak and which tables are strong (covered in an earlier chapter)?",
+            "start": 2615,
+            "end": 2765
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D07_C001_P002",
+      "is_synthetic_control": false,
+      "seconds": 1.15,
+      "verification_seconds": 2.14,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage explicitly describes join queries as combining rows from one table with rows from another table. The proposal correctly identifies 'join' as the source and 'rows' as the target, with the predicate meaning aligning with the operation of combining rows. The direction is correct, and the endpoints are concepts rather than verbs or examples. The conditions and context of the passage are preserved."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "join",
+          "type": "COMBINES",
+          "target": "rows",
+          "passage_id": "D07_C001_P002",
+          "evidence": {
+            "chunk_id": "D07_C001",
+            "quote": "Thus far, our queries have only accessed one table at a time. Queries can access multiple tables at once, or access the same table in such a way that multiple rows of the table are being processed at the same time. Queries that access multiple tables (or multiple instances of the same table) at one time are called <em>join</em> queries. They combine rows from one table with rows from a second table, with an expression specifying which rows are to be paired. For example, to return all the weather records together with the location of the associated city, the database needs to compare the `city` column of each row of the `weather` table with the `name` column of all rows in the `cities` table, and select the pairs of rows where these values match.[<sup>\\[4\\]</sup>](https://www.postgresql.org/docs/18/tutorial-join.html#ftn.id-1.4.4.7.3.6) This would be accomplished by the following query:",
+            "start": 30,
+            "end": 928
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D07_C001_P006",
+      "is_synthetic_control": false,
+      "seconds": 1.2,
+      "verification_seconds": 2.34,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage states that there is no result row for the city of Hayward because there is no matching entry in the `cities` table. This implies a lack of a matching entry, not a requirement. The proposed relationship 'REQUIRES' does not align with the passage's statement, which describes an absence rather than a requirement. The direction of the relationship is also incorrect, as the passage does not indicate that the matching entry is required by the city of Hayward."
+      },
+      "proposal": {
+        "source": "city of Hayward",
+        "type": "REQUIRES",
+        "target": "matching entry in the `cities` table",
+        "passage_id": "D07_C001_P006"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D07_C001_P007",
+      "is_synthetic_control": false,
+      "seconds": 1.05,
+      "verification_seconds": 2.4,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": false,
+        "conditions_preserved": false,
+        "reason": "The passage describes that two columns containing the city name are correct because the lists of columns from the `weather` and `cities` tables are concatenated. However, the proposal incorrectly frames the relationship as 'COMBINES' between 'columns' and 'lists', which are not the actual entities being combined. The passage does not explicitly state that columns combine lists, and the endpoints are not concepts but rather descriptions of data structures. The direction of the relationship is also not accurately represented."
+      },
+      "proposal": {
+        "source": "columns",
+        "type": "COMBINES",
+        "target": "lists",
+        "passage_id": "D07_C001_P007"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D07_C001_P008",
+      "is_synthetic_control": false,
+      "seconds": 1.06,
+      "verification_seconds": 2.55,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The proposed relationship 'COMBINES' between 'weather' and 'cities' is not entailed by the passage. The SQL query shows a JOIN operation between the 'weather' and 'cities' tables on the condition that 'city = name', which implies a relationship of association or matching, not a direct combining operation. The direction of the relationship is also not correct as the JOIN operation is not unidirectional. Additionally, the conditions (e.g., 'city = name') are not preserved in the proposed relationship."
+      },
+      "proposal": {
+        "source": "weather",
+        "type": "COMBINES",
+        "target": "cities",
+        "passage_id": "D07_C001_P008"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D07_C001_P009",
+      "is_synthetic_control": false,
+      "seconds": 1.06,
+      "verification_seconds": 2.67,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage states that the parser automatically found which table columns belong to, and that qualifying column names is needed only if there are duplicate column names. The proposal suggests a direct support relationship from the parser to qualify, which is not entailed by the passage. The passage does not indicate that the parser supports the 'qualify' feature, but rather that qualifying is a necessary action in specific conditions. The direction of the relationship is also incorrect, as the parser does not support the act of qualifying, but rather the need for qualifying arises due to the parser's behavior."
+      },
+      "proposal": {
+        "source": "parser",
+        "type": "SUPPORTS",
+        "target": "qualify",
+        "passage_id": "D07_C001_P009"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D07_C001_P011",
+      "is_synthetic_control": false,
+      "seconds": 1.14,
+      "verification_seconds": 2.28,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage states that qualifying column names is considered good style to prevent query failure if duplicate column names are added later. However, the proposal implies a direct requirement that qualifying column names ensures the query won't fail, which ignores the conditional nature of the original statement (i.e., it prevents failure *if* duplicates are added later). The proposal does not preserve the condition that the query won't fail *only* if duplicate column names are added later."
+      },
+      "proposal": {
+        "source": "qualify all column names",
+        "type": "REQUIRES",
+        "target": "query won't fail",
+        "passage_id": "D07_C001_P011"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D07_C001_P012",
+      "is_synthetic_control": false,
+      "seconds": 1.12,
+      "verification_seconds": 1.83,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage states that join queries 'can also be written in this form,' which implies a possibility rather than a typical usage. The predicate meaning specifies 'typically used in,' but the passage does not confirm that this is the typical usage, only that it is an alternative. Therefore, the relationship is not entailed."
+      },
+      "proposal": {
+        "source": "Join queries",
+        "type": "TYPICALLY_USED_IN",
+        "target": "this form",
+        "passage_id": "D07_C001_P012"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D07_C001_P014",
+      "is_synthetic_control": false,
+      "seconds": 1.17,
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Endpoint is not a literal concept surface in this passage: source"
+    },
+    {
+      "passage_id": "D07_C002_P001",
+      "is_synthetic_control": false,
+      "seconds": 1.05,
+      "verification_seconds": 2.02,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage describes an outer join as a type of query, but the proposed relationship suggests that 'outer join' is a specific concept and 'query' is its general category. However, the passage does not explicitly state that an outer join is a type of query; it only describes what an outer join does. Therefore, the relationship is not entailed."
+      },
+      "proposal": {
+        "source": "outer join",
+        "type": "IS_A",
+        "target": "query",
+        "passage_id": "D07_C002_P001"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D07_C002_P004",
+      "is_synthetic_control": false,
+      "seconds": 1.2,
+      "verification_seconds": 1.69,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage states that empty (null) values are substituted for the right-table columns when there is no match, but it does not explicitly state that the 'left outer join' operation preserves these empty (null) values. The relationship is not directly entailed."
+      },
+      "proposal": {
+        "source": "left outer join",
+        "type": "PRESERVES",
+        "target": "empty (null) values",
+        "passage_id": "D07_C002_P004"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D07_C002_P005",
+      "is_synthetic_control": false,
+      "seconds": 1.12,
+      "verification_seconds": 2.26,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": false,
+        "conditions_preserved": false,
+        "reason": "The passage does not explicitly state that right outer joins are typically used in the Exercise. The passage only mentions that right outer joins exist and suggests the reader try to find out what they do. The relationship is not entailed, and the direction of the relationship is not correct. Additionally, 'Exercise' is not a concept but a context or activity, and 'right outer joins' are not a concept in the traditional sense but a technical term."
+      },
+      "proposal": {
+        "source": "right outer joins",
+        "type": "TYPICALLY_USED_IN",
+        "target": "Exercise",
+        "passage_id": "D07_C002_P005"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D07_C002_P006",
+      "is_synthetic_control": false,
+      "seconds": 1.08,
+      "verification_seconds": 2.29,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage describes a 'self join' as a specific type of join, but the proposed relationship 'self join IS_A join' is not entailed because the passage does not explicitly state that a self join is a type of join. The direction is incorrect as it should be 'join IS_A self join' if the relationship were to be entailed. Additionally, the passage does not provide enough information to confirm that the conditions are preserved."
+      },
+      "proposal": {
+        "source": "self join",
+        "type": "IS_A",
+        "target": "join",
+        "passage_id": "D07_C002_P006"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D07_C002_P009",
+      "is_synthetic_control": false,
+      "seconds": 1.09,
+      "verification_seconds": 1.95,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage describes relabeling the weather table as `w1` and `w2` for distinguishing purposes in a join, but it does not explicitly state or imply that the weather table `HAS_FORM` as `w1`. The relationship is not entailed by the passage, and the direction of the relationship is not supported by the text."
+      },
+      "proposal": {
+        "source": "weather table",
+        "type": "HAS_FORM",
+        "target": "w1",
+        "passage_id": "D07_C002_P009"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D07_C002_P012",
+      "is_synthetic_control": false,
+      "seconds": 1.07,
+      "verification_seconds": 2.23,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": false,
+        "conditions_preserved": false,
+        "reason": "The passage does not establish a direct relationship between 'join' and 'user' where the join 'preserves' the user. The passage discusses the efficiency of joins and their conceptual nature, but it does not imply that the join operation preserves any element related to the user. The endpoints 'join' and 'user' are not both concepts in a relational sense, and the proposed relationship is not entailed by the passage."
+      },
+      "proposal": {
+        "source": "join",
+        "type": "PRESERVES",
+        "target": "user",
+        "passage_id": "D07_C002_P012"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "CONTROL_1",
+      "is_synthetic_control": true,
+      "seconds": 0.92,
+      "verification_seconds": 2.32,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": false,
+        "conditions_preserved": false,
+        "reason": "The passage describes the layout of a textbook page, but the proposed relationship 'HAS_FORM' between 'textbook page' and 'layout' is not entailed. The passage does not describe a form or structure that can be interpreted as a general operation to a specific form. Additionally, 'layout' is not a concept in the passage but rather a description of the page's structure. The direction of the relationship is also not clear or supported by the passage."
+      },
+      "proposal": {
+        "source": "textbook page",
+        "type": "HAS_FORM",
+        "target": "layout",
+        "passage_id": "CONTROL_1"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "CONTROL_2",
+      "is_synthetic_control": true,
+      "seconds": 0.23,
+      "status": "abstained",
+      "relations": []
+    }
+  ],
+  "semantic_check_enabled": true,
+  "note": "Selected passages and labeled controls; not exhaustive or independently evaluated. The same model verifies itself; manual review remains required."
+}

@@ -1,0 +1,15 @@
+{
+  "method": "source_glossary_rule",
+  "input_sha256": "71a46d39933679b92cdf4dd04026627fe58147d84d428bedede274431f7b861e",
+  "entries": 75,
+  "groups": 74,
+  "documents": [
+    "D01",
+    "D02",
+    "D03",
+    "D04",
+    "D05",
+    "D09"
+  ],
+  "note": "Candidates only, not accepted graph facts; no semantic relations, translation, or model calls generated."
+}

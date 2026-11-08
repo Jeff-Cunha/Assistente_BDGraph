@@ -1,6 +1,6 @@
 # Preparação do pipeline automático
 
-Estado atual: entradas piloto preparadas e adaptador Gemini implementado, sem execução de modelo. Configuração inicial: gemini-3.8-flash, dependendo de disponibilidade e cota gratuita da conta. Houve tentativas de API, mas ainda não há extração automática validada. Consulte `docs/configuracao-gemini.md`.
+Estado atual: entradas piloto preparadas e adaptador Gemini implementado, sem execução de modelo. Configuração inicial: gemini-3.8-flash, dependendo de disponibilidade e cota gratuita da conta. Houve tentativas de API sem extração validada; a extração local e seus resultados estão descritos em docs/cobertura-sql.md. Consulte `docs/configuracao-gemini.md`.
 
 ## Arquivos
 
@@ -33,7 +33,7 @@ O registro conhecido inicial contém somente nomes, aliases e IDs dos 12 conceit
 5. Converter ao contrato final 0.1.0, reunir evidências e validar com `scripts/validate-extraction.ps1`.
 6. Revisar semanticamente os candidatos antes de liberar a ingestão no Neo4j.
 
-O preparador só organiza entradas. O adaptador Gemini valida candidatos; a consolidação conservadora está implementada; equivalências ambíguas exigem revisão. O validador PowerShell atual é para a saída consolidada, não para as respostas brutas por trecho.
+O preparador só organiza entradas. O adaptador Gemini valida candidatos; a consolidação conservadora e a resolução revisada estão implementadas; equivalências ambíguas continuam pendentes. O validador PowerShell atual é para a saída consolidada, não para as respostas brutas por trecho.
 
 ## Verificações já executadas
 
@@ -42,4 +42,4 @@ O preparador só organiza entradas. O adaptador Gemini valida candidatos; a cons
 - Diretório de lote existente protegido contra sobrescrita.
 - Amostra consolidada continua válida: 12 conceitos, 9 relações e 21 citações literais.
 
-Não há resultados de qualidade de extração automática nem ingestão no banco concluída. A consolidação já está implementada em scripts/consolidate-extraction.py; consulte docs/consolidacao-extracao.md.
+Não foram feitos testes de qualidade de um modelo, extração automática real ou ingestão no banco nesta etapa.

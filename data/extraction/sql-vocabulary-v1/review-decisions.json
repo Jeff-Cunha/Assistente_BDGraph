@@ -1,0 +1,117 @@
+{
+  "reviewer": "Codex",
+  "independent_review": false,
+  "note": "Vocabulário definido manualmente e vinculado às ocorrências do corpus; não foram criadas relações semânticas. Blocos SQL podem conter exemplos negativos: reconhecer o termo não certifica a validade da consulta.",
+  "decisions": [
+    {
+      "concept_id": "C_and",
+      "decision": "accept",
+      "note": "Termo presente nas páginas de SQL e resumo conferido no contexto das explicações; preservar citações e distinção entre ocorrência e validade de consulta."
+    },
+    {
+      "concept_id": "C_as",
+      "decision": "accept",
+      "note": "Termo presente nas páginas de SQL e resumo conferido no contexto das explicações; preservar citações e distinção entre ocorrência e validade de consulta."
+    },
+    {
+      "concept_id": "C_avg",
+      "decision": "accept",
+      "note": "Termo presente nas páginas de SQL e resumo conferido no contexto das explicações; preservar citações e distinção entre ocorrência e validade de consulta."
+    },
+    {
+      "concept_id": "C_count",
+      "decision": "accept",
+      "note": "Termo presente nas páginas de SQL e resumo conferido no contexto das explicações; preservar citações e distinção entre ocorrência e validade de consulta."
+    },
+    {
+      "concept_id": "C_distinct",
+      "decision": "accept",
+      "note": "Termo presente nas páginas de SQL e resumo conferido no contexto das explicações; preservar citações e distinção entre ocorrência e validade de consulta."
+    },
+    {
+      "concept_id": "C_filter",
+      "decision": "accept",
+      "note": "Termo presente nas páginas de SQL e resumo conferido no contexto das explicações; preservar citações e distinção entre ocorrência e validade de consulta."
+    },
+    {
+      "concept_id": "C_from",
+      "decision": "accept",
+      "note": "Termo presente nas páginas de SQL e resumo conferido no contexto das explicações; preservar citações e distinção entre ocorrência e validade de consulta."
+    },
+    {
+      "concept_id": "C_group_by",
+      "decision": "accept",
+      "note": "Termo presente nas páginas de SQL e resumo conferido no contexto das explicações; preservar citações e distinção entre ocorrência e validade de consulta."
+    },
+    {
+      "concept_id": "C_having",
+      "decision": "accept",
+      "note": "Termo presente nas páginas de SQL e resumo conferido no contexto das explicações; preservar citações e distinção entre ocorrência e validade de consulta."
+    },
+    {
+      "concept_id": "C_inner_join",
+      "decision": "accept",
+      "note": "Termo presente nas páginas de SQL e resumo conferido no contexto das explicações; preservar citações e distinção entre ocorrência e validade de consulta."
+    },
+    {
+      "concept_id": "C_join",
+      "decision": "accept",
+      "note": "Termo presente nas páginas de SQL e resumo conferido no contexto das explicações; preservar citações e distinção entre ocorrência e validade de consulta."
+    },
+    {
+      "concept_id": "C_left_outer_join",
+      "decision": "accept",
+      "note": "Termo presente nas páginas de SQL e resumo conferido no contexto das explicações; preservar citações e distinção entre ocorrência e validade de consulta."
+    },
+    {
+      "concept_id": "C_like",
+      "decision": "accept",
+      "note": "Termo presente nas páginas de SQL e resumo conferido no contexto das explicações; preservar citações e distinção entre ocorrência e validade de consulta."
+    },
+    {
+      "concept_id": "C_max",
+      "decision": "accept",
+      "note": "Termo presente nas páginas de SQL e resumo conferido no contexto das explicações; preservar citações e distinção entre ocorrência e validade de consulta."
+    },
+    {
+      "concept_id": "C_min",
+      "decision": "accept",
+      "note": "Termo presente nas páginas de SQL e resumo conferido no contexto das explicações; preservar citações e distinção entre ocorrência e validade de consulta."
+    },
+    {
+      "concept_id": "C_not",
+      "decision": "accept",
+      "note": "Termo presente nas páginas de SQL e resumo conferido no contexto das explicações; preservar citações e distinção entre ocorrência e validade de consulta."
+    },
+    {
+      "concept_id": "C_or",
+      "decision": "accept",
+      "note": "Termo presente nas páginas de SQL e resumo conferido no contexto das explicações; preservar citações e distinção entre ocorrência e validade de consulta."
+    },
+    {
+      "concept_id": "C_order_by",
+      "decision": "accept",
+      "note": "Termo presente nas páginas de SQL e resumo conferido no contexto das explicações; preservar citações e distinção entre ocorrência e validade de consulta."
+    },
+    {
+      "concept_id": "C_outer_join",
+      "decision": "accept",
+      "note": "Termo presente nas páginas de SQL e resumo conferido no contexto das explicações; preservar citações e distinção entre ocorrência e validade de consulta."
+    },
+    {
+      "concept_id": "C_select",
+      "decision": "accept",
+      "note": "Termo presente nas páginas de SQL e resumo conferido no contexto das explicações; preservar citações e distinção entre ocorrência e validade de consulta."
+    },
+    {
+      "concept_id": "C_sum",
+      "decision": "accept",
+      "note": "Termo presente nas páginas de SQL e resumo conferido no contexto das explicações; preservar citações e distinção entre ocorrência e validade de consulta."
+    },
+    {
+      "concept_id": "C_where",
+      "decision": "accept",
+      "note": "Termo presente nas páginas de SQL e resumo conferido no contexto das explicações; preservar citações e distinção entre ocorrência e validade de consulta."
+    }
+  ]
+}

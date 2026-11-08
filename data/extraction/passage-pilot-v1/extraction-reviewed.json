@@ -1,0 +1,105 @@
+{
+  "schema_version": "0.1.0",
+  "extraction_method": "llm_candidates",
+  "input_chunk_ids": [
+    "D03_C001"
+  ],
+  "concepts": [
+    {
+      "concept_id": "C_entity_integrity",
+      "canonical_name": "entity integrity",
+      "name_pt": "integridade de entidade",
+      "aliases": [],
+      "category": "constraint",
+      "description_pt": "Regra conceitual que exige chave primária sem valores nulos no trecho da fonte.",
+      "evidence": [
+        {
+          "chunk_id": "D03_C001",
+          "quote": "To ensure <em>entity integrity</em>, it is required that every table have a primary key. Neither the PK nor any part of it can contain null values. This is because null values for the primary key mean we cannot identify some rows. For example, in the EMPLOYEE table, Phone cannot be a primary key since some people may not have a telephone."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Extração proposta por Qwen3 8B; evidência copiada do corpus; revisão semântica e nomes portugueses por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_primary_key",
+      "canonical_name": "primary key",
+      "name_pt": "chave primária",
+      "aliases": [],
+      "category": "structure",
+      "description_pt": "Chave que identifica registros, sem nulos nos seus componentes.",
+      "evidence": [
+        {
+          "chunk_id": "D03_C001",
+          "quote": "To ensure <em>entity integrity</em>, it is required that every table have a primary key. Neither the PK nor any part of it can contain null values. This is because null values for the primary key mean we cannot identify some rows. For example, in the EMPLOYEE table, Phone cannot be a primary key since some people may not have a telephone."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Extração proposta por Qwen3 8B; evidência copiada do corpus; revisão semântica e nomes portugueses por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_orphan_record",
+      "canonical_name": "orphan record",
+      "name_pt": "registro órfão",
+      "aliases": [],
+      "category": "structure",
+      "description_pt": "Registro cuja referência de chave estrangeira não é encontrada na entidade correspondente, conforme a definição da fonte.",
+      "evidence": [
+        {
+          "chunk_id": "D03_C001",
+          "quote": "To ensure that there are no orphan records, we need to enforce referential integrity. An <em>orphan record</em> is one whose foreign key FK value is not found in the corresponding entity – the entity where the PK is located. Recall that a typical join is between a PK and FK."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Extração proposta por Qwen3 8B; evidência copiada do corpus; revisão semântica e nomes portugueses por Codex, sem revisão humana independente."
+    },
+    {
+      "concept_id": "C_record",
+      "canonical_name": "record",
+      "name_pt": "registro",
+      "aliases": [],
+      "category": "structure",
+      "description_pt": "Conceito geral de registro ao qual pertence a definição de registro órfão.",
+      "evidence": [
+        {
+          "chunk_id": "D03_C001",
+          "quote": "To ensure that there are no orphan records, we need to enforce referential integrity. An <em>orphan record</em> is one whose foreign key FK value is not found in the corresponding entity – the entity where the PK is located. Recall that a typical join is between a PK and FK."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Extração proposta por Qwen3 8B; evidência copiada do corpus; revisão semântica e nomes portugueses por Codex, sem revisão humana independente."
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "R_passage_D03_C001_P008",
+      "source": "C_entity_integrity",
+      "target": "C_primary_key",
+      "type": "REQUIRES",
+      "assertion_kind": "explicit",
+      "evidence": [
+        {
+          "chunk_id": "D03_C001",
+          "quote": "To ensure <em>entity integrity</em>, it is required that every table have a primary key. Neither the PK nor any part of it can contain null values. This is because null values for the primary key mean we cannot identify some rows. For example, in the EMPLOYEE table, Phone cannot be a primary key since some people may not have a telephone."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Regra explicitamente enunciada para integridade de entidade no modelo conceitual da fonte; não generaliza restrição física de todo SGBD. Revisão por Codex, sem revisão independente."
+    },
+    {
+      "relation_id": "R_passage_D03_C001_P014",
+      "source": "C_orphan_record",
+      "target": "C_record",
+      "type": "IS_A",
+      "assertion_kind": "explicit",
+      "evidence": [
+        {
+          "chunk_id": "D03_C001",
+          "quote": "To ensure that there are no orphan records, we need to enforce referential integrity. An <em>orphan record</em> is one whose foreign key FK value is not found in the corresponding entity – the entity where the PK is located. Recall that a typical join is between a PK and FK."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Definição de orphan record como um registro com referência ausente na entidade correspondente; IS_A é uma leitura definicional direta. Revisão por Codex, sem revisão independente."
+    }
+  ]
+}

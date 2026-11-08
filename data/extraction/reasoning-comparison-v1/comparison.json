@@ -1,0 +1,103 @@
+{
+  "model": "qwen3:8b",
+  "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+  "note": "Four labeled development cases selected by Codex. Expected values were not sent to the model. Not independent or representative.",
+  "results": [
+    {
+      "case_id": "conditional_requirement",
+      "passage_id": "D03_C001_P010",
+      "think": false,
+      "expected": false,
+      "seconds": 15.96,
+      "answer": {
+        "supported": true,
+        "reason": "Referential integrity requires a foreign key to have a matching primary key or be null."
+      },
+      "matches_development_label": false
+    },
+    {
+      "case_id": "subtype",
+      "passage_id": "D07_C002_P006",
+      "think": false,
+      "expected": true,
+      "seconds": 0.42,
+      "answer": {
+        "supported": true,
+        "reason": "Self join is a type of join."
+      },
+      "matches_development_label": true
+    },
+    {
+      "case_id": "reversed_subtype",
+      "passage_id": "D07_C002_P006",
+      "think": false,
+      "expected": false,
+      "seconds": 0.5,
+      "answer": {
+        "supported": true,
+        "reason": "The passage explicitly mentions that joining a table against itself is called a self join."
+      },
+      "matches_development_label": false
+    },
+    {
+      "case_id": "explicit_support",
+      "passage_id": "D03_C001_P003",
+      "think": false,
+      "expected": true,
+      "seconds": 0.57,
+      "answer": {
+        "supported": true,
+        "reason": "The relational model supports constraints as it allows designers to specify the semantics of data in the database."
+      },
+      "matches_development_label": true
+    },
+    {
+      "case_id": "conditional_requirement",
+      "passage_id": "D03_C001_P010",
+      "think": true,
+      "expected": false,
+      "seconds": 33.94,
+      "answer": {
+        "supported": false,
+        "reason": "The passage states referential integrity requires the foreign key to have a valid value, not that it requires the existence of a foreign key."
+      },
+      "matches_development_label": true
+    },
+    {
+      "case_id": "subtype",
+      "passage_id": "D07_C002_P006",
+      "think": true,
+      "expected": true,
+      "seconds": 2.88,
+      "answer": {
+        "supported": true,
+        "reason": "A self join is explicitly described as a type of join in the passage."
+      },
+      "matches_development_label": true
+    },
+    {
+      "case_id": "reversed_subtype",
+      "passage_id": "D07_C002_P006",
+      "think": true,
+      "expected": false,
+      "seconds": 6.59,
+      "answer": {
+        "supported": false,
+        "reason": "The passage indicates that a self join is a specific type of join, not the reverse."
+      },
+      "matches_development_label": true
+    },
+    {
+      "case_id": "explicit_support",
+      "passage_id": "D03_C001_P003",
+      "think": true,
+      "expected": true,
+      "seconds": 4.1,
+      "answer": {
+        "supported": true,
+        "reason": "The passage explicitly states that the relational model supports the well-defined theory of constraints."
+      },
+      "matches_development_label": true
+    }
+  ]
+}
