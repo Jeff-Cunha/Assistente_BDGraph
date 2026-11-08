@@ -1,0 +1,8 @@
+Database Design - 2nd Edition
+Copyright © 2014 by
+Adrienne Watt and Nelson Eng
+is licensed under a
+Creative Commons Attribution 4.0 International License
+, except where otherwise noted.
+Image Attributions
+Figures 9.3, 9.4, 9.6, 9.8, 9.10, 9.12, 9.14 and 9.15 by A. Watt.

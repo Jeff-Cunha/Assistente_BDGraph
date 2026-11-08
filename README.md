@@ -57,7 +57,7 @@ O corpus inicial contém **9 documentos**, organizados em **31 trechos textuais*
 
 Os textos permanecem em inglês. A aplicação deverá permitir perguntas e respostas em português, com tratamento de termos equivalentes entre os idiomas.
 
-A preparação do corpus preserva os documentos originais, exemplos SQL, metadados de origem e avisos de atribuição. A transcrição das figuras essenciais está em preparação como complemento separado.
+A preparação do corpus preserva os documentos originais, exemplos SQL, metadados de origem e avisos de atribuição. Foram preparados **28 suplementos de figuras**, separados dos 31 trechos originais, totalizando **59 trechos**. Duas transcrições permanecem parciais, com incertezas registradas.
 
 ## Estado atual
 
@@ -66,8 +66,8 @@ A preparação do corpus preserva os documentos originais, exemplos SQL, metadad
 - [x] Limpeza e organização dos textos.
 - [x] Divisão em trechos com identificação das fontes.
 - [x] Verificação de integridade dos arquivos do corpus.
-- [ ] Complementação textual das figuras essenciais.
-- [ ] Definição do esquema do grafo e dos formatos de integração.
+- [x] Complementação textual das figuras essenciais, com limitações documentadas.
+- [x] Definição inicial do esquema do grafo e dos formatos de integração.
 - [ ] Extração automática e resolução de entidades.
 - [ ] Configuração e ingestão no Neo4j.
 - [ ] Recuperação híbrida e consultas multi-hop.
@@ -95,13 +95,33 @@ Todos os integrantes contribuirão com documentação, testes, artigo e apresent
 - Modelo de linguagem.
 - Modelo de embeddings.
 
-A linguagem de implementação, os modelos, as bibliotecas e a tecnologia da interface serão documentados após a definição do ambiente.
+Os scripts de preparação e extração usam Python. O adaptador inicial da API Gemini está implementado; a execução local com Ollama está sendo avaliada. A escolha final dos modelos, embeddings e interface permanece em aberto.
 
 ## Instalação e execução
 
-As instruções serão adicionadas conforme a implementação dos módulos.
+Para conferir a amostra manual (PowerShell 7):
 
-No estado atual, ainda não há um assistente executável. A documentação de preparação do corpus acompanha seus arquivos e deverá ser incluída no repositório.
+```powershell
+pwsh -NoProfile -File scripts/validate-extraction.ps1
+```
+
+Para testar a consolidação (Python 3.10 ou superior):
+
+```powershell
+python -m pip install -r requirements-extraction.txt
+python -m unittest discover -s tests -p test_consolidation.py -v
+```
+
+A amostra contém 12 conceitos e 9 relações, com 21 evidências literais. Ela é manual e não representa extração automática concluída.
+
+- [Entrega para a parte 2 e critérios de ingestão](docs/entrega-parte1-para-parte2.md)
+- [Contrato de dados](docs/contrato-extracao.md)
+- [Preparação e qualidade do corpus](corpus/README.md)
+- [Consolidação das extrações](docs/consolidacao-extracao.md)
+- [Configuração da API Gemini](docs/configuracao-gemini.md)
+- [ZIP da entrega inicial para a parte 2](outputs/parte1-para-parte2.zip)
+
+No estado atual, ainda não há um assistente executável. O corpus e sua documentação já estão incluídos. O Neo4j e a aplicação ainda precisam ser implementados.
 
 Senhas, credenciais do Neo4j e chaves de API não devem ser versionadas. As configurações necessárias serão exemplificadas em um arquivo `.env.example`, sem valores secretos.
 

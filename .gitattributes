@@ -1,0 +1,6 @@
+* text=auto eol=lf
+# Preserve snapshot bytes and recorded hashes across Windows/Linux.
+corpus/** -text
+*.zip binary
+*.jpg binary
+*.png binary

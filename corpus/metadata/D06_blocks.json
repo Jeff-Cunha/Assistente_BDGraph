@@ -1,0 +1,114 @@
+[
+  {
+    "kind": "h2",
+    "text": "## 2.5. Querying a Table"
+  },
+  {
+    "kind": "paragraph",
+    "text": "To retrieve data from a table, the table is <em>queried</em>. An SQL `SELECT` statement is used to do this. The statement is divided into a select list (the part that lists the columns to be returned), a table list (the part that lists the tables from which to retrieve the data), and an optional qualification (the part that specifies any restrictions). For example, to retrieve all the rows of table `weather`, type:"
+  },
+  {
+    "kind": "code",
+    "text": "```sql\nSELECT * FROM weather;\n```"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Here `*` is a shorthand for “all columns”. [<sup>\\[2\\]</sup>](https://www.postgresql.org/docs/18/tutorial-select.html#ftn.id-1.4.4.6.2.10) So the same result would be had with:"
+  },
+  {
+    "kind": "code",
+    "text": "```sql\nSELECT city, temp_lo, temp_hi, prcp, date FROM weather;\n```"
+  },
+  {
+    "kind": "paragraph",
+    "text": "The output should be:"
+  },
+  {
+    "kind": "code",
+    "text": "```text\n     city      | temp_lo | temp_hi | prcp |    date\n---------------+---------+---------+------+------------\n San Francisco |      46 |      50 | 0.25 | 1994-11-27\n San Francisco |      43 |      57 |    0 | 1994-11-29\n Hayward       |      37 |      54 |      | 1994-11-29\n(3 rows)\n```"
+  },
+  {
+    "kind": "paragraph",
+    "text": "You can write expressions, not just simple column references, in the select list. For example, you can do:"
+  },
+  {
+    "kind": "code",
+    "text": "```sql\nSELECT city, (temp_hi+temp_lo)/2 AS temp_avg, date FROM weather;\n```"
+  },
+  {
+    "kind": "paragraph",
+    "text": "This should give:"
+  },
+  {
+    "kind": "code",
+    "text": "```text\n     city      | temp_avg |    date\n---------------+----------+------------\n San Francisco |       48 | 1994-11-27\n San Francisco |       50 | 1994-11-29\n Hayward       |       45 | 1994-11-29\n(3 rows)\n```"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Notice how the `AS` clause is used to relabel the output column. (The `AS` clause is optional.)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "A query can be “qualified” by adding a `WHERE` clause that specifies which rows are wanted. The `WHERE` clause contains a Boolean (truth value) expression, and only rows for which the Boolean expression is true are returned. The usual Boolean operators (`AND`, `OR`, and `NOT`) are allowed in the qualification. For example, the following retrieves the weather of San Francisco on rainy days:"
+  },
+  {
+    "kind": "code",
+    "text": "```sql\nSELECT * FROM weather\n    WHERE city = 'San Francisco' AND prcp > 0.0;\n```"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Result:"
+  },
+  {
+    "kind": "code",
+    "text": "```text\n     city      | temp_lo | temp_hi | prcp |    date\n---------------+---------+---------+------+------------\n San Francisco |      46 |      50 | 0.25 | 1994-11-27\n(1 row)\n```"
+  },
+  {
+    "kind": "paragraph",
+    "text": "You can request that the results of a query be returned in sorted order:"
+  },
+  {
+    "kind": "code",
+    "text": "```sql\nSELECT * FROM weather\n    ORDER BY city;\n```"
+  },
+  {
+    "kind": "code",
+    "text": "```text\n     city      | temp_lo | temp_hi | prcp |    date\n---------------+---------+---------+------+------------\n Hayward       |      37 |      54 |      | 1994-11-29\n San Francisco |      43 |      57 |    0 | 1994-11-29\n San Francisco |      46 |      50 | 0.25 | 1994-11-27\n```"
+  },
+  {
+    "kind": "paragraph",
+    "text": "In this example, the sort order isn't fully specified, and so you might get the San Francisco rows in either order. But you'd always get the results shown above if you do:"
+  },
+  {
+    "kind": "code",
+    "text": "```sql\nSELECT * FROM weather\n    ORDER BY city, temp_lo;\n```"
+  },
+  {
+    "kind": "paragraph",
+    "text": "You can request that duplicate rows be removed from the result of a query:"
+  },
+  {
+    "kind": "code",
+    "text": "```sql\nSELECT DISTINCT city\n    FROM weather;\n```"
+  },
+  {
+    "kind": "code",
+    "text": "```text\n     city\n---------------\n Hayward\n San Francisco\n(2 rows)\n```"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Here again, the result row ordering might vary. You can ensure consistent results by using `DISTINCT` and `ORDER BY` together: [<sup>\\[3\\]</sup>](https://www.postgresql.org/docs/18/tutorial-select.html#ftn.id-1.4.4.6.6.7)"
+  },
+  {
+    "kind": "code",
+    "text": "```sql\nSELECT DISTINCT city\n    FROM weather\n    ORDER BY city;\n```"
+  },
+  {
+    "kind": "paragraph",
+    "text": "[<sup>\\[2\\]</sup>](https://www.postgresql.org/docs/18/tutorial-select.html#id-1.4.4.6.2.10) While `SELECT *` is useful for off-the-cuff queries, it is widely considered bad style in production code, since adding a column to the table would change the results."
+  },
+  {
+    "kind": "paragraph",
+    "text": "[<sup>\\[3\\]</sup>](https://www.postgresql.org/docs/18/tutorial-select.html#id-1.4.4.6.6.7) In some database systems, including older versions of PostgreSQL, the implementation of `DISTINCT` automatically orders the rows and so `ORDER BY` is unnecessary. But this is not required by the SQL standard, and current PostgreSQL does not guarantee that `DISTINCT` causes the rows to be ordered."
+  }
+]

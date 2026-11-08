@@ -1,0 +1,143 @@
+[
+  {
+    "requested_url": "https://opentextbc.ca/dbdesign01/",
+    "collected_at": "2026-11-08T17:21:05.833916+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 200
+      }
+    ],
+    "final_url": "https://opentextbc.ca/dbdesign01/",
+    "http_status": 200,
+    "redirects": [],
+    "content_type": "text/html; charset=UTF-8",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 17:21:06 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Content-Encoding": "gzip"
+    },
+    "path": "licenses/book.html",
+    "bytes": 76201,
+    "sha256": "40c3c918a6e4236e19f59f1f9f74ac02af532517f211eb9303096ffe9adec1ae",
+    "status": "success"
+  },
+  {
+    "requested_url": "https://www.postgresql.org/docs/18/legalnotice.html",
+    "collected_at": "2026-11-08T17:21:05.834234+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 200
+      }
+    ],
+    "final_url": "https://www.postgresql.org/docs/18/legalnotice.html",
+    "http_status": 200,
+    "redirects": [],
+    "content_type": "text/html; charset=utf-8",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 13:21:45 GMT",
+      "Content-Type": "text/html; charset=utf-8",
+      "Content-Encoding": "gzip"
+    },
+    "path": "licenses/postgresql_18_copyright.html",
+    "bytes": 12721,
+    "sha256": "8daaf9d2f927000ca465d466c87bb54d2027b3105dc86a1b48538bbaa4a44e16",
+    "status": "success"
+  },
+  {
+    "requested_url": "https://www.postgresql.org/about/licence/",
+    "collected_at": "2026-11-08T17:21:05.835130+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 200
+      }
+    ],
+    "final_url": "https://www.postgresql.org/about/licence/",
+    "http_status": 200,
+    "redirects": [],
+    "content_type": "text/html; charset=utf-8",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 10:07:20 GMT",
+      "Content-Type": "text/html; charset=utf-8",
+      "Content-Encoding": "gzip"
+    },
+    "path": "licenses/postgresql_license.html",
+    "bytes": 8067,
+    "sha256": "6dd2101caabbd24ab62aaf8744bd43e6c7b9a20a5ebac399bdaf7051e0dd22e5",
+    "status": "success"
+  },
+  {
+    "requested_url": "https://creativecommons.org/licenses/by/4.0/",
+    "collected_at": "2026-11-08T17:21:05.836151+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 200
+      }
+    ],
+    "final_url": "https://creativecommons.org/licenses/by/4.0/",
+    "http_status": 200,
+    "redirects": [],
+    "content_type": "text/html",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 17:21:06 GMT",
+      "Content-Type": "text/html",
+      "Last-Modified": "Thu, 01 Oct 2026 17:09:56 GMT",
+      "Content-Encoding": "gzip"
+    },
+    "path": "licenses/cc_by_4.html",
+    "bytes": 31950,
+    "sha256": "8dda1ccec4be91fc80821d4e4fd5c568072b9a3a74b2fdc07c249a27e920ef01",
+    "status": "success"
+  },
+  {
+    "requested_url": "https://creativecommons.org/licenses/by/3.0/",
+    "collected_at": "2026-11-08T17:21:06.695112+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 200
+      }
+    ],
+    "final_url": "https://creativecommons.org/licenses/by/3.0/",
+    "http_status": 200,
+    "redirects": [],
+    "content_type": "text/html",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 17:21:06 GMT",
+      "Content-Type": "text/html",
+      "Last-Modified": "Thu, 01 Oct 2026 17:09:56 GMT",
+      "Content-Encoding": "gzip"
+    },
+    "path": "licenses/cc_by_3.html",
+    "bytes": 31824,
+    "sha256": "befae005d7dc8701eed58fe2080fda2889c3749272d6c8aba8e8310114112095",
+    "status": "success"
+  },
+  {
+    "requested_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "collected_at": "2026-11-08T17:25:58.663510+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 200
+      }
+    ],
+    "final_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "http_status": 200,
+    "redirects": [],
+    "content_type": "text/html",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 17:25:59 GMT",
+      "Content-Type": "text/html",
+      "Last-Modified": "Thu, 01 Oct 2026 17:09:56 GMT",
+      "Content-Encoding": "gzip"
+    },
+    "path": "licenses/cc_by_sa_3.html",
+    "bytes": 35431,
+    "sha256": "9a17cd36de36b242cbe4234773116f2036f86a8ce4459af8b37fd120482ca931",
+    "status": "success"
+  }
+]

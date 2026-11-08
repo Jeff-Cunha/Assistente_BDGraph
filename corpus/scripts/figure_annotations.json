@@ -1,0 +1,198 @@
+{
+  "D02_F004": {
+    "decision": "transcribe",
+    "reason": "The double-oval notation for a multivalued attribute is not expressed in the original alt text.",
+    "literal": "Labels: EMPLOYEE; Degrees; Name; Address; Birthdate; Salary; Multivalued attribute.",
+    "visual": "EMPLOYEE is a rectangle connected by plain lines to the five attribute ovals. Degrees has a double oval; the annotation arrow from 'Multivalued attribute' points to that double boundary. The other four ovals have single boundaries. There are no relationship cardinalities or data rows.",
+    "pending": []
+  },
+  "D02_F005": {
+    "decision": "transcribe",
+    "reason": "The dashed-oval notation for a derived attribute is absent from the alt text.",
+    "literal": "Labels: EMPLOYEE; Age; Name; Address; Birthdate; Salary; Derived attribute.",
+    "visual": "EMPLOYEE is a rectangle connected to five ovals. Age has a dashed outline, and an annotation arrow labelled 'Derived attribute' points to it. Name, Address, Birthdate and Salary have solid outlines. The drawing does not show a directed arrow from Birthdate to Age; that derivation is explained in the parent text.",
+    "pending": []
+  },
+  "D02_F006": {
+    "decision": "transcribe",
+    "reason": "The salary and commission values underlying the null example exist only in the image.",
+    "literal": "Salary_tbl\n\n| emp# | jobName | salary | commission |\n|---|---|---|---|\n| E10 | Sales | 12500 | 32090 |\n| E11 | Null | 25000 | 8000 |\n| E12 | Sales | 44000 | 0 |\n| E13 | Sales | 44000 | Null |",
+    "visual": "Four data rows and four columns. 'Null' is the literal displayed word, not an empty cell. No key icon or key underline is shown. The supplement does not recompute or correct the query results printed in the parent text.",
+    "pending": []
+  },
+  "D02_F007": {
+    "decision": "transcribe",
+    "reason": "The ER endpoints, underlined attributes and relational schema add explicit relationships not captured by the filename alt.",
+    "literal": "Entities and attributes:\n- EMPLOYEE: Name, Birthdate, Address, Salary, EID.\n- DEPARTMENT: Name, Office, DeptId.\n- Relationship diamond: Works In.\n- Endpoint labels: N next to EMPLOYEE; 1 next to DEPARTMENT.\n\nRelational Schema\n```text\nEMPLOYEE(EID, Name, Address, Birthdate, Salary, DeptId)\nDEPARTMENT(DeptId, Name, Office)\n```",
+    "visual": "EMPLOYEE (left) -- N -- Works In -- 1 -- DEPARTMENT (right). EID and DeptId are underlined in their entity ovals. In the schema, EID is underlined in EMPLOYEE and DeptId is underlined in DEPARTMENT; the employee's trailing DeptId is italic. The relationship lines are undirected; no minimum participation is printed. Attribute lines merely attach the named ovals to their rectangles.",
+    "pending": []
+  },
+  "D02_F008": {
+    "decision": "transcribe",
+    "reason": "The image contains the relationship attribute StartDate and a separate JOIN schema; its endpoint labels must not be silently corrected.",
+    "literal": "Entities and attributes:\n- EMPLOYEE: Name, Birthdate, Address, Salary, EID.\n- PROJECT: Name, Budget, Code.\n- Relationship diamond: Joins in.\n- Attribute attached to the diamond: StartDate.\n- Endpoint labels: N next to EMPLOYEE; 1 next to PROJECT.\n\nRelational Schema\n```text\nEMPLOYEE(EID, Name, Address, Birthdate, Salary)\nPROJECT(Code, Name, Budget)\nJOIN(EID, Code, StartDate)\n```",
+    "visual": "EMPLOYEE (left) -- N -- Joins in -- 1 -- PROJECT (right). StartDate is an oval above the relationship diamond, connected to the diamond rather than an entity. EID and Code are underlined in their ovals and respective entity schema lines. In the JOIN line EID and Code are visibly underlined. The underline extent beneath StartDate is not sufficiently clear to assign it key status. No direction arrow or minimum participation is printed.",
+    "pending": ["The supplied 300px image does not establish whether StartDate is also underlined in JOIN; no key status is assigned to it.", "The PROJECT endpoint visibly reads 1 while the surrounding section discusses many-to-many relationships; retained as drawn and deferred for conceptual review."]
+  },
+  "D02_F009": {
+    "decision": "transcribe",
+    "reason": "The recursive role labels and Super-EID schema field are only in the diagram.",
+    "literal": "Entity: EMPLOYEE. Attribute ovals: Name, Birthdate, Address, Salary, EID. Relationship diamond: Supervises. Role labels: supervisor (upper connection), supervisee (lower connection).\n\nRelational Schema\n```text\nEMPLOYEE(EID, Name, Address, Birthdate, Salary, Super-EID)\n```",
+    "visual": "Two separate lines leave EMPLOYEE and return through the same Supervises diamond: the upper line is labelled supervisor, the lower line supervisee. EID is underlined; Super-EID is italic in the schema. The recursive lines have no visible numeric cardinality, crow's-foot marker or arrowhead, so no minimum, maximum or FK target is inferred from the image alone.",
+    "pending": []
+  },
+  "D02_F010": {
+    "decision": "transcribe",
+    "reason": "The ternary association, relationship attributes and composite schema are not transcribed in the body.",
+    "literal": "Entities and attributes:\n- SUPPLIER: Name, Address, SID.\n- PROJECT: Name, Budget, Code.\n- PART: PartName, Colour, PartID.\n- Relationship diamond: Supply.\n- Supply attributes: Quantity, Date.\n- Endpoint letters: M at SUPPLIER, N at PROJECT, N at PART.\n\nRelational Schema\n```text\nSUPPLIER(SID, Name, Address)\nPROJECT(Code, Name, Budget)\nPART(PartID, PartName, Colour)\nSupply(SID, Code, PartID, Quantity, Date)\n```",
+    "visual": "The single Supply diamond connects left to SUPPLIER, right to PROJECT and downward to PART. Quantity and Date are ovals directly attached to Supply. SID, Code and PartID are underlined in their entity ovals and respective schema lines; SID, Code and PartID are underlined together in the Supply schema. No directional arrows or minimum-participation values are printed. M/N/N are recorded as ternary endpoint labels, without converting them into three independent binary constraints.",
+    "pending": []
+  },
+  "D02_F011": {
+    "decision": "transcribe",
+    "reason": "The complete DIRECTOR and PLAY relations are needed to inspect the source's key and referential-integrity exercise.",
+    "literal": "DIRECTOR\n\n| DIRNUM | DIRNAME | DIRDOB |\n|---|---|---|\n| 100 | J.Broadway | 01/08/39 |\n| 101 | J.Namath | 11/12/48 |\n| 102 | W.Blake | 06/15/44 |\n\nPLAY\n\n| PLAYNO | PLAYNAME | DIRNUM |\n|---|---|---|\n| 1001 | Cat on a cold bare roof | 102 |\n| 1002 | Hold the mayo, pass the bread | 101 |\n| 1003 | I never promised you coffee | 102 |\n| 1004 | Silly putty goes to Texas | 100 |\n| 1005 | See no sound, hear no sight | 101 |\n| 1006 | Starstruck in Biloxi | 102 |\n| 1007 | Stranger in parrot ice | 101 |",
+    "visual": "Two separate rectangular tables; the second table's headings and data use bold type. Red wavy spelling-check marks occur under some names, not key underlines. No PK/FK icon or relationship line is drawn; key selection and referential integrity remain questions in the parent text. The wrapped PLAYNAME in row 1002 is one cell, retained as one value. Dates and spellings are not standardized.",
+    "pending": []
+  },
+  "D02_F012": {
+    "decision": "transcribe",
+    "reason": "TRUCK, BASE and TYPE data, including a blank foreign-key candidate cell, are exclusively visual exercise evidence.",
+    "literal": "TRUCK\n\n| TNUM | BASENUM | TYPENUM | TMILES | TBOUGHT | TSERIAL |\n|---|---|---|---|---|---|\n| 1001 | 501 | 1 | 5900.2 | 11/08/90 | aa-125 |\n| 1002 | 502 | 2 | 64523.9 | 11/08/90 | ac-213 |\n| 1003 | 501 | 2 | 32116.0 | 09/29/91 | ac-215 |\n| 1004 |  | 2 | 3256.9 | 01/14/92 | ac-315 |\n\nBASE\n\n| BASENUM | BASECITY | BASESTATE | BASEPHON | BASEMGR |\n|---|---|---|---|---|\n| 501 | Dallas | TX | 893-9870 | J. Jones |\n| 502 | New York | NY | 234-7689 | K. Lee |\n\nTYPE\n\n| TYPENUM | TYPEDESC |\n|---|---|\n| 1 | single box, double axle |\n| 2 | tandem trailer, single axle |",
+    "visual": "The BASENUM cell in TRUCK row TNUM 1004 is visually blank. An empty Markdown cell preserves that blank; the image does not label it NULL. Other TRUCK columns and the BASE/TYPE data are bold, while the TRUCK TNUM values are regular weight. There are no explicit PK/FK icons or connecting lines; the supplement does not answer the source exercise by inferring keys.",
+    "pending": []
+  },
+  "D02_F013": {
+    "decision": "transcribe",
+    "reason": "The customer/account/order rows are necessary evidence for the original key and redundancy exercise.",
+    "literal": "Customer\n\n| CustID | CustName | AccntNo. |\n|---|---|---|\n| 100 | Joe Smith | 010839 |\n| 101 | Andy Blake | 111248 |\n| 102 | Sue Brown | 061544 |\n\nBookOrders\n\n| OrderID | Title | CustID | Price |\n|---|---|---|---|\n| 1001 | The Dark Tower | 102 | 12.00 |\n| 1002 | Incubus Dreams | 101 | 19.99 |\n| 1003 | Song of Susannah | 102 | 23.00 |\n| 1004 | The Time Traveler's Wife | 100 | 21.00 |\n| 1005 | The Dark Tower | 101 | 12.00 |\n| 1006 | Tanequil | 102 | 15.00 |\n| 1007 | Song of Susannah | 101 | 23.00 |",
+    "visual": "Two tables, without relationship lines or PK/FK symbols. BookOrders uses bold type in OrderID, CustID and Price values. Leading zeros in AccntNo. and two decimal places in Price are retained as displayed. The supplement makes no candidate-key or redundancy conclusions.",
+    "pending": []
+  },
+  "D02_F014": {
+    "decision": "transcribe",
+    "reason": "The student attribute list and the single explicit key icon are missing from the filename alt.",
+    "literal": "student\n\n| Attribute, in displayed order | Visible marker |\n|---|---|\n| student_id | yellow key icon |\n| student_fname | |\n| student_lname | |\n| tel_no | |\n| fax_no | |\n| gender | |\n| date_of_birth | |\n| student_desc | |\n| preferred_language | |\n| passport_program | |\n| company_id | |",
+    "visual": "One schema box. A yellow key appears only beside student_id. Blank marker cells mean no icon is shown, not a declaration that the attribute cannot be a key. No relationships, data values, types or nullability marks are shown.",
+    "pending": []
+  },
+  "D02_F015": {
+    "decision": "transcribe",
+    "reason": "The school ERD contains five complete schemas and relationship endpoints absent from the body.",
+    "literal": "```text\ninstructor(instructor_id [key], instructor_name, salary, commission, mentor_id, date_hired)\ncourse(course_id [key], title, duration, cost, subject_id)\noffering(offering_id [key], course_id, instructor_id, site_id, start_date, max_no_students)\nattendance(offering_id [key], student_id [key], evaluation, amount_paid)\nstudent(student_id [key], student_fname, student_lname, tel_no, fax_no, gender, date_of_birth, student_desc, preferred_language, passport_program, company_id)\n```",
+    "visual": "Yellow keys are beside the attributes marked [key] above. Four undirected connectors are visible: instructor -- offering (key symbol at instructor, infinity symbol at offering); course -- offering (key at course, infinity at offering); offering -- attendance (key at offering, infinity at attendance); student -- attendance (key at student, infinity at attendance). The lower parts of the infinity glyphs resemble small circles; these are recorded as the diagram's key/infinity notation rather than invented minimum-participation circles. The drawing gives one/many endpoints but no readable minimum-participation specification. No connector is drawn for mentor_id, site_id, subject_id, company_id or passport_program. [key] is transcription notation for a visible icon, not text printed after the attribute.",
+    "pending": []
+  },
+  "D03_F002": {
+    "decision": "transcribe",
+    "reason": "Teacher/Class key membership and the locations of endpoint markers are only in the diagram.",
+    "literal": "| Table | Attribute | Printed marker |\n|---|---|---|\n| Teacher | TeacherID | PK |\n| Teacher | Lname | |\n| Teacher | Fname | |\n| Class | ClassID | PK |\n| Class | TeacherID | PK,FK1 |\n| Class | StartDate | PK |\n\nAnnotation labels: Connectivity; Cardinality.",
+    "visual": "Teacher is left, Class right, joined by a solid horizontal line. TeacherID in Teacher and all three Class attributes are underlined. The Teacher end has two vertical bars; the Class end has a circle and crow's foot. The Connectivity annotation arrows point to the outer Teacher bar and Class crow's foot; the Cardinality arrows point to the inner Teacher bar and Class circle. In the source's displayed endpoint notation: one Teacher per Class; zero to many Class occurrences per Teacher. The arrows are explanatory callouts, not data-flow directions.",
+    "pending": []
+  },
+  "D03_F005": {
+    "decision": "transcribe",
+    "reason": "The image contrasts FK membership in the child key and optionality in two separate panels.",
+    "literal": "Upper panel: Non-Identifying Relationship\n```text\ncustomer: CustID [PK, underlined]; LName; FName\nOrder: OrderID [PK, underlined]; CustID [FK1]; OrdDate\n```\n\nLower panel: Identifying Relationship\n```text\ncustomer: CustID [PK, underlined]; LName; FName\nOrder: OrderID [PK, underlined]; CustID [PK,FK1, underlined]; OrdDate\n```",
+    "visual": "Upper connector is dashed: bar plus circle at customer (zero/one) and circle plus crow's foot at Order (zero/many). Lower connector is solid: two bars at customer (one/one) and circle plus crow's foot at Order (zero/many). Thus CustID is drawn outside the Order PK area above and inside it below. Lines are undirected, and bracketed descriptions represent visible marks rather than added SQL constraints.",
+    "pending": []
+  },
+  "D03_F007": {
+    "decision": "transcribe",
+    "reason": "The figure adds explicit child-key membership and four embedded relationship statements.",
+    "literal": "```text\ncustomer: CustID [PK, underlined]; LName; FName\nOrder: OrderID [PK, underlined]; CustID [PK,FK1, underlined]; OrdDate\n```\n\nEmbedded statements (line wraps normalized):\n- One order record must be associated with a maximum of one Customer\n- An order record must have a valid customer and it must NOT be Null\n- A customer can have many orders\n- A customer does not need to have an order to be a customer",
+    "visual": "A solid line has two bars at customer and a circle plus crow's foot at Order. The two left callout arrows identify the maximum-one bar and mandatory-one bar; the two right callout arrows identify the crow's foot and zero circle. Each Order is shown with exactly one customer; customer participation toward Order is zero to many. These are source statements and visible marks, without adding a new rule.",
+    "pending": []
+  },
+  "D03_F009": {
+    "decision": "transcribe",
+    "reason": "The optional spouse example's fields and embedded minimum/maximum statements are absent from the surrounding text.",
+    "literal": "```text\nEmployee: EmpID [PK, underlined]; LName; Fname\nSpouse: EmpID [PK,FK1, underlined]; SpouseLName; SpouseFname\n```\n\nEmbedded statements (line wraps normalized):\n- One Spouse record must be associated with a maximum of one Employee\n- One Spouse record must be associated with a minimum of one Employee.\n- An employee is associated with a maximum of one spouse.\n- An employee in the Employee table does not have to appear in the Spouse table.",
+    "visual": "A solid connector joins Employee to Spouse, with two bars at Employee and a circle plus bar at Spouse. Every displayed Spouse occurrence has exactly one Employee; the Employee-to-Spouse endpoint is zero or one. Callout arrows identify the maximum and minimum components separately. The optional endpoint is at Spouse, not a declaration that the pictured PK/FK EmpID is nullable.",
+    "pending": []
+  },
+  "D03_F011": {
+    "decision": "transcribe",
+    "reason": "The mandatory spouse variant differs from the optional variant and is not described fully in the body.",
+    "literal": "```text\nEmployee: EmpID [PK, underlined]; LName; Fname\nSpouse: EmpID [PK,FK1, underlined]; SpouseLName; SpouseFname\n```\n\nEmbedded statements (line wraps normalized):\n- A spouse record must contain a maximum of 1 valid Employee ID.\n- A spouse record must contain a minimum of 1 valid Employee ID.\n- An employee is associated with a maximum of one spouse.\n- An employee in the Employee table must appear in the Spouse table at least once.",
+    "visual": "A solid line has two bars at both Employee and Spouse. The two arrows at each end distinguish minimum-one from maximum-one. The image therefore depicts mandatory one-to-one endpoints; unlike Figure 9.9, there is no optionality circle.",
+    "pending": []
+  },
+  "D03_F013": {
+    "decision": "transcribe",
+    "reason": "The mandatory order-detail diagram adds a composite child key and explicit minimum-one participation.",
+    "literal": "```text\nOrder: OrderID [PK, underlined]; CustID; OrdDate\nOrderDetail: OrderID [PK,FK1, underlined]; ProductID [PK, underlined]; Qty; Price\n```\n\nEmbedded statements (line wraps normalized):\n- One order detail record must be associated with a maximum of one Order.\n- An Order Detail record must have a valid OrderID and it must NOT be null.\n- An order contains many products.\n- An order must have at least 1 product",
+    "visual": "The solid connector has two bars beside Order and a bar plus crow's foot beside OrderDetail. The left endpoint is exactly one; the right endpoint is one to many. Callout arrows point to each min/max component. OrderID and ProductID occupy the OrderDetail PK area, but only OrderID has an FK1 marker; no FK target for ProductID is drawn.",
+    "pending": []
+  },
+  "D03_F016": {
+    "decision": "transcribe",
+    "reason": "The isolated optional Customer/Order schema needs explicit key and endpoint transcription.",
+    "literal": "```text\ncustomer: CustID [PK, underlined]; LName; FName\nOrder: OrderID [PK, underlined]; CustID [FK1]; OrdDate\n```",
+    "visual": "A dashed line connects customer (left) to Order (right). At customer the outer bar and inner circle show zero or one; at Order the inner circle and outer crow's foot show zero to many. Order.CustID is printed outside the PK area. The diagram is the same schema pattern as the upper panel of Figure 9.5, retained here because it is a separate cited occurrence with its own parent context. No data-flow direction is shown.",
+    "pending": []
+  },
+  "D03_F017": {
+    "decision": "transcribe",
+    "reason": "The text lists the schemas but the explicit 1/infinity connector placements are visual-only.",
+    "literal": "```text\ntblLevels(Level [key], ClassName)\ntblPool(Pool [key], PoolName, Location)\ntblStaff(StaffID [key], FirstName, MiddleInitial, LastName, Suffix, Salaried, PayAmount)\ntblClasses(LessonIndex [key], Level, SectionID, Semester, Days, Time, Pool, Instructor, Limit, Enrolled, Price)\ntblEnrollment(LessonIndex [key], SID [key], Status, Charged, AmountPaid, DateEnrolled)\ntblStudents(SID [key], FirstName, MiddleInitial, LastName, Suffix, Birthday, LocalStreet, LocalCity, LocalPostalCode, LocalPhone)\n```",
+    "visual": "Five undirected connectors carry printed 1 and infinity marks: tblLevels (1) -- tblClasses (infinity); tblPool (1) -- tblClasses (infinity); tblStaff (1) -- tblClasses (infinity); tblClasses (1) -- tblEnrollment (infinity); tblStudents (1) -- tblEnrollment (infinity). Yellow key icons are transcribed as [key]. The diagram does not print minimum-participation values or FK attribute-to-attribute endpoints; the attribute/type/FK definitions and proposed business rules in the parent text are separate evidence. In particular, no optionality is invented from the 1/infinity glyphs and no exercise answer is generated.",
+    "pending": []
+  },
+  "D04_F001": {
+    "decision": "transcribe",
+    "reason": "Exact table values and case are needed to inspect the functional-dependency examples.",
+    "literal": "Table R\n\n| A | B | C | D | E |\n|---|---|---|---|---|\n| a1 | b1 | c1 | d1 | e1 |\n| a2 | b1 | C2 | d2 | e1 |\n| a3 | b2 | C1 | d1 | e1 |\n| a4 | b2 | C2 | d2 | e1 |\n| a5 | b3 | C3 | d1 | e1 |",
+    "visual": "Five data rows, five attribute columns and the caption 'Table R' below. Letter case in C is preserved as visible: lower-case c1 in the first data row and upper-case C in the other four. There are no drawn arrows, PK labels or underlines in this image. Dependencies asserted in the parent prose are not inferred afresh from this finite sample.",
+    "pending": ["The parent prose first states C → D and subsequently says C does not determine D. The transcription does not reconcile these statements; conceptual review is deferred."]
+  },
+  "D04_F007": {
+    "decision": "transcribe",
+    "reason": "The diagram's complete lower-arrow targets and labels add detail beyond the prose list.",
+    "literal": "Attribute boxes, left to right: ProjectNo; ProjName; EmpNo; EmpName; DeptNo; DeptName; HrsWork.\n\nPrinted labels: Partial Dependency (under ProjectNo/ProjName); Partial Dependency (under the EmpNo branch); Transitive Dependency (under DeptNo/DeptName).",
+    "visual": "Upper black lines join ProjectNo and EmpNo as a grouped origin and have downward arrowheads into ProjName, EmpName, DeptNo, DeptName and HrsWork. Lower left line: ProjectNo → ProjName. Lower long line: EmpNo → EmpName, DeptNo, DeptName. A shorter lower line: DeptNo → DeptName. These arrow directions and target boxes are the observed drawing; ProjectNo and EmpNo are grouped by a bracket rather than printed PK labels. The parent prose lists ProjectNo, EmpNo → HrsWork among Partial Dependencies; that original placement is not corrected in this supplement.",
+    "pending": ["The diagram/prose grouping of full and partial dependencies is retained for later conceptual review, rather than normalized into a corrected teaching explanation."]
+  },
+  "D05_F001": {
+    "decision": "transcribe",
+    "reason": "The colored dependency arrows and compact attribute names are not fully enumerated in the parent text.",
+    "literal": "Attribute boxes, left to right: StudNo; CourseNo; CourseName; InstNo; InstName; InstLoc; Grade.\n\nPrinted arrow-group labels: PD; TD; FD.",
+    "visual": "The upper black bracket groups StudNo and CourseNo; its downward arrowheads point to CourseName, InstNo, InstName, InstLoc and Grade. The lower orange FD line groups StudNo and CourseNo and points upward into Grade: (StudNo, CourseNo) → Grade. The blue PD line starts below CourseNo and points upward into CourseName, InstNo, InstName and InstLoc: CourseNo → CourseName, InstNo, InstName, InstLoc. The green TD line starts below InstNo and points upward into InstName and InstLoc: InstNo → InstName, InstLoc. These are diagram arrows, not newly deduced dependencies. The parent text defines PD as partial dependency, TD as transitive dependency and, specifically in this figure, FD as full dependency; those expansions are source context rather than printed words inside the picture.",
+    "pending": []
+  },
+  "D05_F002": {
+    "decision": "transcribe",
+    "reason": "The original exercise's dependency arrows exist only in this figure.",
+    "literal": "Attribute boxes, left to right: C1; C2; C3; C4; C5. C1 and C3 are underlined.",
+    "visual": "Upper brown lines connect the tops of C1 and C3 into the shared dependency branch, with downward arrowheads at C2, C4 and C5: (C1, C3) → C2, C4, C5. Lower left brown line runs from C1 to an upward arrowhead at C2: C1 → C2. Lower right brown line runs from C4 to an upward arrowhead at C5: C4 → C5. The underlined boxes C1/C3 have orange fill; C2/C4/C5 have white fill and blue outlines. The diagram does not print the words partial, transitive, primary key or a normal-form answer; none are supplied as a solution.",
+    "pending": []
+  },
+  "D05_F003": {
+    "decision": "transcribe",
+    "reason": "The student/course sample values needed for the normalization exercise are only in the image.",
+    "literal": "| Attribute Name | Sample Value | Sample Value | Sample Value |\n|---|---|---|---|\n| StudentID | 1 | 2 | 3 |\n| StudentName | John Smith | Sandy Law | Sue Rogers |\n| CourseID | 2 | 2 | 3 |\n| CourseName | Programming Level 1 | Programming Level 1 | Business |\n| Grade | 75% | 61% | 81% |\n| CourseDate | Jan 5th, 2014 | Jan 5th, 2014 | Jan 7th, 2014 |",
+    "visual": "The three headers all literally read Sample Value; column identities were not invented. The image arranges attributes as rows and sample records as columns, and that orientation is preserved. The suffix th in the dates is superscript in the image. No key markers or arrows are shown; this supplement does not derive a dependency diagram or normalize the table.",
+    "pending": []
+  },
+  "D05_F004": {
+    "decision": "transcribe",
+    "reason": "The staffing/hotel data rows are necessary evidence for the source's update-anomaly exercise.",
+    "literal": "| NIN | ContractNo | Hours | eName | hNo | hLoc |\n|---|---|---|---|---|---|\n| 1135 | C1024 | 16 | Smith J. | H25 | East Killbride |\n| 1057 | C1024 | 24 | Hocine D. | H25 | East Killbride |\n| 1068 | C1025 | 28 | White T. | H4 | Glasgow |\n| 1135 | C1025 | 15 | Smith J. | H4 | Glasgow |",
+    "visual": "Four data rows under six column headings. 'East Killbride' is retained as printed, without correcting the place-name spelling. There are no PK underlines, key icons or dependency arrows. The parent text states that NIN is unique for every staff member; no new functional dependencies or exercise answers are inferred here.",
+    "pending": []
+  },
+  "D09_F003": {
+    "decision": "transcribe",
+    "reason": "The actual record values and arrows relating names, tuples and attribute values are missing from the alt text.",
+    "literal": "| Record ID | PubDate | Author | Title |\n|---|---|---|---|\n| 1 | 26/07/1968 | B. Pitt | Rights and Wrongs online |\n| 2 | 3/5/2000 | A. Jolie | Networking for Change |\n| 3 | 27/02/1971 | J. Carter | The Myth of Cyber Crimes |\n| [obscured by arrow] | 15/09/[year partly obscured] | [initial unclear]. Wheaton | Connecting the disconnected |\n\nAnnotation labels: Attribute Name; Rows (tuples); Attribute Values.",
+    "visual": "An Attribute Name arrow points down to the Record ID column heading. Three arrows from the right-hand label Rows (tuples) point left toward complete table rows. Four arrows from the lower Attribute Values label point upward to individual cells in the final row. Those arrowheads overlap the final row's ID, date and author, so the ambiguous characters are explicitly marked instead of reconstructed from a presumed sequence. The table has four displayed data rows; the source's four-column layout is preserved.",
+    "pending": ["Final-row Record ID is obscured by an annotation arrow; no numeric value is asserted.", "Final-row year and author initial cannot be confirmed at the original 300px resolution. The larger same-stem upload candidate returned HTTP 404; no replacement or guessed characters were used."]
+  },
+  "D09_F005": {
+    "decision": "transcribe",
+    "reason": "The EMPLOYEE exercise table supplies record and job-code values absent from the body.",
+    "literal": "EMPLOYEE\n\n| EMPID | EMPLNAME | EMPINIT | EMPFNAME | EMPJOBCODE |\n|---|---|---|---|---|\n| 123455 | Friedman | A. | Robert | 12 |\n| 123456 | Olanski | D. | Delbert | 18 |\n| 123457 | Fontein | G. | Juliette | 15 |\n| 123458 | Cruazona | X. | Maria | 18 |",
+    "visual": "Five columns and four data rows. The red wavy marks beneath some surnames are spelling-check marks, not key underlines. No PK/FK labels are drawn and no relationship line appears. The source exercise's domain, count and component questions are not answered here.",
+    "pending": []
+  }
+}

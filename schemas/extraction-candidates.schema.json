@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Per-chunk extraction candidates 0.1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["chunk_id", "concepts", "relations", "issues"],
+  "properties": {
+    "chunk_id": {"type": "string", "minLength": 1},
+    "concepts": {"type": "array", "items": {"$ref": "#/$defs/concept"}},
+    "relations": {"type": "array", "items": {"$ref": "#/$defs/relation"}},
+    "issues": {"type": "array", "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "evidence": {"type": "array", "minItems": 1, "items": {
+      "type": "object", "additionalProperties": false,
+      "required": ["chunk_id", "quote"],
+      "properties": {"chunk_id": {"type": "string", "minLength": 1}, "quote": {"type": "string", "minLength": 1}}
+    }},
+    "concept": {
+      "type": "object", "additionalProperties": false,
+      "required": ["local_id", "existing_concept_id", "canonical_name", "name_pt", "aliases", "category", "description_pt", "evidence", "review_status", "review_note"],
+      "properties": {
+        "local_id": {"type": "string", "pattern": "^L[0-9]+$"},
+        "existing_concept_id": {"type": ["string", "null"]},
+        "canonical_name": {"type": "string", "minLength": 1},
+        "name_pt": {"type": "string", "minLength": 1},
+        "aliases": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "category": {"enum": ["general", "structure", "constraint", "operation", "normalization"]},
+        "description_pt": {"type": "string", "minLength": 1},
+        "evidence": {"$ref": "#/$defs/evidence"},
+        "review_status": {"enum": ["pending", "flagged"]},
+        "review_note": {"type": "string"}
+      }
+    },
+    "relation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_local_id", "type", "target_local_id", "assertion_kind", "evidence", "review_status", "review_note"],
+      "properties": {
+        "source_local_id": {"type": "string", "pattern": "^L[0-9]+$"},
+        "target_local_id": {"type": "string", "pattern": "^L[0-9]+$"},
+        "type": {"enum": ["IS_A", "SUPPORTS", "REQUIRES", "GOVERNS", "TYPICALLY_USED_IN", "COMBINES", "HAS_FORM", "PRESERVES"]},
+        "assertion_kind": {"const": "explicit"},
+        "evidence": {"$ref": "#/$defs/evidence"},
+        "review_status": {"enum": ["pending", "flagged"]},
+        "review_note": {"type": "string"}
+      }
+    }
+  }
+}

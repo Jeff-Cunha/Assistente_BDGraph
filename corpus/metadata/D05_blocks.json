@@ -1,0 +1,398 @@
+[
+  {
+    "kind": "h1",
+    "text": "# Chapter 12 Normalization"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Adrienne Watt"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Normalization should be part of the database design process. However, it is difficult to separate the normalization process from the ER modelling process so the two techniques should be used concurrently."
+  },
+  {
+    "kind": "paragraph",
+    "text": "Use an entity relation diagram (ERD) to provide the big picture, or macro view, of an organization’s data requirements and operations. This is created through an iterative process that involves identifying relevant entities, their attributes and their relationships."
+  },
+  {
+    "kind": "paragraph",
+    "text": "Normalization procedure focuses on characteristics of specific entities and represents the micro view of entities within the ERD."
+  },
+  {
+    "kind": "h2",
+    "text": "## What Is Normalization?"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<em>Normalization</em> is the branch of relational theory that provides design insights. It is the process of determining how much redundancy exists in a table. The goals of normalization are to:"
+  },
+  {
+    "kind": "list",
+    "text": "- Be able to characterize the level of redundancy in a relational schema\n\n- Provide mechanisms for transforming schemas in order to remove redundancy"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Normalization theory draws heavily on the theory of functional dependencies. Normalization theory defines six normal forms (NF). Each normal form involves a set of dependency properties that a schema must satisfy and each normal form gives guarantees about the presence and/or absence of update anomalies. This means that higher normal forms have less redundancy, and as a result, fewer update problems."
+  },
+  {
+    "kind": "h2",
+    "text": "## Normal Forms"
+  },
+  {
+    "kind": "paragraph",
+    "text": "All the tables in any database can be in one of the normal forms we will discuss next. Ideally we only want minimal redundancy for PK to FK. Everything else should be derived from other tables. There are six normal forms, but we will only look at the first four, which are:"
+  },
+  {
+    "kind": "list",
+    "text": "- First normal form (1NF)\n\n- Second normal form (2NF)\n\n- Third normal form (3NF)\n\n- Boyce-Codd normal form (BCNF)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "BCNF is rarely used."
+  },
+  {
+    "kind": "h2",
+    "text": "## First Normal Form (1NF)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "In the <em>first normal form</em>, only single values are permitted at the intersection of each row and column; hence, there are no repeating groups."
+  },
+  {
+    "kind": "paragraph",
+    "text": "To normalize a relation that contains a repeating group, remove the repeating group and form two new relations."
+  },
+  {
+    "kind": "paragraph",
+    "text": "The PK of the new relation is a combination of the PK of the original relation plus an attribute from the newly created relation for unique identification."
+  },
+  {
+    "kind": "h3",
+    "text": "### Process for 1NF"
+  },
+  {
+    "kind": "paragraph",
+    "text": "We will use the <strong>Student\\_Grade\\_Report </strong>table below, from a School database, as our example to explain the process for 1NF."
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>Student\\_Grade\\_Report </strong>(StudentNo, StudentName, Major, CourseNo, CourseName, InstructorNo, InstructorName, InstructorLocation, Grade)"
+  },
+  {
+    "kind": "list",
+    "text": "- In the Student Grade Report table, the repeating group is the course information. A student can take many courses.\n\n- Remove the repeating group. In this case, it’s the course information for each student.\n\n- Identify the PK for your new table.\n\n- The PK must uniquely identify the attribute value (StudentNo and CourseNo).\n\n- After removing all the attributes related to the course and student, you are left with the student course table (<strong>StudentCourse</strong>).\n\n- The Student table (<strong>Student</strong>) is now in first normal form with the repeating group removed.\n\n- The two new tables are shown below."
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>Student</strong> (StudentNo, StudentName, Major)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>StudentCourse</strong> (StudentNo, CourseNo, CourseName, InstructorNo, InstructorName, InstructorLocation, Grade)"
+  },
+  {
+    "kind": "h3",
+    "text": "### How to update 1NF anomalies"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>StudentCourse</strong> (StudentNo, CourseNo, CourseName, InstructorNo, InstructorName, InstructorLocation, Grade)"
+  },
+  {
+    "kind": "list",
+    "text": "- To add a new course, we need a student.\n\n- When course information needs to be updated, we may have inconsistencies.\n\n- To delete a <em>student,</em> we might also delete critical information about a course."
+  },
+  {
+    "kind": "h2",
+    "text": "## Second Normal Form (2NF)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "For the <em>second normal form</em>, the relation must first be in 1NF. The relation is automatically in 2NF if, and only if, the PK comprises a single attribute."
+  },
+  {
+    "kind": "paragraph",
+    "text": "If the relation has a composite PK, then each non-key attribute must be fully dependent on the entire PK and not on a subset of the PK (i.e., there must be no partial dependency or augmentation)."
+  },
+  {
+    "kind": "h3",
+    "text": "### Process for 2NF"
+  },
+  {
+    "kind": "paragraph",
+    "text": "To move to 2NF, a table must first be in 1NF."
+  },
+  {
+    "kind": "list",
+    "text": "- The Student table is already in 2NF because it has a single-column PK.\n\n- When examining the Student Course table, we see that not all the attributes are fully dependent on the PK; specifically, all course information. The only attribute that is fully dependent is grade.\n\n- Identify the new table that contains the course information.\n\n- Identify the PK for the new table.\n\n- The three new tables are shown below."
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>Student</strong> (StudentNo, StudentName, Major)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>CourseGrade</strong> (StudentNo, CourseNo, Grade)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>CourseInstructor </strong>(CourseNo, CourseName, InstructorNo, InstructorName, InstructorLocation)"
+  },
+  {
+    "kind": "h3",
+    "text": "### How to update 2NF anomalies"
+  },
+  {
+    "kind": "list",
+    "text": "- When adding a new instructor, we need a course.\n\n- Updating course information could lead to inconsistencies for instructor information.\n\n- Deleting a course may also delete instructor information."
+  },
+  {
+    "kind": "h2",
+    "text": "## Third Normal Form (3NF)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "To be in <em>third normal form</em>, the relation must be in second normal form. Also all transitive dependencies must be removed; a non-key attribute may not be functionally dependent on another non-key attribute."
+  },
+  {
+    "kind": "h3",
+    "text": "### Process for 3NF"
+  },
+  {
+    "kind": "list",
+    "text": "- Eliminate all dependent attributes in transitive relationship(s) from each of the tables that have a transitive relationship.\n\n- Create new table(s) with removed dependency.\n\n- Check new table(s) as well as table(s) modified to make sure that each table has a determinant and that no table contains inappropriate dependencies.\n\n- See the four new tables below."
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>Student</strong> (StudentNo, StudentName, Major)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>CourseGrade</strong> (StudentNo, CourseNo, Grade)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>Course</strong> (CourseNo, CourseName, InstructorNo)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>Instructor</strong> (InstructorNo, InstructorName, InstructorLocation)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "At this stage, there should be no anomalies in third normal form. Let’s look at the dependency diagram (Figure 12.1) for this example. The first step is to remove repeating groups, as discussed above."
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>Student</strong> (StudentNo, StudentName, Major)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>StudentCourse</strong> (StudentNo, CourseNo, CourseName, InstructorNo, InstructorName, InstructorLocation, Grade)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "To recap the normalization process for the School database, review the dependencies shown in Figure 12.1."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Ch-11-Dependency-Diagram-School-300x89](../raw/assets/D05_F001.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Dependency-Diagram-School-300x89.jpg)\n\nFigure 12.1 Dependency diagram, by A. Watt."
+  },
+  {
+    "kind": "paragraph",
+    "text": "The abbreviations used in Figure 12.1 are as follows:"
+  },
+  {
+    "kind": "list",
+    "text": "- PD: partial dependency\n\n- TD: transitive dependency\n\n- FD: full dependency (Note: FD typically stands for <strong>functional</strong> dependency. Using FD as an abbreviation for full dependency is only used in Figure 12.1.)"
+  },
+  {
+    "kind": "h2",
+    "text": "## Boyce-Codd Normal Form (BCNF)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "When a table has more than one candidate key, anomalies may result even though the relation is in 3NF. <em>Boyce-Codd normal form</em> is a special case of 3NF. A relation is in BCNF if, and only if, every determinant is a candidate key."
+  },
+  {
+    "kind": "h3",
+    "text": "### BCNF Example 1"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Consider the following table (<strong>St\\_Maj\\_Adv</strong>)."
+  },
+  {
+    "kind": "table",
+    "text": "<table cellpadding=\"0\" style=\"height: 126px; width: 202px; border-spacing: 0px;\">\n<tbody>\n<tr>\n<td valign=\"top\"><strong>Student_id</strong></td>\n<td valign=\"top\"><strong>Major</strong></td>\n<td valign=\"top\"><strong>Advisor</strong></td>\n</tr>\n<tr>\n<td valign=\"top\">111</td>\n<td valign=\"top\">Physics</td>\n<td valign=\"top\">Smith</td>\n</tr>\n<tr>\n<td valign=\"top\">111</td>\n<td style=\"text-align: left;\" valign=\"top\">Music</td>\n<td valign=\"top\">Chan</td>\n</tr>\n<tr>\n<td valign=\"top\">320</td>\n<td valign=\"top\">Math</td>\n<td valign=\"top\">Dobbs</td>\n</tr>\n<tr>\n<td valign=\"top\">671</td>\n<td valign=\"top\">Physics</td>\n<td valign=\"top\">White</td>\n</tr>\n<tr>\n<td valign=\"top\">803</td>\n<td valign=\"top\">Physics</td>\n<td valign=\"top\">Smith</td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+    "kind": "paragraph",
+    "text": "The <em>semantic rules</em> (business rules applied to the database) for this table are:"
+  },
+  {
+    "kind": "list",
+    "text": "1. Each Student may major in several subjects.\n\n2. For each Major, a given Student has only one Advisor.\n\n3. Each Major has several Advisors.\n\n4. Each Advisor advises only one Major.\n\n5. Each Advisor advises several Students in one Major."
+  },
+  {
+    "kind": "paragraph",
+    "text": "The functional dependencies for this table are listed below. The first one is a candidate key; the second is not."
+  },
+  {
+    "kind": "list",
+    "text": "1. Student\\_id, Major ——&gt; Advisor\n\n2. Advisor ——&gt; Major"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Anomalies for this table include:"
+  },
+  {
+    "kind": "list",
+    "text": "1. Delete – student deletes advisor info\n\n2. Insert – a new advisor needs a student\n\n3. Update – inconsistencies"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>Note</strong>: No single attribute is a candidate key."
+  },
+  {
+    "kind": "paragraph",
+    "text": "PK can be Student\\_id, Major or Student\\_id, Advisor<strong>.</strong>"
+  },
+  {
+    "kind": "paragraph",
+    "text": "To reduce the <strong>St\\_Maj\\_Adv</strong> relation to BCNF, you create two new tables:"
+  },
+  {
+    "kind": "list",
+    "text": "1. <strong>St\\_Adv</strong> (Student\\_id, Advisor)\n\n2. <strong>Adv\\_Maj</strong> (Advisor, Major)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>St\\_Adv </strong>table <strong> </strong>"
+  },
+  {
+    "kind": "table",
+    "text": "<table cellpadding=\"0\" style=\"border-spacing: 0px;\">\n<tbody>\n<tr>\n<td valign=\"top\"><strong>Student_id</strong></td>\n<td valign=\"top\"><strong>Advisor</strong></td>\n</tr>\n<tr>\n<td valign=\"top\">111</td>\n<td valign=\"top\">Smith</td>\n</tr>\n<tr>\n<td valign=\"top\">111</td>\n<td valign=\"top\">Chan</td>\n</tr>\n<tr>\n<td valign=\"top\">320</td>\n<td valign=\"top\">Dobbs</td>\n</tr>\n<tr>\n<td valign=\"top\">671</td>\n<td valign=\"top\">White</td>\n</tr>\n<tr>\n<td valign=\"top\">803</td>\n<td valign=\"top\">Smith</td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>Adv\\_Maj </strong>table<strong>  \n </strong>"
+  },
+  {
+    "kind": "table",
+    "text": "<table cellpadding=\"0\" style=\"border-spacing: 0px;\">\n<tbody>\n<tr>\n<td valign=\"top\"><strong>Advisor</strong></td>\n<td valign=\"top\"><strong>Major</strong></td>\n</tr>\n<tr>\n<td valign=\"top\">Smith</td>\n<td valign=\"top\">Physics</td>\n</tr>\n<tr>\n<td valign=\"top\">Chan</td>\n<td valign=\"top\">Music</td>\n</tr>\n<tr>\n<td valign=\"top\">Dobbs</td>\n<td valign=\"top\">Math</td>\n</tr>\n<tr>\n<td valign=\"top\">White</td>\n<td valign=\"top\">Physics</td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+    "kind": "h3",
+    "text": "### BCNF Example 2"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Consider the following table (<strong>Client\\_Interview)</strong>."
+  },
+  {
+    "kind": "table",
+    "text": "<table cellpadding=\"0\" style=\"border-spacing: 0px;\">\n<tbody>\n<tr>\n<td valign=\"top\"><strong>ClientNo</strong></td>\n<td valign=\"top\"><strong>InterviewDate</strong></td>\n<td valign=\"top\"><strong>InterviewTime</strong></td>\n<td valign=\"top\"><strong>StaffNo</strong></td>\n<td valign=\"top\"><strong>RoomNo</strong></td>\n</tr>\n<tr>\n<td valign=\"top\">CR76</td>\n<td valign=\"top\">13-May-02</td>\n<td valign=\"top\">10.30</td>\n<td valign=\"top\">SG5</td>\n<td valign=\"top\">G101</td>\n</tr>\n<tr>\n<td valign=\"top\">CR56</td>\n<td valign=\"top\">13-May-02</td>\n<td valign=\"top\">12.00</td>\n<td valign=\"top\">SG5</td>\n<td valign=\"top\">G101</td>\n</tr>\n<tr>\n<td valign=\"top\">CR74</td>\n<td valign=\"top\">13-May-02</td>\n<td valign=\"top\">12.00</td>\n<td valign=\"top\">SG37</td>\n<td valign=\"top\">G102</td>\n</tr>\n<tr>\n<td valign=\"top\">CR56</td>\n<td valign=\"top\">1-July-02</td>\n<td valign=\"top\">10.30</td>\n<td valign=\"top\">SG5</td>\n<td valign=\"top\">G102</td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+    "kind": "paragraph",
+    "text": "FD1 – ClientNo, InterviewDate –&gt; InterviewTime, StaffNo, RoomNo (PK)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "FD2 – staffNo, interviewDate, interviewTime –&gt; clientNO (candidate key: CK)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "FD3 – roomNo, interviewDate, interviewTime –&gt; staffNo, clientNo (CK)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "FD4 – staffNo, interviewDate –&gt; roomNo"
+  },
+  {
+    "kind": "paragraph",
+    "text": "A relation is in BCNF if, and only if, every determinant is a candidate key. We need to create a table that incorporates the first three FDs (<strong>Client\\_Interview2 </strong>table) and another table (<strong>StaffRoom</strong> table) for the fourth FD."
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>Client\\_Interview2 </strong>table"
+  },
+  {
+    "kind": "table",
+    "text": "<table cellpadding=\"0\" style=\"border-spacing: 0px;\">\n<tbody>\n<tr>\n<td valign=\"top\"><strong>ClientNo</strong></td>\n<td valign=\"top\"><strong>InterviewDate</strong></td>\n<td valign=\"top\"><strong>InterViewTime</strong></td>\n<td valign=\"top\"><strong>StaffNo</strong></td>\n</tr>\n<tr>\n<td valign=\"top\">CR76</td>\n<td valign=\"top\">13-May-02</td>\n<td valign=\"top\">10.30</td>\n<td valign=\"top\">SG5</td>\n</tr>\n<tr>\n<td valign=\"top\">CR56</td>\n<td valign=\"top\">13-May-02</td>\n<td valign=\"top\">12.00</td>\n<td valign=\"top\">SG5</td>\n</tr>\n<tr>\n<td valign=\"top\">CR74</td>\n<td valign=\"top\">13-May-02</td>\n<td valign=\"top\">12.00</td>\n<td valign=\"top\">SG37</td>\n</tr>\n<tr>\n<td valign=\"top\">CR56</td>\n<td valign=\"top\">1-July-02</td>\n<td valign=\"top\">10.30</td>\n<td valign=\"top\">SG5</td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>StaffRoom</strong> table"
+  },
+  {
+    "kind": "table",
+    "text": "<table cellpadding=\"0\" style=\"border-spacing: 0px;\">\n<tbody>\n<tr>\n<td valign=\"top\"><strong>StaffNo</strong></td>\n<td valign=\"top\"><strong>InterviewDate</strong></td>\n<td valign=\"top\"><strong>RoomNo</strong></td>\n</tr>\n<tr>\n<td valign=\"top\">SG5</td>\n<td valign=\"top\">13-May-02</td>\n<td valign=\"top\">G101</td>\n</tr>\n<tr>\n<td valign=\"top\">SG37</td>\n<td valign=\"top\">13-May-02</td>\n<td valign=\"top\">G102</td>\n</tr>\n<tr>\n<td valign=\"top\">SG5</td>\n<td valign=\"top\">1-July-02</td>\n<td valign=\"top\">G102</td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+    "kind": "h2",
+    "text": "## Normalization and Database Design"
+  },
+  {
+    "kind": "paragraph",
+    "text": "During the normalization process of database design, make sure that proposed entities meet required normal form before table structures are created. Many real-world databases have been improperly designed or burdened with anomalies if improperly modified during the course of time. You may be asked to redesign and modify existing databases. This can be a large undertaking if the tables are not properly normalized."
+  },
+  {
+    "kind": "h2",
+    "text": "## Key Terms and Abbrevations"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>Boyce-Codd normal form (BCNF)</strong>: a special case of 3rd NF"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>first normal form (1NF): </strong>only single values are permitted at the intersection of each row and column so there are no repeating groups"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>normalization</strong>: the process of determining how much redundancy exists in a table"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>second normal form (2NF)</strong>: the relation must be in 1NF and the PK comprises a single attribute"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>semantic rules</strong>: business rules applied to the database"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>third normal form (3NF)</strong>: the relation must be in 2NF and all transitive dependencies must be removed; a non-key attribute may not be functionally dependent on another non-key attribute"
+  },
+  {
+    "kind": "h2",
+    "text": "## Exercises"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>Complete chapters 11 and 12 before doing these exercises.</strong>"
+  },
+  {
+    "kind": "list",
+    "text": "1. What is normalization?\n\n2. When is a table in 1NF?\n\n3. When is a table in 2NF?\n\n4. When is a table in 3NF?\n\n5. Identify and discuss each of the indicated dependencies in the dependency diagram shown in Figure 12.2.\n\n   [![Ch11-Exercises -Fig11-1](../raw/assets/D05_F002.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch11-Exercises-Fig11-1-e1409835870943.jpg)\n\n   Figure 12.2 For question 5, by A. Watt.\n6. To keep track of students and courses, a new college uses the table structure in Figure 12.3.  \n    Draw the dependency diagram for this table.\n\n   [![Ch11-Exercises -Fig11-2](../raw/assets/D05_F003.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch11-Exercises-Fig11-2-e1409836100289.jpg)\n\n   Figure 12.3 For question 6, by A. Watt.\n7. Using the dependency diagram you just drew, show the tables (in their third normal form) you would create to fix the problems you encountered. Draw the dependency diagram for the fixed table.\n\n8. An agency called Instant Cover supplies part-time/temporary staff to hotels in Scotland. Figure 12.4 lists the time spent by agency staff working at various hotels. The national insurance number (NIN) is unique for every member of staff. Use Figure 12.4 to answer questions (a) and (b).\n\n   [![Ch12-Exercises -Fig12-1](../raw/assets/D05_F004.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch12-Exercises-Fig12-1-e1409836269456.jpg)\n\n   Figure 12.4 For question 8, by A. Watt.\n\n   1. This table is susceptible to update anomalies. Provide examples of insertion, deletion and update anomalies.\n\n   2. Normalize this table to third normal form. State any assumptions.\n9. Fill in the blanks:\n\n   1. \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_ produces a lower normal form.\n\n   2. Any attribute whose value determines other values within a row is called a(n) \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_.\n\n   3. An attribute that cannot be further divided is said to display \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_.\n\n   4. \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_ refers to the level of detail represented by the values stored in a table’s row.\n\n   5. A relational table must not contain \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_ groups."
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>Also see</strong> <em>Appendix B: Sample ERD Exercises</em>"
+  },
+  {
+    "kind": "h2",
+    "text": "## Bibliography"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Nguyen Kim Anh,  <em>Relational Design Theory</em>. OpenStax CNX.  8 Jul 2009 Retrieved July 2014 from [http://cnx.org/contents/606cc532-0b1d-419d-a0ec-ac4e2e2d533b@1@1](http://cnx.org/contents/606cc532-0b1d-419d-a0ec-ac4e2e2d533b@1@1)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Russell, Gordon. Chapter 4 – Normalisation. <em>Database eLearning</em>. N.d. Retrived July 2014 from [db.grussell.org/ch4.html](https://opentextbc.ca/dbdesign01/chapter/chapter-12-normalization/db.grussell.org/ch4.html)"
+  }
+]

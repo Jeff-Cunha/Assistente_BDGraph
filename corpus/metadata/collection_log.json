@@ -1,0 +1,1537 @@
+[
+  {
+    "requested_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-2-fundamental-concepts/",
+    "collected_at": "2026-11-08T17:20:35.555321+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 200
+      }
+    ],
+    "final_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-2-fundamental-concepts/",
+    "http_status": 200,
+    "redirects": [],
+    "content_type": "text/html; charset=UTF-8",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 17:20:36 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Content-Encoding": "gzip"
+    },
+    "path": "raw/D01.html",
+    "bytes": 70701,
+    "sha256": "5e8d2fc74c80f35b9dcb009afc512f114853ed6f06ea5eb0381326614ae5432e",
+    "status": "success",
+    "document_id": "D01",
+    "assets": [
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/RDBMS-300x2091.jpg",
+        "collected_at": "2026-11-08T17:20:37.079533+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/RDBMS-300x2091.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:37 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "22285",
+          "Etag": "\"570d-4ed4b47d03480\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:18:10 GMT"
+        },
+        "path": "raw/assets/D01_F001.jpg",
+        "bytes": 22285,
+        "sha256": "adc89ea8a87a4d61e0fef0533e05302f6b95c9bacfeb2d1b05364674f9b32a07",
+        "status": "success",
+        "alt": "A diagram showing a yellow cylinder with coloured rectangles within it, presumably representing data. Four rectangels are listed to the left of this each with the label \"Application Program\"."
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/08/MemFormAug2014.jpg",
+        "collected_at": "2026-11-08T17:20:37.801987+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/08/MemFormAug2014.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:38 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "132641",
+          "Etag": "\"20621-501928a423100\"",
+          "Last-Modified": "Wed, 27 Aug 2014 01:43:00 GMT"
+        },
+        "path": "raw/assets/D01_F002.jpg",
+        "bytes": 132641,
+        "sha256": "198ad576459b92e47bd136a36231389ceaebd4a941fba2429767c69af9b07d96",
+        "status": "success",
+        "alt": "Snapshot of an online membership form. Underneath it is a spreadsheet with names, barcodes, date, and teim."
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Banking-Systems-RDBMS-300x1951.jpg",
+        "collected_at": "2026-11-08T17:20:38.756901+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Banking-Systems-RDBMS-300x1951.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:38 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "16145",
+          "Etag": "\"3f11-4ed4b48d39ac0\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:18:27 GMT"
+        },
+        "path": "raw/assets/D01_F003.jpg",
+        "bytes": 16145,
+        "sha256": "953f299e417010978691ca79bf9c287199e1adaf0a96910e2f1c6bb59ff980ab",
+        "status": "success",
+        "alt": "There are three drawings on the left. The top one shows three people sitting and talking at a table; it is labelled as Personnel Dept. The drawing underneath this shows a man and woman in business attire and carrying briefcases shaking hands; it is labelled as Account Dept. The last drawing is of a woman; it is labelled Loan Dept. To the right of this is a rectangle with DBMS. to the right of this is a green cylinder that says Shared Database with employees, checking accounts, saving accounts, installment loans, mortgage loans, data files."
+      }
+    ]
+  },
+  {
+    "requested_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-8-entity-relationship-model/",
+    "collected_at": "2026-11-08T17:20:35.556016+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 200
+      }
+    ],
+    "final_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-8-entity-relationship-model/",
+    "http_status": 200,
+    "redirects": [],
+    "content_type": "text/html; charset=UTF-8",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 17:20:36 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Content-Encoding": "gzip"
+    },
+    "path": "raw/D02.html",
+    "bytes": 103252,
+    "sha256": "3c6364ff362c72c736d1ecd3cfc0dee2d460b2a27d4d0356cf5e1068d95d8eb4",
+    "status": "success",
+    "document_id": "D02",
+    "assets": [
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/EntitySet-300x86.jpg",
+        "collected_at": "2026-11-08T17:20:36.731371+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/EntitySet-300x86.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:37 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "6583",
+          "Etag": "\"19b7-4ed4b26ac5180\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:54 GMT"
+        },
+        "path": "raw/assets/D02_F001.jpg",
+        "bytes": 6583,
+        "sha256": "11910deb568bf58cc3501692f98638ab20f376c008cac489206e16394af17761",
+        "status": "success",
+        "alt": "A yellow rectangle with e1, e2 and en inside. There is an arrow from the yellow box to a blue rectangle with the work EMPLOYEE in capitals. Over the arrow are the words Represent in ER diagram. To the far left it says Entity set."
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Attributes-300x106.jpg",
+        "collected_at": "2026-11-08T17:20:37.421452+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Attributes-300x106.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:37 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "9605",
+          "Etag": "\"2585-4ed4b26ac5180\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:54 GMT"
+        },
+        "path": "raw/assets/D02_F002.jpg",
+        "bytes": 9605,
+        "sha256": "ca075421d918353315615544a5a8a16b24d9440d096462c412ec1f25495620fa",
+        "status": "success",
+        "alt": "One blue rectangle with the word EMPLOYEE. This is connected with a line to four separate yellow ovals. Each has a different word inside it: Name, Address, Birthdate, Salary."
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Simple-and-Composite-Attributes-300x133.jpg",
+        "collected_at": "2026-11-08T17:20:38.140195+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Simple-and-Composite-Attributes-300x133.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:38 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "12961",
+          "Etag": "\"32a1-4ed4b26ac5180\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:54 GMT"
+        },
+        "path": "raw/assets/D02_F003.jpg",
+        "bytes": 12961,
+        "sha256": "9ac32a60b429c08d2df818c88df736ccfcc6f8d52b71285a69ca96a4926fd42e",
+        "status": "success",
+        "alt": "Blue rectangle with the word EMPLOYEE. Under this are four yellow ovals with the words Name, Address, Birthdate, Salary. There are lines between the rectangle and yellow ovals. Under the Address oval are three white ovals with the words Number, Street, Suburb."
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Multivalued-Attribute-300x131.jpg",
+        "collected_at": "2026-11-08T17:20:38.847301+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Multivalued-Attribute-300x131.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:39 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "12747",
+          "Etag": "\"31cb-4ed4b26ac5180\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:54 GMT"
+        },
+        "path": "raw/assets/D02_F004.jpg",
+        "bytes": 12747,
+        "sha256": "c3fb572f4bfc603246697f1cd43779f73b9c411daf7c8679976c9834c2bba278",
+        "status": "success",
+        "alt": "Blue rectangle with the word EMPLOYEE. A line connects this to each of five yellow ovals with these words inside the ovals: Degrees, Name, Address, Birthdate, Salary"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Derived-Attribute-300x154.jpg",
+        "collected_at": "2026-11-08T17:20:39.538038+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Derived-Attribute-300x154.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:39 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "11161",
+          "Etag": "\"2b99-4ed4b26ac5180\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:54 GMT"
+        },
+        "path": "raw/assets/D02_F005.jpg",
+        "bytes": 11161,
+        "sha256": "e548b4322f78d09ac958b8894848e3cc4adb6e489fc98ba2d9265f5dba422293",
+        "status": "success",
+        "alt": "Blue rectangle with the word EMPLOYEE, and connected by a line to five different yellow ovals with the words: Age, Name, Address, Birthdate, Salary."
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/SalaryTable-300x132.jpg",
+        "collected_at": "2026-11-08T17:20:39.836343+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/SalaryTable-300x132.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:39 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "13989",
+          "Etag": "\"36a5-4ed4b26ac5180\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:54 GMT"
+        },
+        "path": "raw/assets/D02_F006.jpg",
+        "bytes": 13989,
+        "sha256": "73e481ab118a86a334d903411c6ae56c8c5a1696324e2641bea5ba306b2b59bf",
+        "status": "success",
+        "alt": "SalaryTable-300x132"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/One-to-Many-Relationships-300x137.jpg",
+        "collected_at": "2026-11-08T17:20:40.111571+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/One-to-Many-Relationships-300x137.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:40 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "12086",
+          "Etag": "\"2f36-4ed4b26ac5180\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:54 GMT"
+        },
+        "path": "raw/assets/D02_F007.jpg",
+        "bytes": 12086,
+        "sha256": "234d6a690263135a0c2a73bd72c1efdf956bae8ddd3f2009ec1c899e4f609505",
+        "status": "success",
+        "alt": "A light blue diamond in the middle connected on either side to a blue rectangle. The rectangle on the left says EMPLOYEE and is connected with a line to five yellow ovals with the words Birthdate, Name, Address, Salary, EID. The diamond is also connected to a blue rectangle on its right with the word DEPARTMENT and that is connected with lines to three yellow ovals with the words Name, Office, DeptID."
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Many-to-Many-Relationships-300x167.jpg",
+        "collected_at": "2026-11-08T17:20:40.396856+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Many-to-Many-Relationships-300x167.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:40 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "13299",
+          "Etag": "\"33f3-4ed4b26ac5180\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:54 GMT"
+        },
+        "path": "raw/assets/D02_F008.jpg",
+        "bytes": 13299,
+        "sha256": "3aae60985aeb2427074a34784c5a82dd68f6327b6027e14d281793d449ec1ad5",
+        "status": "success",
+        "alt": "image"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Unary-Relationships-300x168.jpg",
+        "collected_at": "2026-11-08T17:20:40.670486+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Unary-Relationships-300x168.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:41 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "13663",
+          "Etag": "\"355f-4ed4b26ac5180\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:54 GMT"
+        },
+        "path": "raw/assets/D02_F009.jpg",
+        "bytes": 13663,
+        "sha256": "393cac1eb4efd0075ae9d2c6ce7925eb1c36a91e948245579da1b68e24661787",
+        "status": "success",
+        "alt": "image"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ternary-Mapping-Relationships-300x197.jpg",
+        "collected_at": "2026-11-08T17:20:41.363374+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ternary-Mapping-Relationships-300x197.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:41 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "14937",
+          "Etag": "\"3a59-4ed4b26ac5180\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:54 GMT"
+        },
+        "path": "raw/assets/D02_F010.jpg",
+        "bytes": 14937,
+        "sha256": "ea9ddca55781c8ead1c1b3d93ac8d1aaf9a25e287e786b67b95bf813c8f58d3f",
+        "status": "success",
+        "alt": "Ternary-Mapping-Relationships-300x197"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-Fig8-1-e1409188616109.jpg",
+        "collected_at": "2026-11-08T17:20:41.648347+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-Fig8-1-e1409188616109.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:41 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "112353",
+          "Etag": "\"1b6e1-501a64ae0d200\"",
+          "Last-Modified": "Thu, 28 Aug 2014 01:16:56 GMT"
+        },
+        "path": "raw/assets/D02_F011.jpg",
+        "bytes": 112353,
+        "sha256": "20c859ed297b20a75d28d12d1507bfaff71b6e71e8d0565277b1cb514f4ad4d1",
+        "status": "success",
+        "alt": "Ch8-Exercises -Fig8-1"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-Fig8-2-e1409189722961.jpg",
+        "collected_at": "2026-11-08T17:20:42.395297+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-Fig8-2-e1409189722961.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:42 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "135384",
+          "Etag": "\"210d8-501a68ccd0a80\"",
+          "Last-Modified": "Thu, 28 Aug 2014 01:35:22 GMT"
+        },
+        "path": "raw/assets/D02_F012.jpg",
+        "bytes": 135384,
+        "sha256": "e33f18273b7f45bec6d2d153a105ef80556b342f1d3d626fd095ccdce21407c9",
+        "status": "success",
+        "alt": "Ch8-Exercises -Fig8-2"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-Fig8-3-e1409189789204.jpg",
+        "collected_at": "2026-11-08T17:20:42.918602+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-Fig8-3-e1409189789204.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:43 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "109500",
+          "Etag": "\"1abbc-501a690cb6140\"",
+          "Last-Modified": "Thu, 28 Aug 2014 01:36:29 GMT"
+        },
+        "path": "raw/assets/D02_F013.jpg",
+        "bytes": 109500,
+        "sha256": "5045a961a0c732e9efbc5b1807d03e3ea2406ddef52732489f22bb37ca771f08",
+        "status": "success",
+        "alt": "Ch8-Exercises -Fig8-3"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-No6-Student.jpg",
+        "collected_at": "2026-11-08T17:20:43.833083+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-No6-Student.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:44 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "47726",
+          "Etag": "\"ba6e-4f50fc7aa8b80\"",
+          "Last-Modified": "Thu, 20 Mar 2014 20:40:30 GMT"
+        },
+        "path": "raw/assets/D02_F014.jpg",
+        "bytes": 47726,
+        "sha256": "fab7450fd0d796c108b52cfb7074e5258b3b2880e3dd170034dc4222f0c70b6f",
+        "status": "success",
+        "alt": "Ch8-Exercises - No6 Student"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-No7-School-Database-1024x640.jpg",
+        "collected_at": "2026-11-08T17:20:44.599450+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-No7-School-Database-1024x640.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:44 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "71347",
+          "Etag": "\"116b3-4f50fc7c91000\"",
+          "Last-Modified": "Thu, 20 Mar 2014 20:40:32 GMT"
+        },
+        "path": "raw/assets/D02_F015.jpg",
+        "bytes": 71347,
+        "sha256": "a1ebddd206f272fda53eb6ef1e2fd8b3208dbec27e9d1d4996d787ed799620c0",
+        "status": "success",
+        "alt": "Ch8-Exercises -No7 School Database"
+      }
+    ]
+  },
+  {
+    "requested_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-9-integrity-rules-and-constraints/",
+    "collected_at": "2026-11-08T17:20:35.556331+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 200
+      }
+    ],
+    "final_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-9-integrity-rules-and-constraints/",
+    "http_status": 200,
+    "redirects": [],
+    "content_type": "text/html; charset=UTF-8",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 17:20:36 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Content-Encoding": "gzip"
+    },
+    "path": "raw/D03.html",
+    "bytes": 96333,
+    "sha256": "c53ae141d14be7362e5ee5e295fba8bf7e5d8fe59245e4329ef3a5f0d81abea8",
+    "status": "success",
+    "document_id": "D03",
+    "assets": [
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Access-Referential-Integrity-Window-300x212.jpg",
+        "collected_at": "2026-11-08T17:20:37.119004+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Access-Referential-Integrity-Window-300x212.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:37 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "21430",
+          "Etag": "\"53b6-4ed4b26ac5180\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:54 GMT"
+        },
+        "path": "raw/assets/D03_F001.jpg",
+        "bytes": 21430,
+        "sha256": "1f34302a9dd261eb1c9fee805458ba0ac70f6e118cd1fc76fe23f8d3eb6530c1",
+        "status": "success",
+        "alt": "A screenshot of the Edit Relationships commend in MS Access."
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Connectivity-and-Cardinality-300x202.jpg",
+        "collected_at": "2026-11-08T17:20:37.800277+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Connectivity-and-Cardinality-300x202.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:38 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "14889",
+          "Etag": "\"3a29-4ed4b26ac5180\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:54 GMT"
+        },
+        "path": "raw/assets/D03_F002.jpg",
+        "bytes": 14889,
+        "sha256": "94e01a9f2e18959e48cb8ef74c4d2aaf699038fe0a3f31e0dd7df58429471898",
+        "status": "success",
+        "alt": "Connectivity-and-Cardinality-300x202"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-oneToMany-1.jpg",
+        "collected_at": "2026-11-08T17:20:38.521812+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-oneToMany-1.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:38 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "1503",
+          "Etag": "\"5df-4ed4b26ac5180\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:54 GMT"
+        },
+        "path": "raw/assets/D03_F003.jpg",
+        "bytes": 1503,
+        "sha256": "6b62986eb73ee8214660a65156951bdfc9c7d8a769e953c1fbf874b931ecbe0f",
+        "status": "success",
+        "alt": "Ch-9-oneToMany-1"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-oneToMany-2.jpg",
+        "collected_at": "2026-11-08T17:20:38.798982+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-oneToMany-2.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:39 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "1846",
+          "Etag": "\"736-4ed4b26ac5180\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:54 GMT"
+        },
+        "path": "raw/assets/D03_F004.jpg",
+        "bytes": 1846,
+        "sha256": "ac0aafdd3c5fe023feaf5d950e230e85581a8a08881d251ba430cfbb82be7ec6",
+        "status": "success",
+        "alt": "Ch-9-oneToMany-2"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Identifying-and-Non-Identifying-relationship-300x298.jpg",
+        "collected_at": "2026-11-08T17:20:39.500367+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Identifying-and-Non-Identifying-relationship-300x298.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:39 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "21470",
+          "Etag": "\"53de-4ed4b26bb93c0\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:55 GMT"
+        },
+        "path": "raw/assets/D03_F005.jpg",
+        "bytes": 21470,
+        "sha256": "105ffda06039cc33a3cabc2b83924d77d05d8e735111e0e211009d1181ccc0a9",
+        "status": "success",
+        "alt": "Figure 9.5. Identifying and non-identifying relationship."
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Zero-or-Many-1.jpg",
+        "collected_at": "2026-11-08T17:20:39.812504+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Zero-or-Many-1.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:40 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "1602",
+          "Etag": "\"642-4ed4b26ac5180\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:54 GMT"
+        },
+        "path": "raw/assets/D03_F006.jpg",
+        "bytes": 1602,
+        "sha256": "1163f78fc6e0c502d3a66dff63cb9d5e73eed1b790515015669239a317213903",
+        "status": "success",
+        "alt": "Ch-9-Zero-or-Many-1"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Cardinality-Optional-0-or-more-300x189.jpg",
+        "collected_at": "2026-11-08T17:20:40.498396+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Cardinality-Optional-0-or-more-300x189.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:40 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "15978",
+          "Etag": "\"3e6a-4ed4b26ac5180\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:54 GMT"
+        },
+        "path": "raw/assets/D03_F007.jpg",
+        "bytes": 15978,
+        "sha256": "5cb46e804eadf64f6dba6ca9f112a29e1152a5eb90ee78371b65641ad9f72087",
+        "status": "success",
+        "alt": "Cardinality-Optional-0-or-more-300x189"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Optional-Arrow-2.jpg",
+        "collected_at": "2026-11-08T17:20:40.810067+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Optional-Arrow-2.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:41 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "1127",
+          "Etag": "\"467-4ed4b26ac5180\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:54 GMT"
+        },
+        "path": "raw/assets/D03_F008.jpg",
+        "bytes": 1127,
+        "sha256": "f68df3d0cb9ca74044bccbd910738a6e945df735b1b5054d080dd0085ccc4e13",
+        "status": "success",
+        "alt": "Ch-9-Optional-Arrow-2"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Cardinality-Optional-0-or-1-300x188.jpg",
+        "collected_at": "2026-11-08T17:20:41.491095+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Cardinality-Optional-0-or-1-300x188.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:42 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "17028",
+          "Etag": "\"4284-4ed4b26bb93c0\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:55 GMT"
+        },
+        "path": "raw/assets/D03_F009.jpg",
+        "bytes": 17028,
+        "sha256": "57cb922ed88738f207c09d03644e68df719965c33bf47207502de757f7ca266b",
+        "status": "success",
+        "alt": "Cardinality-Optional-0-or-1-300x188"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-oneToOne-1.jpg",
+        "collected_at": "2026-11-08T17:20:42.214259+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-oneToOne-1.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:42 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "942",
+          "Etag": "\"3ae-4ed4b26bb93c0\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:55 GMT"
+        },
+        "path": "raw/assets/D03_F010.jpg",
+        "bytes": 942,
+        "sha256": "0130400eb48da877c55a3179a720caad7eaa2b3b1b2b13257a8a212e582e1084",
+        "status": "success",
+        "alt": "Ch-9-oneToOne-1"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Mandatory-Cardinality-one-to-one-300x188.jpg",
+        "collected_at": "2026-11-08T17:20:42.487300+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Mandatory-Cardinality-one-to-one-300x188.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:43 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "15740",
+          "Etag": "\"3d7c-4ed4b26bb93c0\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:55 GMT"
+        },
+        "path": "raw/assets/D03_F011.jpg",
+        "bytes": 15740,
+        "sha256": "14f06cd4df0ca1dabc926e791bdb0185ad6f6e20fc1a4768ef866768e1b6c56a",
+        "status": "success",
+        "alt": "Ch-9-Mandatory-Cardinality-one-to-one-300x188"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-oneToMany-3.jpg",
+        "collected_at": "2026-11-08T17:20:43.190325+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-oneToMany-3.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:43 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "1066",
+          "Etag": "\"42a-4ed4b26bb93c0\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:55 GMT"
+        },
+        "path": "raw/assets/D03_F012.jpg",
+        "bytes": 1066,
+        "sha256": "f964c6521462efe87adef7beafa54615201301483023a6cbc13bf67769dcc4eb",
+        "status": "success",
+        "alt": "Ch-9-oneToMany-3"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Mandatory-Cardinality-one-to-Many-300x188.jpg",
+        "collected_at": "2026-11-08T17:20:43.474383+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Mandatory-Cardinality-one-to-Many-300x188.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:43 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "16077",
+          "Etag": "\"3ecd-4ed4b26bb93c0\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:55 GMT"
+        },
+        "path": "raw/assets/D03_F013.jpg",
+        "bytes": 16077,
+        "sha256": "6b6f45522d088d15d77d559472f4ffec89e1312c97f86edd51fa82d299ce1708",
+        "status": "success",
+        "alt": "Ch-9-Mandatory-Cardinality-one-to-Many-300x188"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Zero-or-Many-2.jpg",
+        "collected_at": "2026-11-08T17:20:43.761108+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Zero-or-Many-2.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:44 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "1543",
+          "Etag": "\"607-4ed4b26bb93c0\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:55 GMT"
+        },
+        "path": "raw/assets/D03_F014.jpg",
+        "bytes": 1543,
+        "sha256": "413871497577e852f27bdc17311e570200207e9c99e404b5e8c1ef39ee3979c7",
+        "status": "success",
+        "alt": "Ch-9-Zero-or-Many-2"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Cust-to-Order-ERD-300x168.jpg",
+        "collected_at": "2026-11-08T17:20:44.462009+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Cust-to-Order-ERD-300x168.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:44 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "10406",
+          "Etag": "\"28a6-4ed4b26bb93c0\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:55 GMT"
+        },
+        "path": "raw/assets/D03_F015.jpg",
+        "bytes": 10406,
+        "sha256": "8ff3c2ff9a7bca1774e3bbf3fd0da58052d599bc2b798d3fe8e07baf53cfec02",
+        "status": "success",
+        "alt": "Ch-9-Cust-to-Order-ERD-300x168"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/SwimClubDatabase.jpg",
+        "collected_at": "2026-11-08T17:20:44.740541+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/SwimClubDatabase.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:44 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "75683",
+          "Etag": "\"127a3-4f5ef467675c0\"",
+          "Last-Modified": "Mon, 31 Mar 2014 23:18:55 GMT"
+        },
+        "path": "raw/assets/D03_F016.jpg",
+        "bytes": 75683,
+        "sha256": "4ff3c1f29d297029d40eed704786b1c6c7df650e98ba1e3b07734540805cdd9c",
+        "status": "success",
+        "alt": "SwimClubDatabase"
+      }
+    ]
+  },
+  {
+    "requested_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-11-functional-dependencies/",
+    "collected_at": "2026-11-08T17:20:35.556703+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 200
+      }
+    ],
+    "final_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-11-functional-dependencies/",
+    "http_status": 200,
+    "redirects": [],
+    "content_type": "text/html; charset=UTF-8",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 17:20:36 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Content-Encoding": "gzip"
+    },
+    "path": "raw/D04.html",
+    "bytes": 79290,
+    "sha256": "6b3f3e94d12ccc889cc234a9b9ad2f2019248d0a723efe408c8d33a653e49fc5",
+    "status": "success",
+    "document_id": "D04",
+    "assets": [
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Table-R-Functional-Dependency-example.jpg",
+        "collected_at": "2026-11-08T17:20:37.111743+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Table-R-Functional-Dependency-example.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:37 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "17011",
+          "Etag": "\"4273-4ed4b26bb93c0\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:55 GMT"
+        },
+        "path": "raw/assets/D04_F001.jpg",
+        "bytes": 17011,
+        "sha256": "426c82e0a38bd07367063d443b7a1ab3534b5c0d397f9849dccdd3e1d158e8cf",
+        "status": "success",
+        "alt": "Table-R-Functional-Dependency-example"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axion-Reflexivity.jpg",
+        "collected_at": "2026-11-08T17:20:37.824830+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axion-Reflexivity.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:38 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "5123",
+          "Etag": "\"1403-4ed4b26bb93c0\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:55 GMT"
+        },
+        "path": "raw/assets/D04_F002.jpg",
+        "bytes": 5123,
+        "sha256": "e9d0376a013b30e53e1598ec5fdc016e9e0948c50859d0554f21a2c4feedd246",
+        "status": "success",
+        "alt": "Ch-11-Axion-Reflexivity"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axiom-of-Augmentation-300x34.jpg",
+        "collected_at": "2026-11-08T17:20:38.525343+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axiom-of-Augmentation-300x34.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:39 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "3665",
+          "Etag": "\"e51-4ed4b26bb93c0\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:55 GMT"
+        },
+        "path": "raw/assets/D04_F003.jpg",
+        "bytes": 3665,
+        "sha256": "84bcb6027367147731312562b6039aa53ca19bae27ef956847733fa15025dfde",
+        "status": "success",
+        "alt": "Ch-11-Axiom-of-Augmentation-300x34"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axiom-of-transitivity-300x30.jpg",
+        "collected_at": "2026-11-08T17:20:39.200023+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axiom-of-transitivity-300x30.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:39 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "3254",
+          "Etag": "\"cb6-4ed4b26bb93c0\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:55 GMT"
+        },
+        "path": "raw/assets/D04_F004.jpg",
+        "bytes": 3254,
+        "sha256": "0e5e809ba476e7de703473e1f7251b09ffa7ce8d83455b3ee93fb09ac4537b38",
+        "status": "success",
+        "alt": "Ch-11-Axiom-of-transitivity-300x30"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axiom-Union-300x23.jpg",
+        "collected_at": "2026-11-08T17:20:39.939257+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axiom-Union-300x23.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:40 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "3931",
+          "Etag": "\"f5b-4ed4b26bb93c0\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:55 GMT"
+        },
+        "path": "raw/assets/D04_F005.jpg",
+        "bytes": 3931,
+        "sha256": "7d6a18f8c18914f39c17ef149976ed1d00f5183bda04c14807532a3e844b1a8a",
+        "status": "success",
+        "alt": "Ch-11-Axiom-Union-300x23"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axiom-Decomposition-300x28.jpg",
+        "collected_at": "2026-11-08T17:20:40.612152+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axiom-Decomposition-300x28.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:40 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "3873",
+          "Etag": "\"f21-4ed4b26bb93c0\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:55 GMT"
+        },
+        "path": "raw/assets/D04_F006.jpg",
+        "bytes": 3873,
+        "sha256": "001b207bf09d87f04567fc7c986f64ac4f10b06bbb0834b3a58ddd143b47d103",
+        "status": "success",
+        "alt": "Ch-11-Axiom-Decomposition-300x28"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Dependency-Diagram-300x67.jpg",
+        "collected_at": "2026-11-08T17:20:40.884721+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Dependency-Diagram-300x67.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:41 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "6735",
+          "Etag": "\"1a4f-4ed4b26bb93c0\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:55 GMT"
+        },
+        "path": "raw/assets/D04_F007.jpg",
+        "bytes": 6735,
+        "sha256": "2eb423d21dab004772f63e81d813ccb3f66e0044737fab47ee24e02b8f20dba4",
+        "status": "success",
+        "alt": "Ch-11-Dependency-Diagram-300x67"
+      }
+    ]
+  },
+  {
+    "requested_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-12-normalization/",
+    "collected_at": "2026-11-08T17:20:39.081886+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 200
+      }
+    ],
+    "final_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-12-normalization/",
+    "http_status": 200,
+    "redirects": [],
+    "content_type": "text/html; charset=UTF-8",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 17:20:39 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Content-Encoding": "gzip"
+    },
+    "path": "raw/D05.html",
+    "bytes": 86446,
+    "sha256": "70d95d4a06cee9a8a05256ed4ddd24ff49fa283905fd24b905024fcf556d207a",
+    "status": "success",
+    "document_id": "D05",
+    "assets": [
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Dependency-Diagram-School-300x89.jpg",
+        "collected_at": "2026-11-08T17:20:39.937363+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Dependency-Diagram-School-300x89.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:40 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "8324",
+          "Etag": "\"2084-4ed4b26bb93c0\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:55 GMT"
+        },
+        "path": "raw/assets/D05_F001.jpg",
+        "bytes": 8324,
+        "sha256": "5d7d7ee89261ad3f2db0a36223c3f7693c193f867b7f629b90a4c8c164e1c202",
+        "status": "success",
+        "alt": "Ch-11-Dependency-Diagram-School-300x89"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch11-Exercises-Fig11-1-e1409835870943.jpg",
+        "collected_at": "2026-11-08T17:20:40.220063+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch11-Exercises-Fig11-1-e1409835870943.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:40 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "29193",
+          "Etag": "\"7209-5023cfe391380\"",
+          "Last-Modified": "Thu, 04 Sep 2014 13:04:30 GMT"
+        },
+        "path": "raw/assets/D05_F002.jpg",
+        "bytes": 29193,
+        "sha256": "ae77683f9c7965bcbe1ff9ec494c3c5e0daee0f37dd73a61bc33c9dac8e8654f",
+        "status": "success",
+        "alt": "Ch11-Exercises -Fig11-1"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch11-Exercises-Fig11-2-e1409836100289.jpg",
+        "collected_at": "2026-11-08T17:20:40.937617+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch11-Exercises-Fig11-2-e1409836100289.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:41 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "80978",
+          "Etag": "\"13c52-5023d0bee9900\"",
+          "Last-Modified": "Thu, 04 Sep 2014 13:08:20 GMT"
+        },
+        "path": "raw/assets/D05_F003.jpg",
+        "bytes": 80978,
+        "sha256": "0a496090ab7b9560d3367c993d50c82f9b7206b82035561440e8da142234c760",
+        "status": "success",
+        "alt": "Ch11-Exercises -Fig11-2"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch12-Exercises-Fig12-1-e1409836269456.jpg",
+        "collected_at": "2026-11-08T17:20:41.451838+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch12-Exercises-Fig12-1-e1409836269456.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:42 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "64200",
+          "Etag": "\"fac8-5023d16015540\"",
+          "Last-Modified": "Thu, 04 Sep 2014 13:11:09 GMT"
+        },
+        "path": "raw/assets/D05_F004.jpg",
+        "bytes": 64200,
+        "sha256": "b00a01e1ff697da2f293d8a5d2f738ae5a75b5317b25e27336c1aff9f56e3e51",
+        "status": "success",
+        "alt": "Ch12-Exercises -Fig12-1"
+      }
+    ]
+  },
+  {
+    "requested_url": "https://www.postgresql.org/docs/18/tutorial-select.html",
+    "collected_at": "2026-11-08T17:20:41.559057+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 200
+      }
+    ],
+    "final_url": "https://www.postgresql.org/docs/18/tutorial-select.html",
+    "http_status": 200,
+    "redirects": [],
+    "content_type": "text/html; charset=utf-8",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 10:16:49 GMT",
+      "Content-Type": "text/html; charset=utf-8",
+      "Content-Encoding": "gzip"
+    },
+    "path": "raw/D06.html",
+    "bytes": 19770,
+    "sha256": "73e623874edf0767095d2f4df5a72d2674ac21e1db1b6fa4312a709055418fd2",
+    "status": "success",
+    "document_id": "D06",
+    "assets": []
+  },
+  {
+    "requested_url": "https://www.postgresql.org/docs/18/tutorial-join.html",
+    "collected_at": "2026-11-08T17:20:42.258477+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "error": "HTTPSConnectionPool(host='www.postgresql.org', port=443): Read timed out. (read timeout=20)"
+      },
+      {
+        "number": 2,
+        "status": 200
+      }
+    ],
+    "final_url": "https://www.postgresql.org/docs/18/tutorial-join.html",
+    "http_status": 200,
+    "redirects": [],
+    "content_type": "text/html; charset=utf-8",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 11:02:24 GMT",
+      "Content-Type": "text/html; charset=utf-8",
+      "Content-Encoding": "gzip"
+    },
+    "path": "raw/D07.html",
+    "bytes": 22308,
+    "sha256": "422bcd5bf5b3922b003de96948e29530eae9cbb7a17932008d16343e4e3bc398",
+    "status": "success",
+    "document_id": "D07",
+    "assets": []
+  },
+  {
+    "requested_url": "https://www.postgresql.org/docs/18/tutorial-agg.html",
+    "collected_at": "2026-11-08T17:20:44.966020+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 200
+      }
+    ],
+    "final_url": "https://www.postgresql.org/docs/18/tutorial-agg.html",
+    "http_status": 200,
+    "redirects": [],
+    "content_type": "text/html; charset=utf-8",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 12:08:30 GMT",
+      "Content-Type": "text/html; charset=utf-8",
+      "Content-Encoding": "gzip"
+    },
+    "path": "raw/D08.html",
+    "bytes": 20692,
+    "sha256": "9d29d88ef26d72a5e2451af03898bac775116e6cf1a70a816589342d5e480ee3",
+    "status": "success",
+    "document_id": "D08",
+    "assets": []
+  },
+  {
+    "requested_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-7-the-relational-data-model/",
+    "collected_at": "2026-11-08T17:20:45.094305+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 200
+      }
+    ],
+    "final_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-7-the-relational-data-model/",
+    "http_status": 200,
+    "redirects": [],
+    "content_type": "text/html; charset=UTF-8",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 17:20:45 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Content-Encoding": "gzip"
+    },
+    "path": "raw/D09.html",
+    "bytes": 75727,
+    "sha256": "6a9d83990be27d9b4d6d24ad88899fad31433fac5cf1dc3c8a0716bf813d79f4",
+    "status": "success",
+    "document_id": "D09",
+    "assets": [
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/School-Database-Fig-1-300x221.jpg",
+        "collected_at": "2026-11-08T17:20:46.043539+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/School-Database-Fig-1-300x221.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:46 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "14385",
+          "Etag": "\"3831-4ed4b26ac5180\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:54 GMT"
+        },
+        "path": "raw/assets/D09_F001.jpg",
+        "bytes": 14385,
+        "sha256": "354ac231a878319ccb56756224a14b6a097ead848617d2c4b56a9da5365e717c",
+        "status": "success",
+        "alt": "Blue cylinder with three white rectangles each with a list of words."
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Record-300x177.jpg",
+        "collected_at": "2026-11-08T17:20:46.326373+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Record-300x177.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:46 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "18525",
+          "Etag": "\"485d-4ed4b26ac5180\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:54 GMT"
+        },
+        "path": "raw/assets/D09_F002.jpg",
+        "bytes": 18525,
+        "sha256": "90a4aeefb6bc3b87ee9107b1ba12fcff27a14205480d3cff20babfb838d795f3",
+        "status": "success",
+        "alt": "Record-300x177"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Table-Description-300x146.jpg",
+        "collected_at": "2026-11-08T17:20:46.616480+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Table-Description-300x146.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:46 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "14666",
+          "Etag": "\"394a-4ed4b26ac5180\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:54 GMT"
+        },
+        "path": "raw/assets/D09_F003.jpg",
+        "bytes": 14666,
+        "sha256": "a4b052ffa6267ebb46b58e2d955ddda8278095a7e9c6507c60c9a02e09d4585e",
+        "status": "success",
+        "alt": "image"
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Terms.jpg",
+        "collected_at": "2026-11-08T17:20:46.921095+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Terms.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:47 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "14915",
+          "Etag": "\"3a43-4ed4b26ac5180\"",
+          "Last-Modified": "Thu, 12 Dec 2013 00:08:54 GMT"
+        },
+        "path": "raw/assets/D09_F004.jpg",
+        "bytes": 14915,
+        "sha256": "79f531c93cd24083f2ba3236e3b4c402a8229e339c1fb0e44a9855267b75d92a",
+        "status": "success",
+        "alt": "A database table with words."
+      },
+      {
+        "requested_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch7-Exercises-Fig7-1-e1409190387554.jpg",
+        "collected_at": "2026-11-08T17:20:47.214516+00:00",
+        "attempts": [
+          {
+            "number": 1,
+            "status": 200
+          }
+        ],
+        "final_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch7-Exercises-Fig7-1-e1409190387554.jpg",
+        "http_status": 200,
+        "redirects": [],
+        "content_type": "image/jpeg",
+        "response_headers": {
+          "Date": "Sun, 08 Nov 2026 17:20:47 GMT",
+          "Content-Type": "image/jpeg",
+          "Content-Length": "65187",
+          "Etag": "\"fea3-501a6b47022c0\"",
+          "Last-Modified": "Thu, 28 Aug 2014 01:46:27 GMT"
+        },
+        "path": "raw/assets/D09_F005.jpg",
+        "bytes": 65187,
+        "sha256": "85db44d7ce2945cdb69a2ff5dc12758fda7fa5dea13218ec95d4c199af9283b4",
+        "status": "success",
+        "alt": "Table with 5 columns and 5 rows."
+      }
+    ]
+  }
+]

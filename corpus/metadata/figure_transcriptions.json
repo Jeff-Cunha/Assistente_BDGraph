@@ -1,0 +1,2419 @@
+[
+  {
+    "figure_id": "D01_F001",
+    "document_id": "D01",
+    "caption": "Figure 2.1. A database is a repository of data.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-2-fundamental-concepts/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/RDBMS-300x2091.jpg",
+    "original_image_file": "raw/assets/D01_F001.jpg",
+    "original_image_sha256": "adc89ea8a87a4d61e0fef0533e05302f6b95c9bacfeb2d1b05364674f9b32a07",
+    "original_dimensions": [
+      300,
+      209
+    ],
+    "parent_chunk_ids": [
+      "D01_C001"
+    ],
+    "processed_marker_offset": 534,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": null,
+    "supplement_chunk_ids": [],
+    "license_evidence_files": [
+      "licenses/D01_notices.html",
+      "licenses/D01_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "already_covered_by_text",
+    "decision_reason": "The shared repository/application-program concept is described in the body and alt. The drawing adds no essential relational schema.",
+    "visual_observation": "Four Application Program boxes and three User callouts connect to the shared Database/DBMS drawing.",
+    "coverage_scope": "Essential educational role covered; not a claim that every specimen value is transcribed.",
+    "transcription_status": "not_selected",
+    "uncertainty_in_transcription": false,
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D01_F002",
+    "document_id": "D01",
+    "caption": "Figure 2.2. Membership system at Science World by N. Eng.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-2-fundamental-concepts/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/08/MemFormAug2014.jpg",
+    "original_image_file": "raw/assets/D01_F002.jpg",
+    "original_image_sha256": "198ad576459b92e47bd136a36231389ceaebd4a941fba2429767c69af9b07d96",
+    "original_dimensions": [
+      843,
+      545
+    ],
+    "parent_chunk_ids": [
+      "D01_C001"
+    ],
+    "processed_marker_offset": 1760,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": null,
+    "supplement_chunk_ids": [],
+    "license_evidence_files": [
+      "licenses/D01_notices.html",
+      "licenses/D01_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [
+      "V01"
+    ],
+    "pending": [],
+    "decision": "already_covered_by_text",
+    "decision_reason": "The membership example already names the members and explains the shared membership/address. Interface fields and specimen barcodes are not essential additional model evidence for this stage.",
+    "visual_observation": "Membership form above an eight-row member grid. Exact specimen UI values are intentionally not transcribed; this is conceptual coverage, not full image-text coverage.",
+    "coverage_scope": "Essential educational role covered; not a claim that every specimen value is transcribed.",
+    "transcription_status": "not_selected",
+    "uncertainty_in_transcription": false,
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D01_F003",
+    "document_id": "D01",
+    "caption": "Figure 2.3. A bank database management system (DBMS).",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-2-fundamental-concepts/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Banking-Systems-RDBMS-300x1951.jpg",
+    "original_image_file": "raw/assets/D01_F003.jpg",
+    "original_image_sha256": "953f299e417010978691ca79bf9c287199e1adaf0a96910e2f1c6bb59ff980ab",
+    "original_dimensions": [
+      300,
+      195
+    ],
+    "parent_chunk_ids": [
+      "D01_C002"
+    ],
+    "processed_marker_offset": 3336,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": null,
+    "supplement_chunk_ids": [],
+    "license_evidence_files": [
+      "licenses/D01_notices.html",
+      "licenses/D01_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "already_covered_by_text",
+    "decision_reason": "The body and detailed alt already list the departments, DBMS and shared banking data.",
+    "visual_observation": "Personnel Dept., Account Dept. and Loan Dept. connect to DBMS and then Shared Database.",
+    "coverage_scope": "Essential educational role covered; not a claim that every specimen value is transcribed.",
+    "transcription_status": "not_selected",
+    "uncertainty_in_transcription": false,
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D02_F001",
+    "document_id": "D02",
+    "caption": "Figure 8.1. ERD with entity type EMPLOYEE.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-8-entity-relationship-model/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/EntitySet-300x86.jpg",
+    "original_image_file": "raw/assets/D02_F001.jpg",
+    "original_image_sha256": "11910deb568bf58cc3501692f98638ab20f376c008cac489206e16394af17761",
+    "original_dimensions": [
+      300,
+      86
+    ],
+    "parent_chunk_ids": [
+      "D02_C001"
+    ],
+    "processed_marker_offset": 3319,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": null,
+    "supplement_chunk_ids": [],
+    "license_evidence_files": [
+      "licenses/D02_notices.html",
+      "licenses/D02_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "already_covered_by_text",
+    "decision_reason": "The original alt already transcribes entity-set labels, the right-pointing arrow and EMPLOYEE entity type.",
+    "visual_observation": "Entity set e1, e2, en; Represent in ER diagram arrow points right to EMPLOYEE.",
+    "coverage_scope": "Essential educational role covered; not a claim that every specimen value is transcribed.",
+    "transcription_status": "not_selected",
+    "uncertainty_in_transcription": false,
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D02_F002",
+    "document_id": "D02",
+    "caption": "Figure 8.2. How attributes are represented in an ERD.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-8-entity-relationship-model/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Attributes-300x106.jpg",
+    "original_image_file": "raw/assets/D02_F002.jpg",
+    "original_image_sha256": "ca075421d918353315615544a5a8a16b24d9440d096462c412ec1f25495620fa",
+    "original_dimensions": [
+      300,
+      106
+    ],
+    "parent_chunk_ids": [
+      "D02_C003"
+    ],
+    "processed_marker_offset": 6594,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": null,
+    "supplement_chunk_ids": [],
+    "license_evidence_files": [
+      "licenses/D02_notices.html",
+      "licenses/D02_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "already_covered_by_text",
+    "decision_reason": "All four attribute names and their oval-to-entity connections are already in the body/alt.",
+    "visual_observation": "EMPLOYEE rectangle connects to Name, Address, Birthdate and Salary ovals.",
+    "coverage_scope": "Essential educational role covered; not a claim that every specimen value is transcribed.",
+    "transcription_status": "not_selected",
+    "uncertainty_in_transcription": false,
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D02_F003",
+    "document_id": "D02",
+    "caption": "Figure 8.3. An example of composite attributes.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-8-entity-relationship-model/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Simple-and-Composite-Attributes-300x133.jpg",
+    "original_image_file": "raw/assets/D02_F003.jpg",
+    "original_image_sha256": "9ac32a60b429c08d2df818c88df736ccfcc6f8d52b71285a69ca96a4926fd42e",
+    "original_dimensions": [
+      300,
+      133
+    ],
+    "parent_chunk_ids": [
+      "D02_C003"
+    ],
+    "processed_marker_offset": 7926,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": null,
+    "supplement_chunk_ids": [],
+    "license_evidence_files": [
+      "licenses/D02_notices.html",
+      "licenses/D02_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "already_covered_by_text",
+    "decision_reason": "The composite Address hierarchy and Number/Street/Suburb children are fully described in the body and alt.",
+    "visual_observation": "Simple attribute callout points to Name; Composite attribute callout points to Address, which connects to Number, Street and Suburb.",
+    "coverage_scope": "Essential educational role covered; not a claim that every specimen value is transcribed.",
+    "transcription_status": "not_selected",
+    "uncertainty_in_transcription": false,
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D02_F004",
+    "document_id": "D02",
+    "caption": "Figure 8.4. Example of a multivalued attribute.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-8-entity-relationship-model/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Multivalued-Attribute-300x131.jpg",
+    "original_image_file": "raw/assets/D02_F004.jpg",
+    "original_image_sha256": "c3fb572f4bfc603246697f1cd43779f73b9c411daf7c8679976c9834c2bba278",
+    "original_dimensions": [
+      300,
+      131
+    ],
+    "parent_chunk_ids": [
+      "D02_C003"
+    ],
+    "processed_marker_offset": 8529,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": "supplements/figures/D02_F004.md",
+    "supplement_chunk_ids": [
+      "D02_F004_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D02_notices.html",
+      "licenses/D02_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "transcribe",
+    "decision_reason": "The double-oval notation for a multivalued attribute is not expressed in the original alt text.",
+    "transcription_status": "complete",
+    "supplement_id": "D02_F004_T01",
+    "literal_transcription": "Labels: EMPLOYEE; Degrees; Name; Address; Birthdate; Salary; Multivalued attribute.",
+    "visual_description": "EMPLOYEE is a rectangle connected by plain lines to the five attribute ovals. Degrees has a double oval; the annotation arrow from 'Multivalued attribute' points to that double boundary. The other four ovals have single boundaries. There are no relationship cardinalities or data rows.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": false,
+    "transcription_sha256": "9ccf21f4e6e7224a31cf6607b363c43538b1c1ef8ba4bed10149739c25f3ac55",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D02_F005",
+    "document_id": "D02",
+    "caption": "Figure 8.5. Example of a derived attribute.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-8-entity-relationship-model/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Derived-Attribute-300x154.jpg",
+    "original_image_file": "raw/assets/D02_F005.jpg",
+    "original_image_sha256": "e548b4322f78d09ac958b8894848e3cc4adb6e489fc98ba2d9265f5dba422293",
+    "original_dimensions": [
+      300,
+      154
+    ],
+    "parent_chunk_ids": [
+      "D02_C003"
+    ],
+    "processed_marker_offset": 9197,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": "supplements/figures/D02_F005.md",
+    "supplement_chunk_ids": [
+      "D02_F005_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D02_notices.html",
+      "licenses/D02_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "transcribe",
+    "decision_reason": "The dashed-oval notation for a derived attribute is absent from the alt text.",
+    "transcription_status": "complete",
+    "supplement_id": "D02_F005_T01",
+    "literal_transcription": "Labels: EMPLOYEE; Age; Name; Address; Birthdate; Salary; Derived attribute.",
+    "visual_description": "EMPLOYEE is a rectangle connected to five ovals. Age has a dashed outline, and an annotation arrow labelled 'Derived attribute' points to it. Name, Address, Birthdate and Salary have solid outlines. The drawing does not show a directed arrow from Birthdate to Age; that derivation is explained in the parent text.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": false,
+    "transcription_sha256": "941c1f27c6934ecc956689b574ed950038f67d4ef0e2d254911d1461e0e95f2a",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D02_F006",
+    "document_id": "D02",
+    "caption": "Figure 8.6. Salary table for null example, by A. Watt.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-8-entity-relationship-model/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/SalaryTable-300x132.jpg",
+    "original_image_file": "raw/assets/D02_F006.jpg",
+    "original_image_sha256": "73e481ab118a86a334d903411c6ae56c8c5a1696324e2641bea5ba306b2b59bf",
+    "original_dimensions": [
+      300,
+      132
+    ],
+    "parent_chunk_ids": [
+      "D02_C005"
+    ],
+    "processed_marker_offset": 13028,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": "supplements/figures/D02_F006.md",
+    "supplement_chunk_ids": [
+      "D02_F006_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D02_notices.html",
+      "licenses/D02_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "transcribe",
+    "decision_reason": "The salary and commission values underlying the null example exist only in the image.",
+    "transcription_status": "complete",
+    "supplement_id": "D02_F006_T01",
+    "literal_transcription": "Salary_tbl\n\n| emp# | jobName | salary | commission |\n|---|---|---|---|\n| E10 | Sales | 12500 | 32090 |\n| E11 | Null | 25000 | 8000 |\n| E12 | Sales | 44000 | 0 |\n| E13 | Sales | 44000 | Null |",
+    "visual_description": "Four data rows and four columns. 'Null' is the literal displayed word, not an empty cell. No key icon or key underline is shown. The supplement does not recompute or correct the query results printed in the parent text.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": false,
+    "transcription_sha256": "3008c947027cd0840623abc4699da9898dd7c8dc0614b864f889727982d341de",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D02_F007",
+    "document_id": "D02",
+    "caption": "Figure 8.7. Example of a one to many relationship.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-8-entity-relationship-model/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/One-to-Many-Relationships-300x137.jpg",
+    "original_image_file": "raw/assets/D02_F007.jpg",
+    "original_image_sha256": "234d6a690263135a0c2a73bd72c1efdf956bae8ddd3f2009ec1c899e4f609505",
+    "original_dimensions": [
+      300,
+      137
+    ],
+    "parent_chunk_ids": [
+      "D02_C006"
+    ],
+    "processed_marker_offset": 15532,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": {
+      "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/One-to-Many-Relationships.jpg",
+      "http_status": 404,
+      "evidence_file": "supplements/provenance/responses/D02_F007.html",
+      "use": "not used; candidate unavailable"
+    },
+    "transcription_file": "supplements/figures/D02_F007.md",
+    "supplement_chunk_ids": [
+      "D02_F007_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D02_notices.html",
+      "licenses/D02_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "transcribe",
+    "decision_reason": "The ER endpoints, underlined attributes and relational schema add explicit relationships not captured by the filename alt.",
+    "transcription_status": "complete",
+    "supplement_id": "D02_F007_T01",
+    "literal_transcription": "Entities and attributes:\n- EMPLOYEE: Name, Birthdate, Address, Salary, EID.\n- DEPARTMENT: Name, Office, DeptId.\n- Relationship diamond: Works In.\n- Endpoint labels: N next to EMPLOYEE; 1 next to DEPARTMENT.\n\nRelational Schema\n```text\nEMPLOYEE(EID, Name, Address, Birthdate, Salary, DeptId)\nDEPARTMENT(DeptId, Name, Office)\n```",
+    "visual_description": "EMPLOYEE (left) -- N -- Works In -- 1 -- DEPARTMENT (right). EID and DeptId are underlined in their entity ovals. In the schema, EID is underlined in EMPLOYEE and DeptId is underlined in DEPARTMENT; the employee's trailing DeptId is italic. The relationship lines are undirected; no minimum participation is printed. Attribute lines merely attach the named ovals to their rectangles.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": false,
+    "transcription_sha256": "1d637d5afd106e292a0bcd6d8323aad71d39f2b0b6c1dcf3048a0737a9fc8cc1",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D02_F008",
+    "document_id": "D02",
+    "caption": "Figure 8.8. Example where employee has different start dates for different projects.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-8-entity-relationship-model/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Many-to-Many-Relationships-300x167.jpg",
+    "original_image_file": "raw/assets/D02_F008.jpg",
+    "original_image_sha256": "3aae60985aeb2427074a34784c5a82dd68f6327b6027e14d281793d449ec1ad5",
+    "original_dimensions": [
+      300,
+      167
+    ],
+    "parent_chunk_ids": [
+      "D02_C006"
+    ],
+    "processed_marker_offset": 17261,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": {
+      "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Many-to-Many-Relationships.jpg",
+      "http_status": 404,
+      "evidence_file": "supplements/provenance/responses/D02_F008.html",
+      "use": "not used; candidate unavailable"
+    },
+    "transcription_file": "supplements/figures/D02_F008.md",
+    "supplement_chunk_ids": [
+      "D02_F008_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D02_notices.html",
+      "licenses/D02_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [
+      "V02"
+    ],
+    "pending": [
+      "The supplied 300px image does not establish whether StartDate is also underlined in JOIN; no key status is assigned to it.",
+      "The PROJECT endpoint visibly reads 1 while the surrounding section discusses many-to-many relationships; retained as drawn and deferred for conceptual review."
+    ],
+    "decision": "transcribe",
+    "decision_reason": "The image contains the relationship attribute StartDate and a separate JOIN schema; its endpoint labels must not be silently corrected.",
+    "transcription_status": "partial",
+    "supplement_id": "D02_F008_T01",
+    "literal_transcription": "Entities and attributes:\n- EMPLOYEE: Name, Birthdate, Address, Salary, EID.\n- PROJECT: Name, Budget, Code.\n- Relationship diamond: Joins in.\n- Attribute attached to the diamond: StartDate.\n- Endpoint labels: N next to EMPLOYEE; 1 next to PROJECT.\n\nRelational Schema\n```text\nEMPLOYEE(EID, Name, Address, Birthdate, Salary)\nPROJECT(Code, Name, Budget)\nJOIN(EID, Code, StartDate)\n```",
+    "visual_description": "EMPLOYEE (left) -- N -- Joins in -- 1 -- PROJECT (right). StartDate is an oval above the relationship diamond, connected to the diamond rather than an entity. EID and Code are underlined in their ovals and respective entity schema lines. In the JOIN line EID and Code are visibly underlined. The underline extent beneath StartDate is not sufficiently clear to assign it key status. No direction arrow or minimum participation is printed.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": true,
+    "transcription_sha256": "d9f649ac3473c5483c6304bd53dd61caa3152a91300127ac78d92e9a0e6ad1a9",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D02_F009",
+    "document_id": "D02",
+    "caption": "Figure 8.9. Example of a unary relationship.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-8-entity-relationship-model/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Unary-Relationships-300x168.jpg",
+    "original_image_file": "raw/assets/D02_F009.jpg",
+    "original_image_sha256": "393cac1eb4efd0075ae9d2c6ce7925eb1c36a91e948245579da1b68e24661787",
+    "original_dimensions": [
+      300,
+      168
+    ],
+    "parent_chunk_ids": [
+      "D02_C006"
+    ],
+    "processed_marker_offset": 18439,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": {
+      "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Unary-Relationships.jpg",
+      "http_status": 404,
+      "evidence_file": "supplements/provenance/responses/D02_F009.html",
+      "use": "not used; candidate unavailable"
+    },
+    "transcription_file": "supplements/figures/D02_F009.md",
+    "supplement_chunk_ids": [
+      "D02_F009_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D02_notices.html",
+      "licenses/D02_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "transcribe",
+    "decision_reason": "The recursive role labels and Super-EID schema field are only in the diagram.",
+    "transcription_status": "complete",
+    "supplement_id": "D02_F009_T01",
+    "literal_transcription": "Entity: EMPLOYEE. Attribute ovals: Name, Birthdate, Address, Salary, EID. Relationship diamond: Supervises. Role labels: supervisor (upper connection), supervisee (lower connection).\n\nRelational Schema\n```text\nEMPLOYEE(EID, Name, Address, Birthdate, Salary, Super-EID)\n```",
+    "visual_description": "Two separate lines leave EMPLOYEE and return through the same Supervises diamond: the upper line is labelled supervisor, the lower line supervisee. EID is underlined; Super-EID is italic in the schema. The recursive lines have no visible numeric cardinality, crow's-foot marker or arrowhead, so no minimum, maximum or FK target is inferred from the image alone.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": false,
+    "transcription_sha256": "62048233d2aa11ade165e39f4f24b963bc2fe56a86d629e5313bd71466919dae",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D02_F010",
+    "document_id": "D02",
+    "caption": "Figure 8.10. Example of a ternary relationship.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-8-entity-relationship-model/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ternary-Mapping-Relationships-300x197.jpg",
+    "original_image_file": "raw/assets/D02_F010.jpg",
+    "original_image_sha256": "ea9ddca55781c8ead1c1b3d93ac8d1aaf9a25e287e786b67b95bf813c8f58d3f",
+    "original_dimensions": [
+      300,
+      197
+    ],
+    "parent_chunk_ids": [
+      "D02_C007"
+    ],
+    "processed_marker_offset": 19299,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": {
+      "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ternary-Mapping-Relationships.jpg",
+      "http_status": 404,
+      "evidence_file": "supplements/provenance/responses/D02_F010.html",
+      "use": "not used; candidate unavailable"
+    },
+    "transcription_file": "supplements/figures/D02_F010.md",
+    "supplement_chunk_ids": [
+      "D02_F010_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D02_notices.html",
+      "licenses/D02_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "transcribe",
+    "decision_reason": "The ternary association, relationship attributes and composite schema are not transcribed in the body.",
+    "transcription_status": "complete",
+    "supplement_id": "D02_F010_T01",
+    "literal_transcription": "Entities and attributes:\n- SUPPLIER: Name, Address, SID.\n- PROJECT: Name, Budget, Code.\n- PART: PartName, Colour, PartID.\n- Relationship diamond: Supply.\n- Supply attributes: Quantity, Date.\n- Endpoint letters: M at SUPPLIER, N at PROJECT, N at PART.\n\nRelational Schema\n```text\nSUPPLIER(SID, Name, Address)\nPROJECT(Code, Name, Budget)\nPART(PartID, PartName, Colour)\nSupply(SID, Code, PartID, Quantity, Date)\n```",
+    "visual_description": "The single Supply diamond connects left to SUPPLIER, right to PROJECT and downward to PART. Quantity and Date are ovals directly attached to Supply. SID, Code and PartID are underlined in their entity ovals and respective schema lines; SID, Code and PartID are underlined together in the Supply schema. No directional arrows or minimum-participation values are printed. M/N/N are recorded as ternary endpoint labels, without converting them into three independent binary constraints.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": false,
+    "transcription_sha256": "f7cb6f24176ab69e466a19b96767a8dd7803d677427467d3c34ec4db2619da17",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D02_F011",
+    "document_id": "D02",
+    "caption": "Figure 8.11. Director and Play tables for question 2, by A. Watt.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-8-entity-relationship-model/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-Fig8-1-e1409188616109.jpg",
+    "original_image_file": "raw/assets/D02_F011.jpg",
+    "original_image_sha256": "20c859ed297b20a75d28d12d1507bfaff71b6e71e8d0565277b1cb514f4ad4d1",
+    "original_dimensions": [
+      861,
+      615
+    ],
+    "parent_chunk_ids": [
+      "D02_C008"
+    ],
+    "processed_marker_offset": 22755,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": "supplements/figures/D02_F011.md",
+    "supplement_chunk_ids": [
+      "D02_F011_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D02_notices.html",
+      "licenses/D02_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "transcribe",
+    "decision_reason": "The complete DIRECTOR and PLAY relations are needed to inspect the source's key and referential-integrity exercise.",
+    "transcription_status": "complete",
+    "supplement_id": "D02_F011_T01",
+    "literal_transcription": "DIRECTOR\n\n| DIRNUM | DIRNAME | DIRDOB |\n|---|---|---|\n| 100 | J.Broadway | 01/08/39 |\n| 101 | J.Namath | 11/12/48 |\n| 102 | W.Blake | 06/15/44 |\n\nPLAY\n\n| PLAYNO | PLAYNAME | DIRNUM |\n|---|---|---|\n| 1001 | Cat on a cold bare roof | 102 |\n| 1002 | Hold the mayo, pass the bread | 101 |\n| 1003 | I never promised you coffee | 102 |\n| 1004 | Silly putty goes to Texas | 100 |\n| 1005 | See no sound, hear no sight | 101 |\n| 1006 | Starstruck in Biloxi | 102 |\n| 1007 | Stranger in parrot ice | 101 |",
+    "visual_description": "Two separate rectangular tables; the second table's headings and data use bold type. Red wavy spelling-check marks occur under some names, not key underlines. No PK/FK icon or relationship line is drawn; key selection and referential integrity remain questions in the parent text. The wrapped PLAYNAME in row 1002 is one cell, retained as one value. Dates and spellings are not standardized.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": false,
+    "transcription_sha256": "a418740dfe4b4854ec08c0daedacd8165f1e3c1961f93ae40818d48d17ab8287",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D02_F012",
+    "document_id": "D02",
+    "caption": "Figure 8.12. Truck, Base and Type tables for question 4, by A. Watt.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-8-entity-relationship-model/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-Fig8-2-e1409189722961.jpg",
+    "original_image_file": "raw/assets/D02_F012.jpg",
+    "original_image_sha256": "e33f18273b7f45bec6d2d153a105ef80556b342f1d3d626fd095ccdce21407c9",
+    "original_dimensions": [
+      1207,
+      618
+    ],
+    "parent_chunk_ids": [
+      "D02_C008"
+    ],
+    "processed_marker_offset": 23662,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": "supplements/figures/D02_F012.md",
+    "supplement_chunk_ids": [
+      "D02_F012_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D02_notices.html",
+      "licenses/D02_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "transcribe",
+    "decision_reason": "TRUCK, BASE and TYPE data, including a blank foreign-key candidate cell, are exclusively visual exercise evidence.",
+    "transcription_status": "complete",
+    "supplement_id": "D02_F012_T01",
+    "literal_transcription": "TRUCK\n\n| TNUM | BASENUM | TYPENUM | TMILES | TBOUGHT | TSERIAL |\n|---|---|---|---|---|---|\n| 1001 | 501 | 1 | 5900.2 | 11/08/90 | aa-125 |\n| 1002 | 502 | 2 | 64523.9 | 11/08/90 | ac-213 |\n| 1003 | 501 | 2 | 32116.0 | 09/29/91 | ac-215 |\n| 1004 |  | 2 | 3256.9 | 01/14/92 | ac-315 |\n\nBASE\n\n| BASENUM | BASECITY | BASESTATE | BASEPHON | BASEMGR |\n|---|---|---|---|---|\n| 501 | Dallas | TX | 893-9870 | J. Jones |\n| 502 | New York | NY | 234-7689 | K. Lee |\n\nTYPE\n\n| TYPENUM | TYPEDESC |\n|---|---|\n| 1 | single box, double axle |\n| 2 | tandem trailer, single axle |",
+    "visual_description": "The BASENUM cell in TRUCK row TNUM 1004 is visually blank. An empty Markdown cell preserves that blank; the image does not label it NULL. Other TRUCK columns and the BASE/TYPE data are bold, while the TRUCK TNUM values are regular weight. There are no explicit PK/FK icons or connecting lines; the supplement does not answer the source exercise by inferring keys.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": false,
+    "transcription_sha256": "b62c9c5cdac4ba08c7b45ee54280faae5960d12fc66b8ca6b9fce5144fb953d3",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D02_F013",
+    "document_id": "D02",
+    "caption": "Figure 8.13. Customer and BookOrders tables for question 5, by A. Watt.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-8-entity-relationship-model/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-Fig8-3-e1409189789204.jpg",
+    "original_image_file": "raw/assets/D02_F013.jpg",
+    "original_image_sha256": "5045a961a0c732e9efbc5b1807d03e3ea2406ddef52732489f22bb37ca771f08",
+    "original_dimensions": [
+      895,
+      580
+    ],
+    "parent_chunk_ids": [
+      "D02_C008"
+    ],
+    "processed_marker_offset": 24257,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": "supplements/figures/D02_F013.md",
+    "supplement_chunk_ids": [
+      "D02_F013_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D02_notices.html",
+      "licenses/D02_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "transcribe",
+    "decision_reason": "The customer/account/order rows are necessary evidence for the original key and redundancy exercise.",
+    "transcription_status": "complete",
+    "supplement_id": "D02_F013_T01",
+    "literal_transcription": "Customer\n\n| CustID | CustName | AccntNo. |\n|---|---|---|\n| 100 | Joe Smith | 010839 |\n| 101 | Andy Blake | 111248 |\n| 102 | Sue Brown | 061544 |\n\nBookOrders\n\n| OrderID | Title | CustID | Price |\n|---|---|---|---|\n| 1001 | The Dark Tower | 102 | 12.00 |\n| 1002 | Incubus Dreams | 101 | 19.99 |\n| 1003 | Song of Susannah | 102 | 23.00 |\n| 1004 | The Time Traveler's Wife | 100 | 21.00 |\n| 1005 | The Dark Tower | 101 | 12.00 |\n| 1006 | Tanequil | 102 | 15.00 |\n| 1007 | Song of Susannah | 101 | 23.00 |",
+    "visual_description": "Two tables, without relationship lines or PK/FK symbols. BookOrders uses bold type in OrderID, CustID and Price values. Leading zeros in AccntNo. and two decimal places in Price are retained as displayed. The supplement makes no candidate-key or redundancy conclusions.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": false,
+    "transcription_sha256": "dc9d3e191c5312fcae73174a3b87272726a0f8083fc12e3ddb9c940cc67cb930",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D02_F014",
+    "document_id": "D02",
+    "caption": "Figure 8.14. Student table for question 6, by A. Watt.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-8-entity-relationship-model/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-No6-Student.jpg",
+    "original_image_file": "raw/assets/D02_F014.jpg",
+    "original_image_sha256": "fab7450fd0d796c108b52cfb7074e5258b3b2880e3dd170034dc4222f0c70b6f",
+    "original_dimensions": [
+      337,
+      573
+    ],
+    "parent_chunk_ids": [
+      "D02_C008"
+    ],
+    "processed_marker_offset": 25113,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": "supplements/figures/D02_F014.md",
+    "supplement_chunk_ids": [
+      "D02_F014_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D02_notices.html",
+      "licenses/D02_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "transcribe",
+    "decision_reason": "The student attribute list and the single explicit key icon are missing from the filename alt.",
+    "transcription_status": "complete",
+    "supplement_id": "D02_F014_T01",
+    "literal_transcription": "student\n\n| Attribute, in displayed order | Visible marker |\n|---|---|\n| student_id | yellow key icon |\n| student_fname | |\n| student_lname | |\n| tel_no | |\n| fax_no | |\n| gender | |\n| date_of_birth | |\n| student_desc | |\n| preferred_language | |\n| passport_program | |\n| company_id | |",
+    "visual_description": "One schema box. A yellow key appears only beside student_id. Blank marker cells mean no icon is shown, not a declaration that the attribute cannot be a key. No relationships, data values, types or nullability marks are shown.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": false,
+    "transcription_sha256": "80d88cc3265030a24d17bbdb551ecdbb4e887d3dec01a9d2f9739fe97ba72b63",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D02_F015",
+    "document_id": "D02",
+    "caption": "Figure 8.15. ERD of school database for questions 7-10, by A. Watt.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-8-entity-relationship-model/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-No7-School-Database-1024x640.jpg",
+    "original_image_file": "raw/assets/D02_F015.jpg",
+    "original_image_sha256": "a1ebddd206f272fda53eb6ef1e2fd8b3208dbec27e9d1d4996d787ed799620c0",
+    "original_dimensions": [
+      1024,
+      640
+    ],
+    "parent_chunk_ids": [
+      "D02_C008"
+    ],
+    "processed_marker_offset": 25343,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": "supplements/figures/D02_F015.md",
+    "supplement_chunk_ids": [
+      "D02_F015_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D02_notices.html",
+      "licenses/D02_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "transcribe",
+    "decision_reason": "The school ERD contains five complete schemas and relationship endpoints absent from the body.",
+    "transcription_status": "complete",
+    "supplement_id": "D02_F015_T01",
+    "literal_transcription": "```text\ninstructor(instructor_id [key], instructor_name, salary, commission, mentor_id, date_hired)\ncourse(course_id [key], title, duration, cost, subject_id)\noffering(offering_id [key], course_id, instructor_id, site_id, start_date, max_no_students)\nattendance(offering_id [key], student_id [key], evaluation, amount_paid)\nstudent(student_id [key], student_fname, student_lname, tel_no, fax_no, gender, date_of_birth, student_desc, preferred_language, passport_program, company_id)\n```",
+    "visual_description": "Yellow keys are beside the attributes marked [key] above. Four undirected connectors are visible: instructor -- offering (key symbol at instructor, infinity symbol at offering); course -- offering (key at course, infinity at offering); offering -- attendance (key at offering, infinity at attendance); student -- attendance (key at student, infinity at attendance). The lower parts of the infinity glyphs resemble small circles; these are recorded as the diagram's key/infinity notation rather than invented minimum-participation circles. The drawing gives one/many endpoints but no readable minimum-participation specification. No connector is drawn for mentor_id, site_id, subject_id, company_id or passport_program. [key] is transcription notation for a visible icon, not text printed after the attribute.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": false,
+    "transcription_sha256": "21243ff0c0987465efeea6cd65464d2bd4e0cae24560e3b570e45136b51b9e35",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D03_F001",
+    "document_id": "D03",
+    "caption": "Figure 9.1. Referential access in MS Access, by A. Watt.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-9-integrity-rules-and-constraints/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Access-Referential-Integrity-Window-300x212.jpg",
+    "original_image_file": "raw/assets/D03_F001.jpg",
+    "original_image_sha256": "1f34302a9dd261eb1c9fee805458ba0ac70f6e118cd1fc76fe23f8d3eb6530c1",
+    "original_dimensions": [
+      300,
+      212
+    ],
+    "parent_chunk_ids": [
+      "D03_C002"
+    ],
+    "processed_marker_offset": 3786,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": null,
+    "supplement_chunk_ids": [],
+    "license_evidence_files": [
+      "licenses/D03_notices.html",
+      "licenses/D03_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "already_covered_by_text",
+    "decision_reason": "The body already explains the CustID join, enforcement and cascade options. The Access dialog adds no new essential rule.",
+    "visual_observation": "Edit Relationships: Customer.CustID to Order.CustID; Enforce Referential Integrity checked, both Cascade options unchecked; Relationship Type One-To-Many.",
+    "coverage_scope": "Essential educational role covered; not a claim that every specimen value is transcribed.",
+    "transcription_status": "not_selected",
+    "uncertainty_in_transcription": false,
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D03_F002",
+    "document_id": "D03",
+    "caption": "Figure 9.2. Position of connectivity and cardinality on a relationship symbol, by A. Watt.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-9-integrity-rules-and-constraints/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Connectivity-and-Cardinality-300x202.jpg",
+    "original_image_file": "raw/assets/D03_F002.jpg",
+    "original_image_sha256": "94e01a9f2e18959e48cb8ef74c4d2aaf699038fe0a3f31e0dd7df58429471898",
+    "original_dimensions": [
+      300,
+      202
+    ],
+    "parent_chunk_ids": [
+      "D03_C003"
+    ],
+    "processed_marker_offset": 6940,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": {
+      "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Connectivity-and-Cardinality.jpg",
+      "http_status": 404,
+      "evidence_file": "supplements/provenance/responses/D03_F002.html",
+      "use": "not used; candidate unavailable"
+    },
+    "transcription_file": "supplements/figures/D03_F002.md",
+    "supplement_chunk_ids": [
+      "D03_F002_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D03_notices.html",
+      "licenses/D03_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "transcribe",
+    "decision_reason": "Teacher/Class key membership and the locations of endpoint markers are only in the diagram.",
+    "transcription_status": "complete",
+    "supplement_id": "D03_F002_T01",
+    "literal_transcription": "| Table | Attribute | Printed marker |\n|---|---|---|\n| Teacher | TeacherID | PK |\n| Teacher | Lname | |\n| Teacher | Fname | |\n| Class | ClassID | PK |\n| Class | TeacherID | PK,FK1 |\n| Class | StartDate | PK |\n\nAnnotation labels: Connectivity; Cardinality.",
+    "visual_description": "Teacher is left, Class right, joined by a solid horizontal line. TeacherID in Teacher and all three Class attributes are underlined. The Teacher end has two vertical bars; the Class end has a circle and crow's foot. The Connectivity annotation arrows point to the outer Teacher bar and Class crow's foot; the Cardinality arrows point to the inner Teacher bar and Class circle. In the source's displayed endpoint notation: one Teacher per Class; zero to many Class occurrences per Teacher. The arrows are explanatory callouts, not data-flow directions.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": false,
+    "transcription_sha256": "cd43ee03cf4938823ebd8c2db6fc6ec1748baeade5946726424d4e27fc1d8e2c",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D03_F003",
+    "document_id": "D03",
+    "caption": "Figure 9.3.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-9-integrity-rules-and-constraints/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-oneToMany-1.jpg",
+    "original_image_file": "raw/assets/D03_F003.jpg",
+    "original_image_sha256": "6b62986eb73ee8214660a65156951bdfc9c7d8a769e953c1fbf874b931ecbe0f",
+    "original_dimensions": [
+      171,
+      34
+    ],
+    "parent_chunk_ids": [
+      "D03_C003"
+    ],
+    "processed_marker_offset": 7817,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": null,
+    "supplement_chunk_ids": [],
+    "license_evidence_files": [
+      "licenses/D03_notices.html",
+      "licenses/D03_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "decorative_or_symbol",
+    "decision_reason": "Standalone notation already explicitly explained in the parent text; no separate retrieval supplement needed.",
+    "visual_observation": "A horizontal stroke has a bar on the left and a crow's foot on the right. The body identifies it as one to many.",
+    "transcription_status": "not_selected",
+    "uncertainty_in_transcription": false,
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D03_F004",
+    "document_id": "D03",
+    "caption": "Figure 9.4.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-9-integrity-rules-and-constraints/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-oneToMany-2.jpg",
+    "original_image_file": "raw/assets/D03_F004.jpg",
+    "original_image_sha256": "ac0aafdd3c5fe023feaf5d950e230e85581a8a08881d251ba430cfbb82be7ec6",
+    "original_dimensions": [
+      169,
+      37
+    ],
+    "parent_chunk_ids": [
+      "D03_C003"
+    ],
+    "processed_marker_offset": 8209,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": null,
+    "supplement_chunk_ids": [],
+    "license_evidence_files": [
+      "licenses/D03_notices.html",
+      "licenses/D03_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "decorative_or_symbol",
+    "decision_reason": "Standalone notation already explicitly explained in the parent text; no separate retrieval supplement needed.",
+    "visual_observation": "Two bars at the left; bar and crow's foot at the right. The body explicitly states minimum/maximum one/one and one/many.",
+    "transcription_status": "not_selected",
+    "uncertainty_in_transcription": false,
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D03_F005",
+    "document_id": "D03",
+    "caption": "Figure 9.5. Identifying and non-identifying relationship, by A. Watt.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-9-integrity-rules-and-constraints/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Identifying-and-Non-Identifying-relationship-300x298.jpg",
+    "original_image_file": "raw/assets/D03_F005.jpg",
+    "original_image_sha256": "105ffda06039cc33a3cabc2b83924d77d05d8e735111e0e211009d1181ccc0a9",
+    "original_dimensions": [
+      300,
+      298
+    ],
+    "parent_chunk_ids": [
+      "D03_C004"
+    ],
+    "processed_marker_offset": 8880,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": {
+      "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Identifying-and-Non-Identifying-relationship.jpg",
+      "http_status": 404,
+      "evidence_file": "supplements/provenance/responses/D03_F005.html",
+      "use": "not used; candidate unavailable"
+    },
+    "transcription_file": "supplements/figures/D03_F005.md",
+    "supplement_chunk_ids": [
+      "D03_F005_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D03_notices.html",
+      "licenses/D03_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "transcribe",
+    "decision_reason": "The image contrasts FK membership in the child key and optionality in two separate panels.",
+    "transcription_status": "complete",
+    "supplement_id": "D03_F005_T01",
+    "literal_transcription": "Upper panel: Non-Identifying Relationship\n```text\ncustomer: CustID [PK, underlined]; LName; FName\nOrder: OrderID [PK, underlined]; CustID [FK1]; OrdDate\n```\n\nLower panel: Identifying Relationship\n```text\ncustomer: CustID [PK, underlined]; LName; FName\nOrder: OrderID [PK, underlined]; CustID [PK,FK1, underlined]; OrdDate\n```",
+    "visual_description": "Upper connector is dashed: bar plus circle at customer (zero/one) and circle plus crow's foot at Order (zero/many). Lower connector is solid: two bars at customer (one/one) and circle plus crow's foot at Order (zero/many). Thus CustID is drawn outside the Order PK area above and inside it below. Lines are undirected, and bracketed descriptions represent visible marks rather than added SQL constraints.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": false,
+    "transcription_sha256": "f550507e7abdb5e1178df9a50ca913dcbf7292cfb4db17cc5888eeaf5ceffc46",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D03_F006",
+    "document_id": "D03",
+    "caption": "Figure 9.6.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-9-integrity-rules-and-constraints/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Zero-or-Many-1.jpg",
+    "original_image_file": "raw/assets/D03_F006.jpg",
+    "original_image_sha256": "1163f78fc6e0c502d3a66dff63cb9d5e73eed1b790515015669239a317213903",
+    "original_dimensions": [
+      49,
+      33
+    ],
+    "parent_chunk_ids": [
+      "D03_C004"
+    ],
+    "processed_marker_offset": 9443,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": null,
+    "supplement_chunk_ids": [],
+    "license_evidence_files": [
+      "licenses/D03_notices.html",
+      "licenses/D03_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "decorative_or_symbol",
+    "decision_reason": "Standalone notation already explicitly explained in the parent text; no separate retrieval supplement needed.",
+    "visual_observation": "Circle and crow's foot, zero or many; both shapes and their reading are already stated in the body.",
+    "transcription_status": "not_selected",
+    "uncertainty_in_transcription": false,
+    "reused_image_occurrences": [
+      "D03_F014"
+    ]
+  },
+  {
+    "figure_id": "D03_F007",
+    "document_id": "D03",
+    "caption": "Figure 9.7. Example usage of a zero to many optional relationship symbol, by A. Watt.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-9-integrity-rules-and-constraints/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Cardinality-Optional-0-or-more-300x189.jpg",
+    "original_image_file": "raw/assets/D03_F007.jpg",
+    "original_image_sha256": "5cb46e804eadf64f6dba6ca9f112a29e1152a5eb90ee78371b65641ad9f72087",
+    "original_dimensions": [
+      300,
+      189
+    ],
+    "parent_chunk_ids": [
+      "D03_C004"
+    ],
+    "processed_marker_offset": 9844,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": {
+      "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Cardinality-Optional-0-or-more.jpg",
+      "http_status": 404,
+      "evidence_file": "supplements/provenance/responses/D03_F007.html",
+      "use": "not used; candidate unavailable"
+    },
+    "transcription_file": "supplements/figures/D03_F007.md",
+    "supplement_chunk_ids": [
+      "D03_F007_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D03_notices.html",
+      "licenses/D03_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "transcribe",
+    "decision_reason": "The figure adds explicit child-key membership and four embedded relationship statements.",
+    "transcription_status": "complete",
+    "supplement_id": "D03_F007_T01",
+    "literal_transcription": "```text\ncustomer: CustID [PK, underlined]; LName; FName\nOrder: OrderID [PK, underlined]; CustID [PK,FK1, underlined]; OrdDate\n```\n\nEmbedded statements (line wraps normalized):\n- One order record must be associated with a maximum of one Customer\n- An order record must have a valid customer and it must NOT be Null\n- A customer can have many orders\n- A customer does not need to have an order to be a customer",
+    "visual_description": "A solid line has two bars at customer and a circle plus crow's foot at Order. The two left callout arrows identify the maximum-one bar and mandatory-one bar; the two right callout arrows identify the crow's foot and zero circle. Each Order is shown with exactly one customer; customer participation toward Order is zero to many. These are source statements and visible marks, without adding a new rule.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": false,
+    "transcription_sha256": "1b1288c259f17d7f23b1be93a1868266c36cdb50060c9876416d28c3930446b6",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D03_F008",
+    "document_id": "D03",
+    "caption": "Figure 9.8.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-9-integrity-rules-and-constraints/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Optional-Arrow-2.jpg",
+    "original_image_file": "raw/assets/D03_F008.jpg",
+    "original_image_sha256": "f68df3d0cb9ca74044bccbd910738a6e945df735b1b5054d080dd0085ccc4e13",
+    "original_dimensions": [
+      45,
+      32
+    ],
+    "parent_chunk_ids": [
+      "D03_C004"
+    ],
+    "processed_marker_offset": 10541,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": null,
+    "supplement_chunk_ids": [],
+    "license_evidence_files": [
+      "licenses/D03_notices.html",
+      "licenses/D03_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "decorative_or_symbol",
+    "decision_reason": "Standalone notation already explicitly explained in the parent text; no separate retrieval supplement needed.",
+    "visual_observation": "Circle and bar, zero or one; the body explicitly gives that reading.",
+    "transcription_status": "not_selected",
+    "uncertainty_in_transcription": false,
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D03_F009",
+    "document_id": "D03",
+    "caption": "Figure 9.9. Example usage of a zero to one optional relationship symbol, by A. Watt.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-9-integrity-rules-and-constraints/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Cardinality-Optional-0-or-1-300x188.jpg",
+    "original_image_file": "raw/assets/D03_F009.jpg",
+    "original_image_sha256": "57cb922ed88738f207c09d03644e68df719965c33bf47207502de757f7ca266b",
+    "original_dimensions": [
+      300,
+      188
+    ],
+    "parent_chunk_ids": [
+      "D03_C004"
+    ],
+    "processed_marker_offset": 10791,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": {
+      "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Cardinality-Optional-0-or-1.jpg",
+      "http_status": 404,
+      "evidence_file": "supplements/provenance/responses/D03_F009.html",
+      "use": "not used; candidate unavailable"
+    },
+    "transcription_file": "supplements/figures/D03_F009.md",
+    "supplement_chunk_ids": [
+      "D03_F009_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D03_notices.html",
+      "licenses/D03_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "transcribe",
+    "decision_reason": "The optional spouse example's fields and embedded minimum/maximum statements are absent from the surrounding text.",
+    "transcription_status": "complete",
+    "supplement_id": "D03_F009_T01",
+    "literal_transcription": "```text\nEmployee: EmpID [PK, underlined]; LName; Fname\nSpouse: EmpID [PK,FK1, underlined]; SpouseLName; SpouseFname\n```\n\nEmbedded statements (line wraps normalized):\n- One Spouse record must be associated with a maximum of one Employee\n- One Spouse record must be associated with a minimum of one Employee.\n- An employee is associated with a maximum of one spouse.\n- An employee in the Employee table does not have to appear in the Spouse table.",
+    "visual_description": "A solid connector joins Employee to Spouse, with two bars at Employee and a circle plus bar at Spouse. Every displayed Spouse occurrence has exactly one Employee; the Employee-to-Spouse endpoint is zero or one. Callout arrows identify the maximum and minimum components separately. The optional endpoint is at Spouse, not a declaration that the pictured PK/FK EmpID is nullable.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": false,
+    "transcription_sha256": "dd22a5be54f44ee8122407a65e384da8150070186b73c2c8f29a90cb70cb7841",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D03_F010",
+    "document_id": "D03",
+    "caption": "Figure 9.10",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-9-integrity-rules-and-constraints/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-oneToOne-1.jpg",
+    "original_image_file": "raw/assets/D03_F010.jpg",
+    "original_image_sha256": "0130400eb48da877c55a3179a720caad7eaa2b3b1b2b13257a8a212e582e1084",
+    "original_dimensions": [
+      21,
+      24
+    ],
+    "parent_chunk_ids": [
+      "D03_C004"
+    ],
+    "processed_marker_offset": 11287,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": null,
+    "supplement_chunk_ids": [],
+    "license_evidence_files": [
+      "licenses/D03_notices.html",
+      "licenses/D03_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "decorative_or_symbol",
+    "decision_reason": "Standalone notation already explicitly explained in the parent text; no separate retrieval supplement needed.",
+    "visual_observation": "Two bars, one and only one; the body explicitly gives that reading.",
+    "transcription_status": "not_selected",
+    "uncertainty_in_transcription": false,
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D03_F011",
+    "document_id": "D03",
+    "caption": "Figure 9.11. Example of a one and only one mandatory relationship symbol, by A. Watt.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-9-integrity-rules-and-constraints/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Mandatory-Cardinality-one-to-one-300x188.jpg",
+    "original_image_file": "raw/assets/D03_F011.jpg",
+    "original_image_sha256": "14f06cd4df0ca1dabc926e791bdb0185ad6f6e20fc1a4768ef866768e1b6c56a",
+    "original_dimensions": [
+      300,
+      188
+    ],
+    "parent_chunk_ids": [
+      "D03_C004"
+    ],
+    "processed_marker_offset": 11555,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": {
+      "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Mandatory-Cardinality-one-to-one.jpg",
+      "http_status": 404,
+      "evidence_file": "supplements/provenance/responses/D03_F011.html",
+      "use": "not used; candidate unavailable"
+    },
+    "transcription_file": "supplements/figures/D03_F011.md",
+    "supplement_chunk_ids": [
+      "D03_F011_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D03_notices.html",
+      "licenses/D03_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "transcribe",
+    "decision_reason": "The mandatory spouse variant differs from the optional variant and is not described fully in the body.",
+    "transcription_status": "complete",
+    "supplement_id": "D03_F011_T01",
+    "literal_transcription": "```text\nEmployee: EmpID [PK, underlined]; LName; Fname\nSpouse: EmpID [PK,FK1, underlined]; SpouseLName; SpouseFname\n```\n\nEmbedded statements (line wraps normalized):\n- A spouse record must contain a maximum of 1 valid Employee ID.\n- A spouse record must contain a minimum of 1 valid Employee ID.\n- An employee is associated with a maximum of one spouse.\n- An employee in the Employee table must appear in the Spouse table at least once.",
+    "visual_description": "A solid line has two bars at both Employee and Spouse. The two arrows at each end distinguish minimum-one from maximum-one. The image therefore depicts mandatory one-to-one endpoints; unlike Figure 9.9, there is no optionality circle.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": false,
+    "transcription_sha256": "7d37dce21a24f653bb8ee691594e2dadde260e3ba6e239410f0c2a53ded07c60",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D03_F012",
+    "document_id": "D03",
+    "caption": "Figure 9.12.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-9-integrity-rules-and-constraints/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-oneToMany-3.jpg",
+    "original_image_file": "raw/assets/D03_F012.jpg",
+    "original_image_sha256": "f964c6521462efe87adef7beafa54615201301483023a6cbc13bf67769dcc4eb",
+    "original_dimensions": [
+      24,
+      27
+    ],
+    "parent_chunk_ids": [
+      "D03_C004"
+    ],
+    "processed_marker_offset": 11938,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": null,
+    "supplement_chunk_ids": [],
+    "license_evidence_files": [
+      "licenses/D03_notices.html",
+      "licenses/D03_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "decorative_or_symbol",
+    "decision_reason": "Standalone notation already explicitly explained in the parent text; no separate retrieval supplement needed.",
+    "visual_observation": "Bar and crow's foot, mandatory one to many; the body explains the mandatory many side.",
+    "transcription_status": "not_selected",
+    "uncertainty_in_transcription": false,
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D03_F013",
+    "document_id": "D03",
+    "caption": "Figure 9.13. Example of a one to many mandatory relationship symbol, by A. Watt.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-9-integrity-rules-and-constraints/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Mandatory-Cardinality-one-to-Many-300x188.jpg",
+    "original_image_file": "raw/assets/D03_F013.jpg",
+    "original_image_sha256": "6b6f45522d088d15d77d559472f4ffec89e1312c97f86edd51fa82d299ce1708",
+    "original_dimensions": [
+      300,
+      188
+    ],
+    "parent_chunk_ids": [
+      "D03_C004"
+    ],
+    "processed_marker_offset": 12203,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": {
+      "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Mandatory-Cardinality-one-to-Many.jpg",
+      "http_status": 404,
+      "evidence_file": "supplements/provenance/responses/D03_F013.html",
+      "use": "not used; candidate unavailable"
+    },
+    "transcription_file": "supplements/figures/D03_F013.md",
+    "supplement_chunk_ids": [
+      "D03_F013_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D03_notices.html",
+      "licenses/D03_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "transcribe",
+    "decision_reason": "The mandatory order-detail diagram adds a composite child key and explicit minimum-one participation.",
+    "transcription_status": "complete",
+    "supplement_id": "D03_F013_T01",
+    "literal_transcription": "```text\nOrder: OrderID [PK, underlined]; CustID; OrdDate\nOrderDetail: OrderID [PK,FK1, underlined]; ProductID [PK, underlined]; Qty; Price\n```\n\nEmbedded statements (line wraps normalized):\n- One order detail record must be associated with a maximum of one Order.\n- An Order Detail record must have a valid OrderID and it must NOT be null.\n- An order contains many products.\n- An order must have at least 1 product",
+    "visual_description": "The solid connector has two bars beside Order and a bar plus crow's foot beside OrderDetail. The left endpoint is exactly one; the right endpoint is one to many. Callout arrows point to each min/max component. OrderID and ProductID occupy the OrderDetail PK area, but only OrderID has an FK1 marker; no FK target for ProductID is drawn.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": false,
+    "transcription_sha256": "321dca1085a452c8219d216fbf137b74a14a09cd0f3791c64ba372a56e4ebc74",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D03_F014",
+    "document_id": "D03",
+    "caption": "Figure 9.14",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-9-integrity-rules-and-constraints/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Zero-or-Many-1.jpg",
+    "original_image_file": "raw/assets/D03_F006.jpg",
+    "original_image_sha256": "1163f78fc6e0c502d3a66dff63cb9d5e73eed1b790515015669239a317213903",
+    "original_dimensions": [
+      49,
+      33
+    ],
+    "parent_chunk_ids": [
+      "D03_C004"
+    ],
+    "processed_marker_offset": 12712,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": null,
+    "supplement_chunk_ids": [],
+    "license_evidence_files": [
+      "licenses/D03_notices.html",
+      "licenses/D03_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "decorative_or_symbol",
+    "decision_reason": "Standalone notation already explicitly explained in the parent text; no separate retrieval supplement needed.",
+    "visual_observation": "Same source image as D03_F006, reused for Figure 9.14. Circle and crow's foot are already discussed in the parent text.",
+    "transcription_status": "not_selected",
+    "uncertainty_in_transcription": false,
+    "reused_image_occurrences": [
+      "D03_F006"
+    ]
+  },
+  {
+    "figure_id": "D03_F015",
+    "document_id": "D03",
+    "caption": "Figure 9.15.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-9-integrity-rules-and-constraints/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Zero-or-Many-2.jpg",
+    "original_image_file": "raw/assets/D03_F014.jpg",
+    "original_image_sha256": "413871497577e852f27bdc17311e570200207e9c99e404b5e8c1ef39ee3979c7",
+    "original_dimensions": [
+      49,
+      35
+    ],
+    "parent_chunk_ids": [
+      "D03_C004"
+    ],
+    "processed_marker_offset": 12986,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": null,
+    "supplement_chunk_ids": [],
+    "license_evidence_files": [
+      "licenses/D03_notices.html",
+      "licenses/D03_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "decorative_or_symbol",
+    "decision_reason": "Standalone notation already explicitly explained in the parent text; no separate retrieval supplement needed.",
+    "visual_observation": "Bar-circle-bar glyph used by the source as a disallowed-connectivity illustration. The source explicitly discusses it; no corrected notation is invented.",
+    "transcription_status": "not_selected",
+    "uncertainty_in_transcription": false,
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D03_F016",
+    "document_id": "D03",
+    "caption": "Figure 9.16. The relationship between a Customer table and an Order table, by A. Watt.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-9-integrity-rules-and-constraints/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Cust-to-Order-ERD-300x168.jpg",
+    "original_image_file": "raw/assets/D03_F015.jpg",
+    "original_image_sha256": "8ff3c2ff9a7bca1774e3bbf3fd0da58052d599bc2b798d3fe8e07baf53cfec02",
+    "original_dimensions": [
+      300,
+      168
+    ],
+    "parent_chunk_ids": [
+      "D03_C005"
+    ],
+    "processed_marker_offset": 13974,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": {
+      "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Cust-to-Order-ERD.jpg",
+      "http_status": 404,
+      "evidence_file": "supplements/provenance/responses/D03_F016.html",
+      "use": "not used; candidate unavailable"
+    },
+    "transcription_file": "supplements/figures/D03_F016.md",
+    "supplement_chunk_ids": [
+      "D03_F016_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D03_notices.html",
+      "licenses/D03_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "transcribe",
+    "decision_reason": "The isolated optional Customer/Order schema needs explicit key and endpoint transcription.",
+    "transcription_status": "complete",
+    "supplement_id": "D03_F016_T01",
+    "literal_transcription": "```text\ncustomer: CustID [PK, underlined]; LName; FName\nOrder: OrderID [PK, underlined]; CustID [FK1]; OrdDate\n```",
+    "visual_description": "A dashed line connects customer (left) to Order (right). At customer the outer bar and inner circle show zero or one; at Order the inner circle and outer crow's foot show zero to many. Order.CustID is printed outside the PK area. The diagram is the same schema pattern as the upper panel of Figure 9.5, retained here because it is a separate cited occurrence with its own parent context. No data-flow direction is shown.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": false,
+    "transcription_sha256": "92998d4af999d9beb70490cfebaebc52b422c9360fd795bfeb5c0fe6bcca5600",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D03_F017",
+    "document_id": "D03",
+    "caption": "Figure 9.17. ERD for questions 1-5. (Diagram by A. Watt.)",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-9-integrity-rules-and-constraints/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/SwimClubDatabase.jpg",
+    "original_image_file": "raw/assets/D03_F016.jpg",
+    "original_image_sha256": "4ff3c1f29d297029d40eed704786b1c6c7df650e98ba1e3b07734540805cdd9c",
+    "original_dimensions": [
+      966,
+      475
+    ],
+    "parent_chunk_ids": [
+      "D03_C006"
+    ],
+    "processed_marker_offset": 16616,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": "supplements/figures/D03_F017.md",
+    "supplement_chunk_ids": [
+      "D03_F017_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D03_notices.html",
+      "licenses/D03_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "transcribe",
+    "decision_reason": "The text lists the schemas but the explicit 1/infinity connector placements are visual-only.",
+    "transcription_status": "complete",
+    "supplement_id": "D03_F017_T01",
+    "literal_transcription": "```text\ntblLevels(Level [key], ClassName)\ntblPool(Pool [key], PoolName, Location)\ntblStaff(StaffID [key], FirstName, MiddleInitial, LastName, Suffix, Salaried, PayAmount)\ntblClasses(LessonIndex [key], Level, SectionID, Semester, Days, Time, Pool, Instructor, Limit, Enrolled, Price)\ntblEnrollment(LessonIndex [key], SID [key], Status, Charged, AmountPaid, DateEnrolled)\ntblStudents(SID [key], FirstName, MiddleInitial, LastName, Suffix, Birthday, LocalStreet, LocalCity, LocalPostalCode, LocalPhone)\n```",
+    "visual_description": "Five undirected connectors carry printed 1 and infinity marks: tblLevels (1) -- tblClasses (infinity); tblPool (1) -- tblClasses (infinity); tblStaff (1) -- tblClasses (infinity); tblClasses (1) -- tblEnrollment (infinity); tblStudents (1) -- tblEnrollment (infinity). Yellow key icons are transcribed as [key]. The diagram does not print minimum-participation values or FK attribute-to-attribute endpoints; the attribute/type/FK definitions and proposed business rules in the parent text are separate evidence. In particular, no optionality is invented from the 1/infinity glyphs and no exercise answer is generated.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": false,
+    "transcription_sha256": "7cb65c82c3ee997d8e68c33fc14dcc68c8286e9f05ae9897ccf08f8207b4e4d5",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D04_F001",
+    "document_id": "D04",
+    "caption": "Table 11.1. Functional dependency example, by A. Watt.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-11-functional-dependencies/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Table-R-Functional-Dependency-example.jpg",
+    "original_image_file": "raw/assets/D04_F001.jpg",
+    "original_image_sha256": "426c82e0a38bd07367063d443b7a1ab3534b5c0d397f9849dccdd3e1d158e8cf",
+    "original_dimensions": [
+      141,
+      216
+    ],
+    "parent_chunk_ids": [
+      "D04_C001"
+    ],
+    "processed_marker_offset": 1269,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": "supplements/figures/D04_F001.md",
+    "supplement_chunk_ids": [
+      "D04_F001_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D04_notices.html",
+      "licenses/D04_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [
+      "V03"
+    ],
+    "pending": [
+      "The parent prose first states C → D and subsequently says C does not determine D. The transcription does not reconcile these statements; conceptual review is deferred."
+    ],
+    "decision": "transcribe",
+    "decision_reason": "Exact table values and case are needed to inspect the functional-dependency examples.",
+    "transcription_status": "complete",
+    "supplement_id": "D04_F001_T01",
+    "literal_transcription": "Table R\n\n| A | B | C | D | E |\n|---|---|---|---|---|\n| a1 | b1 | c1 | d1 | e1 |\n| a2 | b1 | C2 | d2 | e1 |\n| a3 | b2 | C1 | d1 | e1 |\n| a4 | b2 | C2 | d2 | e1 |\n| a5 | b3 | C3 | d1 | e1 |",
+    "visual_description": "Five data rows, five attribute columns and the caption 'Table R' below. Letter case in C is preserved as visible: lower-case c1 in the first data row and upper-case C in the other four. There are no drawn arrows, PK labels or underlines in this image. Dependencies asserted in the parent prose are not inferred afresh from this finite sample.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": false,
+    "transcription_sha256": "aa0cbacd433a135054339d44de4aee8272528f717317de5342b4d9f951fc55a8",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D04_F002",
+    "document_id": "D04",
+    "caption": "Figure 11.1. Equation for axiom of reflexivity.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-11-functional-dependencies/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axion-Reflexivity.jpg",
+    "original_image_file": "raw/assets/D04_F002.jpg",
+    "original_image_sha256": "e9d0376a013b30e53e1598ec5fdc016e9e0948c50859d0554f21a2c4feedd246",
+    "original_dimensions": [
+      289,
+      59
+    ],
+    "parent_chunk_ids": [
+      "D04_C002"
+    ],
+    "processed_marker_offset": 3107,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": null,
+    "supplement_chunk_ids": [],
+    "license_evidence_files": [
+      "licenses/D04_notices.html",
+      "licenses/D04_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "already_covered_by_text",
+    "decision_reason": "The reflexivity subsection states the same condition and result in words: if Y is a subset of X, X determines Y.",
+    "visual_observation": "Visible equation: If Y ⊆ X, then X → Y.",
+    "coverage_scope": "Essential educational role covered; not a claim that every specimen value is transcribed.",
+    "transcription_status": "not_selected",
+    "uncertainty_in_transcription": false,
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D04_F003",
+    "document_id": "D04",
+    "caption": "Figure 11.2. Equation for axiom of augmentation.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-11-functional-dependencies/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axiom-of-Augmentation-300x34.jpg",
+    "original_image_file": "raw/assets/D04_F003.jpg",
+    "original_image_sha256": "84bcb6027367147731312562b6039aa53ca19bae27ef956847733fa15025dfde",
+    "original_dimensions": [
+      300,
+      34
+    ],
+    "parent_chunk_ids": [
+      "D04_C002"
+    ],
+    "processed_marker_offset": 3638,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": null,
+    "supplement_chunk_ids": [],
+    "license_evidence_files": [
+      "licenses/D04_notices.html",
+      "licenses/D04_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "already_covered_by_text",
+    "decision_reason": "The augmentation subsection explicitly gives the same antecedent and consequent, including any Z.",
+    "visual_observation": "Visible equation: If X → Y, then XZ → YZ for any Z.",
+    "coverage_scope": "Essential educational role covered; not a claim that every specimen value is transcribed.",
+    "transcription_status": "not_selected",
+    "uncertainty_in_transcription": false,
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D04_F004",
+    "document_id": "D04",
+    "caption": "Figure 11.3. Equation for axiom of transitivity.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-11-functional-dependencies/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axiom-of-transitivity-300x30.jpg",
+    "original_image_file": "raw/assets/D04_F004.jpg",
+    "original_image_sha256": "0e5e809ba476e7de703473e1f7251b09ffa7ce8d83455b3ee93fb09ac4537b38",
+    "original_dimensions": [
+      300,
+      30
+    ],
+    "parent_chunk_ids": [
+      "D04_C002"
+    ],
+    "processed_marker_offset": 4731,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": null,
+    "supplement_chunk_ids": [],
+    "license_evidence_files": [
+      "licenses/D04_notices.html",
+      "licenses/D04_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "already_covered_by_text",
+    "decision_reason": "The transitivity subsection explicitly states X determines Y and Y determines Z, hence X determines Z.",
+    "visual_observation": "Visible equation: If X → Y and Y → Z, then X → Z.",
+    "coverage_scope": "Essential educational role covered; not a claim that every specimen value is transcribed.",
+    "transcription_status": "not_selected",
+    "uncertainty_in_transcription": false,
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D04_F005",
+    "document_id": "D04",
+    "caption": "Figure 11.4. Equation for the Union rule.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-11-functional-dependencies/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axiom-Union-300x23.jpg",
+    "original_image_file": "raw/assets/D04_F005.jpg",
+    "original_image_sha256": "7d6a18f8c18914f39c17ef149976ed1d00f5183bda04c14807532a3e844b1a8a",
+    "original_dimensions": [
+      300,
+      23
+    ],
+    "parent_chunk_ids": [
+      "D04_C002"
+    ],
+    "processed_marker_offset": 6026,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": null,
+    "supplement_chunk_ids": [],
+    "license_evidence_files": [
+      "licenses/D04_notices.html",
+      "licenses/D04_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "already_covered_by_text",
+    "decision_reason": "The Union subsection explicitly states both premises and the joint consequent.",
+    "visual_observation": "Visible equation: If X → Y and X → Z, then X → YZ.",
+    "coverage_scope": "Essential educational role covered; not a claim that every specimen value is transcribed.",
+    "transcription_status": "not_selected",
+    "uncertainty_in_transcription": false,
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D04_F006",
+    "document_id": "D04",
+    "caption": "Figure 11.5. Equation for decompensation rule.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-11-functional-dependencies/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axiom-Decomposition-300x28.jpg",
+    "original_image_file": "raw/assets/D04_F006.jpg",
+    "original_image_sha256": "001b207bf09d87f04567fc7c986f64ac4f10b06bbb0834b3a58ddd143b47d103",
+    "original_dimensions": [
+      300,
+      28
+    ],
+    "parent_chunk_ids": [
+      "D04_C003"
+    ],
+    "processed_marker_offset": 7022,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": null,
+    "supplement_chunk_ids": [],
+    "license_evidence_files": [
+      "licenses/D04_notices.html",
+      "licenses/D04_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "already_covered_by_text",
+    "decision_reason": "The Decomposition subsection explicitly states the joint premise and both separate consequents.",
+    "visual_observation": "Visible equation: If X → YZ then X → Y and X → Z.",
+    "coverage_scope": "Essential educational role covered; not a claim that every specimen value is transcribed.",
+    "transcription_status": "not_selected",
+    "uncertainty_in_transcription": false,
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D04_F007",
+    "document_id": "D04",
+    "caption": "Figure 11.6. Dependency diagram.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-11-functional-dependencies/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Dependency-Diagram-300x67.jpg",
+    "original_image_file": "raw/assets/D04_F007.jpg",
+    "original_image_sha256": "2eb423d21dab004772f63e81d813ccb3f66e0044737fab47ee24e02b8f20dba4",
+    "original_dimensions": [
+      300,
+      67
+    ],
+    "parent_chunk_ids": [
+      "D04_C003"
+    ],
+    "processed_marker_offset": 7462,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": {
+      "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Dependency-Diagram.jpg",
+      "http_status": 404,
+      "evidence_file": "supplements/provenance/responses/D04_F007.html",
+      "use": "not used; candidate unavailable"
+    },
+    "transcription_file": "supplements/figures/D04_F007.md",
+    "supplement_chunk_ids": [
+      "D04_F007_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D04_notices.html",
+      "licenses/D04_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [
+      "V04"
+    ],
+    "pending": [
+      "The diagram/prose grouping of full and partial dependencies is retained for later conceptual review, rather than normalized into a corrected teaching explanation."
+    ],
+    "decision": "transcribe",
+    "decision_reason": "The diagram's complete lower-arrow targets and labels add detail beyond the prose list.",
+    "transcription_status": "complete",
+    "supplement_id": "D04_F007_T01",
+    "literal_transcription": "Attribute boxes, left to right: ProjectNo; ProjName; EmpNo; EmpName; DeptNo; DeptName; HrsWork.\n\nPrinted labels: Partial Dependency (under ProjectNo/ProjName); Partial Dependency (under the EmpNo branch); Transitive Dependency (under DeptNo/DeptName).",
+    "visual_description": "Upper black lines join ProjectNo and EmpNo as a grouped origin and have downward arrowheads into ProjName, EmpName, DeptNo, DeptName and HrsWork. Lower left line: ProjectNo → ProjName. Lower long line: EmpNo → EmpName, DeptNo, DeptName. A shorter lower line: DeptNo → DeptName. These arrow directions and target boxes are the observed drawing; ProjectNo and EmpNo are grouped by a bracket rather than printed PK labels. The parent prose lists ProjectNo, EmpNo → HrsWork among Partial Dependencies; that original placement is not corrected in this supplement.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": false,
+    "transcription_sha256": "4ade90346d3d9019ae53346fedd9bfd05b1d94e6248f7050dd34ecda4500c92f",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D05_F001",
+    "document_id": "D05",
+    "caption": "Figure 12.1 Dependency diagram, by A. Watt.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-12-normalization/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Dependency-Diagram-School-300x89.jpg",
+    "original_image_file": "raw/assets/D05_F001.jpg",
+    "original_image_sha256": "5d7d7ee89261ad3f2db0a36223c3f7693c193f867b7f629b90a4c8c164e1c202",
+    "original_dimensions": [
+      300,
+      89
+    ],
+    "parent_chunk_ids": [
+      "D05_C002"
+    ],
+    "processed_marker_offset": 6547,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": {
+      "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Dependency-Diagram-School.jpg",
+      "http_status": 404,
+      "evidence_file": "supplements/provenance/responses/D05_F001.html",
+      "use": "not used; candidate unavailable"
+    },
+    "transcription_file": "supplements/figures/D05_F001.md",
+    "supplement_chunk_ids": [
+      "D05_F001_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D05_notices.html",
+      "licenses/D05_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "transcribe",
+    "decision_reason": "The colored dependency arrows and compact attribute names are not fully enumerated in the parent text.",
+    "transcription_status": "complete",
+    "supplement_id": "D05_F001_T01",
+    "literal_transcription": "Attribute boxes, left to right: StudNo; CourseNo; CourseName; InstNo; InstName; InstLoc; Grade.\n\nPrinted arrow-group labels: PD; TD; FD.",
+    "visual_description": "The upper black bracket groups StudNo and CourseNo; its downward arrowheads point to CourseName, InstNo, InstName, InstLoc and Grade. The lower orange FD line groups StudNo and CourseNo and points upward into Grade: (StudNo, CourseNo) → Grade. The blue PD line starts below CourseNo and points upward into CourseName, InstNo, InstName and InstLoc: CourseNo → CourseName, InstNo, InstName, InstLoc. The green TD line starts below InstNo and points upward into InstName and InstLoc: InstNo → InstName, InstLoc. These are diagram arrows, not newly deduced dependencies. The parent text defines PD as partial dependency, TD as transitive dependency and, specifically in this figure, FD as full dependency; those expansions are source context rather than printed words inside the picture.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": false,
+    "transcription_sha256": "0746599003f1cc1d5e38f095c7b7e642375e1e0b301c86b367a7819d5a00fa2b",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D05_F002",
+    "document_id": "D05",
+    "caption": "Figure 12.2 For question 5, by A. Watt.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-12-normalization/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch11-Exercises-Fig11-1-e1409835870943.jpg",
+    "original_image_file": "raw/assets/D05_F002.jpg",
+    "original_image_sha256": "ae77683f9c7965bcbe1ff9ec494c3c5e0daee0f37dd73a61bc33c9dac8e8654f",
+    "original_dimensions": [
+      857,
+      259
+    ],
+    "parent_chunk_ids": [
+      "D05_C004"
+    ],
+    "processed_marker_offset": 14670,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": "supplements/figures/D05_F002.md",
+    "supplement_chunk_ids": [
+      "D05_F002_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D05_notices.html",
+      "licenses/D05_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "transcribe",
+    "decision_reason": "The original exercise's dependency arrows exist only in this figure.",
+    "transcription_status": "complete",
+    "supplement_id": "D05_F002_T01",
+    "literal_transcription": "Attribute boxes, left to right: C1; C2; C3; C4; C5. C1 and C3 are underlined.",
+    "visual_description": "Upper brown lines connect the tops of C1 and C3 into the shared dependency branch, with downward arrowheads at C2, C4 and C5: (C1, C3) → C2, C4, C5. Lower left brown line runs from C1 to an upward arrowhead at C2: C1 → C2. Lower right brown line runs from C4 to an upward arrowhead at C5: C4 → C5. The underlined boxes C1/C3 have orange fill; C2/C4/C5 have white fill and blue outlines. The diagram does not print the words partial, transitive, primary key or a normal-form answer; none are supplied as a solution.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": false,
+    "transcription_sha256": "a7876f12fcc43f996194a62f15d309b720b806c8a39cc95f30e4a6fe2e85a3ed",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D05_F003",
+    "document_id": "D05",
+    "caption": "Figure 12.3 For question 6, by A. Watt.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-12-normalization/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch11-Exercises-Fig11-2-e1409836100289.jpg",
+    "original_image_file": "raw/assets/D05_F003.jpg",
+    "original_image_sha256": "0a496090ab7b9560d3367c993d50c82f9b7206b82035561440e8da142234c760",
+    "original_dimensions": [
+      1229,
+      286
+    ],
+    "parent_chunk_ids": [
+      "D05_C004"
+    ],
+    "processed_marker_offset": 15033,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": "supplements/figures/D05_F003.md",
+    "supplement_chunk_ids": [
+      "D05_F003_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D05_notices.html",
+      "licenses/D05_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "transcribe",
+    "decision_reason": "The student/course sample values needed for the normalization exercise are only in the image.",
+    "transcription_status": "complete",
+    "supplement_id": "D05_F003_T01",
+    "literal_transcription": "| Attribute Name | Sample Value | Sample Value | Sample Value |\n|---|---|---|---|\n| StudentID | 1 | 2 | 3 |\n| StudentName | John Smith | Sandy Law | Sue Rogers |\n| CourseID | 2 | 2 | 3 |\n| CourseName | Programming Level 1 | Programming Level 1 | Business |\n| Grade | 75% | 61% | 81% |\n| CourseDate | Jan 5th, 2014 | Jan 5th, 2014 | Jan 7th, 2014 |",
+    "visual_description": "The three headers all literally read Sample Value; column identities were not invented. The image arranges attributes as rows and sample records as columns, and that orientation is preserved. The suffix th in the dates is superscript in the image. No key markers or arrows are shown; this supplement does not derive a dependency diagram or normalize the table.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": false,
+    "transcription_sha256": "72f791ae05a56d29f9c390b2f399b247f93c697804d1753272c49146a03f2b63",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D05_F004",
+    "document_id": "D05",
+    "caption": "Figure 12.4 For question 8, by A. Watt.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-12-normalization/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch12-Exercises-Fig12-1-e1409836269456.jpg",
+    "original_image_file": "raw/assets/D05_F004.jpg",
+    "original_image_sha256": "b00a01e1ff697da2f293d8a5d2f738ae5a75b5317b25e27336c1aff9f56e3e51",
+    "original_dimensions": [
+      927,
+      217
+    ],
+    "parent_chunk_ids": [
+      "D05_C004"
+    ],
+    "processed_marker_offset": 15735,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": "supplements/figures/D05_F004.md",
+    "supplement_chunk_ids": [
+      "D05_F004_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D05_notices.html",
+      "licenses/D05_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "transcribe",
+    "decision_reason": "The staffing/hotel data rows are necessary evidence for the source's update-anomaly exercise.",
+    "transcription_status": "complete",
+    "supplement_id": "D05_F004_T01",
+    "literal_transcription": "| NIN | ContractNo | Hours | eName | hNo | hLoc |\n|---|---|---|---|---|---|\n| 1135 | C1024 | 16 | Smith J. | H25 | East Killbride |\n| 1057 | C1024 | 24 | Hocine D. | H25 | East Killbride |\n| 1068 | C1025 | 28 | White T. | H4 | Glasgow |\n| 1135 | C1025 | 15 | Smith J. | H4 | Glasgow |",
+    "visual_description": "Four data rows under six column headings. 'East Killbride' is retained as printed, without correcting the place-name spelling. There are no PK underlines, key icons or dependency arrows. The parent text states that NIN is unique for every staff member; no new functional dependencies or exercise answers are inferred here.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": false,
+    "transcription_sha256": "f417c202710ec498e06d434d9c3bd79dbc99ee55fecb07b8a61eabd6e387f5d2",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D09_F001",
+    "document_id": "D09",
+    "caption": "Figure 7.1. Database with three tables.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-7-the-relational-data-model/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/School-Database-Fig-1-300x221.jpg",
+    "original_image_file": "raw/assets/D09_F001.jpg",
+    "original_image_sha256": "354ac231a878319ccb56756224a14b6a097ead848617d2c4b56a9da5365e717c",
+    "original_dimensions": [
+      300,
+      221
+    ],
+    "parent_chunk_ids": [
+      "D09_C001"
+    ],
+    "processed_marker_offset": 1555,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": null,
+    "supplement_chunk_ids": [],
+    "license_evidence_files": [
+      "licenses/D09_notices.html",
+      "licenses/D09_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "already_covered_by_text",
+    "decision_reason": "The body explains that a database contains multiple tables; the exact small specimen schema is not needed for that illustration and a complete school ERD is separately transcribed from D02_F015.",
+    "visual_observation": "A cylinder encloses three boxes labelled tblInstructor, tblOffering and tblCourse; this is conceptual coverage, not a transcription of every small field.",
+    "coverage_scope": "Essential educational role covered; not a claim that every specimen value is transcribed.",
+    "transcription_status": "not_selected",
+    "uncertainty_in_transcription": false,
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D09_F002",
+    "document_id": "D09",
+    "caption": "Figure 7.2. Example of an ID card by A. Watt.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-7-the-relational-data-model/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Record-300x177.jpg",
+    "original_image_file": "raw/assets/D09_F002.jpg",
+    "original_image_sha256": "90a4aeefb6bc3b87ee9107b1ba12fcff27a14205480d3cff20babfb838d795f3",
+    "original_dimensions": [
+      300,
+      177
+    ],
+    "parent_chunk_ids": [
+      "D09_C001"
+    ],
+    "processed_marker_offset": 2495,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": null,
+    "supplement_chunk_ids": [],
+    "license_evidence_files": [
+      "licenses/D09_notices.html",
+      "licenses/D09_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "already_covered_by_text",
+    "decision_reason": "Field/value organization and the illustrated field domains are explained in the Column/Domain text. The specimen ID-card values do not add an essential key or relationship.",
+    "visual_observation": "Two-column Field Name/Data example with personal fields including First Name, Family Name, Nationality, Salary, Date of Birth, Marital Status, Shift, Place of issue and Valid until. Specimen values intentionally omitted.",
+    "coverage_scope": "Essential educational role covered; not a claim that every specimen value is transcribed.",
+    "transcription_status": "not_selected",
+    "uncertainty_in_transcription": false,
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D09_F003",
+    "document_id": "D09",
+    "caption": "Figure 7.3. Example of a simple table by A. Watt.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-7-the-relational-data-model/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Table-Description-300x146.jpg",
+    "original_image_file": "raw/assets/D09_F003.jpg",
+    "original_image_sha256": "a4b052ffa6267ebb46b58e2d955ddda8278095a7e9c6507c60c9a02e09d4585e",
+    "original_dimensions": [
+      300,
+      146
+    ],
+    "parent_chunk_ids": [
+      "D09_C002"
+    ],
+    "processed_marker_offset": 4055,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": {
+      "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Table-Description.jpg",
+      "http_status": 404,
+      "evidence_file": "supplements/provenance/responses/D09_F003.html",
+      "use": "not used; candidate unavailable"
+    },
+    "transcription_file": "supplements/figures/D09_F003.md",
+    "supplement_chunk_ids": [
+      "D09_F003_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D09_notices.html",
+      "licenses/D09_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [
+      "Final-row Record ID is obscured by an annotation arrow; no numeric value is asserted.",
+      "Final-row year and author initial cannot be confirmed at the original 300px resolution. The larger same-stem upload candidate returned HTTP 404; no replacement or guessed characters were used."
+    ],
+    "decision": "transcribe",
+    "decision_reason": "The actual record values and arrows relating names, tuples and attribute values are missing from the alt text.",
+    "transcription_status": "partial",
+    "supplement_id": "D09_F003_T01",
+    "literal_transcription": "| Record ID | PubDate | Author | Title |\n|---|---|---|---|\n| 1 | 26/07/1968 | B. Pitt | Rights and Wrongs online |\n| 2 | 3/5/2000 | A. Jolie | Networking for Change |\n| 3 | 27/02/1971 | J. Carter | The Myth of Cyber Crimes |\n| [obscured by arrow] | 15/09/[year partly obscured] | [initial unclear]. Wheaton | Connecting the disconnected |\n\nAnnotation labels: Attribute Name; Rows (tuples); Attribute Values.",
+    "visual_description": "An Attribute Name arrow points down to the Record ID column heading. Three arrows from the right-hand label Rows (tuples) point left toward complete table rows. Four arrows from the lower Attribute Values label point upward to individual cells in the final row. Those arrowheads overlap the final row's ID, date and author, so the ambiguous characters are explicitly marked instead of reconstructed from a presumed sequence. The table has four displayed data rows; the source's four-column layout is preserved.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": true,
+    "transcription_sha256": "0f1c6449d857934dba116162dbad88efd6a619430229bd8eb70ba43bc1d8119b",
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D09_F004",
+    "document_id": "D09",
+    "caption": "Table 7.1. Terms and their synonyms by A. Watt.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-7-the-relational-data-model/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Terms.jpg",
+    "original_image_file": "raw/assets/D09_F004.jpg",
+    "original_image_sha256": "79f531c93cd24083f2ba3236e3b4c402a8229e339c1fb0e44a9855267b75d92a",
+    "original_dimensions": [
+      288,
+      110
+    ],
+    "parent_chunk_ids": [
+      "D09_C003"
+    ],
+    "processed_marker_offset": 7210,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": null,
+    "supplement_chunk_ids": [],
+    "license_evidence_files": [
+      "licenses/D09_notices.html",
+      "licenses/D09_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "already_covered_by_text",
+    "decision_reason": "The body and Key Terms already state Relation/Table/File, Tuple/Row/Record and Attribute/Column/Field synonyms.",
+    "visual_observation": "Three columns Formal Terms (Codd), Alternative 1, Alternative 2; rows Relation/Table/File, Tuple/Row/Record, Attribute/Column/Field.",
+    "coverage_scope": "Essential educational role covered; not a claim that every specimen value is transcribed.",
+    "transcription_status": "not_selected",
+    "uncertainty_in_transcription": false,
+    "reused_image_occurrences": []
+  },
+  {
+    "figure_id": "D09_F005",
+    "document_id": "D09",
+    "caption": "Table 7.2. Table for exercise questions, by A. Watt.",
+    "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-7-the-relational-data-model/",
+    "original_image_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch7-Exercises-Fig7-1-e1409190387554.jpg",
+    "original_image_file": "raw/assets/D09_F005.jpg",
+    "original_image_sha256": "85db44d7ce2945cdb69a2ff5dc12758fda7fa5dea13218ec95d4c199af9283b4",
+    "original_dimensions": [
+      1206,
+      226
+    ],
+    "parent_chunk_ids": [
+      "D09_C003"
+    ],
+    "processed_marker_offset": 7712,
+    "method": "direct visual inspection; no OCR; manually curated English annotation",
+    "visual_review": {
+      "reviewed": true,
+      "date": "2026-11-08",
+      "reviewer": "Codex",
+      "individual_original_opened": true,
+      "independent_human_review": false,
+      "scope": "Individual image; parent text consulted. Some small selected figures also viewed enlarged without claiming recovered resolution."
+    },
+    "resolution_attempt": null,
+    "transcription_file": "supplements/figures/D09_F005.md",
+    "supplement_chunk_ids": [
+      "D09_F005_S001"
+    ],
+    "license_evidence_files": [
+      "licenses/D09_notices.html",
+      "licenses/D09_notices.txt",
+      "metadata/sources.json"
+    ],
+    "source_issue_ids": [],
+    "pending": [],
+    "decision": "transcribe",
+    "decision_reason": "The EMPLOYEE exercise table supplies record and job-code values absent from the body.",
+    "transcription_status": "complete",
+    "supplement_id": "D09_F005_T01",
+    "literal_transcription": "EMPLOYEE\n\n| EMPID | EMPLNAME | EMPINIT | EMPFNAME | EMPJOBCODE |\n|---|---|---|---|---|\n| 123455 | Friedman | A. | Robert | 12 |\n| 123456 | Olanski | D. | Delbert | 18 |\n| 123457 | Fontein | G. | Juliette | 15 |\n| 123458 | Cruazona | X. | Maria | 18 |",
+    "visual_description": "Five columns and four data rows. The red wavy marks beneath some surnames are spelling-check marks, not key underlines. No PK/FK labels are drawn and no relationship line appears. The source exercise's domain, count and component questions are not answered here.",
+    "interpretation": "No additional business rules, keys, dependency conclusions, exercise answers or conceptual corrections are inferred. Verbal readings of visible notation are identified in the visual description and refer to the source context.",
+    "uncertainty_in_transcription": false,
+    "transcription_sha256": "65839697066e617476c41b975d5dcc497fa2f22de23b78ccb2ae86865520a3b9",
+    "reused_image_occurrences": []
+  }
+]

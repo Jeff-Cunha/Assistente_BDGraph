@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "original_core_files_unchanged": 69,
+  "original_chunks_unchanged": 31,
+  "triaged_occurrences": 51,
+  "unique_original_images": 50,
+  "supplement_chunks": 28,
+  "complete_transcriptions": 26,
+  "partial_transcriptions": 2,
+  "all_parent_occurrences_resolved": true,
+  "reused_image_contexts_distinguished": true,
+  "unique_ids_no_original_collisions": true,
+  "transcript_hashes_verified": true,
+  "all_selected_have_visual_review": true,
+  "all_original_images_opened_individually_recorded": true,
+  "independent_human_review": false,
+  "pending_details_explicit": true,
+  "selected_table_layout_and_literal_sentinels_checked": true,
+  "resolution_evidence_available": true
+}

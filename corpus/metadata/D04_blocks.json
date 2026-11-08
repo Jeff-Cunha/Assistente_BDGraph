@@ -1,0 +1,310 @@
+[
+  {
+    "kind": "h1",
+    "text": "# Chapter 11 Functional Dependencies"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Adrienne Watt"
+  },
+  {
+    "kind": "paragraph",
+    "text": "A <em>functional dependency</em> (FD) is a relationship between two attributes, typically between the PK and other non-key attributes within a table. For any relation R, attribute Y is functionally dependent on attribute X (usually the PK), if for every valid instance of X, that value of X uniquely determines the value of Y. This relationship is indicated by the representation below :"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>X ———–&gt; Y</strong>"
+  },
+  {
+    "kind": "paragraph",
+    "text": "The left side of the above FD diagram is called the<em> determinant</em>, and the right side is the <em>dependent</em>. Here are a few examples."
+  },
+  {
+    "kind": "paragraph",
+    "text": "In the first example, below, SIN determines Name, Address and Birthdate. Given SIN, we can determine any of the other attributes within the table."
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>SIN ———-&gt; Name, Address, Birthdate</strong>"
+  },
+  {
+    "kind": "paragraph",
+    "text": "For the second example, SIN and Course determine the date completed (DateCompleted). This must also work for a composite PK."
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>SIN, Course ———&gt; DateCompleted</strong>"
+  },
+  {
+    "kind": "paragraph",
+    "text": "The third example indicates that ISBN determines Title."
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>ISBN ———–&gt; Title</strong>"
+  },
+  {
+    "kind": "h2",
+    "text": "## Rules of Functional Dependencies"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Consider the following table of data r(R) of the relation schema R(ABCDE) shown in Table 11.1."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Table-R-Functional-Dependency-example](../raw/assets/D04_F001.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Table-R-Functional-Dependency-example.jpg)\n\nTable 11.1. Functional dependency example, by A. Watt."
+  },
+  {
+    "kind": "paragraph",
+    "text": "As you look at this table, ask yourself: <em>What kind of dependencies can we observe among the attributes in Table R? </em>Since the values of A are unique (a1, a2, a3, etc.), it follows from the FD definition that:"
+  },
+  {
+    "kind": "paragraph",
+    "text": "A → B, A → C, A → D, A → E"
+  },
+  {
+    "kind": "list",
+    "text": "- It also follows that A →BC (or any other subset of ABCDE).\n\n- This can be summarized as A →BCDE.\n\n- From our understanding of primary keys, A is a primary key."
+  },
+  {
+    "kind": "paragraph",
+    "text": "Since the values of E are always the same (all e1), it follows that:"
+  },
+  {
+    "kind": "paragraph",
+    "text": "A → E, B → E, C → E, D → E"
+  },
+  {
+    "kind": "paragraph",
+    "text": "However, we cannot generally summarize the above with ABCD → E  because, in general, A → E, B → E, AB → E."
+  },
+  {
+    "kind": "paragraph",
+    "text": "Other observations:"
+  },
+  {
+    "kind": "list",
+    "text": "1. Combinations of BC are unique, therefore BC → ADE.\n\n2. Combinations of BD are unique, therefore BD → ACE.\n\n3. If C values match, so do D values.\n\n   1. Therefore, C → D\n\n   2. However, D values don’t determine C values\n\n   3. So C does not determine D, and D does not determine C."
+  },
+  {
+    "kind": "paragraph",
+    "text": "Looking at actual data can help clarify which attributes are dependent and which are determinants."
+  },
+  {
+    "kind": "h2",
+    "text": "## Inference Rules"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<em>Armstrong’s axioms</em> are a set of inference rules used to infer all the functional dependencies on a relational database. They were developed by William W. Armstrong. The following describes what will be used, in terms of notation, to explain these axioms."
+  },
+  {
+    "kind": "paragraph",
+    "text": "Let R(U) be a relation scheme over the set of attributes U. We will use the letters X, Y, Z to represent any subset of and, for short, the union of two sets of attributes, instead of the usual X U Y."
+  },
+  {
+    "kind": "h3",
+    "text": "### Axiom of reflexivity"
+  },
+  {
+    "kind": "paragraph",
+    "text": "This axiom says, if Y is a subset of X, then X determines Y (see Figure 11.1)."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Ch-11-Axion-Reflexivity](../raw/assets/D04_F002.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axion-Reflexivity.jpg)\n\nFigure 11.1. Equation for axiom of reflexivity."
+  },
+  {
+    "kind": "paragraph",
+    "text": "For example, <strong>PartNo —&gt; NT123</strong> where X (PartNo) is composed of more than one piece of information; i.e., Y (NT) and partID (123)."
+  },
+  {
+    "kind": "h3",
+    "text": "### Axiom of augmentation"
+  },
+  {
+    "kind": "paragraph",
+    "text": "The axiom of augmentation, also known as a partial dependency, says if X determines Y, then XZ determines YZ for any Z (see Figure 11.2 )."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Ch-11-Axiom-of-Augmentation-300x34](../raw/assets/D04_F003.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axiom-of-Augmentation-300x34.jpg)\n\nFigure 11.2. Equation for axiom of augmentation."
+  },
+  {
+    "kind": "paragraph",
+    "text": "The axiom of augmentation says that every non-key attribute must be fully dependent on the PK. In the example shown below, StudentName, Address, City, Prov, and PC (postal code) are only dependent on the StudentNo, not on the StudentNo and Grade."
+  },
+  {
+    "kind": "paragraph",
+    "text": "StudentNo, Course —&gt; StudentName, Address, City, Prov, PC, Grade, DateCompleted"
+  },
+  {
+    "kind": "paragraph",
+    "text": "This situation is not desirable because every non-key attribute has to be fully dependent on the PK. In this situation, student information is only partially dependent on the PK (StudentNo)."
+  },
+  {
+    "kind": "paragraph",
+    "text": "To fix this problem, we need to break the original table down into two as follows:"
+  },
+  {
+    "kind": "list",
+    "text": "- Table 1: StudentNo, Course, Grade, DateCompleted\n\n- Table 2: StudentNo, StudentName, Address, City, Prov, PC"
+  },
+  {
+    "kind": "h3",
+    "text": "### Axiom of transitivity"
+  },
+  {
+    "kind": "paragraph",
+    "text": "The axiom of transitivity says if X determines Y, and Y determines Z, then X must also determine Z (see Figure 11.3)."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Ch-11-Axiom-of-transitivity-300x30](../raw/assets/D04_F004.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axiom-of-transitivity-300x30.jpg)\n\nFigure 11.3. Equation for axiom of transitivity."
+  },
+  {
+    "kind": "paragraph",
+    "text": "The table below has information not directly related to the student; for instance, ProgramID and ProgramName should have a table of its own. ProgramName is not dependent on StudentNo; it’s dependent on ProgramID."
+  },
+  {
+    "kind": "paragraph",
+    "text": "StudentNo —&gt; StudentName, Address, City, Prov, PC, ProgramID, ProgramName"
+  },
+  {
+    "kind": "paragraph",
+    "text": "This situation is not desirable because a non-key attribute (ProgramName) depends on another non-key attribute (ProgramID)."
+  },
+  {
+    "kind": "paragraph",
+    "text": "To fix this problem, we need to break this table into two: one to hold information about the student and the other to hold information about the program."
+  },
+  {
+    "kind": "list",
+    "text": "- Table 1: StudentNo —&gt; StudentName, Address, City, Prov, PC, ProgramID\n\n- Table 2: ProgramID —&gt; ProgramName<strong>  \n   </strong>"
+  },
+  {
+    "kind": "paragraph",
+    "text": "However we still need to leave an FK in the student table so that we can identify which program the student is enrolled in."
+  },
+  {
+    "kind": "h3",
+    "text": "### Union"
+  },
+  {
+    "kind": "paragraph",
+    "text": "This rule suggests that if two tables are separate, and the PK is the same, you may want to consider putting them together. It states that if X determines Y and X determines Z then X must also determine Y and Z (see Figure 11.4)."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Ch-11-Axiom-Union-300x23](../raw/assets/D04_F005.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axiom-Union-300x23.jpg)\n\nFigure 11.4. Equation for the Union rule."
+  },
+  {
+    "kind": "paragraph",
+    "text": "For example, if:"
+  },
+  {
+    "kind": "list",
+    "text": "- SIN —&gt; EmpName\n\n- SIN —&gt; SpouseName"
+  },
+  {
+    "kind": "paragraph",
+    "text": "You may want to join these two tables into one as follows:"
+  },
+  {
+    "kind": "paragraph",
+    "text": "SIN –&gt; EmpName, SpouseName"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Some database administrators (<em>DBA</em>) might choose to keep these tables separated for a couple of reasons. One, each table describes a different entity so the entities should be kept apart. Two, if SpouseName is to be left NULL most of the time, there is no need to include it in the same table as EmpName."
+  },
+  {
+    "kind": "h3",
+    "text": "### Decomposition"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Decomposition is the reverse of the Union rule. If you have a table that appears to contain two entities that are determined by the same PK, consider breaking them up into two tables. This rule states that if X determines Y and Z, then X determines Y and X determines Z separately (see Figure 11.5)."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Ch-11-Axiom-Decomposition-300x28](../raw/assets/D04_F006.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axiom-Decomposition-300x28.jpg)\n\nFigure 11.5. Equation for decompensation rule."
+  },
+  {
+    "kind": "h2",
+    "text": "## Dependency Diagram"
+  },
+  {
+    "kind": "paragraph",
+    "text": "A dependency diagram, shown in Figure 11.6, illustrates the various dependencies that might exist in a <em>non-normalized table</em>. A non-normalized table is one that has data redundancy in it."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Ch-11-Dependency-Diagram-300x67](../raw/assets/D04_F007.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Dependency-Diagram-300x67.jpg)\n\nFigure 11.6. Dependency diagram."
+  },
+  {
+    "kind": "paragraph",
+    "text": "The following dependencies are identified in this table:"
+  },
+  {
+    "kind": "list",
+    "text": "- ProjectNo and EmpNo, combined, are the PK.\n\n- Partial Dependencies:\n\n  - ProjectNo —&gt; ProjName\n\n  - EmpNo —&gt; EmpName, DeptNo,\n\n  - ProjectNo, EmpNo —&gt; HrsWork\n- Transitive Dependency:\n\n  - DeptNo —&gt; DeptName"
+  },
+  {
+    "kind": "h2",
+    "text": "## Key Terms"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>Armstrong’s axioms</strong>: a set of inference rules used to infer all the functional dependencies on a relational database<strong>DBA</strong>: database administrator"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>decomposition</strong>: a rule that suggests if you have a table that appears to contain two entities that are determined by the same PK, consider breaking them up into two tables"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>dependent</strong>: the right side of the functional dependency diagram"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>determinant</strong>: the left side of the functional dependency diagram"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>functional dependency (FD):</strong> a relationship between two attributes, typically between the PK and other non-key attributes within a table"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>non-normalized table</strong>: a table that has data redundancy in it"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>Union</strong>: a rule that suggests that if two tables are separate, and the PK is the same, consider putting them together"
+  },
+  {
+    "kind": "h2",
+    "text": "## Exercises"
+  },
+  {
+    "kind": "paragraph",
+    "text": "See Chapter 12."
+  },
+  {
+    "kind": "h2",
+    "text": "## Attributions"
+  },
+  {
+    "kind": "paragraph",
+    "text": "This chapter of <em>Database Design</em> (including images, except as otherwise noted) is a derivative copy of [Armstrong’s axioms](http://en.wikipedia.org/wiki/Armstrong%27s_axioms) by Wikipedia the Free Encyclopedia licensed under [Creative Commons Attribution-ShareAlike 3.0 Unported](http://creativecommons.org/licenses/by-sa/3.0/)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "The following material was written by Adrienne Watt:"
+  },
+  {
+    "kind": "list",
+    "text": "1. some of Rules of Functional Dependencies\n\n2. Key Terms"
+  }
+]

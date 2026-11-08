@@ -1,0 +1,818 @@
+[
+  {
+    "document_id": "D01",
+    "figure_id": "D01_F001",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/RDBMS-300x2091.jpg",
+    "local_file": "raw/assets/D01_F001.jpg",
+    "alt": "A diagram showing a yellow cylinder with coloured rectangles within it, presumably representing data. Four rectangels are listed to the left of this each with the label \"Application Program\".",
+    "caption": "Figure 2.1. A database is a repository of data.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      209
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D01",
+    "figure_id": "D01_F002",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/08/MemFormAug2014.jpg",
+    "local_file": "raw/assets/D01_F002.jpg",
+    "alt": "Snapshot of an online membership form. Underneath it is a spreadsheet with names, barcodes, date, and teim.",
+    "caption": "Figure 2.2. Membership system at Science World by N. Eng.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      843,
+      545
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D01",
+    "figure_id": "D01_F003",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Banking-Systems-RDBMS-300x1951.jpg",
+    "local_file": "raw/assets/D01_F003.jpg",
+    "alt": "There are three drawings on the left. The top one shows three people sitting and talking at a table; it is labelled as Personnel Dept. The drawing underneath this shows a man and woman in business attire and carrying briefcases shaking hands; it is labelled as Account Dept. The last drawing is of a woman; it is labelled Loan Dept. To the right of this is a rectangle with DBMS. to the right of this is a green cylinder that says Shared Database with employees, checking accounts, saving accounts, installment loans, mortgage loans, data files.",
+    "caption": "Figure 2.3. A bank database management system (DBMS).",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      195
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D02",
+    "figure_id": "D02_F001",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/EntitySet-300x86.jpg",
+    "local_file": "raw/assets/D02_F001.jpg",
+    "alt": "A yellow rectangle with e1, e2 and en inside. There is an arrow from the yellow box to a blue rectangle with the work EMPLOYEE in capitals. Over the arrow are the words Represent in ER diagram. To the far left it says Entity set.",
+    "caption": "Figure 8.1. ERD with entity type EMPLOYEE.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      86
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D02",
+    "figure_id": "D02_F002",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Attributes-300x106.jpg",
+    "local_file": "raw/assets/D02_F002.jpg",
+    "alt": "One blue rectangle with the word EMPLOYEE. This is connected with a line to four separate yellow ovals. Each has a different word inside it: Name, Address, Birthdate, Salary.",
+    "caption": "Figure 8.2. How attributes are represented in an ERD.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      106
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D02",
+    "figure_id": "D02_F003",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Simple-and-Composite-Attributes-300x133.jpg",
+    "local_file": "raw/assets/D02_F003.jpg",
+    "alt": "Blue rectangle with the word EMPLOYEE. Under this are four yellow ovals with the words Name, Address, Birthdate, Salary. There are lines between the rectangle and yellow ovals. Under the Address oval are three white ovals with the words Number, Street, Suburb.",
+    "caption": "Figure 8.3. An example of composite attributes.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      133
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D02",
+    "figure_id": "D02_F004",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Multivalued-Attribute-300x131.jpg",
+    "local_file": "raw/assets/D02_F004.jpg",
+    "alt": "Blue rectangle with the word EMPLOYEE. A line connects this to each of five yellow ovals with these words inside the ovals: Degrees, Name, Address, Birthdate, Salary",
+    "caption": "Figure 8.4. Example of a multivalued attribute.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      131
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D02",
+    "figure_id": "D02_F005",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Derived-Attribute-300x154.jpg",
+    "local_file": "raw/assets/D02_F005.jpg",
+    "alt": "Blue rectangle with the word EMPLOYEE, and connected by a line to five different yellow ovals with the words: Age, Name, Address, Birthdate, Salary.",
+    "caption": "Figure 8.5. Example of a derived attribute.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      154
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D02",
+    "figure_id": "D02_F006",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/SalaryTable-300x132.jpg",
+    "local_file": "raw/assets/D02_F006.jpg",
+    "alt": "SalaryTable-300x132",
+    "caption": "Figure 8.6. Salary table for null example, by A. Watt.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      132
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D02",
+    "figure_id": "D02_F007",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/One-to-Many-Relationships-300x137.jpg",
+    "local_file": "raw/assets/D02_F007.jpg",
+    "alt": "A light blue diamond in the middle connected on either side to a blue rectangle. The rectangle on the left says EMPLOYEE and is connected with a line to five yellow ovals with the words Birthdate, Name, Address, Salary, EID. The diamond is also connected to a blue rectangle on its right with the word DEPARTMENT and that is connected with lines to three yellow ovals with the words Name, Office, DeptID.",
+    "caption": "Figure 8.7. Example of a one to many relationship.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      137
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D02",
+    "figure_id": "D02_F008",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Many-to-Many-Relationships-300x167.jpg",
+    "local_file": "raw/assets/D02_F008.jpg",
+    "alt": "image",
+    "caption": "Figure 8.8. Example where employee has different start dates for different projects.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      167
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D02",
+    "figure_id": "D02_F009",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Unary-Relationships-300x168.jpg",
+    "local_file": "raw/assets/D02_F009.jpg",
+    "alt": "image",
+    "caption": "Figure 8.9. Example of a unary relationship.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      168
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D02",
+    "figure_id": "D02_F010",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ternary-Mapping-Relationships-300x197.jpg",
+    "local_file": "raw/assets/D02_F010.jpg",
+    "alt": "Ternary-Mapping-Relationships-300x197",
+    "caption": "Figure 8.10. Example of a ternary relationship.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      197
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D02",
+    "figure_id": "D02_F011",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-Fig8-1-e1409188616109.jpg",
+    "local_file": "raw/assets/D02_F011.jpg",
+    "alt": "Ch8-Exercises -Fig8-1",
+    "caption": "Figure 8.11. Director and Play tables for question 2, by A. Watt.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      861,
+      615
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D02",
+    "figure_id": "D02_F012",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-Fig8-2-e1409189722961.jpg",
+    "local_file": "raw/assets/D02_F012.jpg",
+    "alt": "Ch8-Exercises -Fig8-2",
+    "caption": "Figure 8.12. Truck, Base and Type tables for question 4, by A. Watt.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      1207,
+      618
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D02",
+    "figure_id": "D02_F013",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-Fig8-3-e1409189789204.jpg",
+    "local_file": "raw/assets/D02_F013.jpg",
+    "alt": "Ch8-Exercises -Fig8-3",
+    "caption": "Figure 8.13. Customer and BookOrders tables for question 5, by A. Watt.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      895,
+      580
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D02",
+    "figure_id": "D02_F014",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-No6-Student.jpg",
+    "local_file": "raw/assets/D02_F014.jpg",
+    "alt": "Ch8-Exercises - No6 Student",
+    "caption": "Figure 8.14. Student table for question 6, by A. Watt.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      337,
+      573
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D02",
+    "figure_id": "D02_F015",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-No7-School-Database-1024x640.jpg",
+    "local_file": "raw/assets/D02_F015.jpg",
+    "alt": "Ch8-Exercises -No7 School Database",
+    "caption": "Figure 8.15. ERD of school database for questions 7-10, by A. Watt.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      1024,
+      640
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D03",
+    "figure_id": "D03_F001",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Access-Referential-Integrity-Window-300x212.jpg",
+    "local_file": "raw/assets/D03_F001.jpg",
+    "alt": "A screenshot of the Edit Relationships commend in MS Access.",
+    "caption": "Figure 9.1. Referential access in MS Access, by A. Watt.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      212
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D03",
+    "figure_id": "D03_F002",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Connectivity-and-Cardinality-300x202.jpg",
+    "local_file": "raw/assets/D03_F002.jpg",
+    "alt": "Connectivity-and-Cardinality-300x202",
+    "caption": "Figure 9.2. Position of connectivity and cardinality on a relationship symbol, by A. Watt.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      202
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D03",
+    "figure_id": "D03_F003",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-oneToMany-1.jpg",
+    "local_file": "raw/assets/D03_F003.jpg",
+    "alt": "Ch-9-oneToMany-1",
+    "caption": "Figure 9.3.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      171,
+      34
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D03",
+    "figure_id": "D03_F004",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-oneToMany-2.jpg",
+    "local_file": "raw/assets/D03_F004.jpg",
+    "alt": "Ch-9-oneToMany-2",
+    "caption": "Figure 9.4.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      169,
+      37
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D03",
+    "figure_id": "D03_F005",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Identifying-and-Non-Identifying-relationship-300x298.jpg",
+    "local_file": "raw/assets/D03_F005.jpg",
+    "alt": "Figure 9.5. Identifying and non-identifying relationship.",
+    "caption": "Figure 9.5. Identifying and non-identifying relationship, by A. Watt.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      298
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D03",
+    "figure_id": "D03_F006",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Zero-or-Many-1.jpg",
+    "local_file": "raw/assets/D03_F006.jpg",
+    "alt": "Ch-9-Zero-or-Many-1",
+    "caption": "Figure 9.6.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      49,
+      33
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D03",
+    "figure_id": "D03_F007",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Cardinality-Optional-0-or-more-300x189.jpg",
+    "local_file": "raw/assets/D03_F007.jpg",
+    "alt": "Cardinality-Optional-0-or-more-300x189",
+    "caption": "Figure 9.7. Example usage of a zero to many optional relationship symbol, by A. Watt.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      189
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D03",
+    "figure_id": "D03_F008",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Optional-Arrow-2.jpg",
+    "local_file": "raw/assets/D03_F008.jpg",
+    "alt": "Ch-9-Optional-Arrow-2",
+    "caption": "Figure 9.8.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      45,
+      32
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D03",
+    "figure_id": "D03_F009",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Cardinality-Optional-0-or-1-300x188.jpg",
+    "local_file": "raw/assets/D03_F009.jpg",
+    "alt": "Cardinality-Optional-0-or-1-300x188",
+    "caption": "Figure 9.9. Example usage of a zero to one optional relationship symbol, by A. Watt.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      188
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D03",
+    "figure_id": "D03_F010",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-oneToOne-1.jpg",
+    "local_file": "raw/assets/D03_F010.jpg",
+    "alt": "Ch-9-oneToOne-1",
+    "caption": "Figure 9.10",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      21,
+      24
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D03",
+    "figure_id": "D03_F011",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Mandatory-Cardinality-one-to-one-300x188.jpg",
+    "local_file": "raw/assets/D03_F011.jpg",
+    "alt": "Ch-9-Mandatory-Cardinality-one-to-one-300x188",
+    "caption": "Figure 9.11. Example of a one and only one mandatory relationship symbol, by A. Watt.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      188
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D03",
+    "figure_id": "D03_F012",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-oneToMany-3.jpg",
+    "local_file": "raw/assets/D03_F012.jpg",
+    "alt": "Ch-9-oneToMany-3",
+    "caption": "Figure 9.12.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      24,
+      27
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D03",
+    "figure_id": "D03_F013",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Mandatory-Cardinality-one-to-Many-300x188.jpg",
+    "local_file": "raw/assets/D03_F013.jpg",
+    "alt": "Ch-9-Mandatory-Cardinality-one-to-Many-300x188",
+    "caption": "Figure 9.13. Example of a one to many mandatory relationship symbol, by A. Watt.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      188
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D03",
+    "figure_id": "D03_F014",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Zero-or-Many-1.jpg",
+    "local_file": "raw/assets/D03_F006.jpg",
+    "alt": "Ch-9-Zero-or-Many-1",
+    "caption": "Figure 9.14",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      49,
+      33
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D03",
+    "figure_id": "D03_F015",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Zero-or-Many-2.jpg",
+    "local_file": "raw/assets/D03_F014.jpg",
+    "alt": "Ch-9-Zero-or-Many-2",
+    "caption": "Figure 9.15.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      49,
+      35
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D03",
+    "figure_id": "D03_F016",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Cust-to-Order-ERD-300x168.jpg",
+    "local_file": "raw/assets/D03_F015.jpg",
+    "alt": "Ch-9-Cust-to-Order-ERD-300x168",
+    "caption": "Figure 9.16. The relationship between a Customer table and an Order table, by A. Watt.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      168
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D03",
+    "figure_id": "D03_F017",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/SwimClubDatabase.jpg",
+    "local_file": "raw/assets/D03_F016.jpg",
+    "alt": "SwimClubDatabase",
+    "caption": "Figure 9.17. ERD for questions 1-5. (Diagram by A. Watt.)",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      966,
+      475
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D04",
+    "figure_id": "D04_F001",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Table-R-Functional-Dependency-example.jpg",
+    "local_file": "raw/assets/D04_F001.jpg",
+    "alt": "Table-R-Functional-Dependency-example",
+    "caption": "Table 11.1. Functional dependency example, by A. Watt.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      141,
+      216
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D04",
+    "figure_id": "D04_F002",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axion-Reflexivity.jpg",
+    "local_file": "raw/assets/D04_F002.jpg",
+    "alt": "Ch-11-Axion-Reflexivity",
+    "caption": "Figure 11.1. Equation for axiom of reflexivity.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      289,
+      59
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D04",
+    "figure_id": "D04_F003",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axiom-of-Augmentation-300x34.jpg",
+    "local_file": "raw/assets/D04_F003.jpg",
+    "alt": "Ch-11-Axiom-of-Augmentation-300x34",
+    "caption": "Figure 11.2. Equation for axiom of augmentation.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      34
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D04",
+    "figure_id": "D04_F004",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axiom-of-transitivity-300x30.jpg",
+    "local_file": "raw/assets/D04_F004.jpg",
+    "alt": "Ch-11-Axiom-of-transitivity-300x30",
+    "caption": "Figure 11.3. Equation for axiom of transitivity.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      30
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D04",
+    "figure_id": "D04_F005",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axiom-Union-300x23.jpg",
+    "local_file": "raw/assets/D04_F005.jpg",
+    "alt": "Ch-11-Axiom-Union-300x23",
+    "caption": "Figure 11.4. Equation for the Union rule.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      23
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D04",
+    "figure_id": "D04_F006",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axiom-Decomposition-300x28.jpg",
+    "local_file": "raw/assets/D04_F006.jpg",
+    "alt": "Ch-11-Axiom-Decomposition-300x28",
+    "caption": "Figure 11.5. Equation for decompensation rule.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      28
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D04",
+    "figure_id": "D04_F007",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Dependency-Diagram-300x67.jpg",
+    "local_file": "raw/assets/D04_F007.jpg",
+    "alt": "Ch-11-Dependency-Diagram-300x67",
+    "caption": "Figure 11.6. Dependency diagram.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      67
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D05",
+    "figure_id": "D05_F001",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Dependency-Diagram-School-300x89.jpg",
+    "local_file": "raw/assets/D05_F001.jpg",
+    "alt": "Ch-11-Dependency-Diagram-School-300x89",
+    "caption": "Figure 12.1 Dependency diagram, by A. Watt.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      89
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D05",
+    "figure_id": "D05_F002",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch11-Exercises-Fig11-1-e1409835870943.jpg",
+    "local_file": "raw/assets/D05_F002.jpg",
+    "alt": "Ch11-Exercises -Fig11-1",
+    "caption": "Figure 12.2 For question 5, by A. Watt.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      857,
+      259
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D05",
+    "figure_id": "D05_F003",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch11-Exercises-Fig11-2-e1409836100289.jpg",
+    "local_file": "raw/assets/D05_F003.jpg",
+    "alt": "Ch11-Exercises -Fig11-2",
+    "caption": "Figure 12.3 For question 6, by A. Watt.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      1229,
+      286
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D05",
+    "figure_id": "D05_F004",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch12-Exercises-Fig12-1-e1409836269456.jpg",
+    "local_file": "raw/assets/D05_F004.jpg",
+    "alt": "Ch12-Exercises -Fig12-1",
+    "caption": "Figure 12.4 For question 8, by A. Watt.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      927,
+      217
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D09",
+    "figure_id": "D09_F001",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/School-Database-Fig-1-300x221.jpg",
+    "local_file": "raw/assets/D09_F001.jpg",
+    "alt": "Blue cylinder with three white rectangles each with a list of words.",
+    "caption": "Figure 7.1. Database with three tables.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      221
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D09",
+    "figure_id": "D09_F002",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Record-300x177.jpg",
+    "local_file": "raw/assets/D09_F002.jpg",
+    "alt": "Record-300x177",
+    "caption": "Figure 7.2. Example of an ID card by A. Watt.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      177
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D09",
+    "figure_id": "D09_F003",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Table-Description-300x146.jpg",
+    "local_file": "raw/assets/D09_F003.jpg",
+    "alt": "image",
+    "caption": "Figure 7.3. Example of a simple table by A. Watt.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      300,
+      146
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D09",
+    "figure_id": "D09_F004",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Terms.jpg",
+    "local_file": "raw/assets/D09_F004.jpg",
+    "alt": "A database table with words.",
+    "caption": "Table 7.1. Terms and their synonyms by A. Watt.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      288,
+      110
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  },
+  {
+    "document_id": "D09",
+    "figure_id": "D09_F005",
+    "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch7-Exercises-Fig7-1-e1409190387554.jpg",
+    "local_file": "raw/assets/D09_F005.jpg",
+    "alt": "Table with 5 columns and 5 rows.",
+    "caption": "Table 7.2. Table for exercise questions, by A. Watt.",
+    "image_decodes": true,
+    "pixel_dimensions": [
+      1206,
+      226
+    ],
+    "requires_visual_content": true,
+    "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+    "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+  }
+]

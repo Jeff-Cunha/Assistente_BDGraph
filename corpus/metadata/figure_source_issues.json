@@ -1,0 +1,42 @@
+[
+  {
+    "issue_id": "V01",
+    "document_id": "D01",
+    "figure_ids": [
+      "D01_F002"
+    ],
+    "type": "source_data_discrepancy",
+    "observation": "The screenshot address reads 8982 Rodent Lane, whereas the parent text states 8932 Rodent Lane.",
+    "resolution": "Deferred; neither image nor original text changed. Screenshot fixture not selected for full transcription."
+  },
+  {
+    "issue_id": "V02",
+    "document_id": "D02",
+    "figure_ids": [
+      "D02_F008"
+    ],
+    "type": "source_diagram_context_discrepancy",
+    "observation": "The image visibly labels the PROJECT endpoint 1, while its surrounding section discusses many-to-many relationships and displays a JOIN relation.",
+    "resolution": "Deferred; N/1 is transcribed as drawn, with no replacement by M/N."
+  },
+  {
+    "issue_id": "V03",
+    "document_id": "D04",
+    "figure_ids": [
+      "D04_F001"
+    ],
+    "type": "source_prose_internal_contradiction",
+    "observation": "The parent prose first says C → D and later says C does not determine D.",
+    "resolution": "Deferred; exact data case preserved, with no new dependency conclusion."
+  },
+  {
+    "issue_id": "V04",
+    "document_id": "D04",
+    "figure_ids": [
+      "D04_F007"
+    ],
+    "type": "source_dependency_grouping",
+    "observation": "The parent prose places the composite ProjectNo, EmpNo → HrsWork dependency under Partial Dependencies. The upper/lower arrow groups are transcribed without reclassifying that prose.",
+    "resolution": "Deferred conceptual review, outside this transcription stage."
+  }
+]

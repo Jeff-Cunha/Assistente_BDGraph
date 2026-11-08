@@ -1,0 +1,4 @@
+requests==2.33.1
+beautifulsoup4==4.15.0
+Pillow==12.2.0
+markdown-it-py==4.2.0

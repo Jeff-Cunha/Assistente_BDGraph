@@ -1,0 +1,14 @@
+.env
+.env.*
+!.env.example
+.venv/
+.venv-*/
+__pycache__/
+*.py[cod]
+work/
+.figure_review/
+
+# Tentativas locais de API e instaladores
+data/extraction/pilot-results*/
+*.exe
+*.msi
