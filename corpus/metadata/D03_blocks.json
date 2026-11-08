@@ -1,0 +1,422 @@
+[
+  {
+    "kind": "h1",
+    "text": "# Chapter 9 Integrity Rules and Constraints"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Adrienne Watt &amp; Nelson Eng"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Constraints are a very important feature in a relational model. In fact, the relational model supports the well-defined theory of constraints on attributes or tables. Constraints are useful because they allow a designer to specify the semantics of data in the database. <em>Constraints</em> are the rules that force DBMSs to check that data satisfies the semantics."
+  },
+  {
+    "kind": "h2",
+    "text": "## Domain Integrity"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Domain restricts the values of attributes in the relation and is a constraint of the relational model. However, there are real-world semantics for data that cannot be specified if used only with domain constraints. We need more specific ways to state what data values are or are not allowed and which format is suitable for an attribute. For example, the Employee ID (EID) must be unique or the employee Birthdate is in the range \\[Jan 1, 1950, Jan 1, 2000\\]. Such information is provided in logical statements called <em>integrity constraints</em>."
+  },
+  {
+    "kind": "paragraph",
+    "text": "There are several kinds of integrity constraints, described below."
+  },
+  {
+    "kind": "h3",
+    "text": "### Entity integrity"
+  },
+  {
+    "kind": "paragraph",
+    "text": "To ensure <em>entity integrity</em>, it is required that every table have a primary key. Neither the PK nor any part of it can contain null values. This is because null values for the primary key mean we cannot identify some rows. For example, in the EMPLOYEE table, Phone cannot be a primary key since some people may not have a telephone."
+  },
+  {
+    "kind": "h3",
+    "text": "### Referential integrity"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<em>Referential integrity</em> requires that a foreign key must have a matching primary key or it must be null. This constraint is specified between two tables (parent and child); it maintains the correspondence between rows in these tables. It means the reference from a row in one table to another table must be valid."
+  },
+  {
+    "kind": "paragraph",
+    "text": "Examples of referential integrity constraint in the Customer/Order database of the Company:"
+  },
+  {
+    "kind": "list",
+    "text": "- Customer(<strong>CustID</strong>, CustName)\n\n- Order(<strong>OrderID</strong>, CustID, OrderDate)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "To ensure that there are no orphan records, we need to enforce referential integrity. An <em>orphan record</em> is one whose foreign key FK value is not found in the corresponding entity – the entity where the PK is located. Recall that a typical join is between a PK and FK."
+  },
+  {
+    "kind": "paragraph",
+    "text": "The referential integrity constraint states that the customer ID (CustID) in the Order table must match a valid CustID in the Customer table. Most relational databases have declarative referential integrity. In other words, when the tables are created the referential integrity constraints are set up."
+  },
+  {
+    "kind": "paragraph",
+    "text": "Here is another example from a Course/Class database:"
+  },
+  {
+    "kind": "list",
+    "text": "- Course(<strong>CrsCode</strong>, DeptCode, Description)\n\n- Class(<strong>CrsCode, Section</strong>, ClassTime)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "The referential integrity constraint states that CrsCode in the Class table must match a valid CrsCode in the Course table. In this situation, it’s not enough that the CrsCode and Section in the Class table make up the PK, we must also enforce referential integrity."
+  },
+  {
+    "kind": "paragraph",
+    "text": "When setting up referential integrity it is important that the PK and FK have the same data types and come from the same domain, otherwise the relational database management system (RDBMS) will not allow the join. RDBMS is a popular database system that is based on the relational model introduced by E. F. Codd of IBM’s San Jose Research Laboratory. Relational database systems are easier to use and understand than other database systems."
+  },
+  {
+    "kind": "h3",
+    "text": "### Referential integrity in Microsoft Access"
+  },
+  {
+    "kind": "paragraph",
+    "text": "In Microsoft (MS) Access, referential integrity is set up by joining the PK in the Customer table to the CustID in the Order table. See Figure 9.1 for a view of how this is done on the Edit Relationships screen in MS Access."
+  },
+  {
+    "kind": "figure",
+    "text": "[![A screenshot of the Edit Relationships commend in MS Access.](../raw/assets/D03_F001.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Access-Referential-Integrity-Window-300x212.jpg)\n\nFigure 9.1. Referential access in MS Access, by A. Watt."
+  },
+  {
+    "kind": "h3",
+    "text": "### Referential integrity using Transact-SQL (MS SQL Server)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "When using Transact-SQL, the referential integrity is set when creating the Order table with the FK. Listed below are the statements showing the FK in the Order table referencing the PK in the Customer table."
+  },
+  {
+    "kind": "code",
+    "text": "```sql\nCREATE TABLE Customer\n( CustID INTEGER PRIMARY KEY,\nCustName CHAR(35) )\n```"
+  },
+  {
+    "kind": "code",
+    "text": "```sql\nCREATE TABLE Orders\n( OrderID INTEGER PRIMARY KEY,\nCustID INTEGER REFERENCES Customer(CustID),\nOrderDate DATETIME )\n```"
+  },
+  {
+    "kind": "h3",
+    "text": "### Foreign key rules"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Additional foreign key rules may be added when setting referential integrity, such as what to do with the child rows (in the Orders table) when the record with the PK, part of the parent (Customer), is deleted or changed (updated). For example, the Edit Relationships window in MS Access (see Figure 9.1) shows two additional options for FK rules: Cascade Update and Cascade Delete. If these are not selected, the system will prevent the deletion or update of PK values in the parent table (Customer table) if a child record exists. The child record is any record with a matching PK."
+  },
+  {
+    "kind": "paragraph",
+    "text": "In some databases, an additional option exists when selecting the Delete option called Set to Null. In this is chosen, the PK row is deleted, but the FK in the child table is set to NULL. Though this creates an orphan row, it is acceptable."
+  },
+  {
+    "kind": "h2",
+    "text": "## Enterprise Constraints"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Enterprise constraints – sometimes referred to as semantic constraints – are additional rules specified by users or database administrators and can be based on multiple tables."
+  },
+  {
+    "kind": "paragraph",
+    "text": "Here are some examples."
+  },
+  {
+    "kind": "list",
+    "text": "- A class can have a maximum of 30 students.\n\n- A teacher can teach a maximum of four classes per semester.\n\n- An employee cannot take part in more than five projects.\n\n- The salary of an employee cannot exceed the salary of the employee’s manager."
+  },
+  {
+    "kind": "h2",
+    "text": "## Business Rules"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<em>Business rules</em> are obtained from users when gathering requirements. The requirements-gathering process is very important, and its results should be verified by the user before the database design is built. If the business rules are incorrect, the design will be incorrect, and ultimately the application built will not function as expected by the users."
+  },
+  {
+    "kind": "paragraph",
+    "text": "Some examples of business rules are:"
+  },
+  {
+    "kind": "list",
+    "text": "- A teacher can teach many students.\n\n- A class can have a maximum of 35 students.\n\n- A course can be taught many times, but by only one instructor.\n\n- Not all teachers teach classes."
+  },
+  {
+    "kind": "h3",
+    "text": "### Cardinality and connectivity"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Business rules are used to determine cardinality and connectivity.<em> Cardinality</em> describes the relationship between two data tables by expressing the minimum and maximum number of entity occurrences associated with one occurrence of a related entity. In Figure 9.2, you can see that cardinality is represented by the innermost markings on the relationship symbol. In this figure, the cardinality is 0 (zero) on the right and 1 (one) on the left."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Connectivity-and-Cardinality-300x202](../raw/assets/D03_F002.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Connectivity-and-Cardinality-300x202.jpg)\n\nFigure 9.2. Position of connectivity and cardinality on a relationship symbol, by A. Watt."
+  },
+  {
+    "kind": "paragraph",
+    "text": "The outermost symbol of the relationship symbol, on the other hand, represents the connectivity between the two tables.<em> </em><em>Connectivity</em> is the relationship between two tables, e.g., one to one or one to many. The only time it is zero is when the FK can be null. When it comes to participation, there are three options to the relationship between these entities: either 0 (zero), 1 (one) or many. In Figure 9.2, for example, the connectivity is 1 (one) on the outer, left-hand side of this line and many on the outer, right-hand side."
+  },
+  {
+    "kind": "paragraph",
+    "text": "Figure 9.3. shows the symbol that represents a one to many relationship."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Ch-9-oneToMany-1](../raw/assets/D03_F003.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-oneToMany-1.jpg)\n\nFigure 9.3."
+  },
+  {
+    "kind": "paragraph",
+    "text": "In Figure 9.4, both inner (representing cardinality) and outer (representing connectivity) markers are shown. The left side of this symbol is read as minimum 1 and maximum 1. On the right side, it is read as: minimum 1 and maximum many."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Ch-9-oneToMany-2](../raw/assets/D03_F004.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-oneToMany-2.jpg)\n\nFigure 9.4."
+  },
+  {
+    "kind": "h2",
+    "text": "## Relationship Types"
+  },
+  {
+    "kind": "paragraph",
+    "text": "The line that connects two tables, in an ERD, indicates the <em>relationship type </em>between the tables<em>:</em> either identifying or non-identifying. An <em>identifying relationship</em> will have a solid line (where the PK contains the FK). A <em>non-identifying relationship</em> is indicated by a broken line and does not contain the FK in the PK. See the section in Chapter 8 that discusses weak and strong relationships for more explanation."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Figure 9.5. Identifying and non-identifying relationship.](../raw/assets/D03_F005.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Identifying-and-Non-Identifying-relationship-300x298.jpg)\n\nFigure 9.5. Identifying and non-identifying relationship, by A. Watt."
+  },
+  {
+    "kind": "h3",
+    "text": "### Optional relationships"
+  },
+  {
+    "kind": "paragraph",
+    "text": "In an <em>optional relationship</em>, the FK can be null or the parent table does not need to have a corresponding child table occurrence. The symbol, shown in Figure 9.6, illustrates one type with a zero and three prongs (indicating many) which is interpreted as zero OR many."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Ch-9-Zero-or-Many-1](../raw/assets/D03_F006.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Zero-or-Many-1.jpg)\n\nFigure 9.6."
+  },
+  {
+    "kind": "paragraph",
+    "text": "For example, if you look at the Order table on the right-hand side of Figure 9.7, you’ll notice that a customer doesn’t need to place an order to be a customer. In other words, the <strong>many side</strong> is optional."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Cardinality-Optional-0-or-more-300x189](../raw/assets/D03_F007.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Cardinality-Optional-0-or-more-300x189.jpg)\n\nFigure 9.7. Example usage of a zero to many optional relationship symbol, by A. Watt."
+  },
+  {
+    "kind": "paragraph",
+    "text": "The relationship symbol in Figure 9.7 can also be read as follows:"
+  },
+  {
+    "kind": "list",
+    "text": "- Left side: The order entity must contain a minimum of one related entity in the Customer table and a maximum of one related entity.\n\n- Right side: A customer can place a minimum of zero orders or a maximum of many orders."
+  },
+  {
+    "kind": "paragraph",
+    "text": "Figure 9.8 shows another type of optional relationship symbol with a zero and one, meaning zero OR one.  The <strong>one side</strong> is optional."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Ch-9-Optional-Arrow-2](../raw/assets/D03_F008.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Optional-Arrow-2.jpg)\n\nFigure 9.8."
+  },
+  {
+    "kind": "paragraph",
+    "text": "Figure 9.9 gives an example of how a zero to one symbol might be used."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Cardinality-Optional-0-or-1-300x188](../raw/assets/D03_F009.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Cardinality-Optional-0-or-1-300x188.jpg)\n\nFigure 9.9. Example usage of a zero to one optional relationship symbol, by A. Watt."
+  },
+  {
+    "kind": "h3",
+    "text": "### Mandatory relationships"
+  },
+  {
+    "kind": "paragraph",
+    "text": "In a <em>mandatory relationship</em>, one entity occurrence requires a corresponding entity occurrence. The symbol for this relationship shows <em>one and only one </em>as shown in Figure 9.10. The one side is mandatory."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Ch-9-oneToOne-1](../raw/assets/D03_F010.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-oneToOne-1.jpg)\n\nFigure 9.10"
+  },
+  {
+    "kind": "paragraph",
+    "text": "See Figure 9.11 for an example of how the one and only one mandatory symbol is used."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Ch-9-Mandatory-Cardinality-one-to-one-300x188](../raw/assets/D03_F011.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Mandatory-Cardinality-one-to-one-300x188.jpg)\n\nFigure 9.11. Example of a one and only one mandatory relationship symbol, by A. Watt."
+  },
+  {
+    "kind": "paragraph",
+    "text": "Figure 9.12 illustrates what a one to many relationship symbol looks like where the <strong>many side</strong> is mandatory."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Ch-9-oneToMany-3](../raw/assets/D03_F012.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-oneToMany-3.jpg)\n\nFigure 9.12."
+  },
+  {
+    "kind": "paragraph",
+    "text": "Refer to Figure 9.13 for an example of how the one to many symbol may be used."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Ch-9-Mandatory-Cardinality-one-to-Many-300x188](../raw/assets/D03_F013.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Mandatory-Cardinality-one-to-Many-300x188.jpg)\n\nFigure 9.13. Example of a one to many mandatory relationship symbol, by A. Watt."
+  },
+  {
+    "kind": "paragraph",
+    "text": "So far we have seen that the innermost side of a relationship symbol (on the left-side of the symbol in Figure 9.14) can have a 0 (zero) cardinality and a connectivity of many (shown on the right-side of the symbol in Figure 9.14), or one (not shown)."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Ch-9-Zero-or-Many-1](../raw/assets/D03_F006.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Zero-or-Many-1.jpg)\n\nFigure 9.14"
+  },
+  {
+    "kind": "paragraph",
+    "text": "However, it cannot have a connectivity of 0 (zero), as displayed in Figure 9.15. The connectivity can only be 1."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Ch-9-Zero-or-Many-2](../raw/assets/D03_F014.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Zero-or-Many-2.jpg)\n\nFigure 9.15."
+  },
+  {
+    "kind": "paragraph",
+    "text": "The connectivity symbols show maximums. So if you think about it logically, if the connectivity symbol on the left side shows 0 (zero), then there would be no connection between the tables."
+  },
+  {
+    "kind": "paragraph",
+    "text": "The way to read a relationship symbol, such as the one in Figure 9.16, is as follows."
+  },
+  {
+    "kind": "list",
+    "text": "- The CustID in the Order table must also be found in the Customer table a minimum of 0 and a maximum of 1 times.\n\n- The 0 means that the CustID in the Order table may be null.\n\n- The left-most 1 (right before the 0 representing connectivity) says that if there is a CustID in the Order table, it can only be in the Customer table once.\n\n- When you see the 0 symbol for cardinality, you can assume two things: T\n\n  1. the FK in the Order table allows nulls, and\n\n  2. the FK is not part of the PK since PKs must not contain null values."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Ch-9-Cust-to-Order-ERD-300x168](../raw/assets/D03_F015.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Cust-to-Order-ERD-300x168.jpg)\n\nFigure 9.16. The relationship between a Customer table and an Order table, by A. Watt."
+  },
+  {
+    "kind": "h2",
+    "text": "## Key Terms"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>business rules</strong>: obtained from users when gathering requirements and are used to determine cardinality"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>cardinality</strong>: expresses the minimum and maximum number of entity occurrences associated with one occurrence of a related entity"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>connectivity</strong>: the relationship between two tables, e.g., one to one or one to many"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>constraints</strong>: the rules that force DBMSs to check that data satisfies the semantics"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>entity integrity</strong>: requires that every table have a primary key; neither the primary key, nor any part of it, can contain null values"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>identifying relationship</strong>: where the primary key contains the foreign key; indicated in an ERD by a solid line"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>integrity constraints</strong>: logical statements that state what data values are or are not allowed and which format is suitable for an attribute"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>mandatory relationship</strong>:one entity occurrence requires a corresponding entity occurrence."
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>non-identifying relationship</strong>: does not contain the foreign key in the primary key; indicated in an ERD by a dotted line"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>optional relationship</strong>: the FK can be null or the parent table does not need to have a corresponding child table occurrence"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>orphan record</strong>: a record whose foreign key value is not found in the corresponding entity – the entity where the primary key is located"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>referential integrity</strong>: requires that a foreign key must have a matching primary key or it must be null"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>relational database management system (RDBMS)</strong>: a popular database system based on the relational model introduced by E. F. Codd of IBM’s San Jose Research Laboratory"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>relationship type</strong>: the type of relationship between two tables in an ERD (either identifying or non-identifying); this relationship is indicated by a line drawn between the two tables."
+  },
+  {
+    "kind": "h2",
+    "text": "## Exercises"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<em>Read the following description and then answer questions 1-5 at the end.</em>"
+  },
+  {
+    "kind": "paragraph",
+    "text": "The swim club database in Figure 9.17 has been designed to hold information about students who are enrolled in swim classes. The following information is stored: students, enrollment, swim classes, pools where classes are held, instructors for the classes, and various levels of swim classes. Use Figure 9.17 to answer questions 1 to 5."
+  },
+  {
+    "kind": "figure",
+    "text": "[![SwimClubDatabase](../raw/assets/D03_F016.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/SwimClubDatabase.jpg)\n\nFigure 9.17. ERD for questions 1-5. (Diagram by A. Watt.)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "The primary keys are identified below. The following data types are defined in the SQL Server."
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>tblLevels </strong>  \n Level – Identity PK  \n ClassName – text 20 – nulls are not allowed"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>tblPool</strong>  \n Pool – Identity PK  \n PoolName – text 20 – nulls are not allowed  \n Location – text 30"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>tblStaff</strong>  \n StaffID – Identity PK  \n FirstName – text 20  \n MiddleInitial – text 3  \n LastName – text 30  \n Suffix – text 3  \n Salaried – Bit  \n PayAmount – money"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>tblClasses</strong>  \n LessonIndex – Identity PK  \n Level – Integer FK  \n SectionID – Integer  \n Semester – TinyInt  \n Days – text 20  \n Time – datetime (formatted for time)  \n Pool – Integer FK  \n Instructor – Integer FK  \n Limit – TinyInt  \n Enrolled – TinyInt  \n Price – money"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>tblEnrollment</strong>  \n LessonIndex – Integer FK  \n SID – Integer FK (LessonIndex and SID) Primary Key  \n Status – text 30  \n Charged – bit  \n AmountPaid – money  \n DateEnrolled – datetime"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>tblStudents</strong>  \n SID – Identity PK  \n FirstName – text 20  \n MiddleInitial – text 3  \n LastName – text 30  \n Suffix – text 3  \n Birthday – datetime  \n LocalStreet – text 30  \n LocalCity – text 20  \n LocalPostalCode – text 6  \n LocalPhone – text 10"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Implement this schema in SQL Server or access (you will need to pick comparable data types). Submit a screenshot of your ERD in the database."
+  },
+  {
+    "kind": "list",
+    "text": "1. Explain the relationship rules for each relationship (e.g., tblEnrollment and tblStudents: A student can enroll in many classes).\n\n2. Identify cardinality for each relationship, assuming the following rules:\n\n   - A pool may or may not ever have a class.\n\n   - The levels table must always be associated with at least one class.\n\n   - The staff table may not have ever taught a class.\n\n   - All students must be enrolled in at least one class.\n\n   - The class must have students enrolled in it.\n\n   - The class must have a valid pool.\n\n   - The class may not have an instructor assigned.\n\n   - The class must always be associated with an existing level.\n3. Which tables are weak and which tables are strong (covered in an earlier chapter)?\n\n4. Which of the tables are non-identifying and which are identifying?"
+  },
+  {
+    "kind": "h2",
+    "text": "## Image Attributions"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Figures 9.3, 9.4, 9.6, 9.8, 9.10, 9.12, 9.14 and 9.15 by A. Watt."
+  }
+]

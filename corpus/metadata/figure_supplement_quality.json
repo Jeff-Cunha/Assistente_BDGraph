@@ -1,0 +1,107 @@
+{
+  "original_core_files_unchanged": 69,
+  "figure_occurrences": 51,
+  "unique_original_images": 50,
+  "decision_counts": {
+    "already_covered_by_text": 15,
+    "transcribe": 28,
+    "decorative_or_symbol": 8
+  },
+  "supplement_chunks": 28,
+  "complete_transcriptions": 26,
+  "partial_transcriptions": 2,
+  "pending_legibility_figures": [
+    "D02_F008",
+    "D09_F003"
+  ],
+  "source_issues_deferred": 4,
+  "supplement_words": 5020,
+  "resolution_attempts": 14,
+  "resolution_attempt_http_statuses": {
+    "404": 14
+  },
+  "larger_images_used": 0,
+  "per_document": [
+    {
+      "document_id": "D01",
+      "occurrences": 3,
+      "transcribed": 0,
+      "complete": 0,
+      "partial": 0,
+      "covered": 3,
+      "symbols": 0
+    },
+    {
+      "document_id": "D02",
+      "occurrences": 15,
+      "transcribed": 12,
+      "complete": 11,
+      "partial": 1,
+      "covered": 3,
+      "symbols": 0
+    },
+    {
+      "document_id": "D03",
+      "occurrences": 17,
+      "transcribed": 8,
+      "complete": 8,
+      "partial": 0,
+      "covered": 1,
+      "symbols": 8
+    },
+    {
+      "document_id": "D04",
+      "occurrences": 7,
+      "transcribed": 2,
+      "complete": 2,
+      "partial": 0,
+      "covered": 5,
+      "symbols": 0
+    },
+    {
+      "document_id": "D05",
+      "occurrences": 4,
+      "transcribed": 4,
+      "complete": 4,
+      "partial": 0,
+      "covered": 0,
+      "symbols": 0
+    },
+    {
+      "document_id": "D06",
+      "occurrences": 0,
+      "transcribed": 0,
+      "complete": 0,
+      "partial": 0,
+      "covered": 0,
+      "symbols": 0
+    },
+    {
+      "document_id": "D07",
+      "occurrences": 0,
+      "transcribed": 0,
+      "complete": 0,
+      "partial": 0,
+      "covered": 0,
+      "symbols": 0
+    },
+    {
+      "document_id": "D08",
+      "occurrences": 0,
+      "transcribed": 0,
+      "complete": 0,
+      "partial": 0,
+      "covered": 0,
+      "symbols": 0
+    },
+    {
+      "document_id": "D09",
+      "occurrences": 5,
+      "transcribed": 2,
+      "complete": 1,
+      "partial": 1,
+      "covered": 3,
+      "symbols": 0
+    }
+  ]
+}

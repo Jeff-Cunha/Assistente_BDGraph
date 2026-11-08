@@ -1,0 +1,114 @@
+[
+  {
+    "kind": "h1",
+    "text": "# Chapter 2 Fundamental Concepts"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Adrienne Watt &amp; Nelson Eng"
+  },
+  {
+    "kind": "h2",
+    "text": "## What Is a Database?"
+  },
+  {
+    "kind": "paragraph",
+    "text": "A <em>database</em> is a shared collection of related data used to support the activities of a particular organization. A database can be viewed as a repository of data that is defined once and then accessed by various users as shown in Figure 2.1."
+  },
+  {
+    "kind": "figure",
+    "text": "[![A diagram showing a yellow cylinder with coloured rectangles within it, presumably representing data. Four rectangels are listed to the left of this each with the label \"Application Program\".](../raw/assets/D01_F001.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/RDBMS-300x2091.jpg)\n\nFigure 2.1. A database is a repository of data."
+  },
+  {
+    "kind": "h2",
+    "text": "## Database Properties"
+  },
+  {
+    "kind": "paragraph",
+    "text": "A database has the following properties:"
+  },
+  {
+    "kind": "list",
+    "text": "- It is a representation of some aspect of the real world or a collection of <em>data element</em>s (facts) representing real-world information.\n\n- A database is logical, coherent and internally consistent.\n\n- A database is designed, built and populated with data for a specific purpose.\n\n- Each data item is stored in a field.\n\n- A combination of fields makes up a <em>table</em>. For example, each field in an employee table contains data about an individual employee."
+  },
+  {
+    "kind": "paragraph",
+    "text": "<em> </em>A database can contain many tables. For example, a membership system may contain an address table and an individual member table as shown in Figure 2.2. Members of Science World are individuals, group homes, businesses and corporations who have an active membership to Science World. Memberships can be purchased for a one- or two-year period, and then renewed for another one- or two-year period."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Snapshot of an online membership form. Underneath it is a spreadsheet with names, barcodes, date, and teim.](../raw/assets/D01_F002.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/08/MemFormAug2014.jpg)\n\nFigure 2.2. Membership system at Science World by N. Eng."
+  },
+  {
+    "kind": "paragraph",
+    "text": "In Figure 2.2, Minnie Mouse renewed the family membership with Science World. Everyone with membership ID#100755  lives at 8932 Rodent Lane. The individual members are Mickey Mouse, Minnie Mouse, Mighty Mouse, Door Mouse, Tom Mouse, King Rat, Man Mouse and Moose Mouse."
+  },
+  {
+    "kind": "h2",
+    "text": "## Database Management System"
+  },
+  {
+    "kind": "paragraph",
+    "text": "A <em>database management system (DBMS)</em> is a collection of programs that enables users to create and maintain databases and control all access to them. The primary goal of a DBMS is to provide an environment that is both convenient and efficient for users to retrieve and store information."
+  },
+  {
+    "kind": "paragraph",
+    "text": "With the database approach, we can have the traditional banking system as shown in Figure 2.3. In this bank example, a DBMS is used by the Personnel Department, the Account Department and the Loan Department to access the shared corporate database."
+  },
+  {
+    "kind": "figure",
+    "text": "[![There are three drawings on the left. The top one shows three people sitting and talking at a table; it is labelled as Personnel Dept. The drawing underneath this shows a man and woman in business attire and carrying briefcases shaking hands; it is labelled as Account Dept. The last drawing is of a woman; it is labelled Loan Dept. To the right of this is a rectangle with DBMS. to the right of this is a green cylinder that says Shared Database with employees, checking accounts, saving accounts, installment loans, mortgage loans, data files.](../raw/assets/D01_F003.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Banking-Systems-RDBMS-300x1951.jpg)\n\nFigure 2.3. A bank database management system (DBMS)."
+  },
+  {
+    "kind": "h2",
+    "text": "## Key Terms"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>data elements</strong>: facts that represent real-world information"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>database</strong>: a shared collection of related data used to support the activities of a particular organization"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>database management system (DBMS)</strong>: a collection of programs that enables users to create and maintain databases and control all access to them"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>table</strong>: a combination of fields"
+  },
+  {
+    "kind": "h2",
+    "text": "## Exercises"
+  },
+  {
+    "kind": "list",
+    "text": "1. What is a database management system (DBMS)?\n\n2. What are the properties of a DBMS?\n\n3. Provide three examples of a real-world database (e.g., the library contains a database of books)."
+  },
+  {
+    "kind": "h2",
+    "text": "## Attribution"
+  },
+  {
+    "kind": "paragraph",
+    "text": "This chapter of <em>Database Design</em> (including images, except as otherwise noted) is a derivative copy of [Database System Concepts](http://cnx.org/contents/b57b8760-6898-469d-a0f7-06e0537f6817@1) by Nguyen Kim Anh licensed under [Creative Commons Attribution License 3.0 license](http://creativecommons.org/licenses/by/3.0/)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "The following material was written by Nelson Eng:"
+  },
+  {
+    "kind": "list",
+    "text": "1. Example under <em>Database Properties</em>\n\n2. Key Terms"
+  },
+  {
+    "kind": "paragraph",
+    "text": "The following material was written by Adrienne Watt:"
+  },
+  {
+    "kind": "list",
+    "text": "1. Exercises"
+  }
+]

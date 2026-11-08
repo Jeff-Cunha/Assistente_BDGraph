@@ -1,0 +1,618 @@
+[
+  {
+    "kind": "h1",
+    "text": "# Chapter 8 The Entity Relationship Data Model"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Adrienne Watt"
+  },
+  {
+    "kind": "paragraph",
+    "text": "The <em>entity relationship (ER) data model</em> has existed for over 35 years. It is well suited to data modelling for use with databases because it is fairly abstract and is easy to discuss and explain. ER models are readily translated to relations. ER models, also called an ER schema, are represented by ER diagrams."
+  },
+  {
+    "kind": "paragraph",
+    "text": "ER modelling is based on two concepts:"
+  },
+  {
+    "kind": "list",
+    "text": "- Entities<em>,</em> defined as tables that hold specific information (data)\n\n- <em>Relationships,</em> defined as the associations or interactions between entities"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Here is an example of how these two concepts might be combined in an ER data model: Prof. Ba (entity) teaches (relationship) the Database Systems course (entity)."
+  },
+  {
+    "kind": "paragraph",
+    "text": "For the rest of this chapter, we will use a sample database called the COMPANY database to illustrate the concepts of the ER model. This database contains information about employees, departments and projects. Important points to note include:"
+  },
+  {
+    "kind": "list",
+    "text": "- There are several departments in the company. Each department has a unique identification, a name, location of the office and a particular employee who manages the department.\n\n- A department controls a number of projects, each of which has a unique name, a unique number and a budget.\n\n- Each employee has a name, identification number, address, salary and birthdate. An employee is assigned to one department but can join in several projects. We need to record the start date of the employee in each project. We also need to know the direct supervisor of each employee.\n\n- We want to keep track of the dependents for each employee. Each dependent has a name, birthdate and relationship with the employee."
+  },
+  {
+    "kind": "h2",
+    "text": "## Entity, Entity Set and Entity Type"
+  },
+  {
+    "kind": "paragraph",
+    "text": "An <em>entity</em> is an object in the real world with an independent existence that can be differentiated from other objects. An entity might be"
+  },
+  {
+    "kind": "list",
+    "text": "- An object with physical existence (e.g., a lecturer, a student, a car)\n\n- An object with conceptual existence (e.g., a course, a job, a position)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Entities can be classified based on their strength. An entity is considered weak if its tables are existence dependent."
+  },
+  {
+    "kind": "list",
+    "text": "- That is, it cannot exist without a relationship with another entity\n\n- Its primary key is derived from the primary key of the parent entity\n\n  - The Spouse table, in the COMPANY database, is a weak entity because its primary key is dependent on the Employee table. Without a corresponding employee record, the spouse record would not exist."
+  },
+  {
+    "kind": "paragraph",
+    "text": "An entity is considered strong if it can exist apart from all of its related entities."
+  },
+  {
+    "kind": "list",
+    "text": "- Kernels are strong entities.\n\n- A table without a foreign key or a table that contains a foreign key that can contain nulls is a strong entity"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Another term to know is <em>entity type</em> which defines a collection of similar entities."
+  },
+  {
+    "kind": "paragraph",
+    "text": "An <em>entity set</em> is a collection of entities of an entity type at a particular point of time. In an entity relationship diagram (ERD), an entity type is represented by a name in a box. For example, in Figure 8.1, the entity type is EMPLOYEE."
+  },
+  {
+    "kind": "figure",
+    "text": "[![A yellow rectangle with e1, e2 and en inside. There is an arrow from the yellow box to a blue rectangle with the work EMPLOYEE in capitals. Over the arrow are the words Represent in ER diagram. To the far left it says Entity set.](../raw/assets/D02_F001.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Attributes-300x106.jpg)\n\nFigure 8.1. ERD with entity type EMPLOYEE."
+  },
+  {
+    "kind": "h3",
+    "text": "### Existence dependency"
+  },
+  {
+    "kind": "paragraph",
+    "text": "An entity’s existence is dependent on the existence of the related entity. It is existence-dependent if it has a mandatory foreign key (i.e., a foreign key attribute that cannot be null). For example, in the COMPANY database, a Spouse entity is existence -dependent on the Employee entity."
+  },
+  {
+    "kind": "h2",
+    "text": "## Kinds of Entities"
+  },
+  {
+    "kind": "paragraph",
+    "text": "You should also be familiar with different kinds of entities including independent entities, dependent entities and characteristic entities. These are described below."
+  },
+  {
+    "kind": "h3",
+    "text": "### Independent entities"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<em>Independent entities</em>, also referred to as kernels, are the backbone of the database. They are what other tables are based on. <em>Kernels</em> have the following characteristics:"
+  },
+  {
+    "kind": "list",
+    "text": "- They are the building blocks of a database.\n\n- The primary key may be simple or composite.\n\n- The primary key is not a foreign key.\n\n- They do not depend on another entity for their existence."
+  },
+  {
+    "kind": "paragraph",
+    "text": "If we refer back to our COMPANY database, examples of an independent entity include the Customer table, Employee table or Product table."
+  },
+  {
+    "kind": "h3",
+    "text": "### Dependent entities"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<em>Dependent entities</em>, also referred to as <em>derived entities</em>, depend on other tables for their meaning. These entities have the following characteristics:"
+  },
+  {
+    "kind": "list",
+    "text": "- Dependent entities are used to connect two kernels together.\n\n- They are said to be existence dependent on two or more tables.\n\n- Many to many relationships become associative tables with at least two foreign keys.\n\n- They may contain other attributes.\n\n- The foreign key identifies each associated table.\n\n- There are three options for the primary key:\n\n  1. Use a composite of foreign keys of associated tables if unique\n\n  2. Use a composite of foreign keys and a qualifying column\n\n  3. Create a new simple primary key"
+  },
+  {
+    "kind": "h3",
+    "text": "### Characteristic entities"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<em>Characteristic entities</em> provide more information about another table. These entities have the following characteristics:"
+  },
+  {
+    "kind": "list",
+    "text": "- They represent multivalued attributes.\n\n- They describe other entities.\n\n- They typically have a one to many relationship.\n\n- The foreign key is used to further identify the characterized table.\n\n- Options for primary key are as follows:\n\n  1. Use a composite of foreign key plus a qualifying column\n\n  2. Create a new simple primary key. In the COMPANY database, these might include:\n\n     - Employee (EID, Name, Address, Age, Salary) – EID is the simple primary key.\n\n     - EmployeePhone (EID, Phone) – EID is part of a composite primary key. Here, EID is also a foreign key."
+  },
+  {
+    "kind": "h2",
+    "text": "## Attributes"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Each entity is described by a set of attributes (e.g., Employee = (Name, Address, Birthdate (Age), Salary)."
+  },
+  {
+    "kind": "paragraph",
+    "text": "Each attribute has a name, and is associated with an entity and a domain of legal values. However, the information about attribute domain is not presented on the ERD."
+  },
+  {
+    "kind": "paragraph",
+    "text": "In the entity relationship diagram, shown in Figure 8.2, each attribute is represented by an oval with a name inside."
+  },
+  {
+    "kind": "figure",
+    "text": "[![One blue rectangle with the word EMPLOYEE. This is connected with a line to four separate yellow ovals. Each has a different word inside it: Name, Address, Birthdate, Salary.](../raw/assets/D02_F002.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Distributed-Systems-300x217.jpg)\n\nFigure 8.2. How attributes are represented in an ERD."
+  },
+  {
+    "kind": "h2",
+    "text": "## Types of Attributes"
+  },
+  {
+    "kind": "paragraph",
+    "text": "There are a few types of attributes you need to be familiar with. Some of these are to be left as is, but some need to be adjusted to facilitate representation in the relational model. This first section will discuss the types of attributes. Later on we will discuss fixing the attributes to fit correctly into the relational model."
+  },
+  {
+    "kind": "h3",
+    "text": "### Simple attributes"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<em>Simple attributes</em> are those drawn from the atomic value domains; they are also called <em>single-valued attributes</em>. In the COMPANY database, an example of this would be: Name = {John} ; Age = {23}"
+  },
+  {
+    "kind": "h3",
+    "text": "### Composite attributes"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<em>Composite attributes</em> are those that consist of a hierarchy of attributes. Using our database example, and shown in Figure 8.3, Address may consist of Number, Street and Suburb. So this would be written as → Address = {59 + ‘Meek Street’ + ‘Kingsford’}"
+  },
+  {
+    "kind": "figure",
+    "text": "[![Blue rectangle with the word EMPLOYEE. Under this are four yellow ovals with the words Name, Address, Birthdate, Salary. There are lines between the rectangle and yellow ovals. Under the Address oval are three white ovals with the words Number, Street, Suburb.](../raw/assets/D02_F003.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Network-data-model-300x244.jpg)\n\nFigure 8.3. An example of composite attributes."
+  },
+  {
+    "kind": "h3",
+    "text": "### Multivalued attributes"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<em>Multivalued attributes</em> are attributes that have a set of values for each entity. An example of a multivalued attribute from the COMPANY database, as seen in Figure 8.4, are the degrees of an employee: BSc, MIT, PhD."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Blue rectangle with the word EMPLOYEE. A line connects this to each of five yellow ovals with these words inside the ovals: Degrees, Name, Address, Birthdate, Salary](../raw/assets/D02_F004.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Many-to-Many-Relationships-300x167.jpg)\n\nFigure 8.4. Example of a multivalued attribute."
+  },
+  {
+    "kind": "h3",
+    "text": "### Derived attributes"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<em>Derived attributes</em> are attributes that contain values calculated from other attributes. An example of this can be seen in Figure 8.5. Age can be derived from the attribute Birthdate. In this situation, Birthdate is called a <em>stored attribute, </em>which is physically saved to the database."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Blue rectangle with the word EMPLOYEE, and connected by a line to five different yellow ovals with the words: Age, Name, Address, Birthdate, Salary.](../raw/assets/D02_F005.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Derived-Attribute-300x154.jpg)\n\nFigure 8.5. Example of a derived attribute."
+  },
+  {
+    "kind": "h2",
+    "text": "## Keys"
+  },
+  {
+    "kind": "paragraph",
+    "text": "An important constraint on an entity is the key. The <em>key</em> is an attribute or a group of attributes whose values can be used to uniquely identify an individual entity in an entity set."
+  },
+  {
+    "kind": "h2",
+    "text": "## Types of Keys"
+  },
+  {
+    "kind": "paragraph",
+    "text": "There are several types of keys. These are described below."
+  },
+  {
+    "kind": "h3",
+    "text": "### Candidate key"
+  },
+  {
+    "kind": "paragraph",
+    "text": "A <em>candidate key</em> is a simple or composite key that is unique and minimal. It is unique because no two rows in a table may have the same value at any time. It is minimal because every column is necessary in order to attain uniqueness."
+  },
+  {
+    "kind": "paragraph",
+    "text": "From our COMPANY database example, if the entity is <strong>Employee</strong>(EID, First Name, Last Name, <em>SIN</em>, Address, Phone, BirthDate, Salary, DepartmentID), possible candidate keys are:"
+  },
+  {
+    "kind": "list",
+    "text": "- EID, SIN\n\n- First Name and Last Name – assuming there is no one else in the company with the same name\n\n- Last Name and DepartmentID – assuming two people with the same last name don’t work in the same department"
+  },
+  {
+    "kind": "h3",
+    "text": "### Composite key"
+  },
+  {
+    "kind": "paragraph",
+    "text": "A <em>composite key</em> is composed of two or more attributes, but it must be minimal."
+  },
+  {
+    "kind": "paragraph",
+    "text": "Using the example from the candidate key section, possible composite keys are:"
+  },
+  {
+    "kind": "list",
+    "text": "- First Name and Last Name – assuming there is no one else in the company with the same name\n\n- Last Name and Department ID – assuming two people with the same last name don’t work in the same department"
+  },
+  {
+    "kind": "h3",
+    "text": "### Primary key"
+  },
+  {
+    "kind": "paragraph",
+    "text": "The primary key is a candidate key that is selected by the database designer to be used as an identifying mechanism for the whole entity set. It must uniquely identify tuples in a table and not be null. The primary key is indicated in the ER model by underlining the attribute."
+  },
+  {
+    "kind": "list",
+    "text": "- A candidate key is selected by the designer to uniquely identify tuples in a table. It must not be null.\n\n- A key is chosen by the database designer to be used as an identifying mechanism for the whole entity set. This is referred to as the primary key. This key is indicated by underlining the attribute in the ER model."
+  },
+  {
+    "kind": "paragraph",
+    "text": "In the following example, EID is the primary key:"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>Employee</strong>(EID, First Name, Last Name, SIN, Address, Phone, BirthDate, Salary, DepartmentID)"
+  },
+  {
+    "kind": "h3",
+    "text": "### Secondary key"
+  },
+  {
+    "kind": "paragraph",
+    "text": "A <em>secondary key</em> is an attribute used strictly for retrieval purposes (can be composite), for example: Phone and Last Name."
+  },
+  {
+    "kind": "h3",
+    "text": "### Alternate key"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<em>Alternate keys</em> are all candidate keys not chosen as the primary key."
+  },
+  {
+    "kind": "h3",
+    "text": "### Foreign key"
+  },
+  {
+    "kind": "paragraph",
+    "text": "A<em> foreign key (FK)</em> is an attribute in a table that references the primary key in another table OR it can be null. Both foreign and primary keys must be of the same data type."
+  },
+  {
+    "kind": "paragraph",
+    "text": "In the COMPANY database example below, DepartmentID is the foreign key:"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>Employee</strong>(EID, First Name, Last Name, SIN, Address, Phone, BirthDate, Salary, DepartmentID)"
+  },
+  {
+    "kind": "h2",
+    "text": "## Nulls"
+  },
+  {
+    "kind": "paragraph",
+    "text": "A<em> null</em> is a special symbol, independent of data type, which means either unknown or inapplicable. It does not mean zero or blank. Features of null include:"
+  },
+  {
+    "kind": "list",
+    "text": "- No data entry\n\n- Not permitted in the primary key\n\n- Should be avoided in other attributes\n\n- Can represent\n\n  - An unknown attribute value\n\n  - A known, but missing, attribute value\n\n  - A “not applicable” condition\n- Can create problems when functions such as COUNT, AVERAGE and SUM are used\n\n- Can create logical problems when relational tables are linked"
+  },
+  {
+    "kind": "paragraph",
+    "text": "NOTE: The result of a comparison operation is null when either argument is null. The result of an arithmetic operation is null when either argument is null (except functions that ignore nulls)."
+  },
+  {
+    "kind": "h3",
+    "text": "### Example of how null can be used"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Use the Salary table (Salary\\_tbl) in Figure 8.6 to follow an example of how null can be used."
+  },
+  {
+    "kind": "figure",
+    "text": "[![SalaryTable-300x132](../raw/assets/D02_F006.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/SalaryTable-300x132.jpg)\n\nFigure 8.6. Salary table for null example, by A. Watt."
+  },
+  {
+    "kind": "paragraph",
+    "text": "To begin, find all employees (emp#) in Sales (under the jobName column) whose salary plus commission are greater than 30,000."
+  },
+  {
+    "kind": "list",
+    "text": "- SELECT emp# FROM Salary\\_tbl\n\n- WHERE jobName = Sales AND\n\n- (commission + salary) &gt; 30,000 –&gt; E10 and E12"
+  },
+  {
+    "kind": "paragraph",
+    "text": "This result does not include E13 because of the null value in the commission column. To ensure that the row with the null value is included, we need to look at the individual fields. By adding commission and salary for employee E13, the result will be a null value. The solution is shown below."
+  },
+  {
+    "kind": "list",
+    "text": "- SELECT emp# FROM Salary\\_tbl\n\n- WHERE jobName = Sales AND\n\n- (commission &gt; 30000 OR\n\n- salary &gt; 30000 OR\n\n- (commission + salary) &gt; 30,000 –&gt;E10 and E12 and E13"
+  },
+  {
+    "kind": "h2",
+    "text": "## Relationships"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<em>Relationships</em> are the glue that holds the tables together. They are used to connect related information between tables."
+  },
+  {
+    "kind": "paragraph",
+    "text": "<em>Relationship strength</em> is based on how the primary key of a related entity is defined. A weak, or non-identifying, relationship exists if the primary key of the related entity does not contain a primary key component of the parent entity. Company database examples include:"
+  },
+  {
+    "kind": "list",
+    "text": "- Customer(<strong>CustID</strong>, CustName)\n\n- Order(<strong>OrderID</strong>, CustID, Date)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "A strong, or identifying, relationship exists when the primary key of the related entity contains the primary key component of the parent entity. Examples include:"
+  },
+  {
+    "kind": "list",
+    "text": "- Course(<strong>CrsCode</strong>, DeptCode, Description)\n\n- Class(<strong>CrsCode, Section</strong>, ClassTime…)"
+  },
+  {
+    "kind": "h2",
+    "text": "## Types of Relationships"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Below are descriptions of the various types of relationships."
+  },
+  {
+    "kind": "h3",
+    "text": "### One to many (1:M) relationship"
+  },
+  {
+    "kind": "paragraph",
+    "text": "A one to many (1:M) relationship should be the norm in any relational database design and is found in all relational database environments. For example, one department has many employees. Figure 8.7 shows the relationship of one of these employees to the department."
+  },
+  {
+    "kind": "figure",
+    "text": "[![A light blue diamond in the middle connected on either side to a blue rectangle. The rectangle on the left says EMPLOYEE and is connected with a line to five yellow ovals with the words Birthdate, Name, Address, Salary, EID. The diamond is also connected to a blue rectangle on its right with the word DEPARTMENT and that is connected with lines to three yellow ovals with the words Name, Office, DeptID.](../raw/assets/D02_F007.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/FileBased-300x170.jpg)\n\nFigure 8.7. Example of a one to many relationship."
+  },
+  {
+    "kind": "h3",
+    "text": "### One to one (1:1) relationship"
+  },
+  {
+    "kind": "paragraph",
+    "text": "A one to one (1:1) relationship is the relationship of one entity to only one other entity, and vice versa. It should be rare in any relational database design. In fact, it could indicate that two entities actually belong in the same table."
+  },
+  {
+    "kind": "paragraph",
+    "text": "An example from the COMPANY database is one employee is associated with one spouse, and one spouse is associated with one employee."
+  },
+  {
+    "kind": "h3",
+    "text": "### Many to many (M:N) relationships"
+  },
+  {
+    "kind": "paragraph",
+    "text": "For a many to many relationship, consider the following points:"
+  },
+  {
+    "kind": "list",
+    "text": "- It cannot be implemented as such in the relational model.\n\n- It can be changed into two 1:M relationships.\n\n- It can be implemented by breaking up to produce a set of 1:M relationships.\n\n- It involves the implementation of a composite entity.\n\n- Creates two or more 1:M relationships.\n\n- The composite entity table must contain at least the primary keys of the original tables.\n\n- The linking table contains multiple occurrences of the foreign key values.\n\n- Additional attributes may be assigned as needed.\n\n- It can avoid problems inherent in an M:N relationship by creating a composite entity or bridge entity. For example, an employee can work on many projects OR a project can have many employees working on it, depending on the business rules. Or, a student can have many classes and a class can hold many students."
+  },
+  {
+    "kind": "paragraph",
+    "text": "Figure 8.8 shows another another aspect of the M:N relationship where an employee has different start dates for different projects. Therefore, we need a JOIN table that contains the EID, Code and StartDate."
+  },
+  {
+    "kind": "figure",
+    "text": "[![image](../raw/assets/D02_F008.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/One-to-Many-Relationships-300x137.jpg)\n\nFigure 8.8. Example where employee has different start dates for different projects."
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>Example of mapping an M:N binary relationship type</strong>"
+  },
+  {
+    "kind": "list",
+    "text": "- For each M:N binary relationship, identify two relations.\n\n- A and B represent two entity types participating in R.\n\n- Create a new relation S to represent R.\n\n- S needs to contain the PKs of A and B. These together can be the PK in the S table OR these together with another simple attribute in the new table R can be the PK.\n\n- The combination of the primary keys (A and B) will make the primary key of S."
+  },
+  {
+    "kind": "h3",
+    "text": "### Unary relationship (recursive)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "A <em>unary relationship, </em>also called <em>recursive, </em> is one in which a relationship exists between occurrences of the same entity set. In this relationship, the primary and foreign keys are the same, but they represent two entities with different roles. See Figure 8.9 for an example."
+  },
+  {
+    "kind": "paragraph",
+    "text": "For some entities in a unary relationship, a separate column can be created that refers to the primary key of the same entity set."
+  },
+  {
+    "kind": "figure",
+    "text": "[![image](../raw/assets/D02_F009.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Data-Abstraction-300x226.jpg)\n\nFigure 8.9. Example of a unary relationship."
+  },
+  {
+    "kind": "h3",
+    "text": "### Ternary Relationships"
+  },
+  {
+    "kind": "paragraph",
+    "text": "A <em>ternary relationship</em> is a relationship type that involves many to many relationships between three tables."
+  },
+  {
+    "kind": "paragraph",
+    "text": "Refer to Figure 8.10 for an example of mapping a ternary relationship type. Note <em>n-ary</em> means multiple tables in a relationship. (Remember, N = many.)"
+  },
+  {
+    "kind": "list",
+    "text": "- For each n-ary (&gt; 2) relationship, create a new relation to represent the relationship.\n\n- The primary key of the new relation is a combination of the primary keys of the participating entities that hold the N (many) side.\n\n- In most cases of an n-ary relationship, all the participating entities hold a <strong>many</strong> side."
+  },
+  {
+    "kind": "figure",
+    "text": "[![Ternary-Mapping-Relationships-300x197](../raw/assets/D02_F010.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ternary-Mapping-Relationships-300x197.jpg)\n\nFigure 8.10. Example of a ternary relationship."
+  },
+  {
+    "kind": "h2",
+    "text": "## Key Terms"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>alternate key</strong>: all candidate keys not chosen as the primary key<strong>candidate key</strong>: a simple or composite key that is unique (no two rows in a table may have the same value) and minimal (every column is necessary)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>characteristic entities</strong>: entities that provide more information about another table"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>composite attributes</strong>: attributes that consist of a hierarchy of attributes"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>composite key</strong>: composed of two or more attributes, but it must be minimal"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>dependent entities</strong>: these entities depend on other tables for their meaning"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>derived attributes</strong>: attributes that contain values calculated from other attributes"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>derived entities</strong>: see<em> dependent entities</em>"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>EID</strong>: employee identification (ID)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>entity</strong>: a thing or object in the real world with an independent existence that can be differentiated from other objects"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>entity relationship (ER) data model</strong>: also called an ER schema, are represented by ER diagrams. These are well suited to data modelling for use with databases."
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>entity relationship schema</strong>: see<em> entity relationship data model</em>"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>entity set</strong>:a collection of entities of an entity type at a point of time"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>entity type</strong>: a collection of similar entities"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>foreign key (FK)</strong>: an attribute in a table that references the primary key in another table OR it can be null"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>independent entity</strong>: as the building blocks of a database, these entities are what other tables are based on"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>kernel</strong>: see<em> independent entity</em>"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>key</strong>: an attribute or group of attributes whose values can be used to uniquely identify an individual entity in an entity set"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>multivalued attributes</strong>: attributes that have a set of values for each entity"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>n-ary</strong>: multiple tables in a relationship"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>null</strong>: a special symbol, independent of data type, which means either unknown or inapplicable; it does not mean zero or blank"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>recursive relationship</strong>: see<em> unary relationship</em>"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>relationships</strong>: the associations or interactions between entities; used to connect related information between tables"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>relationship strength</strong>: based on how the primary key of a related entity is defined"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>secondary key</strong> an attribute used strictly for retrieval purposes"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>simple attributes</strong>: drawn from the atomic value domains"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>SIN</strong>: social insurance number"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>single-valued attributes</strong>: see<em> simple attributes</em>"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>stored attribute</strong>: saved physically to the database"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>ternary relationship</strong>: a relationship type that involves many to many relationships between three tables."
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>unary relationship</strong>: one in which a relationship exists between occurrences of the same entity set."
+  },
+  {
+    "kind": "h2",
+    "text": "## Exercises"
+  },
+  {
+    "kind": "list",
+    "text": "1. What two concepts are ER modelling based on?\n\n2. The database in Figure 8.11 is composed of two tables. Use this figure to answer questions 2.1 to 2.5.\n\n   [![Ch8-Exercises -Fig8-1](../raw/assets/D02_F011.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-Fig8-1-e1409188616109.jpg)\n\n   Figure 8.11. Director and Play tables for question 2, by A. Watt.\n\n   1. Identify the primary key for each table.\n\n   2. Identify the foreign key in the PLAY table.\n\n   3. Identify the candidate keys in both tables.\n\n   4. Draw the ER model.\n\n   5. Does the PLAY table exhibit referential integrity? Why or why not?\n3. Define the following terms (you may need to use the Internet for some of these):  \n    schema  \n    host language  \n    data sublanguage  \n    data definition language  \n    unary relation  \n    foreign key  \n    virtual relation  \n    connectivity  \n    composite key  \n    linking table\n4. The RRE Trucking Company database includes the three tables in Figure 8.12. Use Figure 8.12 to answer questions 4.1 to 4.5.\n\n   [![Ch8-Exercises -Fig8-2](../raw/assets/D02_F012.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-Fig8-2-e1409189722961.jpg)\n\n   Figure 8.12. Truck, Base and Type tables for question 4, by A. Watt.\n\n   1. Identify the primary and foreign key(s) for each table.\n\n   2. Does the TRUCK table exhibit entity and referential integrity? Why or why not? Explain your answer.\n\n   3. What kind of relationship exists between the TRUCK and BASE tables?\n\n   4. How many entities does the TRUCK table contain ?\n\n   5. Identify the TRUCK table candidate key(s).\n\n      [![Ch8-Exercises -Fig8-3](../raw/assets/D02_F013.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-Fig8-3-e1409189789204.jpg)\n\n      Figure 8.13. Customer and BookOrders tables for question 5, by A. Watt.\n5. Suppose you are using the database in Figure 8.13, composed of the two tables. Use Figure 8.13 to answer questions 5.1 to 5.6.\n\n   1. Identify the primary key in each table.\n\n   2. Identify the foreign key in the BookOrders table.\n\n   3. Are there any candidate keys in either table?\n\n   4. Draw the ER model.\n\n   5. Does the BookOrders table exhibit referential integrity? Why or why not?\n\n   6. Do the tables contain redundant data? If so which table(s) and what is the redundant data?\n6. Looking at the student table in Figure 8.14, list all the possible candidate keys. Why did you select these?\n\n   [![Ch8-Exercises - No6 Student](../raw/assets/D02_F014.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-No6-Student.jpg)\n\n   Figure 8.14. Student table for question 6, by A. Watt.\n\n   [![Ch8-Exercises -No7 School Database](../raw/assets/D02_F015.jpg)](http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-No7-School-Database.jpg)\n\n   Figure 8.15. ERD of school database for questions 7-10, by A. Watt.\n\n   Use the ERD of a school database in Figure 8.15 to answer questions 7 to 10.\n7. Identity all the kernels and dependent and characteristic entities in the ERD.\n\n8. Which of the tables contribute to weak relationships? Strong relationships?\n\n9. Looking at each of the tables in the school database in Figure 8.15, which attribute could have a NULL value? Why?\n\n10. Which of the tables were created as a result of many to many relationships?"
+  },
+  {
+    "kind": "paragraph",
+    "text": "<strong>Also see</strong> <em>Appendix B: Sample ERD Exercises</em>"
+  },
+  {
+    "kind": "h2",
+    "text": "## Attribution"
+  },
+  {
+    "kind": "paragraph",
+    "text": "This chapter of <em>Database Design</em> (including images, except as otherwisse noted) is a derivative copy of [Data Modeling Using Entity-Relationship Model](http://cnx.org/contents/68cd9551-e453-420e-a906-d8e7e71260bb@1) by Nguyen Kim Anh licensed under [Creative Commons Attribution License 3.0 license](http://creativecommons.org/licenses/by/3.0/)"
+  },
+  {
+    "kind": "paragraph",
+    "text": "The following material was written by Adrienne Watt:"
+  },
+  {
+    "kind": "list",
+    "text": "1. Nulls section and example\n\n2. Key Terms\n\n3. Exercises"
+  }
+]

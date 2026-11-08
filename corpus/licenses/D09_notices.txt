@@ -1,0 +1,19 @@
+Database Design - 2nd Edition
+Copyright © 2014 by
+Adrienne Watt and Nelson Eng
+is licensed under a
+Creative Commons Attribution 4.0 International License
+, except where otherwise noted.
+Attribution
+This chapter of
+Database Design
+(including images, except as otherwise noted) is a derivative copy of
+Relational Design Theory
+by
+Nguyen Kim Anh
+licensed under
+Creative Commons Attribution License 3.0 license
+The following material was written by Adrienne Watt:
+All or part of the sections on relations, tables, columns and degree
+Key Terms
+Exercises

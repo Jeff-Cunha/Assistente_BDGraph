@@ -1,0 +1,16 @@
+Database Design - 2nd Edition
+Copyright © 2014 by
+Adrienne Watt and Nelson Eng
+is licensed under a
+Creative Commons Attribution 4.0 International License
+, except where otherwise noted.
+Attributions
+This chapter of
+Database Design
+(including images, except as otherwise noted) is a derivative copy of
+Armstrong’s axioms
+by Wikipedia the Free Encyclopedia licensed under
+Creative Commons Attribution-ShareAlike 3.0 Unported
+The following material was written by Adrienne Watt:
+some of Rules of Functional Dependencies
+Key Terms

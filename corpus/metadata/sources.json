@@ -1,0 +1,1184 @@
+[
+  {
+    "document_id": "D01",
+    "title": "Chapter 2 Fundamental Concepts",
+    "authors_or_responsible_institution": [
+      "Adrienne Watt & Nelson Eng"
+    ],
+    "authorship_evidence": "https://opentextbc.ca/dbdesign01/chapter/chapter-2-fundamental-concepts/",
+    "requested_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-2-fundamental-concepts/",
+    "final_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-2-fundamental-concepts/",
+    "collected_at": "2026-11-08T17:20:35.555321+00:00",
+    "language": "en",
+    "version_or_edition": "Database Design – 2nd Edition",
+    "license": {
+      "name": "Creative Commons Attribution 4.0 International, except where otherwise noted",
+      "declaration_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-2-fundamental-concepts/",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "statement_file": "licenses/D01_notices.html",
+      "verification_status": "verified",
+      "additional_license_links": [
+        "https://creativecommons.org/licenses/by/4.0/",
+        "http://creativecommons.org/licenses/by/3.0/"
+      ],
+      "saved_declarations": [
+        "licenses/cc_by_4.html",
+        "licenses/cc_by_3.html"
+      ]
+    },
+    "attributions_and_notices": "Database Design - 2nd Edition\nCopyright © 2014 by\nAdrienne Watt and Nelson Eng\nis licensed under a\nCreative Commons Attribution 4.0 International License\n, except where otherwise noted.\nAttribution\nThis chapter of\nDatabase Design\n(including images, except as otherwise noted) is a derivative copy of\nDatabase System Concepts\nby Nguyen Kim Anh licensed under\nCreative Commons Attribution License 3.0 license\nThe following material was written by Nelson Eng:\nExample under\nDatabase Properties\nKey Terms\nThe following material was written by Adrienne Watt:\nExercises",
+    "original_file": "raw/D01.html",
+    "clean_file": "processed/D01.md",
+    "raw_sha256": "5e8d2fc74c80f35b9dcb009afc512f114853ed6f06ea5eb0381326614ae5432e",
+    "clean_sha256": "335b26d2f70ae4f69d668b14cc3d41e9f0f53bf2ed3689d45997b26d16fe2c49",
+    "http_status": 200,
+    "redirects": [],
+    "collection_status": "success",
+    "quality_status": "passed_with_image_dependencies",
+    "notes": [
+      "Figures retained locally with original captions/alt; graphical information not transcribed. Some original alt texts are only filenames."
+    ],
+    "word_count": 649,
+    "chunk_count": 2,
+    "figures": [
+      {
+        "document_id": "D01",
+        "figure_id": "D01_F001",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/RDBMS-300x2091.jpg",
+        "local_file": "raw/assets/D01_F001.jpg",
+        "alt": "A diagram showing a yellow cylinder with coloured rectangles within it, presumably representing data. Four rectangels are listed to the left of this each with the label \"Application Program\".",
+        "caption": "Figure 2.1. A database is a repository of data.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          209
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D01",
+        "figure_id": "D01_F002",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/08/MemFormAug2014.jpg",
+        "local_file": "raw/assets/D01_F002.jpg",
+        "alt": "Snapshot of an online membership form. Underneath it is a spreadsheet with names, barcodes, date, and teim.",
+        "caption": "Figure 2.2. Membership system at Science World by N. Eng.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          843,
+          545
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D01",
+        "figure_id": "D01_F003",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Banking-Systems-RDBMS-300x1951.jpg",
+        "local_file": "raw/assets/D01_F003.jpg",
+        "alt": "There are three drawings on the left. The top one shows three people sitting and talking at a table; it is labelled as Personnel Dept. The drawing underneath this shows a man and woman in business attire and carrying briefcases shaking hands; it is labelled as Account Dept. The last drawing is of a woman; it is labelled Loan Dept. To the right of this is a rectangle with DBMS. to the right of this is a green cylinder that says Shared Database with employees, checking accounts, saving accounts, installment loans, mortgage loans, data files.",
+        "caption": "Figure 2.3. A bank database management system (DBMS).",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          195
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      }
+    ]
+  },
+  {
+    "document_id": "D02",
+    "title": "Chapter 8 The Entity Relationship Data Model",
+    "authors_or_responsible_institution": [
+      "Adrienne Watt"
+    ],
+    "authorship_evidence": "https://opentextbc.ca/dbdesign01/chapter/chapter-8-entity-relationship-model/",
+    "requested_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-8-entity-relationship-model/",
+    "final_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-8-entity-relationship-model/",
+    "collected_at": "2026-11-08T17:20:35.556016+00:00",
+    "language": "en",
+    "version_or_edition": "Database Design – 2nd Edition",
+    "license": {
+      "name": "Creative Commons Attribution 4.0 International, except where otherwise noted",
+      "declaration_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-8-entity-relationship-model/",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "statement_file": "licenses/D02_notices.html",
+      "verification_status": "verified",
+      "additional_license_links": [
+        "https://creativecommons.org/licenses/by/4.0/",
+        "http://creativecommons.org/licenses/by/3.0/"
+      ],
+      "saved_declarations": [
+        "licenses/cc_by_4.html",
+        "licenses/cc_by_3.html"
+      ]
+    },
+    "attributions_and_notices": "Database Design - 2nd Edition\nCopyright © 2014 by\nAdrienne Watt and Nelson Eng\nis licensed under a\nCreative Commons Attribution 4.0 International License\n, except where otherwise noted.\nAttribution\nThis chapter of\nDatabase Design\n(including images, except as otherwisse noted) is a derivative copy of\nData Modeling Using Entity-Relationship Model\nby\nNguyen Kim Anh\nlicensed under\nCreative Commons Attribution License 3.0 license\nThe following material was written by Adrienne Watt:\nNulls section and example\nKey Terms\nExercises",
+    "original_file": "raw/D02.html",
+    "clean_file": "processed/D02.md",
+    "raw_sha256": "3c6364ff362c72c736d1ecd3cfc0dee2d460b2a27d4d0356cf5e1068d95d8eb4",
+    "clean_sha256": "563d9422d328ef4caf754095e28a44ec495120c3d49c7cbb8703da158f9a43d0",
+    "http_status": 200,
+    "redirects": [],
+    "collection_status": "success",
+    "quality_status": "passed_with_image_dependencies",
+    "notes": [
+      "Figures retained locally with original captions/alt; graphical information not transcribed. Some original alt texts are only filenames.",
+      "Figure 8.1 anchor href points to Attributes image, whereas img src is EntitySet; the rendered img src was collected; original anchor retained in Markdown."
+    ],
+    "word_count": 3753,
+    "chunk_count": 8,
+    "figures": [
+      {
+        "document_id": "D02",
+        "figure_id": "D02_F001",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/EntitySet-300x86.jpg",
+        "local_file": "raw/assets/D02_F001.jpg",
+        "alt": "A yellow rectangle with e1, e2 and en inside. There is an arrow from the yellow box to a blue rectangle with the work EMPLOYEE in capitals. Over the arrow are the words Represent in ER diagram. To the far left it says Entity set.",
+        "caption": "Figure 8.1. ERD with entity type EMPLOYEE.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          86
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D02",
+        "figure_id": "D02_F002",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Attributes-300x106.jpg",
+        "local_file": "raw/assets/D02_F002.jpg",
+        "alt": "One blue rectangle with the word EMPLOYEE. This is connected with a line to four separate yellow ovals. Each has a different word inside it: Name, Address, Birthdate, Salary.",
+        "caption": "Figure 8.2. How attributes are represented in an ERD.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          106
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D02",
+        "figure_id": "D02_F003",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Simple-and-Composite-Attributes-300x133.jpg",
+        "local_file": "raw/assets/D02_F003.jpg",
+        "alt": "Blue rectangle with the word EMPLOYEE. Under this are four yellow ovals with the words Name, Address, Birthdate, Salary. There are lines between the rectangle and yellow ovals. Under the Address oval are three white ovals with the words Number, Street, Suburb.",
+        "caption": "Figure 8.3. An example of composite attributes.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          133
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D02",
+        "figure_id": "D02_F004",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Multivalued-Attribute-300x131.jpg",
+        "local_file": "raw/assets/D02_F004.jpg",
+        "alt": "Blue rectangle with the word EMPLOYEE. A line connects this to each of five yellow ovals with these words inside the ovals: Degrees, Name, Address, Birthdate, Salary",
+        "caption": "Figure 8.4. Example of a multivalued attribute.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          131
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D02",
+        "figure_id": "D02_F005",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Derived-Attribute-300x154.jpg",
+        "local_file": "raw/assets/D02_F005.jpg",
+        "alt": "Blue rectangle with the word EMPLOYEE, and connected by a line to five different yellow ovals with the words: Age, Name, Address, Birthdate, Salary.",
+        "caption": "Figure 8.5. Example of a derived attribute.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          154
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D02",
+        "figure_id": "D02_F006",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/SalaryTable-300x132.jpg",
+        "local_file": "raw/assets/D02_F006.jpg",
+        "alt": "SalaryTable-300x132",
+        "caption": "Figure 8.6. Salary table for null example, by A. Watt.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          132
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D02",
+        "figure_id": "D02_F007",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/One-to-Many-Relationships-300x137.jpg",
+        "local_file": "raw/assets/D02_F007.jpg",
+        "alt": "A light blue diamond in the middle connected on either side to a blue rectangle. The rectangle on the left says EMPLOYEE and is connected with a line to five yellow ovals with the words Birthdate, Name, Address, Salary, EID. The diamond is also connected to a blue rectangle on its right with the word DEPARTMENT and that is connected with lines to three yellow ovals with the words Name, Office, DeptID.",
+        "caption": "Figure 8.7. Example of a one to many relationship.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          137
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D02",
+        "figure_id": "D02_F008",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Many-to-Many-Relationships-300x167.jpg",
+        "local_file": "raw/assets/D02_F008.jpg",
+        "alt": "image",
+        "caption": "Figure 8.8. Example where employee has different start dates for different projects.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          167
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D02",
+        "figure_id": "D02_F009",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Unary-Relationships-300x168.jpg",
+        "local_file": "raw/assets/D02_F009.jpg",
+        "alt": "image",
+        "caption": "Figure 8.9. Example of a unary relationship.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          168
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D02",
+        "figure_id": "D02_F010",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ternary-Mapping-Relationships-300x197.jpg",
+        "local_file": "raw/assets/D02_F010.jpg",
+        "alt": "Ternary-Mapping-Relationships-300x197",
+        "caption": "Figure 8.10. Example of a ternary relationship.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          197
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D02",
+        "figure_id": "D02_F011",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-Fig8-1-e1409188616109.jpg",
+        "local_file": "raw/assets/D02_F011.jpg",
+        "alt": "Ch8-Exercises -Fig8-1",
+        "caption": "Figure 8.11. Director and Play tables for question 2, by A. Watt.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          861,
+          615
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D02",
+        "figure_id": "D02_F012",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-Fig8-2-e1409189722961.jpg",
+        "local_file": "raw/assets/D02_F012.jpg",
+        "alt": "Ch8-Exercises -Fig8-2",
+        "caption": "Figure 8.12. Truck, Base and Type tables for question 4, by A. Watt.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          1207,
+          618
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D02",
+        "figure_id": "D02_F013",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-Fig8-3-e1409189789204.jpg",
+        "local_file": "raw/assets/D02_F013.jpg",
+        "alt": "Ch8-Exercises -Fig8-3",
+        "caption": "Figure 8.13. Customer and BookOrders tables for question 5, by A. Watt.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          895,
+          580
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D02",
+        "figure_id": "D02_F014",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-No6-Student.jpg",
+        "local_file": "raw/assets/D02_F014.jpg",
+        "alt": "Ch8-Exercises - No6 Student",
+        "caption": "Figure 8.14. Student table for question 6, by A. Watt.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          337,
+          573
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D02",
+        "figure_id": "D02_F015",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch8-Exercises-No7-School-Database-1024x640.jpg",
+        "local_file": "raw/assets/D02_F015.jpg",
+        "alt": "Ch8-Exercises -No7 School Database",
+        "caption": "Figure 8.15. ERD of school database for questions 7-10, by A. Watt.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          1024,
+          640
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      }
+    ]
+  },
+  {
+    "document_id": "D03",
+    "title": "Chapter 9 Integrity Rules and Constraints",
+    "authors_or_responsible_institution": [
+      "Adrienne Watt & Nelson Eng"
+    ],
+    "authorship_evidence": "https://opentextbc.ca/dbdesign01/chapter/chapter-9-integrity-rules-and-constraints/",
+    "requested_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-9-integrity-rules-and-constraints/",
+    "final_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-9-integrity-rules-and-constraints/",
+    "collected_at": "2026-11-08T17:20:35.556331+00:00",
+    "language": "en",
+    "version_or_edition": "Database Design – 2nd Edition",
+    "license": {
+      "name": "Creative Commons Attribution 4.0 International, except where otherwise noted",
+      "declaration_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-9-integrity-rules-and-constraints/",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "statement_file": "licenses/D03_notices.html",
+      "verification_status": "verified",
+      "additional_license_links": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "saved_declarations": [
+        "licenses/cc_by_4.html"
+      ]
+    },
+    "attributions_and_notices": "Database Design - 2nd Edition\nCopyright © 2014 by\nAdrienne Watt and Nelson Eng\nis licensed under a\nCreative Commons Attribution 4.0 International License\n, except where otherwise noted.\nImage Attributions\nFigures 9.3, 9.4, 9.6, 9.8, 9.10, 9.12, 9.14 and 9.15 by A. Watt.",
+    "original_file": "raw/D03.html",
+    "clean_file": "processed/D03.md",
+    "raw_sha256": "c53ae141d14be7362e5ee5e295fba8bf7e5d8fe59245e4329ef3a5f0d81abea8",
+    "clean_sha256": "5694f5a9b8a29a5b73fd1b16991a91e08e3ae0583844091097d721aa471944ce",
+    "http_status": 200,
+    "redirects": [],
+    "collection_status": "success",
+    "quality_status": "passed_with_image_dependencies",
+    "notes": [
+      "Figures retained locally with original captions/alt; graphical information not transcribed. Some original alt texts are only filenames.",
+      "Two original CREATE TABLE textboxes encoded with br tags converted to sql fences; source is Transact-SQL/MS SQL Server, not PostgreSQL. Figure source repeats one image URL; occurrences preserved."
+    ],
+    "word_count": 2596,
+    "chunk_count": 6,
+    "figures": [
+      {
+        "document_id": "D03",
+        "figure_id": "D03_F001",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Access-Referential-Integrity-Window-300x212.jpg",
+        "local_file": "raw/assets/D03_F001.jpg",
+        "alt": "A screenshot of the Edit Relationships commend in MS Access.",
+        "caption": "Figure 9.1. Referential access in MS Access, by A. Watt.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          212
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D03",
+        "figure_id": "D03_F002",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Connectivity-and-Cardinality-300x202.jpg",
+        "local_file": "raw/assets/D03_F002.jpg",
+        "alt": "Connectivity-and-Cardinality-300x202",
+        "caption": "Figure 9.2. Position of connectivity and cardinality on a relationship symbol, by A. Watt.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          202
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D03",
+        "figure_id": "D03_F003",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-oneToMany-1.jpg",
+        "local_file": "raw/assets/D03_F003.jpg",
+        "alt": "Ch-9-oneToMany-1",
+        "caption": "Figure 9.3.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          171,
+          34
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D03",
+        "figure_id": "D03_F004",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-oneToMany-2.jpg",
+        "local_file": "raw/assets/D03_F004.jpg",
+        "alt": "Ch-9-oneToMany-2",
+        "caption": "Figure 9.4.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          169,
+          37
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D03",
+        "figure_id": "D03_F005",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Identifying-and-Non-Identifying-relationship-300x298.jpg",
+        "local_file": "raw/assets/D03_F005.jpg",
+        "alt": "Figure 9.5. Identifying and non-identifying relationship.",
+        "caption": "Figure 9.5. Identifying and non-identifying relationship, by A. Watt.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          298
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D03",
+        "figure_id": "D03_F006",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Zero-or-Many-1.jpg",
+        "local_file": "raw/assets/D03_F006.jpg",
+        "alt": "Ch-9-Zero-or-Many-1",
+        "caption": "Figure 9.6.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          49,
+          33
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D03",
+        "figure_id": "D03_F007",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Cardinality-Optional-0-or-more-300x189.jpg",
+        "local_file": "raw/assets/D03_F007.jpg",
+        "alt": "Cardinality-Optional-0-or-more-300x189",
+        "caption": "Figure 9.7. Example usage of a zero to many optional relationship symbol, by A. Watt.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          189
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D03",
+        "figure_id": "D03_F008",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Optional-Arrow-2.jpg",
+        "local_file": "raw/assets/D03_F008.jpg",
+        "alt": "Ch-9-Optional-Arrow-2",
+        "caption": "Figure 9.8.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          45,
+          32
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D03",
+        "figure_id": "D03_F009",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Cardinality-Optional-0-or-1-300x188.jpg",
+        "local_file": "raw/assets/D03_F009.jpg",
+        "alt": "Cardinality-Optional-0-or-1-300x188",
+        "caption": "Figure 9.9. Example usage of a zero to one optional relationship symbol, by A. Watt.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          188
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D03",
+        "figure_id": "D03_F010",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-oneToOne-1.jpg",
+        "local_file": "raw/assets/D03_F010.jpg",
+        "alt": "Ch-9-oneToOne-1",
+        "caption": "Figure 9.10",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          21,
+          24
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D03",
+        "figure_id": "D03_F011",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Mandatory-Cardinality-one-to-one-300x188.jpg",
+        "local_file": "raw/assets/D03_F011.jpg",
+        "alt": "Ch-9-Mandatory-Cardinality-one-to-one-300x188",
+        "caption": "Figure 9.11. Example of a one and only one mandatory relationship symbol, by A. Watt.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          188
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D03",
+        "figure_id": "D03_F012",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-oneToMany-3.jpg",
+        "local_file": "raw/assets/D03_F012.jpg",
+        "alt": "Ch-9-oneToMany-3",
+        "caption": "Figure 9.12.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          24,
+          27
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D03",
+        "figure_id": "D03_F013",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Mandatory-Cardinality-one-to-Many-300x188.jpg",
+        "local_file": "raw/assets/D03_F013.jpg",
+        "alt": "Ch-9-Mandatory-Cardinality-one-to-Many-300x188",
+        "caption": "Figure 9.13. Example of a one to many mandatory relationship symbol, by A. Watt.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          188
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D03",
+        "figure_id": "D03_F014",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Zero-or-Many-1.jpg",
+        "local_file": "raw/assets/D03_F006.jpg",
+        "alt": "Ch-9-Zero-or-Many-1",
+        "caption": "Figure 9.14",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          49,
+          33
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D03",
+        "figure_id": "D03_F015",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Zero-or-Many-2.jpg",
+        "local_file": "raw/assets/D03_F014.jpg",
+        "alt": "Ch-9-Zero-or-Many-2",
+        "caption": "Figure 9.15.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          49,
+          35
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D03",
+        "figure_id": "D03_F016",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Cust-to-Order-ERD-300x168.jpg",
+        "local_file": "raw/assets/D03_F015.jpg",
+        "alt": "Ch-9-Cust-to-Order-ERD-300x168",
+        "caption": "Figure 9.16. The relationship between a Customer table and an Order table, by A. Watt.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          168
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D03",
+        "figure_id": "D03_F017",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/SwimClubDatabase.jpg",
+        "local_file": "raw/assets/D03_F016.jpg",
+        "alt": "SwimClubDatabase",
+        "caption": "Figure 9.17. ERD for questions 1-5. (Diagram by A. Watt.)",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          966,
+          475
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      }
+    ]
+  },
+  {
+    "document_id": "D04",
+    "title": "Chapter 11 Functional Dependencies",
+    "authors_or_responsible_institution": [
+      "Adrienne Watt"
+    ],
+    "authorship_evidence": "https://opentextbc.ca/dbdesign01/chapter/chapter-11-functional-dependencies/",
+    "requested_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-11-functional-dependencies/",
+    "final_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-11-functional-dependencies/",
+    "collected_at": "2026-11-08T17:20:35.556703+00:00",
+    "language": "en",
+    "version_or_edition": "Database Design – 2nd Edition",
+    "license": {
+      "name": "Creative Commons Attribution 4.0 International, except where otherwise noted",
+      "declaration_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-11-functional-dependencies/",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "statement_file": "licenses/D04_notices.html",
+      "verification_status": "verified",
+      "additional_license_links": [
+        "https://creativecommons.org/licenses/by/4.0/",
+        "http://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "saved_declarations": [
+        "licenses/cc_by_4.html",
+        "licenses/cc_by_sa_3.html"
+      ]
+    },
+    "attributions_and_notices": "Database Design - 2nd Edition\nCopyright © 2014 by\nAdrienne Watt and Nelson Eng\nis licensed under a\nCreative Commons Attribution 4.0 International License\n, except where otherwise noted.\nAttributions\nThis chapter of\nDatabase Design\n(including images, except as otherwise noted) is a derivative copy of\nArmstrong’s axioms\nby Wikipedia the Free Encyclopedia licensed under\nCreative Commons Attribution-ShareAlike 3.0 Unported\nThe following material was written by Adrienne Watt:\nsome of Rules of Functional Dependencies\nKey Terms",
+    "original_file": "raw/D04.html",
+    "clean_file": "processed/D04.md",
+    "raw_sha256": "6b3f3e94d12ccc889cc234a9b9ad2f2019248d0a723efe408c8d33a653e49fc5",
+    "clean_sha256": "9be2f5f403f7aa6ce556da658bc594eb786d88ecdbcbe15a4742b8371f63fa95",
+    "http_status": 200,
+    "redirects": [],
+    "collection_status": "success",
+    "quality_status": "passed_with_image_dependencies",
+    "notes": [
+      "Figures retained locally with original captions/alt; graphical information not transcribed. Some original alt texts are only filenames.",
+      "Specific attribution cites Creative Commons Attribution-ShareAlike 3.0 for material derived from Wikipedia, in addition to the book-wide CC BY 4.0 notice; both retained."
+    ],
+    "word_count": 1250,
+    "chunk_count": 3,
+    "figures": [
+      {
+        "document_id": "D04",
+        "figure_id": "D04_F001",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Table-R-Functional-Dependency-example.jpg",
+        "local_file": "raw/assets/D04_F001.jpg",
+        "alt": "Table-R-Functional-Dependency-example",
+        "caption": "Table 11.1. Functional dependency example, by A. Watt.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          141,
+          216
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D04",
+        "figure_id": "D04_F002",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axion-Reflexivity.jpg",
+        "local_file": "raw/assets/D04_F002.jpg",
+        "alt": "Ch-11-Axion-Reflexivity",
+        "caption": "Figure 11.1. Equation for axiom of reflexivity.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          289,
+          59
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D04",
+        "figure_id": "D04_F003",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axiom-of-Augmentation-300x34.jpg",
+        "local_file": "raw/assets/D04_F003.jpg",
+        "alt": "Ch-11-Axiom-of-Augmentation-300x34",
+        "caption": "Figure 11.2. Equation for axiom of augmentation.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          34
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D04",
+        "figure_id": "D04_F004",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axiom-of-transitivity-300x30.jpg",
+        "local_file": "raw/assets/D04_F004.jpg",
+        "alt": "Ch-11-Axiom-of-transitivity-300x30",
+        "caption": "Figure 11.3. Equation for axiom of transitivity.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          30
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D04",
+        "figure_id": "D04_F005",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axiom-Union-300x23.jpg",
+        "local_file": "raw/assets/D04_F005.jpg",
+        "alt": "Ch-11-Axiom-Union-300x23",
+        "caption": "Figure 11.4. Equation for the Union rule.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          23
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D04",
+        "figure_id": "D04_F006",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Axiom-Decomposition-300x28.jpg",
+        "local_file": "raw/assets/D04_F006.jpg",
+        "alt": "Ch-11-Axiom-Decomposition-300x28",
+        "caption": "Figure 11.5. Equation for decompensation rule.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          28
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D04",
+        "figure_id": "D04_F007",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Dependency-Diagram-300x67.jpg",
+        "local_file": "raw/assets/D04_F007.jpg",
+        "alt": "Ch-11-Dependency-Diagram-300x67",
+        "caption": "Figure 11.6. Dependency diagram.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          67
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      }
+    ]
+  },
+  {
+    "document_id": "D05",
+    "title": "Chapter 12 Normalization",
+    "authors_or_responsible_institution": [
+      "Adrienne Watt"
+    ],
+    "authorship_evidence": "https://opentextbc.ca/dbdesign01/chapter/chapter-12-normalization/",
+    "requested_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-12-normalization/",
+    "final_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-12-normalization/",
+    "collected_at": "2026-11-08T17:20:39.081886+00:00",
+    "language": "en",
+    "version_or_edition": "Database Design – 2nd Edition",
+    "license": {
+      "name": "Creative Commons Attribution 4.0 International, except where otherwise noted",
+      "declaration_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-12-normalization/",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "statement_file": "licenses/D05_notices.html",
+      "verification_status": "verified",
+      "additional_license_links": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "saved_declarations": [
+        "licenses/cc_by_4.html"
+      ]
+    },
+    "attributions_and_notices": "Database Design - 2nd Edition\nCopyright © 2014 by\nAdrienne Watt and Nelson Eng\nis licensed under a\nCreative Commons Attribution 4.0 International License\n, except where otherwise noted.",
+    "original_file": "raw/D05.html",
+    "clean_file": "processed/D05.md",
+    "raw_sha256": "70d95d4a06cee9a8a05256ed4ddd24ff49fa283905fd24b905024fcf556d207a",
+    "clean_sha256": "1f76059ca92843c17799202b4f1a7d6b5e8969a0e92635599f9b9e7c6f1a558a",
+    "http_status": 200,
+    "redirects": [],
+    "collection_status": "success",
+    "quality_status": "passed_with_image_dependencies",
+    "notes": [
+      "Figures retained locally with original captions/alt; graphical information not transcribed. Some original alt texts are only filenames."
+    ],
+    "word_count": 1822,
+    "chunk_count": 4,
+    "figures": [
+      {
+        "document_id": "D05",
+        "figure_id": "D05_F001",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Dependency-Diagram-School-300x89.jpg",
+        "local_file": "raw/assets/D05_F001.jpg",
+        "alt": "Ch-11-Dependency-Diagram-School-300x89",
+        "caption": "Figure 12.1 Dependency diagram, by A. Watt.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          89
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D05",
+        "figure_id": "D05_F002",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch11-Exercises-Fig11-1-e1409835870943.jpg",
+        "local_file": "raw/assets/D05_F002.jpg",
+        "alt": "Ch11-Exercises -Fig11-1",
+        "caption": "Figure 12.2 For question 5, by A. Watt.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          857,
+          259
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D05",
+        "figure_id": "D05_F003",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch11-Exercises-Fig11-2-e1409836100289.jpg",
+        "local_file": "raw/assets/D05_F003.jpg",
+        "alt": "Ch11-Exercises -Fig11-2",
+        "caption": "Figure 12.3 For question 6, by A. Watt.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          1229,
+          286
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D05",
+        "figure_id": "D05_F004",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch12-Exercises-Fig12-1-e1409836269456.jpg",
+        "local_file": "raw/assets/D05_F004.jpg",
+        "alt": "Ch12-Exercises -Fig12-1",
+        "caption": "Figure 12.4 For question 8, by A. Watt.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          927,
+          217
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      }
+    ]
+  },
+  {
+    "document_id": "D06",
+    "title": "2.5. Querying a Table",
+    "authors_or_responsible_institution": [
+      "PostgreSQL Global Development Group"
+    ],
+    "authorship_evidence": "https://www.postgresql.org/docs/18/legalnotice.html",
+    "requested_url": "https://www.postgresql.org/docs/18/tutorial-select.html",
+    "final_url": "https://www.postgresql.org/docs/18/tutorial-select.html",
+    "collected_at": "2026-11-08T17:20:41.559057+00:00",
+    "language": "en",
+    "version_or_edition": "18.6",
+    "license": {
+      "name": "PostgreSQL License",
+      "declaration_url": "https://www.postgresql.org/docs/18/legalnotice.html",
+      "license_url": "https://www.postgresql.org/about/licence/",
+      "statement_file": "licenses/postgresql_18_notice.txt",
+      "verification_status": "verified"
+    },
+    "attributions_and_notices": "Legal Notice\nPostgreSQL\nDatabase Management System (also known as Postgres, formerly known as Postgres95)\nPortions Copyright © 1996-2026, PostgreSQL Global Development Group\nPortions Copyright © 1994, The Regents of the University of California\nPermission to use, copy, modify, and distribute this software and its documentation for any purpose, without fee, and without a written agreement is hereby granted, provided that the above copyright notice and this paragraph and the following two paragraphs appear in all copies.\nIN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY PARTY FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS, ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF THE UNIVERSITY OF CALIFORNIA HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\nTHE UNIVERSITY OF CALIFORNIA SPECIFICALLY DISCLAIMS ANY WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE PROVIDED HEREUNDER IS ON AN\n“\nAS-IS\n”\nBASIS, AND THE UNIVERSITY OF CALIFORNIA HAS NO OBLIGATIONS TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.",
+    "original_file": "raw/D06.html",
+    "clean_file": "processed/D06.md",
+    "raw_sha256": "73e623874edf0767095d2f4df5a72d2674ac21e1db1b6fa4312a709055418fd2",
+    "clean_sha256": "685c68576f98e2ea8c1c0497addc69f5ca5f467c2e1d1aad37ee510c54a2276a",
+    "http_status": 200,
+    "redirects": [],
+    "collection_status": "success",
+    "quality_status": "passed",
+    "notes": [
+      "Preliminary web-tool verification timed out; direct HTTP collection subsequently succeeded with HTTP 200 and full content checks."
+    ],
+    "word_count": 495,
+    "chunk_count": 1,
+    "figures": []
+  },
+  {
+    "document_id": "D07",
+    "title": "2.6. Joins Between Tables",
+    "authors_or_responsible_institution": [
+      "PostgreSQL Global Development Group"
+    ],
+    "authorship_evidence": "https://www.postgresql.org/docs/18/legalnotice.html",
+    "requested_url": "https://www.postgresql.org/docs/18/tutorial-join.html",
+    "final_url": "https://www.postgresql.org/docs/18/tutorial-join.html",
+    "collected_at": "2026-11-08T17:20:42.258477+00:00",
+    "language": "en",
+    "version_or_edition": "18.6",
+    "license": {
+      "name": "PostgreSQL License",
+      "declaration_url": "https://www.postgresql.org/docs/18/legalnotice.html",
+      "license_url": "https://www.postgresql.org/about/licence/",
+      "statement_file": "licenses/postgresql_18_notice.txt",
+      "verification_status": "verified"
+    },
+    "attributions_and_notices": "Legal Notice\nPostgreSQL\nDatabase Management System (also known as Postgres, formerly known as Postgres95)\nPortions Copyright © 1996-2026, PostgreSQL Global Development Group\nPortions Copyright © 1994, The Regents of the University of California\nPermission to use, copy, modify, and distribute this software and its documentation for any purpose, without fee, and without a written agreement is hereby granted, provided that the above copyright notice and this paragraph and the following two paragraphs appear in all copies.\nIN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY PARTY FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS, ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF THE UNIVERSITY OF CALIFORNIA HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\nTHE UNIVERSITY OF CALIFORNIA SPECIFICALLY DISCLAIMS ANY WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE PROVIDED HEREUNDER IS ON AN\n“\nAS-IS\n”\nBASIS, AND THE UNIVERSITY OF CALIFORNIA HAS NO OBLIGATIONS TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.",
+    "original_file": "raw/D07.html",
+    "clean_file": "processed/D07.md",
+    "raw_sha256": "422bcd5bf5b3922b003de96948e29530eae9cbb7a17932008d16343e4e3bc398",
+    "clean_sha256": "d056c331e3f75a2cdf7778ae2f1daa86550355fc9e36a13b0e249b8ee5de9d1f",
+    "http_status": 200,
+    "redirects": [],
+    "collection_status": "success",
+    "quality_status": "passed",
+    "notes": [],
+    "word_count": 941,
+    "chunk_count": 2,
+    "figures": []
+  },
+  {
+    "document_id": "D08",
+    "title": "2.7. Aggregate Functions",
+    "authors_or_responsible_institution": [
+      "PostgreSQL Global Development Group"
+    ],
+    "authorship_evidence": "https://www.postgresql.org/docs/18/legalnotice.html",
+    "requested_url": "https://www.postgresql.org/docs/18/tutorial-agg.html",
+    "final_url": "https://www.postgresql.org/docs/18/tutorial-agg.html",
+    "collected_at": "2026-11-08T17:20:44.966020+00:00",
+    "language": "en",
+    "version_or_edition": "18.6",
+    "license": {
+      "name": "PostgreSQL License",
+      "declaration_url": "https://www.postgresql.org/docs/18/legalnotice.html",
+      "license_url": "https://www.postgresql.org/about/licence/",
+      "statement_file": "licenses/postgresql_18_notice.txt",
+      "verification_status": "verified"
+    },
+    "attributions_and_notices": "Legal Notice\nPostgreSQL\nDatabase Management System (also known as Postgres, formerly known as Postgres95)\nPortions Copyright © 1996-2026, PostgreSQL Global Development Group\nPortions Copyright © 1994, The Regents of the University of California\nPermission to use, copy, modify, and distribute this software and its documentation for any purpose, without fee, and without a written agreement is hereby granted, provided that the above copyright notice and this paragraph and the following two paragraphs appear in all copies.\nIN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY PARTY FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS, ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF THE UNIVERSITY OF CALIFORNIA HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\nTHE UNIVERSITY OF CALIFORNIA SPECIFICALLY DISCLAIMS ANY WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE PROVIDED HEREUNDER IS ON AN\n“\nAS-IS\n”\nBASIS, AND THE UNIVERSITY OF CALIFORNIA HAS NO OBLIGATIONS TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.",
+    "original_file": "raw/D08.html",
+    "clean_file": "processed/D08.md",
+    "raw_sha256": "9d29d88ef26d72a5e2451af03898bac775116e6cf1a70a816589342d5e480ee3",
+    "clean_sha256": "6d549ae1ba69a7f58da71fb44c47041799990e06773c30abe0727636f7be0209",
+    "http_status": 200,
+    "redirects": [],
+    "collection_status": "success",
+    "quality_status": "passed",
+    "notes": [
+      "One HTML table is a callout explanation, not a data result; preserved as HTML without inventing a header."
+    ],
+    "word_count": 641,
+    "chunk_count": 2,
+    "figures": []
+  },
+  {
+    "document_id": "D09",
+    "title": "Chapter 7 The Relational Data Model",
+    "authors_or_responsible_institution": [
+      "Adrienne Watt"
+    ],
+    "authorship_evidence": "https://opentextbc.ca/dbdesign01/chapter/chapter-7-the-relational-data-model/",
+    "requested_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-7-the-relational-data-model/",
+    "final_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-7-the-relational-data-model/",
+    "collected_at": "2026-11-08T17:20:45.094305+00:00",
+    "language": "en",
+    "version_or_edition": "Database Design – 2nd Edition",
+    "license": {
+      "name": "Creative Commons Attribution 4.0 International, except where otherwise noted",
+      "declaration_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-7-the-relational-data-model/",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "statement_file": "licenses/D09_notices.html",
+      "verification_status": "verified",
+      "additional_license_links": [
+        "https://creativecommons.org/licenses/by/4.0/",
+        "http://creativecommons.org/licenses/by/3.0/"
+      ],
+      "saved_declarations": [
+        "licenses/cc_by_4.html",
+        "licenses/cc_by_3.html"
+      ]
+    },
+    "attributions_and_notices": "Database Design - 2nd Edition\nCopyright © 2014 by\nAdrienne Watt and Nelson Eng\nis licensed under a\nCreative Commons Attribution 4.0 International License\n, except where otherwise noted.\nAttribution\nThis chapter of\nDatabase Design\n(including images, except as otherwise noted) is a derivative copy of\nRelational Design Theory\nby\nNguyen Kim Anh\nlicensed under\nCreative Commons Attribution License 3.0 license\nThe following material was written by Adrienne Watt:\nAll or part of the sections on relations, tables, columns and degree\nKey Terms\nExercises",
+    "original_file": "raw/D09.html",
+    "clean_file": "processed/D09.md",
+    "raw_sha256": "6a9d83990be27d9b4d6d24ad88899fad31433fac5cf1dc3c8a0716bf813d79f4",
+    "clean_sha256": "8ce5bdb006958304d367178047f7245d8117cf7c4906707875874844738b417b",
+    "http_status": 200,
+    "redirects": [],
+    "collection_status": "success",
+    "quality_status": "passed_with_image_dependencies",
+    "notes": [
+      "Figures retained locally with original captions/alt; graphical information not transcribed. Some original alt texts are only filenames."
+    ],
+    "word_count": 1230,
+    "chunk_count": 3,
+    "figures": [
+      {
+        "document_id": "D09",
+        "figure_id": "D09_F001",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/School-Database-Fig-1-300x221.jpg",
+        "local_file": "raw/assets/D09_F001.jpg",
+        "alt": "Blue cylinder with three white rectangles each with a list of words.",
+        "caption": "Figure 7.1. Database with three tables.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          221
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D09",
+        "figure_id": "D09_F002",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Record-300x177.jpg",
+        "local_file": "raw/assets/D09_F002.jpg",
+        "alt": "Record-300x177",
+        "caption": "Figure 7.2. Example of an ID card by A. Watt.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          177
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D09",
+        "figure_id": "D09_F003",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Table-Description-300x146.jpg",
+        "local_file": "raw/assets/D09_F003.jpg",
+        "alt": "image",
+        "caption": "Figure 7.3. Example of a simple table by A. Watt.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          300,
+          146
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D09",
+        "figure_id": "D09_F004",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Terms.jpg",
+        "local_file": "raw/assets/D09_F004.jpg",
+        "alt": "A database table with words.",
+        "caption": "Table 7.1. Terms and their synonyms by A. Watt.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          288,
+          110
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      },
+      {
+        "document_id": "D09",
+        "figure_id": "D09_F005",
+        "source_url": "http://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2014/03/Ch7-Exercises-Fig7-1-e1409190387554.jpg",
+        "local_file": "raw/assets/D09_F005.jpg",
+        "alt": "Table with 5 columns and 5 rows.",
+        "caption": "Table 7.2. Table for exercise questions, by A. Watt.",
+        "image_decodes": true,
+        "pixel_dimensions": [
+          1206,
+          226
+        ],
+        "requires_visual_content": true,
+        "text_representation": "caption_and_original_alt_only; graphical content not transcribed",
+        "observation": "Conservative image-dependency flag; alt text may not express diagram, table, or symbol semantics."
+      }
+    ]
+  }
+]

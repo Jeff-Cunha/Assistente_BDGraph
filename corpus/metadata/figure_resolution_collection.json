@@ -1,0 +1,450 @@
+[
+  {
+    "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/One-to-Many-Relationships.jpg",
+    "collected_at": "2026-11-08T17:43:13.311369+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 404
+      }
+    ],
+    "final_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/One-to-Many-Relationships.jpg",
+    "http_status": 404,
+    "redirects": [],
+    "content_type": "text/html; charset=UTF-8",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 17:43:14 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Last-Modified": "Wed, 10 Sep 2025 22:11:42 GMT",
+      "Content-Encoding": "gzip"
+    },
+    "path": "supplements/provenance/responses/D02_F007.html",
+    "bytes": 2714,
+    "sha256": "fb2893894f6162655b30d1c8eda020a42d5d492b56dde1262ec695e08c8ecbd7",
+    "status": "http_error",
+    "figure_id": "D02_F007",
+    "snapshot_file": "raw/assets/D02_F007.jpg",
+    "snapshot_dimensions": [
+      300,
+      137
+    ],
+    "candidate_basis": "same upload directory and filename, thumbnail size suffix removed; not a substitution",
+    "visual_identity_verified": false
+  },
+  {
+    "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Many-to-Many-Relationships.jpg",
+    "collected_at": "2026-11-08T17:43:13.311810+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 404
+      }
+    ],
+    "final_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Many-to-Many-Relationships.jpg",
+    "http_status": 404,
+    "redirects": [],
+    "content_type": "text/html; charset=UTF-8",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 17:43:14 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Last-Modified": "Wed, 10 Sep 2025 22:11:42 GMT",
+      "Content-Encoding": "gzip"
+    },
+    "path": "supplements/provenance/responses/D02_F008.html",
+    "bytes": 2714,
+    "sha256": "c0a1df2b001a0734523603a70b98859070d7fd27cd94be9cb2443b87943bc1ba",
+    "status": "http_error",
+    "figure_id": "D02_F008",
+    "snapshot_file": "raw/assets/D02_F008.jpg",
+    "snapshot_dimensions": [
+      300,
+      167
+    ],
+    "candidate_basis": "same upload directory and filename, thumbnail size suffix removed; not a substitution",
+    "visual_identity_verified": false
+  },
+  {
+    "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Unary-Relationships.jpg",
+    "collected_at": "2026-11-08T17:43:13.312151+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 404
+      }
+    ],
+    "final_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Unary-Relationships.jpg",
+    "http_status": 404,
+    "redirects": [],
+    "content_type": "text/html; charset=UTF-8",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 17:43:14 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Last-Modified": "Wed, 10 Sep 2025 22:11:42 GMT",
+      "Content-Encoding": "gzip"
+    },
+    "path": "supplements/provenance/responses/D02_F009.html",
+    "bytes": 2714,
+    "sha256": "e700515479dc70d5cac681e29e17087fef64ea1d62642059f49058d466324ed5",
+    "status": "http_error",
+    "figure_id": "D02_F009",
+    "snapshot_file": "raw/assets/D02_F009.jpg",
+    "snapshot_dimensions": [
+      300,
+      168
+    ],
+    "candidate_basis": "same upload directory and filename, thumbnail size suffix removed; not a substitution",
+    "visual_identity_verified": false
+  },
+  {
+    "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ternary-Mapping-Relationships.jpg",
+    "collected_at": "2026-11-08T17:43:13.312476+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 404
+      }
+    ],
+    "final_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ternary-Mapping-Relationships.jpg",
+    "http_status": 404,
+    "redirects": [],
+    "content_type": "text/html; charset=UTF-8",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 17:43:14 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Last-Modified": "Wed, 10 Sep 2025 22:11:42 GMT",
+      "Content-Encoding": "gzip"
+    },
+    "path": "supplements/provenance/responses/D02_F010.html",
+    "bytes": 2714,
+    "sha256": "faa5de1669892a2cbe3e1c61533cb1bac504f2dc23d3ad8f0e659f30548e7be2",
+    "status": "http_error",
+    "figure_id": "D02_F010",
+    "snapshot_file": "raw/assets/D02_F010.jpg",
+    "snapshot_dimensions": [
+      300,
+      197
+    ],
+    "candidate_basis": "same upload directory and filename, thumbnail size suffix removed; not a substitution",
+    "visual_identity_verified": false
+  },
+  {
+    "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Connectivity-and-Cardinality.jpg",
+    "collected_at": "2026-11-08T17:43:14.622145+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 404
+      }
+    ],
+    "final_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Connectivity-and-Cardinality.jpg",
+    "http_status": 404,
+    "redirects": [],
+    "content_type": "text/html; charset=UTF-8",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 17:43:15 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Last-Modified": "Wed, 10 Sep 2025 22:11:42 GMT",
+      "Content-Encoding": "gzip"
+    },
+    "path": "supplements/provenance/responses/D03_F002.html",
+    "bytes": 2714,
+    "sha256": "16bd1db6b585979adfebe4604a34edf84c4068cd69f0536094864074c25e4f51",
+    "status": "http_error",
+    "figure_id": "D03_F002",
+    "snapshot_file": "raw/assets/D03_F002.jpg",
+    "snapshot_dimensions": [
+      300,
+      202
+    ],
+    "candidate_basis": "same upload directory and filename, thumbnail size suffix removed; not a substitution",
+    "visual_identity_verified": false
+  },
+  {
+    "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Identifying-and-Non-Identifying-relationship.jpg",
+    "collected_at": "2026-11-08T17:43:14.623603+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 404
+      }
+    ],
+    "final_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Identifying-and-Non-Identifying-relationship.jpg",
+    "http_status": 404,
+    "redirects": [],
+    "content_type": "text/html; charset=UTF-8",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 17:43:15 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Last-Modified": "Wed, 10 Sep 2025 22:11:42 GMT",
+      "Content-Encoding": "gzip"
+    },
+    "path": "supplements/provenance/responses/D03_F005.html",
+    "bytes": 2714,
+    "sha256": "1fbc13702bc566f776fd95a83a48f2e836e35414b32de886a8a6f669198539cc",
+    "status": "http_error",
+    "figure_id": "D03_F005",
+    "snapshot_file": "raw/assets/D03_F005.jpg",
+    "snapshot_dimensions": [
+      300,
+      298
+    ],
+    "candidate_basis": "same upload directory and filename, thumbnail size suffix removed; not a substitution",
+    "visual_identity_verified": false
+  },
+  {
+    "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Cardinality-Optional-0-or-more.jpg",
+    "collected_at": "2026-11-08T17:43:14.626270+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 404
+      }
+    ],
+    "final_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Cardinality-Optional-0-or-more.jpg",
+    "http_status": 404,
+    "redirects": [],
+    "content_type": "text/html; charset=UTF-8",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 17:43:15 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Last-Modified": "Wed, 10 Sep 2025 22:11:42 GMT",
+      "Content-Encoding": "gzip"
+    },
+    "path": "supplements/provenance/responses/D03_F007.html",
+    "bytes": 2714,
+    "sha256": "ca083798166685688ac50a5928f8167ed898ae3c04950a0b6cd70fed458fbf77",
+    "status": "http_error",
+    "figure_id": "D03_F007",
+    "snapshot_file": "raw/assets/D03_F007.jpg",
+    "snapshot_dimensions": [
+      300,
+      189
+    ],
+    "candidate_basis": "same upload directory and filename, thumbnail size suffix removed; not a substitution",
+    "visual_identity_verified": false
+  },
+  {
+    "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Cardinality-Optional-0-or-1.jpg",
+    "collected_at": "2026-11-08T17:43:14.666181+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 404
+      }
+    ],
+    "final_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Cardinality-Optional-0-or-1.jpg",
+    "http_status": 404,
+    "redirects": [],
+    "content_type": "text/html; charset=UTF-8",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 17:43:15 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Last-Modified": "Wed, 10 Sep 2025 22:11:42 GMT",
+      "Content-Encoding": "gzip"
+    },
+    "path": "supplements/provenance/responses/D03_F009.html",
+    "bytes": 2714,
+    "sha256": "91b26a62118e0e52b326a860e437be605aaf95fa15170db09875f56b661f52f1",
+    "status": "http_error",
+    "figure_id": "D03_F009",
+    "snapshot_file": "raw/assets/D03_F009.jpg",
+    "snapshot_dimensions": [
+      300,
+      188
+    ],
+    "candidate_basis": "same upload directory and filename, thumbnail size suffix removed; not a substitution",
+    "visual_identity_verified": false
+  },
+  {
+    "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Mandatory-Cardinality-one-to-one.jpg",
+    "collected_at": "2026-11-08T17:43:15.825779+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 404
+      }
+    ],
+    "final_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Mandatory-Cardinality-one-to-one.jpg",
+    "http_status": 404,
+    "redirects": [],
+    "content_type": "text/html; charset=UTF-8",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 17:43:16 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Last-Modified": "Wed, 10 Sep 2025 22:11:42 GMT",
+      "Content-Encoding": "gzip"
+    },
+    "path": "supplements/provenance/responses/D03_F011.html",
+    "bytes": 2714,
+    "sha256": "486c38ba0f6d80f28fae77e387fad837e4190fc851bc909e2f9cc0db4c1b308a",
+    "status": "http_error",
+    "figure_id": "D03_F011",
+    "snapshot_file": "raw/assets/D03_F011.jpg",
+    "snapshot_dimensions": [
+      300,
+      188
+    ],
+    "candidate_basis": "same upload directory and filename, thumbnail size suffix removed; not a substitution",
+    "visual_identity_verified": false
+  },
+  {
+    "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Mandatory-Cardinality-one-to-Many.jpg",
+    "collected_at": "2026-11-08T17:43:15.829200+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 404
+      }
+    ],
+    "final_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Mandatory-Cardinality-one-to-Many.jpg",
+    "http_status": 404,
+    "redirects": [],
+    "content_type": "text/html; charset=UTF-8",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 17:43:16 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Last-Modified": "Wed, 10 Sep 2025 22:11:42 GMT",
+      "Content-Encoding": "gzip"
+    },
+    "path": "supplements/provenance/responses/D03_F013.html",
+    "bytes": 2714,
+    "sha256": "e52bdb6f0f664b8ca1197a78c68a0681342158ba54a2ce9e5cef84694652dc17",
+    "status": "http_error",
+    "figure_id": "D03_F013",
+    "snapshot_file": "raw/assets/D03_F013.jpg",
+    "snapshot_dimensions": [
+      300,
+      188
+    ],
+    "candidate_basis": "same upload directory and filename, thumbnail size suffix removed; not a substitution",
+    "visual_identity_verified": false
+  },
+  {
+    "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Cust-to-Order-ERD.jpg",
+    "collected_at": "2026-11-08T17:43:15.863536+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 404
+      }
+    ],
+    "final_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-9-Cust-to-Order-ERD.jpg",
+    "http_status": 404,
+    "redirects": [],
+    "content_type": "text/html; charset=UTF-8",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 17:43:16 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Last-Modified": "Wed, 10 Sep 2025 22:11:42 GMT",
+      "Content-Encoding": "gzip"
+    },
+    "path": "supplements/provenance/responses/D03_F016.html",
+    "bytes": 2714,
+    "sha256": "1c31e864899ddcf500e413f47a5880f3615cc43302379c758ed31deae96c3334",
+    "status": "http_error",
+    "figure_id": "D03_F016",
+    "snapshot_file": "raw/assets/D03_F015.jpg",
+    "snapshot_dimensions": [
+      300,
+      168
+    ],
+    "candidate_basis": "same upload directory and filename, thumbnail size suffix removed; not a substitution",
+    "visual_identity_verified": false
+  },
+  {
+    "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Dependency-Diagram.jpg",
+    "collected_at": "2026-11-08T17:43:15.912305+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 404
+      }
+    ],
+    "final_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Dependency-Diagram.jpg",
+    "http_status": 404,
+    "redirects": [],
+    "content_type": "text/html; charset=UTF-8",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 17:43:16 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Last-Modified": "Wed, 10 Sep 2025 22:11:42 GMT",
+      "Content-Encoding": "gzip"
+    },
+    "path": "supplements/provenance/responses/D04_F007.html",
+    "bytes": 2714,
+    "sha256": "32882abbe70c157b739c2dcd88cf59f4f0b40870ca4cfa56ada57221b268479a",
+    "status": "http_error",
+    "figure_id": "D04_F007",
+    "snapshot_file": "raw/assets/D04_F007.jpg",
+    "snapshot_dimensions": [
+      300,
+      67
+    ],
+    "candidate_basis": "same upload directory and filename, thumbnail size suffix removed; not a substitution",
+    "visual_identity_verified": false
+  },
+  {
+    "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Dependency-Diagram-School.jpg",
+    "collected_at": "2026-11-08T17:43:17.030463+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 404
+      }
+    ],
+    "final_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Ch-11-Dependency-Diagram-School.jpg",
+    "http_status": 404,
+    "redirects": [],
+    "content_type": "text/html; charset=UTF-8",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 17:43:18 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Last-Modified": "Wed, 10 Sep 2025 22:11:42 GMT",
+      "Content-Encoding": "gzip"
+    },
+    "path": "supplements/provenance/responses/D05_F001.html",
+    "bytes": 2714,
+    "sha256": "d94d4e57f82aaaca0314788456401131e8407455164c1d50240aaa4d1d06ec35",
+    "status": "http_error",
+    "figure_id": "D05_F001",
+    "snapshot_file": "raw/assets/D05_F001.jpg",
+    "snapshot_dimensions": [
+      300,
+      89
+    ],
+    "candidate_basis": "same upload directory and filename, thumbnail size suffix removed; not a substitution",
+    "visual_identity_verified": false
+  },
+  {
+    "requested_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Table-Description.jpg",
+    "collected_at": "2026-11-08T17:43:17.056489+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "status": 404
+      }
+    ],
+    "final_url": "https://opentextbc.ca/dbdesign01/wp-content/uploads/sites/11/2013/12/Table-Description.jpg",
+    "http_status": 404,
+    "redirects": [],
+    "content_type": "text/html; charset=UTF-8",
+    "response_headers": {
+      "Date": "Sun, 08 Nov 2026 17:43:18 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Last-Modified": "Wed, 10 Sep 2025 22:11:42 GMT",
+      "Content-Encoding": "gzip"
+    },
+    "path": "supplements/provenance/responses/D09_F003.html",
+    "bytes": 2714,
+    "sha256": "1c1341a64421630f4115ead3642a4fc8ec4cd23a7fe019a31dd067edcf44bae5",
+    "status": "http_error",
+    "figure_id": "D09_F003",
+    "snapshot_file": "raw/assets/D09_F003.jpg",
+    "snapshot_dimensions": [
+      300,
+      146
+    ],
+    "candidate_basis": "same upload directory and filename, thumbnail size suffix removed; not a substitution",
+    "visual_identity_verified": false
+  }
+]
