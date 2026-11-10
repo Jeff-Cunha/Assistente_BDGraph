@@ -1,0 +1,155 @@
+{
+  "version": "1.0",
+  "purpose": "source_scoped_cross_references_not_global_aliases",
+  "date": "2026-11-09",
+  "reviewer": "Codex",
+  "human_approval_for_new_contextual_rules": false,
+  "concept_files": [
+    "data/extraction/rule-knowledge-union-v2/extraction.json",
+    "data/extraction/model-knowledge-union-v3/extraction.json",
+    "data/extraction/manual-source-review-v1/extraction.json"
+  ],
+  "protected_files": [
+    {
+      "path": "corpus/chunks/chunks.jsonl",
+      "sha256": "71a46d39933679b92cdf4dd04026627fe58147d84d428bedede274431f7b861e"
+    },
+    {
+      "path": "corpus/chunks/figure_supplements.jsonl",
+      "sha256": "853eb1d8cc7e2bba50f24274b8b12e6955f046611aa16138c3e429308cb95718"
+    },
+    {
+      "path": "data/extraction/rule-knowledge-union-v2/extraction.json",
+      "sha256": "c29e07486d488f23228beeecf278a11e7f75ecd18071ef781e63347bb21f9baf"
+    },
+    {
+      "path": "data/extraction/model-knowledge-union-v3/extraction.json",
+      "sha256": "d0630f99626b5e59633df4c76deca94b3db829c65fe119ad67efd214f85f8901"
+    },
+    {
+      "path": "data/extraction/manual-source-review-v1/extraction.json",
+      "sha256": "2f46c6af47715f7449d9b839c707b5a10818450c45ac6bdabc95cb8a5740318a"
+    }
+  ],
+  "entries": [
+    {
+      "id": "P01",
+      "forms": [
+        "entity relationship schema",
+        "ER schema",
+        "esquema ER",
+        "esquema entidade-relacionamento"
+      ],
+      "document_ids": [
+        "D02"
+      ],
+      "reference_concept_ids": [
+        "C_entity_relationship_data_model"
+      ],
+      "action": "contextual_reference",
+      "auto_merge_nodes": false,
+      "evidence": [
+        {
+          "chunk_id": "D02_C001",
+          "start": 63,
+          "end": 383,
+          "quote": "The <em>entity relationship (ER) data model</em> has existed for over 35 years. It is well suited to data modelling for use with databases because it is fairly abstract and is easy to discuss and explain. ER models are readily translated to relations. ER models, also called an ER schema, are represented by ER diagrams."
+        },
+        {
+          "chunk_id": "D02_C007",
+          "start": 2051,
+          "end": 2139,
+          "quote": "<strong>entity relationship schema</strong>: see<em> entity relationship data model</em>"
+        }
+      ],
+      "note": "Remissão lexical expressa de D02 ao modelo ER; não define esquema em geral nem estabelece identidade universal entre modelo conceitual e um esquema específico. Traduções portuguesas são curadoria, não citações literais."
+    },
+    {
+      "id": "P03",
+      "forms": [
+        "single-valued attribute",
+        "single-valued attributes",
+        "atributo monovalorado",
+        "atributos monovalorados"
+      ],
+      "document_ids": [
+        "D02"
+      ],
+      "reference_concept_ids": [
+        "C_simple_attribute"
+      ],
+      "action": "contextual_reference",
+      "auto_merge_nodes": false,
+      "evidence": [
+        {
+          "chunk_id": "D02_C003",
+          "start": 1157,
+          "end": 1367,
+          "quote": "<em>Simple attributes</em> are those drawn from the atomic value domains; they are also called <em>single-valued attributes</em>. In the COMPANY database, an example of this would be: Name = {John} ; Age = {23}"
+        },
+        {
+          "chunk_id": "D02_C007",
+          "start": 3559,
+          "end": 3632,
+          "quote": "<strong>single-valued attributes</strong>: see<em> simple attributes</em>"
+        }
+      ],
+      "note": "D02 remete explicitamente monovalorado a simples. A consulta pode seguir a remissão com atribuição à fonte; o projeto não transforma isso em equivalência universal ou fusão automática."
+    },
+    {
+      "id": "P08",
+      "forms": [
+        "file",
+        "arquivo"
+      ],
+      "document_ids": [
+        "D09"
+      ],
+      "reference_concept_ids": [
+        "C_relation"
+      ],
+      "action": "contextual_reference",
+      "auto_merge_nodes": false,
+      "evidence": [
+        {
+          "chunk_id": "D09_C001",
+          "start": 641,
+          "end": 1122,
+          "quote": "A <em>relation, </em>also known as a <em>table</em> or <em>file</em>, is a subset of the Cartesian product of a list of domains characterized by a name. And within a table, each row represents a group of related data values. A <em>row</em>, or record, is also known as a <em>tuple</em>. The columns in a table is a field and is also referred to as an attribute. You can also think of it this way: an attribute is used to define the record and a record contains a set of attributes."
+        },
+        {
+          "chunk_id": "D09_C003",
+          "start": 1140,
+          "end": 1183,
+          "quote": "<strong>file</strong>:see<em> relation</em>"
+        }
+      ],
+      "note": "File é a remissão do glossário de D09 para relação. Não fornece definição de arquivo físico, não cria conceito novo e não funde os IDs já separados de tabela e relação."
+    },
+    {
+      "id": "S01_FD",
+      "forms": [
+        "FD"
+      ],
+      "document_ids": [
+        "D05"
+      ],
+      "chunk_ids": [
+        "D05_C002"
+      ],
+      "reference_concept_ids": [],
+      "action": "requires_review",
+      "auto_merge_nodes": false,
+      "evidence": [
+        {
+          "chunk_id": "D05_C002",
+          "start": 3053,
+          "end": 3223,
+          "quote": "- FD: full dependency (Note: FD typically stands for <strong>functional</strong> dependency. Using FD as an abbreviation for full dependency is only used in Figure 12.1.)"
+        }
+      ],
+      "note": "Na legenda da Figura 12.1, FD representa full dependency; o próprio texto informa que functional dependency é o uso habitual. Como o chunk contém a ressalva, a sigla isolada não é resolvida automaticamente. Consultar o contexto exato da ocorrência."
+    }
+  ],
+  "note": "Use as an auxiliary retrieval reference with explicit source context. Never promote these terms into global Concept.aliases, create new semantic edges, or authorize node merges. Existing graph IDs, labels, concepts and relationships remain intact."
+}

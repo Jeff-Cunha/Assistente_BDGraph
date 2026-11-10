@@ -69,6 +69,8 @@ A preparação do corpus preserva os documentos originais, exemplos SQL, metadad
 - [x] Complementação textual das figuras essenciais, com limitações documentadas.
 - [x] Definição inicial do esquema do grafo e dos formatos de integração.
 - [x] Primeira versão de extração local, resolução de nomes e revisão rastreável.
+- [x] Revisão de 26 resumos/contextos e inclusão de cinco conceitos, com aprovação do usuário registrada.
+- [x] Remissões contextuais de esquema ER, monovalorado e arquivo, sem fusão automática de conceitos.
 - [ ] Ampliação da cobertura de relações e avaliação humana independente.
 - [ ] Configuração e ingestão no Neo4j.
 - [ ] Recuperação híbrida e consultas multi-hop.
@@ -128,29 +130,41 @@ Senhas, credenciais do Neo4j e chaves de API não devem ser versionadas. As conf
 
 ## Base revisada para integração
 
-A entrega atual contém **88 conceitos únicos e 16 relações semânticas únicas**, contando os dois arquivos abaixo e deduplicando IDs/triplas. Não inclui a amostra manual opcional nesses totais.
+A entrega atual contém **93 conceitos únicos e 16 relações semânticas únicas**, deduplicando IDs/triplas dos três arquivos indicados em [data/release/current.json](data/release/current.json). Não inclui a amostra manual inicial opcional nesses totais.
 
 | Origem | Arquivo principal | Conteúdo |
 |---|---|---|
-| Regras e curadoria | [Base por regras](data/extraction/rule-knowledge-union-v1/extraction.json) | 79 conceitos e 5 relações |
-| LLM e revisão | [Base derivada do modelo](data/extraction/model-knowledge-union-v2/extraction.json) | 20 conceitos e 11 relações |
+| Regras e curadoria | [Base por regras](data/extraction/rule-knowledge-union-v2/extraction.json) | 79 conceitos e 5 relações |
+| LLM e curadoria | [Base derivada do modelo](data/extraction/model-knowledge-union-v3/extraction.json) | 20 conceitos e 11 relações |
+| Curadoria manual assistida por IA | [Conceitos acrescentados na revisão](data/extraction/manual-source-review-v1/extraction.json) | 5 conceitos e nenhuma nova relação |
 
-Os conceitos compartilhados devem ser atualizados por ID, reunindo aliases e evidências. Os metadados de origem devem ser preservados. Candidatos, controles sintéticos e respostas rejeitadas nos diretórios históricos **não são fatos aprovados** e não devem ser carregados recursivamente.
+As 26 correções de resumos/contextos e os cinco conceitos acrescentados foram [aprovados pelo usuário](data/review/user-approval-source-check-v1.json), com vínculo aos hashes da entrega. Essa aprovação não equivale a revisão independente de todos os conceitos/relações ou avaliação do sistema final. Os cinco conceitos novos são n-ário, ternário, decomposição de dependências, união de dependências e 2FN.
+
+Os conceitos compartilhados devem ser atualizados por ID, reunindo aliases e evidências e preservando os métodos. Importar somente os três primary_files do índice atual. Candidatos, versões históricas, controles sintéticos e respostas rejeitadas **não são fatos adicionais aprovados**.
+
+O [registro de remissões contextuais](data/normalization/contextual-aliases-v1.json) é auxiliar à busca, não um quarto arquivo de fatos. Esquema ER/modelo ER e monovalorado/simples estão restritos a D02; arquivo/relação está restrito a D09. O resolvedor exige contexto e nunca autoriza fusão de nós. A exceção de FD em D05_C002 exige revisão do contexto. Essa etapa foi conferida por Codex, sem aprovação humana posterior presumida.
 
 - [Guia atualizado para a pessoa 2](docs/entrega-parte1-atualizada.md)
+- [Resumos corrigidos e evidências](docs/revisao-fontes-2026-11-09.md)
+- [Lista dos 93 conceitos para conferência](docs/lista-revisao-atual.md)
+- [Fechamento das três pendências](docs/fechamento-pendencias.md)
+- [D05 para leitura, com tabelas em Markdown](corpus/reading/D05.md)
 - [Resultados e limitações de SQL](docs/cobertura-sql.md)
-- [Revisão dos glossários](docs/revisao-glossarios.md)
 - [Execução local no computador principal](docs/modelo-local-principal.md)
-- [Entrega completa e auditoria](outputs/entrega-parte1-atualizada.zip)
+- [Pacote atual completo e auditoria](outputs/entrega-parte1-pendencias-concluidas.zip)
+
+corpus/reading contém cópias para leitura: seis tabelas de D05 foram formatadas em Markdown e o quadro explicativo de D08 foi mantido sem cabeçalho inventado. A extração continua usando corpus/processed e corpus/chunks, cujos bytes foram preservados. As cópias de leitura não criam novos documentos/chunks nem substituem evidências.
 
 Use o esquema deste repositório, compatível com 0.1.0, 0.1.1 e 0.1.2. Os tipos SQL adicionais exigem 0.1.2. Para validar os dados entregues, não é necessário ter Ollama ou chave de API:
 
 ```powershell
-pwsh -NoProfile -File scripts/validate-extraction.ps1 -ExtractionPath data/extraction/rule-knowledge-union-v1/extraction.json
-pwsh -NoProfile -File scripts/validate-extraction.ps1 -ExtractionPath data/extraction/model-knowledge-union-v2/extraction.json
+pwsh -NoProfile -File scripts/validate-extraction.ps1 -ExtractionPath data/extraction/rule-knowledge-union-v2/extraction.json
+pwsh -NoProfile -File scripts/validate-extraction.ps1 -ExtractionPath data/extraction/model-knowledge-union-v3/extraction.json
+pwsh -NoProfile -File scripts/validate-extraction.ps1 -ExtractionPath data/extraction/manual-source-review-v1/extraction.json
+python scripts/resolve-contextual-alias.py --term "file" --chunk D09_C003
 ```
 
-Os 52 testes passaram na entrega. A revisão foi feita por Codex, sem conferência humana independente; há pendências nas fontes e cobertura limitada de relações. Não há ainda comprovação experimental de redução de alucinações nem ingestão no Neo4j concluída.
+Os **65 testes passaram**. Os hashes, IDs e evidências literais dos três arquivos foram conferidos. Permanecem problemas nas fontes, duas transcrições parciais e cobertura limitada de relações. Não há comprovação experimental de redução de alucinações nem ingestão no Neo4j concluída.
 
 ## Avaliação planejada
 

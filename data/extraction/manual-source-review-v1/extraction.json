@@ -1,0 +1,111 @@
+{
+  "schema_version": "0.1.0",
+  "extraction_method": "manual_reference",
+  "input_chunk_ids": [
+    "D02_C007",
+    "D04_C002",
+    "D04_C003",
+    "D05_C002"
+  ],
+  "concepts": [
+    {
+      "concept_id": "C_n_ary_relationship",
+      "canonical_name": "n-ary relationship",
+      "name_pt": "relacionamento n-ário",
+      "aliases": [
+        "n-ary"
+      ],
+      "category": "structure",
+      "description_pt": "No recorte de mapeamento de D02, relacionamento com mais de duas entidades participantes, representado por uma nova relação.",
+      "review_status": "accepted",
+      "review_note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. P02 resolvido pelo corpo da seção de mapeamento (> 2), com escopo explícito da fonte; não substituir a definição geral de aridade por uma identidade com quantidade de tabelas físicas.",
+      "evidence": [
+        {
+          "chunk_id": "D02_C007",
+          "quote": "- For each n-ary (&gt; 2) relationship, create a new relation to represent the relationship."
+        },
+        {
+          "chunk_id": "D02_C007",
+          "quote": "- In most cases of an n-ary relationship, all the participating entities hold a <strong>many</strong> side."
+        }
+      ]
+    },
+    {
+      "concept_id": "C_ternary_relationship",
+      "canonical_name": "ternary relationship",
+      "name_pt": "relacionamento ternário",
+      "aliases": [],
+      "category": "structure",
+      "description_pt": "Relacionamento entre três entidades participantes, representadas por tabelas no exemplo de D02; não se impõe que todos os lados sejam sempre muitos.",
+      "review_status": "accepted",
+      "review_note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. P04 resolvido por síntese contextual; o glossário é restrito a muitos-para-muitos, enquanto o corpo qualifica muitos como o caso mais comum. Limitação preservada.",
+      "evidence": [
+        {
+          "chunk_id": "D02_C007",
+          "quote": "A <em>ternary relationship</em> is a relationship type that involves many to many relationships between three tables."
+        },
+        {
+          "chunk_id": "D02_C007",
+          "quote": "- In most cases of an n-ary relationship, all the participating entities hold a <strong>many</strong> side."
+        }
+      ]
+    },
+    {
+      "concept_id": "C_fd_decomposition",
+      "canonical_name": "functional dependency decomposition",
+      "name_pt": "decomposição de dependências funcionais",
+      "aliases": [
+        "decomposition"
+      ],
+      "category": "normalization",
+      "description_pt": "Regra segundo a qual X → YZ implica X → Y e X → Z; é apresentada como inversa da regra da união.",
+      "review_status": "accepted",
+      "review_note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. P05 resolvido no sentido da regra de inferência de dependências; não é uma definição geral de decomposição de relações.",
+      "evidence": [
+        {
+          "chunk_id": "D04_C003",
+          "quote": "Decomposition is the reverse of the Union rule. If you have a table that appears to contain two entities that are determined by the same PK, consider breaking them up into two tables. This rule states that if X determines Y and Z, then X determines Y and X determines Z separately (see Figure 11.5)."
+        }
+      ]
+    },
+    {
+      "concept_id": "C_fd_union",
+      "canonical_name": "functional dependency union",
+      "name_pt": "união de dependências funcionais",
+      "aliases": [
+        "Union"
+      ],
+      "category": "normalization",
+      "description_pt": "Regra segundo a qual X → Y e X → Z implicam X → YZ.",
+      "review_status": "accepted",
+      "review_note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. P06 resolvido pela seção de regras de inferência; não corresponde ao operador SQL UNION.",
+      "evidence": [
+        {
+          "chunk_id": "D04_C002",
+          "quote": "This rule suggests that if two tables are separate, and the PK is the same, you may want to consider putting them together. It states that if X determines Y and X determines Z then X must also determine Y and Z (see Figure 11.4)."
+        }
+      ]
+    },
+    {
+      "concept_id": "C_second_normal_form",
+      "canonical_name": "second normal form",
+      "name_pt": "segunda forma normal",
+      "aliases": [
+        "second normal form (2NF)",
+        "2NF",
+        "2FN"
+      ],
+      "category": "normalization",
+      "description_pt": "Na apresentação didática de D05, exige 1FN; uma PK simples atende à condição descrita, e, se a PK é composta, cada atributo não chave deve depender de toda a PK, não apenas de parte dela.",
+      "review_status": "accepted",
+      "review_note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. P07 resolvido pelo corpo, sem repetir o se-e-somente-se restritivo do resumo. O texto também confunde dependência parcial e aumentação, equivalência não adotada. Formulação por PK da fonte, sem alegação de definição formal independente por todas as chaves candidatas.",
+      "evidence": [
+        {
+          "chunk_id": "D05_C002",
+          "quote": "For the <em>second normal form</em>, the relation must first be in 1NF. The relation is automatically in 2NF if, and only if, the PK comprises a single attribute.\n\nIf the relation has a composite PK, then each non-key attribute must be fully dependent on the entire PK and not on a subset of the PK (i.e., there must be no partial dependency or augmentation)."
+        }
+      ]
+    }
+  ],
+  "relations": []
+}

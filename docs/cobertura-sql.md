@@ -1,3 +1,5 @@
+> Atualização de 09/11/2026: este texto registra uma etapa anterior. A referência atual de integração é data/release/current.json: 93 conceitos únicos, 16 relações e três arquivos principais. Consulte docs/revisao-fontes-2026-11-09.md para os resumos corrigidos e pendências resolvidas. As descrições antigas abaixo não substituem a revisão atual.
+
 # Cobertura de consultas e agregações SQL
 
 Esta etapa adiciona inventário SQL, relações de classificação de funções agregadoras e seis relações propostas pelo modelo e mantidas após revisão. As origens permanecem separadas: regras revisadas não são apresentadas como geração por LLM.

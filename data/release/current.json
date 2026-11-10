@@ -1,20 +1,55 @@
 {
-  "release": "parte1-integracao-sql",
+  "release": "parte1-pendencias-contextuais-v1",
+  "date": "2026-11-09",
+  "previous_release": "parte1-revisao-fontes-v1",
   "primary_files": [
     {
-      "path": "data/extraction/rule-knowledge-union-v1/extraction.json",
-      "sha256": "be6499c2f475c54524fdd208276adf09aaac12aa90281104ec43a9fdec9e0392"
+      "path": "data/extraction/rule-knowledge-union-v2/extraction.json",
+      "sha256": "c29e07486d488f23228beeecf278a11e7f75ecd18071ef781e63347bb21f9baf",
+      "extraction_method": "rule_candidates",
+      "concepts": 79,
+      "relations": 5
     },
     {
-      "path": "data/extraction/model-knowledge-union-v2/extraction.json",
-      "sha256": "a0918dee7ff202f7eccaa3529df6f6dfea8bcc3f632f69745a455a2cfff337f2"
+      "path": "data/extraction/model-knowledge-union-v3/extraction.json",
+      "sha256": "d0630f99626b5e59633df4c76deca94b3db829c65fe119ad67efd214f85f8901",
+      "extraction_method": "llm_candidates",
+      "concepts": 20,
+      "relations": 11
+    },
+    {
+      "path": "data/extraction/manual-source-review-v1/extraction.json",
+      "sha256": "2f46c6af47715f7449d9b839c707b5a10818450c45ac6bdabc95cb8a5740318a",
+      "extraction_method": "manual_reference",
+      "concepts": 5,
+      "relations": 0
     }
   ],
   "documents": 9,
   "chunks": 59,
-  "unique_concepts": 88,
+  "unique_concepts": 93,
   "unique_semantic_triples": 16,
   "independent_human_review": false,
+  "review": "data/review/contextual-pending-v1/decisions.json",
+  "source_cautions": "data/review/contextual-pending-v1/source-cautions.json",
+  "reading_manifest": "corpus/reading/manifest.json",
   "optional_manual_sample": "data/extraction/sample.json",
-  "note": "Historical candidates and controls are not accepted facts. Preserve method provenance and merge shared IDs/evidence."
+  "note": "93 concepts / 16 triples unchanged. Load the same three primary files. User approved 26 prior summary/context corrections and five prior manually curated concepts; that scoped approval is recorded. P01/P03/P08 are now source-scoped references in a separate registry, not global aliases or node merges. Source cautions, partial figures and limited relation coverage remain; independent review of the entire graph is not claimed.",
+  "human_review": {
+    "status": "approved_previous_modifications",
+    "record": "data/review/user-approval-source-check-v1.json",
+    "sha256": "c6618fbde9dbd7421e5cf219dd620d7b44f881f8595b6e0173b40b2e25efda2c",
+    "applies_to_release": "parte1-revisao-fontes-v1",
+    "current_contextual_decisions_human_approved": false
+  },
+  "contextual_normalization": {
+    "path": "data/normalization/contextual-aliases-v1.json",
+    "sha256": "8dcd21647081152c962c4b60c6e1e94fd97d5f702245312822ed9bb93e315df0"
+  },
+  "contextual_decisions": {
+    "path": "data/review/contextual-pending-v1/decisions.json",
+    "sha256": "fc32aaebea4d203c2df4850162f68364a0fb8231f90fedcddedae3842467a892"
+  },
+  "remaining_glossary_pending": [],
+  "previous_source_review": "data/review/source-check-v1/review.json"
 }

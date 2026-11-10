@@ -1,0 +1,62 @@
+{
+  "review_id": "contextual-pending-v1",
+  "date": "2026-11-09",
+  "reviewer": "Codex",
+  "independent_human_review": false,
+  "basis": "Cross-references verified in the existing local corpus; no external definition introduced.",
+  "resolutions": [
+    {
+      "pending_id": "P01",
+      "status": "resolved_as_source_scoped_cross_reference",
+      "registry_entry": "P01",
+      "reference_concept_ids": [
+        "C_entity_relationship_data_model"
+      ],
+      "note": "Remissão lexical expressa de D02 ao modelo ER; não define esquema em geral nem estabelece identidade universal entre modelo conceitual e um esquema específico. Traduções portuguesas são curadoria, não citações literais."
+    },
+    {
+      "pending_id": "P03",
+      "status": "resolved_as_source_scoped_cross_reference",
+      "registry_entry": "P03",
+      "reference_concept_ids": [
+        "C_simple_attribute"
+      ],
+      "note": "D02 remete explicitamente monovalorado a simples. A consulta pode seguir a remissão com atribuição à fonte; o projeto não transforma isso em equivalência universal ou fusão automática."
+    },
+    {
+      "pending_id": "P08",
+      "status": "resolved_as_source_scoped_cross_reference",
+      "registry_entry": "P08",
+      "reference_concept_ids": [
+        "C_relation"
+      ],
+      "note": "File é a remissão do glossário de D09 para relação. Não fornece definição de arquivo físico, não cria conceito novo e não funde os IDs já separados de tabela e relação."
+    }
+  ],
+  "remaining_glossary_pending": [],
+  "caveat": "Administrative extraction decisions are closed by restricting scope; source terminology concerns and the four original source discrepancies remain. This does not validate universal equivalence or remove source risks.",
+  "human_approval_record": "data/review/user-approval-source-check-v1.json",
+  "human_approval_applies_to_previous_modifications_only": true,
+  "protected_files": [
+    {
+      "path": "corpus/chunks/chunks.jsonl",
+      "sha256": "71a46d39933679b92cdf4dd04026627fe58147d84d428bedede274431f7b861e"
+    },
+    {
+      "path": "corpus/chunks/figure_supplements.jsonl",
+      "sha256": "853eb1d8cc7e2bba50f24274b8b12e6955f046611aa16138c3e429308cb95718"
+    },
+    {
+      "path": "data/extraction/rule-knowledge-union-v2/extraction.json",
+      "sha256": "c29e07486d488f23228beeecf278a11e7f75ecd18071ef781e63347bb21f9baf"
+    },
+    {
+      "path": "data/extraction/model-knowledge-union-v3/extraction.json",
+      "sha256": "d0630f99626b5e59633df4c76deca94b3db829c65fe119ad67efd214f85f8901"
+    },
+    {
+      "path": "data/extraction/manual-source-review-v1/extraction.json",
+      "sha256": "2f46c6af47715f7449d9b839c707b5a10818450c45ac6bdabc95cb8a5740318a"
+    }
+  ]
+}

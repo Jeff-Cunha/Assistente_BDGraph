@@ -1,0 +1,76 @@
+Vou ler as fontes D02, D03 e D05, que só chegaram como arquivos, para conferir os resumos contra o texto.
+
+Li D02, D03 e D05, que só tinham chegado como arquivos, e conferi os resumos contra D01 a D09. Quase todos são fiéis às fontes. Há correções a fazer, e também preciso corrigir parte da minha resposta anterior, que fiz sem ter as fontes.
+
+## 1. Onde minha resposta anterior foi além das fontes
+
+- **C16 (chave composta):** D02 diz que a chave composta tem dois ou mais atributos e "deve ser mínima". O resumo é fiel, então tirar "mínima" o contradiria. Mantenha "conforme o glossário".
+- **C40 (chave estrangeira):** D02 fala em referenciar a chave primária de outra tabela, ou poder ser nula. O resumo é fiel. Estendê-lo a qualquer chave candidata seria conhecimento externo, sem evidência no corpus.
+- **C59 (tabela não normalizada):** D04 a define exatamente pela redundância. Meu comentário sobre 1FN era externo. Mantenha "na terminologia da fonte".
+- **C23 (DBA):** D04 só diz "database administrator". A descrição de função que sugeri não tem lastro nas fontes.
+
+Tudo o que for acrescentado além disso precisa de evidência no corpus, ou ser marcado como conhecimento externo.
+
+## 2. Resumos a corrigir, com texto que as fontes sustentam
+
+- **C33:** falta dizer que toda tabela deve ter chave primária (D03).
+- **C49:** D03 trata integridade de entidade e referencial como tipos de restrição de integridade. Isso falta no resumo.
+- **C48:** D07 sustenta uma definição: a junção interna ignora linhas sem correspondência (o caso de Hayward).
+- **C52:** D07 diz que as colunas da tabela à direita ficam nulas quando não há correspondência.
+- **C60:** D05 vai além da redundância. Normalização é o ramo da teoria relacional que dá subsídios de projeto, com dois objetivos: caracterizar o nível de redundância e transformar esquemas para removê-la.
+- **C86:** D05 diz explicitamente que um atributo não chave não pode depender funcionalmente de outro não chave. Acrescente isso.
+- **C73:** D09 define melhor. Modelo introduzido por Codd em 1970, que descreve o mundo como coleção de relações (tabelas) inter-relacionadas. D03 só fala das restrições.
+- **C69:** D02 é mais rico. É a chave candidata escolhida pelo projetista, identifica tuplas, não pode ser nula e é sublinhada no modelo ER.
+- **C83:** D09 diz "padrão" (linguagem padrão de acesso).
+- **C85:** D09 sustenta que a tabela guarda os dados, com linhas e colunas.
+- **C45:** D08 diz que HAVING "sempre contém" agregações. A exceção vem só entre parênteses e é pouco útil na prática. O "não exige" do resumo inverte a ênfase.
+- **C08:** o resumo é metalinguístico ("elemento descrito pelo glossário"). D09 diz que atributo é a unidade principal de armazenamento.
+- **C42:** acrescente a condição formal: cada valor de X determina um único valor de Y.
+- **Menores:** C04 também aparece em condição de junção (D07). C11 também determina conectividade no corpo de D03.
+
+## 3. Fiéis, mas não apresentáveis como definição
+
+- **C20 (dados):** nenhuma fonte define o termo. Sugiro remover ou marcar.
+- **C44:** D08 usa "group rows" como expressão corrente, não como termo definido.
+- **C24:** D03 só menciona o termo de passagem.
+- **C23:** a fonte informa apenas a sigla.
+
+## 4. Equivalências
+
+- **A06:** D05 (Figura 12.1) usa "FD" para *full dependency*. Mantenha essa exceção registrada.
+- **A07, A08 e as demais:** conferem.
+- **Duas separações vão contra as fontes.** D09 trata tabela, relação e arquivo como sinônimos. D02 trata atributo simples e monovalorado como sinônimos. Manter separado é defensável, mas é divergência deliberada, e o assistente não deve contradizer a fonte ao citá-la. Corrijo o que disse antes: a "regra correta" de não agrupar é decisão de projeto, não confirmação das fontes.
+- **Equivalências que as fontes trazem e a lista não tem:**
+  - relacionamento fraco = não identificador e forte = identificador (D02);
+  - entidade composta = ponte = tabela de ligação = tabela JOIN (D02);
+  - restrição empresarial = restrição semântica (D03).
+
+## 5. Pendências
+
+- **P01:** confirmado. D02 trata modelo ER e esquema ER como a mesma coisa, e nenhuma fonte define "esquema". Mantenha pendente.
+- **P02:** confirmado ("múltiplas tabelas"). A regra de mapeamento de D02 diz n-ário (> 2), o que permite "mais de duas entidades participantes".
+- **P03:** confirmado. D02 chama atributo simples de "single-valued". Mantenha pendente, coerente com C81.
+- **P04:** confirmado. D02 diz que "na maioria dos casos" todas as entidades têm lado muitos, o que impede generalizar como sempre N:M. Pode ser aprovada como "relacionamento entre três entidades".
+- **P05:** D04 define decomposição como regra de dependências funcionais: se X→YZ, então X→Y e X→Z, inversa da União. Também a usa como orientação de projeto. Retiro minha sugestão anterior (decomposição de relação), que era conceito externo.
+- **P06:** D04 resolve. É a regra da união de dependências funcionais (X→Y e X→Z implicam X→YZ), na seção de regras de inferência. Nenhuma fonte usa UNION de SQL. Pode ser aprovada, e retiro meu "ambíguo".
+- **P07:** confirmado. Use o corpo de D05: está em 1FN, é automaticamente 2FN se a chave é simples e, se composta, todo atributo não chave depende da chave inteira. Evite repetir o "se, e somente se" de D05, porque uma relação com chave composta também pode estar em 2FN.
+- **P08:** D09 equipara arquivo a relação. Mantenha pendente e não vincule minha definição de arquivo físico a D09.
+
+## 6. Risco nas fontes
+
+D04 confunde o axioma da aumentação com dependência parcial. D05 repete a confusão ("dependência parcial ou aumentação"). O exemplo de reflexividade também é estranho. C05 está correto, mas não construam um conceito sobre aumentação a partir de D04 sem revisão.
+
+## 7. Cobertura
+
+As fontes definem termos que a lista não tem:
+- Boyce-Codd (BCNF);
+- chave secundária;
+- entidade fraca e forte, e dependência de existência;
+- dependência parcial e transitiva (C86 as usa sem entrada própria);
+- subconsulta;
+- entidade composta;
+- restrição empresarial.
+
+Se a cobertura for um objetivo, vale incluí-los.
+
+Posso devolver as tabelas das seções 2 e 5 já reescritas, com a evidência de cada alteração, se ajudar.

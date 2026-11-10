@@ -1,3 +1,5 @@
+> Atualização de 09/11/2026: este texto registra uma etapa anterior. A referência atual de integração é data/release/current.json: 93 conceitos únicos, 16 relações e três arquivos principais. Consulte docs/revisao-fontes-2026-11-09.md para os resumos corrigidos e pendências resolvidas. As descrições antigas abaixo não substituem a revisão atual.
+
 # Contrato de extração e integração
 
 Versão: 0.1.0. Estado: referência revisada para a entrega inicial à parte 2; alterações posteriores devem ser combinadas entre as partes.

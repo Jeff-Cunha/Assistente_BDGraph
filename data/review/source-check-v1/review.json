@@ -1,0 +1,579 @@
+{
+  "review_id": "source-check-v1",
+  "date": "2026-11-09",
+  "reviewer": "Codex",
+  "independent_human_review": false,
+  "basis": "Texto encaminhado pelo usuário, conferido diretamente no corpus local; não tratado como aprovação humana de todos os itens.",
+  "inputs": [
+    {
+      "path": "data/extraction/rule-knowledge-union-v1/extraction.json",
+      "sha256": "be6499c2f475c54524fdd208276adf09aaac12aa90281104ec43a9fdec9e0392",
+      "output": "data/extraction/rule-knowledge-union-v2/extraction.json"
+    },
+    {
+      "path": "data/extraction/model-knowledge-union-v2/extraction.json",
+      "sha256": "a0918dee7ff202f7eccaa3529df6f6dfea8bcc3f632f69745a455a2cfff337f2",
+      "output": "data/extraction/model-knowledge-union-v3/extraction.json"
+    }
+  ],
+  "protected_files": [
+    {
+      "path": "corpus/chunks/chunks.jsonl",
+      "sha256": "71a46d39933679b92cdf4dd04026627fe58147d84d428bedede274431f7b861e"
+    },
+    {
+      "path": "corpus/chunks/figure_supplements.jsonl",
+      "sha256": "853eb1d8cc7e2bba50f24274b8b12e6955f046611aa16138c3e429308cb95718"
+    },
+    {
+      "path": "corpus/metadata/sources.json",
+      "sha256": "da6ed06217225d343f8cf4dbe548af00f80b6497ae2b1cb23432d357c65a9793"
+    },
+    {
+      "path": "schemas/extraction.schema.json",
+      "sha256": "0814347987d89bcc135465223518b9c2765efe6e5ddf3462b4305bc0f9ede1c6"
+    },
+    {
+      "path": "data/review/source-check-v1/submitted-review.txt",
+      "sha256": "489aba7251b0b9f5e5e1d816eebbe68ee49279b66532719ca4f748449d3d97ef"
+    }
+  ],
+  "evidence": [
+    {
+      "ref": "entity_integrity",
+      "chunk_id": "D03_C001",
+      "start": 1106,
+      "end": 1446,
+      "quote": "To ensure <em>entity integrity</em>, it is required that every table have a primary key. Neither the PK nor any part of it can contain null values. This is because null values for the primary key mean we cannot identify some rows. For example, in the EMPLOYEE table, Phone cannot be a primary key since some people may not have a telephone."
+    },
+    {
+      "ref": "integrity_constraints",
+      "chunk_id": "D03_C001",
+      "start": 465,
+      "end": 1473,
+      "quote": "Domain restricts the values of attributes in the relation and is a constraint of the relational model. However, there are real-world semantics for data that cannot be specified if used only with domain constraints. We need more specific ways to state what data values are or are not allowed and which format is suitable for an attribute. For example, the Employee ID (EID) must be unique or the employee Birthdate is in the range \\[Jan 1, 1950, Jan 1, 2000\\]. Such information is provided in logical statements called <em>integrity constraints</em>.\n\nThere are several kinds of integrity constraints, described below.\n\n### Entity integrity\n\nTo ensure <em>entity integrity</em>, it is required that every table have a primary key. Neither the PK nor any part of it can contain null values. This is because null values for the primary key mean we cannot identify some rows. For example, in the EMPLOYEE table, Phone cannot be a primary key since some people may not have a telephone.\n\n### Referential integrity"
+    },
+    {
+      "ref": "inner_join_unmatched",
+      "chunk_id": "D07_C001",
+      "start": 1388,
+      "end": 1621,
+      "quote": "- There is no result row for the city of Hayward. This is because there is no matching entry in the `cities` table for Hayward, so the join ignores the unmatched rows in the `weather` table. We will see shortly how this can be fixed."
+    },
+    {
+      "ref": "inner_join_context",
+      "chunk_id": "D07_C002",
+      "start": 0,
+      "end": 429,
+      "quote": "Now we will figure out how we can get the Hayward records back in. What we want the query to do is to scan the `weather` table and for each row to find the matching `cities` row(s). If no matching row is found we want some “empty values” to be substituted for the `cities` table's columns. This kind of query is called an <em>outer join</em>. (The joins we have seen so far are <em>inner joins</em>.) The command looks like this:"
+    },
+    {
+      "ref": "left_join",
+      "chunk_id": "D07_C002",
+      "start": 950,
+      "end": 1356,
+      "quote": "This query is called a <em>left outer join</em> because the table mentioned on the left of the join operator will have each of its rows in the output at least once, whereas the table on the right will only have those rows output that match some row of the left table. When outputting a left-table row for which there is no right-table match, empty (null) values are substituted for the right-table columns."
+    },
+    {
+      "ref": "normalization",
+      "chunk_id": "D05_C001",
+      "start": 675,
+      "end": 1021,
+      "quote": "<em>Normalization</em> is the branch of relational theory that provides design insights. It is the process of determining how much redundancy exists in a table. The goals of normalization are to:\n\n- Be able to characterize the level of redundancy in a relational schema\n\n- Provide mechanisms for transforming schemas in order to remove redundancy"
+    },
+    {
+      "ref": "third_normal_form",
+      "chunk_id": "D05_C002",
+      "start": 1363,
+      "end": 1577,
+      "quote": "To be in <em>third normal form</em>, the relation must be in second normal form. Also all transitive dependencies must be removed; a non-key attribute may not be functionally dependent on another non-key attribute."
+    },
+    {
+      "ref": "relational_model_history",
+      "chunk_id": "D09_C001",
+      "start": 54,
+      "end": 167,
+      "quote": "The relational data model was introduced by E. F. Codd in 1970. Currently, it is the most widely used data model."
+    },
+    {
+      "ref": "relational_model_definition",
+      "chunk_id": "D09_C001",
+      "start": 468,
+      "end": 571,
+      "quote": "The relational data model describes the world as “a collection of inter-related relations (or tables).”"
+    },
+    {
+      "ref": "primary_key",
+      "chunk_id": "D02_C004",
+      "start": 1369,
+      "end": 1646,
+      "quote": "The primary key is a candidate key that is selected by the database designer to be used as an identifying mechanism for the whole entity set. It must uniquely identify tuples in a table and not be null. The primary key is indicated in the ER model by underlining the attribute."
+    },
+    {
+      "ref": "sql_standard",
+      "chunk_id": "D09_C003",
+      "start": 1451,
+      "end": 1538,
+      "quote": "<strong>structured query language (SQL)</strong>: the standard database access language"
+    },
+    {
+      "ref": "table_data",
+      "chunk_id": "D09_C001",
+      "start": 1345,
+      "end": 1482,
+      "quote": "A database is composed of multiple tables and each<em> </em>table holds the data. Figure 7.1 shows a database that contains three tables."
+    },
+    {
+      "ref": "table_rows_columns",
+      "chunk_id": "D09_C001",
+      "start": 641,
+      "end": 1122,
+      "quote": "A <em>relation, </em>also known as a <em>table</em> or <em>file</em>, is a subset of the Cartesian product of a list of domains characterized by a name. And within a table, each row represents a group of related data values. A <em>row</em>, or record, is also known as a <em>tuple</em>. The columns in a table is a field and is also referred to as an attribute. You can also think of it this way: an attribute is used to define the record and a record contains a set of attributes."
+    },
+    {
+      "ref": "having",
+      "chunk_id": "D08_C002",
+      "start": 883,
+      "end": 1696,
+      "quote": "It is important to understand the interaction between aggregates and SQL's `WHERE` and `HAVING` clauses. The fundamental difference between `WHERE` and `HAVING` is this: `WHERE` selects input rows before groups and aggregates are computed (thus, it controls which rows go into the aggregate computation), whereas `HAVING` selects group rows after groups and aggregates are computed. Thus, the `WHERE` clause must not contain aggregate functions; it makes no sense to try to use an aggregate to determine which rows will be inputs to the aggregates. On the other hand, the `HAVING` clause always contains aggregate functions. (Strictly speaking, you are allowed to write a `HAVING` clause that doesn't use aggregates, but it's seldom useful. The same condition could be used more efficiently at the `WHERE` stage.)"
+    },
+    {
+      "ref": "attribute",
+      "chunk_id": "D09_C001",
+      "start": 1928,
+      "end": 2372,
+      "quote": "The principal storage units are called <em>columns</em> or <em>fields</em> or <em>attributes</em>. These house the basic components of data into which your content can be broken down. When deciding which fields to create, you need to think generically about your information, for example, drawing out the common components of the information that you will store in the database and avoiding the specifics that distinguish one item from another."
+    },
+    {
+      "ref": "functional_dependency",
+      "chunk_id": "D04_C001",
+      "start": 53,
+      "end": 440,
+      "quote": "A <em>functional dependency</em> (FD) is a relationship between two attributes, typically between the PK and other non-key attributes within a table. For any relation R, attribute Y is functionally dependent on attribute X (usually the PK), if for every valid instance of X, that value of X uniquely determines the value of Y. This relationship is indicated by the representation below :"
+    },
+    {
+      "ref": "business_rules",
+      "chunk_id": "D03_C003",
+      "start": 640,
+      "end": 1092,
+      "quote": "Business rules are used to determine cardinality and connectivity.<em> Cardinality</em> describes the relationship between two data tables by expressing the minimum and maximum number of entity occurrences associated with one occurrence of a related entity. In Figure 9.2, you can see that cardinality is represented by the innermost markings on the relationship symbol. In this figure, the cardinality is 0 (zero) on the right and 1 (one) on the left."
+    },
+    {
+      "ref": "and_join",
+      "chunk_id": "D07_C002",
+      "start": 1864,
+      "end": 2083,
+      "quote": "```sql\nSELECT w1.city, w1.temp_lo AS low, w1.temp_hi AS high,\n       w2.city, w2.temp_lo AS low, w2.temp_hi AS high\n    FROM weather w1 JOIN weather w2\n        ON w1.temp_lo < w2.temp_lo AND w1.temp_hi > w2.temp_hi;\n```"
+    },
+    {
+      "ref": "weak_relationship",
+      "chunk_id": "D02_C005",
+      "start": 1932,
+      "end": 2213,
+      "quote": "<em>Relationship strength</em> is based on how the primary key of a related entity is defined. A weak, or non-identifying, relationship exists if the primary key of the related entity does not contain a primary key component of the parent entity. Company database examples include:"
+    },
+    {
+      "ref": "strong_relationship",
+      "chunk_id": "D02_C005",
+      "start": 2311,
+      "end": 2474,
+      "quote": "A strong, or identifying, relationship exists when the primary key of the related entity contains the primary key component of the parent entity. Examples include:"
+    },
+    {
+      "ref": "fd_exception",
+      "chunk_id": "D05_C002",
+      "start": 3053,
+      "end": 3223,
+      "quote": "- FD: full dependency (Note: FD typically stands for <strong>functional</strong> dependency. Using FD as an abbreviation for full dependency is only used in Figure 12.1.)"
+    },
+    {
+      "ref": "simple_single",
+      "chunk_id": "D02_C003",
+      "start": 1157,
+      "end": 1367,
+      "quote": "<em>Simple attributes</em> are those drawn from the atomic value domains; they are also called <em>single-valued attributes</em>. In the COMPANY database, an example of this would be: Name = {John} ; Age = {23}"
+    },
+    {
+      "ref": "n_ary_mapping",
+      "chunk_id": "D02_C007",
+      "start": 306,
+      "end": 398,
+      "quote": "- For each n-ary (&gt; 2) relationship, create a new relation to represent the relationship."
+    },
+    {
+      "ref": "n_ary_many",
+      "chunk_id": "D02_C007",
+      "start": 535,
+      "end": 642,
+      "quote": "- In most cases of an n-ary relationship, all the participating entities hold a <strong>many</strong> side."
+    },
+    {
+      "ref": "ternary",
+      "chunk_id": "D02_C007",
+      "start": 27,
+      "end": 144,
+      "quote": "A <em>ternary relationship</em> is a relationship type that involves many to many relationships between three tables."
+    },
+    {
+      "ref": "decomposition",
+      "chunk_id": "D04_C003",
+      "start": 19,
+      "end": 318,
+      "quote": "Decomposition is the reverse of the Union rule. If you have a table that appears to contain two entities that are determined by the same PK, consider breaking them up into two tables. This rule states that if X determines Y and Z, then X determines Y and X determines Z separately (see Figure 11.5)."
+    },
+    {
+      "ref": "union",
+      "chunk_id": "D04_C002",
+      "start": 3279,
+      "end": 3508,
+      "quote": "This rule suggests that if two tables are separate, and the PK is the same, you may want to consider putting them together. It states that if X determines Y and X determines Z then X must also determine Y and Z (see Figure 11.4)."
+    },
+    {
+      "ref": "second_normal_form",
+      "chunk_id": "D05_C002",
+      "start": 29,
+      "end": 388,
+      "quote": "For the <em>second normal form</em>, the relation must first be in 1NF. The relation is automatically in 2NF if, and only if, the PK comprises a single attribute.\n\nIf the relation has a composite PK, then each non-key attribute must be fully dependent on the entire PK and not on a subset of the PK (i.e., there must be no partial dependency or augmentation)."
+    },
+    {
+      "ref": "augmentation_d04",
+      "chunk_id": "D04_C002",
+      "start": 972,
+      "end": 1110,
+      "quote": "The axiom of augmentation, also known as a partial dependency, says if X determines Y, then XZ determines YZ for any Z (see Figure 11.2 )."
+    },
+    {
+      "ref": "augmentation_second_claim",
+      "chunk_id": "D04_C002",
+      "start": 1339,
+      "end": 1585,
+      "quote": "The axiom of augmentation says that every non-key attribute must be fully dependent on the PK. In the example shown below, StudentName, Address, City, Prov, and PC (postal code) are only dependent on the StudentNo, not on the StudentNo and Grade."
+    },
+    {
+      "ref": "reflexivity_example",
+      "chunk_id": "D04_C002",
+      "start": 796,
+      "end": 943,
+      "quote": "For example, <strong>PartNo —&gt; NT123</strong> where X (PartNo) is composed of more than one piece of information; i.e., Y (NT) and partID (123)."
+    },
+    {
+      "ref": "enterprise_constraints",
+      "chunk_id": "D03_C002",
+      "start": 1904,
+      "end": 2080,
+      "quote": "Enterprise constraints – sometimes referred to as semantic constraints – are additional rules specified by users or database administrators and can be based on multiple tables."
+    }
+  ],
+  "concept_updates": {
+    "C_entity_integrity": {
+      "description_pt": "Regra conceitual segundo a qual toda tabela deve ter chave primária e nenhum componente dessa chave pode ser nulo, conforme a fonte.",
+      "evidence_refs": [
+        "entity_integrity"
+      ],
+      "add_aliases": [],
+      "note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. Regra didática da fonte; não afirma impossibilidade técnica universal de criar tabelas sem PK."
+    },
+    "C_integrity_constraint": {
+      "description_pt": "Declaração lógica que limita valores e formatos permitidos para os dados; a fonte apresenta integridade de entidade e integridade referencial entre seus tipos.",
+      "evidence_refs": [
+        "integrity_constraints"
+      ],
+      "add_aliases": [],
+      "note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. Resumo conferido com os trechos indicados."
+    },
+    "C_inner_join": {
+      "description_pt": "Junção interna que combina linhas correspondentes e ignora linhas sem correspondência, conforme o exemplo da fonte.",
+      "evidence_refs": [
+        "inner_join_unmatched",
+        "inner_join_context"
+      ],
+      "add_aliases": [],
+      "note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. Resumo conferido com os trechos indicados."
+    },
+    "C_left_outer_join": {
+      "description_pt": "Junção que preserva cada linha da tabela à esquerda ao menos uma vez; quando não há correspondência à direita, as colunas desse lado recebem valores nulos.",
+      "evidence_refs": [
+        "left_join"
+      ],
+      "add_aliases": [],
+      "note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. Resumo conferido com os trechos indicados."
+    },
+    "C_normalization": {
+      "description_pt": "Ramo da teoria relacional que fornece subsídios ao projeto: caracteriza o nível de redundância e oferece mecanismos de transformação de esquemas para removê-la.",
+      "evidence_refs": [
+        "normalization"
+      ],
+      "add_aliases": [],
+      "note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. Resumo conferido com os trechos indicados."
+    },
+    "C_third_normal_form": {
+      "description_pt": "Na apresentação didática da fonte, a relação está em 2FN e tem removidas as dependências transitivas: um atributo não chave não pode depender funcionalmente de outro não chave.",
+      "evidence_refs": [
+        "third_normal_form"
+      ],
+      "add_aliases": [],
+      "note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. Formulação introdutória da fonte; não apresentada como definição formal independente baseada em todas as chaves candidatas."
+    },
+    "C_relational_model": {
+      "description_pt": "Modelo introduzido por E. F. Codd em 1970 que descreve o mundo como uma coleção de relações, ou tabelas, inter-relacionadas.",
+      "evidence_refs": [
+        "relational_model_history",
+        "relational_model_definition"
+      ],
+      "add_aliases": [],
+      "note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. Resumo conferido com os trechos indicados."
+    },
+    "C_primary_key": {
+      "description_pt": "Chave candidata escolhida pelo projetista para identificar unicamente as tuplas de uma tabela; não pode ser nula e é indicada por sublinhado no modelo ER apresentado na fonte.",
+      "evidence_refs": [
+        "primary_key"
+      ],
+      "add_aliases": [],
+      "note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. Resumo conferido com os trechos indicados."
+    },
+    "C_structured_query_language": {
+      "description_pt": "Linguagem padrão de acesso a bancos de dados identificada pela sigla SQL, conforme o glossário da fonte.",
+      "evidence_refs": [
+        "sql_standard"
+      ],
+      "add_aliases": [],
+      "note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. Resumo conferido com os trechos indicados."
+    },
+    "C_table": {
+      "description_pt": "Estrutura que armazena dados em linhas e colunas; D09 também utiliza tabela, relação e arquivo como termos equivalentes no contexto do capítulo.",
+      "evidence_refs": [
+        "table_data",
+        "table_rows_columns"
+      ],
+      "add_aliases": [],
+      "note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. Tabela e relação mantêm IDs distintos por decisão do projeto; a equivalência lexical afirmada em D09 é preservada explicitamente, sem atribuir essa separação à fonte."
+    },
+    "C_having": {
+      "description_pt": "Cláusula que seleciona grupos após o agrupamento e a agregação, tipicamente com condições sobre agregados; a fonte ressalva que também pode ser escrita sem funções agregadoras.",
+      "evidence_refs": [
+        "having"
+      ],
+      "add_aliases": [],
+      "note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. Mantida a ênfase didática e a exceção explícita; não exportar uma obrigação universal de conter agregados."
+    },
+    "C_attribute": {
+      "description_pt": "Unidade principal de armazenamento descrita em D09 como coluna, campo ou atributo, que contém componentes básicos dos dados.",
+      "evidence_refs": [
+        "attribute"
+      ],
+      "add_aliases": [],
+      "note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. Resumo conferido com os trechos indicados."
+    },
+    "C_functional_dependency": {
+      "description_pt": "Relação em que, para cada ocorrência válida de X, o valor de X determina unicamente o valor de Y, representada por X → Y.",
+      "evidence_refs": [
+        "functional_dependency",
+        "fd_exception"
+      ],
+      "add_aliases": [],
+      "note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. FD significa functional dependency no uso geral; a legenda da Figura 12.1 em D05_C002 usa FD excepcionalmente para full dependency. Resolver pelo contexto, não pela sigla isolada."
+    },
+    "C_and": {
+      "description_pt": "Operador booleano utilizado em condições de seleção e também em condições de junção nos exemplos da fonte.",
+      "evidence_refs": [
+        "and_join"
+      ],
+      "add_aliases": [],
+      "note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. Resumo conferido com os trechos indicados."
+    },
+    "C_business_rule": {
+      "description_pt": "Regra obtida dos usuários durante o levantamento de requisitos e utilizada para determinar cardinalidade e conectividade.",
+      "evidence_refs": [
+        "business_rules"
+      ],
+      "add_aliases": [],
+      "note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. Resumo conferido com os trechos indicados."
+    },
+    "C_data": {
+      "description_pt": "Menção contextual aos dados recuperados por SELECT; o trecho utilizado não oferece uma definição geral do conceito de dado.",
+      "evidence_refs": [],
+      "add_aliases": [],
+      "note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. Manter como nó contextual da relação SELECT → RETRIEVES → data, sem anunciar definição geral."
+    },
+    "C_grouped_row": {
+      "description_pt": "Expressão contextual para uma linha do resultado agrupado, sobre a qual HAVING pode aplicar um filtro.",
+      "evidence_refs": [],
+      "add_aliases": [],
+      "note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. Expressão de uso no tutorial, não termo formal definido por glossário."
+    },
+    "C_database_system": {
+      "description_pt": "Expressão de categoria utilizada pela fonte para classificar um SGBD relacional; o trecho não apresenta uma definição geral de sistema de banco de dados.",
+      "evidence_refs": [],
+      "add_aliases": [],
+      "note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. Nó contextual necessário à classificação existente; não apresentar como definição independente."
+    },
+    "C_database_administrator": {
+      "description_pt": "Administrador de banco de dados, identificado pela sigla DBA; a evidência de glossário apenas expande a sigla.",
+      "evidence_refs": [],
+      "add_aliases": [],
+      "note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. Não acrescentar atribuições profissionais que não estejam sustentadas pela evidência selecionada."
+    },
+    "C_composite_key": {
+      "description_pt": "Chave formada por dois ou mais atributos e que deve ser mínima, conforme o glossário da fonte.",
+      "evidence_refs": [],
+      "add_aliases": [],
+      "note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. Preservada a qualificação de minimalidade expressa em D02; não corrigida com conhecimento externo."
+    },
+    "C_foreign_key": {
+      "description_pt": "Chave que estabelece uma referência entre tabelas; a fonte a apresenta como atributo que referencia a chave primária de outra tabela e admite a possibilidade de nulo.",
+      "evidence_refs": [],
+      "add_aliases": [],
+      "note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. Resumo restrito à apresentação de D02; não estendido a outras chaves referenciáveis sem evidência adicional."
+    },
+    "C_non_normalized_table": {
+      "description_pt": "Tabela caracterizada pela presença de redundância de dados, na terminologia do glossário da fonte.",
+      "evidence_refs": [],
+      "add_aliases": [],
+      "note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. Descrição didática preservada; não apresentada como critério formal universal de normalização."
+    },
+    "C_relation": {
+      "description_pt": "Subconjunto de um produto cartesiano de domínios; D09 também o apresenta como termo técnico equivalente a tabela ou arquivo.",
+      "evidence_refs": [
+        "table_rows_columns"
+      ],
+      "add_aliases": [],
+      "note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. IDs de tabela e relação mantidos por decisão de projeto, apesar da equivalência lexical de D09. Não fundir automaticamente arquivos físicos nem contradizer a terminologia do capítulo."
+    },
+    "C_simple_attribute": {
+      "description_pt": "Atributo proveniente de um domínio de valores atômicos; D02 também o chama de single-valued attribute.",
+      "evidence_refs": [
+        "simple_single"
+      ],
+      "add_aliases": [],
+      "note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. A remissão simples/monovalorado é efetivamente da fonte. Não fundir os termos é decisão conservadora de projeto, não uma distinção ensinada por D02; P03 permanece pendente."
+    },
+    "C_identifying_relationship": {
+      "description_pt": "Relacionamento em que a PK contém a FK, representado por linha contínua na fonte e também chamado de relacionamento forte.",
+      "evidence_refs": [
+        "strong_relationship"
+      ],
+      "add_aliases": [
+        "strong relationship"
+      ],
+      "note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. Resumo conferido com os trechos indicados."
+    },
+    "C_non_identifying_relationship": {
+      "description_pt": "Relacionamento em que a FK não integra a PK, representado por linha pontilhada na fonte e também chamado de relacionamento fraco.",
+      "evidence_refs": [
+        "weak_relationship"
+      ],
+      "add_aliases": [
+        "weak relationship"
+      ],
+      "note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. Resumo conferido com os trechos indicados."
+    }
+  },
+  "new_concepts": [
+    {
+      "concept_id": "C_n_ary_relationship",
+      "canonical_name": "n-ary relationship",
+      "name_pt": "relacionamento n-ário",
+      "aliases": [
+        "n-ary"
+      ],
+      "category": "structure",
+      "description_pt": "No recorte de mapeamento de D02, relacionamento com mais de duas entidades participantes, representado por uma nova relação.",
+      "evidence_refs": [
+        "n_ary_mapping",
+        "n_ary_many"
+      ],
+      "review_status": "accepted",
+      "review_note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. P02 resolvido pelo corpo da seção de mapeamento (> 2), com escopo explícito da fonte; não substituir a definição geral de aridade por uma identidade com quantidade de tabelas físicas."
+    },
+    {
+      "concept_id": "C_ternary_relationship",
+      "canonical_name": "ternary relationship",
+      "name_pt": "relacionamento ternário",
+      "aliases": [],
+      "category": "structure",
+      "description_pt": "Relacionamento entre três entidades participantes, representadas por tabelas no exemplo de D02; não se impõe que todos os lados sejam sempre muitos.",
+      "evidence_refs": [
+        "ternary",
+        "n_ary_many"
+      ],
+      "review_status": "accepted",
+      "review_note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. P04 resolvido por síntese contextual; o glossário é restrito a muitos-para-muitos, enquanto o corpo qualifica muitos como o caso mais comum. Limitação preservada."
+    },
+    {
+      "concept_id": "C_fd_decomposition",
+      "canonical_name": "functional dependency decomposition",
+      "name_pt": "decomposição de dependências funcionais",
+      "aliases": [
+        "decomposition"
+      ],
+      "category": "normalization",
+      "description_pt": "Regra segundo a qual X → YZ implica X → Y e X → Z; é apresentada como inversa da regra da união.",
+      "evidence_refs": [
+        "decomposition"
+      ],
+      "review_status": "accepted",
+      "review_note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. P05 resolvido no sentido da regra de inferência de dependências; não é uma definição geral de decomposição de relações."
+    },
+    {
+      "concept_id": "C_fd_union",
+      "canonical_name": "functional dependency union",
+      "name_pt": "união de dependências funcionais",
+      "aliases": [
+        "Union"
+      ],
+      "category": "normalization",
+      "description_pt": "Regra segundo a qual X → Y e X → Z implicam X → YZ.",
+      "evidence_refs": [
+        "union"
+      ],
+      "review_status": "accepted",
+      "review_note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. P06 resolvido pela seção de regras de inferência; não corresponde ao operador SQL UNION."
+    },
+    {
+      "concept_id": "C_second_normal_form",
+      "canonical_name": "second normal form",
+      "name_pt": "segunda forma normal",
+      "aliases": [
+        "second normal form (2NF)",
+        "2NF",
+        "2FN"
+      ],
+      "category": "normalization",
+      "description_pt": "Na apresentação didática de D05, exige 1FN; uma PK simples atende à condição descrita, e, se a PK é composta, cada atributo não chave deve depender de toda a PK, não apenas de parte dela.",
+      "evidence_refs": [
+        "second_normal_form"
+      ],
+      "review_status": "accepted",
+      "review_note": "Revisão de correspondência com o corpus por Codex após texto encaminhado pelo usuário; não constitui aprovação humana independente. P07 resolvido pelo corpo, sem repetir o se-e-somente-se restritivo do resumo. O texto também confunde dependência parcial e aumentação, equivalência não adotada. Formulação por PK da fonte, sem alegação de definição formal independente por todas as chaves candidatas."
+    }
+  ],
+  "manual_output": "data/extraction/manual-source-review-v1/extraction.json",
+  "contextual_mentions": [
+    "C_data",
+    "C_grouped_row",
+    "C_database_system",
+    "C_database_administrator"
+  ],
+  "resolved_pending": [
+    "P02",
+    "P04",
+    "P05",
+    "P06",
+    "P07"
+  ],
+  "still_pending": [
+    "P01",
+    "P03",
+    "P08"
+  ],
+  "missing_coverage": [
+    "BCNF (fora do recorte inicial)",
+    "secondary key",
+    "weak entity / strong entity / existence dependency",
+    "partial dependency / transitive dependency",
+    "subquery",
+    "composite / bridge / linking / JOIN entity",
+    "enterprise / semantic constraint"
+  ],
+  "note": "As 16 relações anteriores não são alteradas nem recebem aprovação humana. Cinco novos conceitos são curadoria manual assistida por IA, em arquivo separado; não atribuídos a regras ou LLM automaticamente."
+}
