@@ -261,5 +261,29 @@ class GraphModeTests(unittest.TestCase):
         self.assertEqual(answer['support']['level'], 'insufficient')
 
 
+class ExampleBundleTests(unittest.TestCase):
+    """The committed example must keep matching the corpus; it is data that can rot."""
+
+    def test_every_quote_is_still_literal_in_the_corpus(self):
+        bundle = json.loads(BUNDLE.read_text(encoding='utf-8'))
+        texts = m.grounding.load_corpus_texts()
+        checked = m.grounding.check_quotes(m.grounding.normalize_bundle(bundle)['evidence'], texts)
+        self.assertTrue(checked)
+        for item in checked:
+            self.assertTrue(item['quote_verified'],
+                            f"{item['chunk_id']}: citação deixou de existir no corpus")
+
+    def test_bundle_still_covers_two_documents(self):
+        bundle = m.grounding.normalize_bundle(json.loads(BUNDLE.read_text(encoding='utf-8')))
+        self.assertGreaterEqual(
+            len({item['document_id'] for item in bundle['evidence']}), 2)
+
+    def test_example_plan_still_compiles_to_the_documented_chain(self):
+        plan = json.loads(PLAN.read_text(encoding='utf-8'))
+        compiled = m.guard.compile_plan(plan, max_hops=4)
+        for relation in ('GOVERNS', 'TYPICALLY_USED_IN', 'HAS_FORM'):
+            self.assertIn(relation, compiled['cypher'])
+
+
 if __name__ == '__main__':
     unittest.main()

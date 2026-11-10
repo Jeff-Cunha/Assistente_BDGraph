@@ -137,7 +137,9 @@ três tipos por salto, todos do vocabulário permitido; `limit` entre 1 e 200. C
 | `CREATE`, `MERGE`, `SET`, `DELETE`, `DETACH`, `REMOVE`, `DROP`, `FOREACH`, `CALL`, `LOAD CSV`, `USING`, `UNION`, `EXISTS`, `CASE`, `INDEX`, `CONSTRAINT`, `PROFILE`, `EXPLAIN`, `START`, `GRANT`, `REVOKE`, `ALTER`, `SHOW` recusados | leitura somente |
 | Prefixos `apoc`, `gds`, `dbms` recusados | nenhum procedimento de extensão |
 | Rótulos apenas `Concept`, `Chunk`, `Document` | o modelo não alcança outro dado |
+| Todo padrão de nó precisa de rótulo; `(n)` sem rótulo é recusado | evita varredura de todos os rótulos |
 | Propriedades apenas as do contrato | idem |
+| Proibido devolver variável solta (`RETURN n`) e `RETURN *` | impediria ler todos os campos, inclusive `Chunk.embedding` |
 | Tipos de relação apenas os do contrato (3 estruturais + 8 semânticos iniciais + 6 SQL) | idem |
 | Toda relação precisa declarar tipo | evita travessia genérica |
 | `*` só com limite superior explícito e dentro do orçamento | impede explosão combinatória |
@@ -148,6 +150,22 @@ três tipos por salto, todos do vocabulário permitido; `limit` entre 1 e 200. C
 
 A consulta compilada é validada por esse mesmo verificador antes de ser devolvida, e a
 validação também devolve quais rótulos, relações e propriedades foram usados.
+
+### Conjunto de ataques (`data/llm/testes/cypher-ataques.jsonl`)
+
+As tentativas de contorno ficam em um arquivo de dados, não no código, para poderem crescer sem
+alterar o verificador. Cada linha traz `id`, `categoria`, `esperado`, a consulta, os parâmetros e
+a regra que deve ser acionada. Hoje são **38 casos**: 32 recusas obrigatórias, 5 controles que
+devem passar (projeção de propriedades, caminho com `p`, agregação, tipos alternativos e variável
+já ligada com rótulo) e 1 caso aceito de propósito, registrado como limite conhecido.
+
+`tests/test_cypher_redteam.py` roda todos e ainda faz uma verificação independente do campo
+`esperado`: qualquer caso que contenha escrita, procedimento, `embedding`, `.password` ou
+`RETURN *` tem de ser recusado de qualquer forma.
+
+Um caso fica aceito de propósito e está registrado como limite conhecido: `WHERE n.concept_id =
+$id OR 1 = 1`. O verificador filtra sintaxe e contrato, não intenção; um alargamento semântico
+escrito com parâmetro passa. É por isso que a interface também precisa mostrar o Cypher executado.
 
 A projeção devolvida pelo plano compilado traz `nodes` (`label`, `id`, `name`, `name_pt`,
 `canonical_name`) e `relationships` (`type`, `relation_id`, `source`, `target`,

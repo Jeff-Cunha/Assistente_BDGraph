@@ -193,7 +193,8 @@ class AcceptSafeCypherTests(unittest.TestCase):
 
     def test_accepts_bounded_variable_length_and_parameter_limit(self):
         result = m.validate_cypher(
-            'MATCH (a:Concept)-[r:IS_A|SUPPORTS*1..2]->(b:Concept) RETURN a, b LIMIT $limit',
+            'MATCH (a:Concept)-[r:IS_A|SUPPORTS*1..2]->(b:Concept) '
+            'RETURN a.concept_id AS a, b.concept_id AS b LIMIT $limit',
             {'limit': 5})
         self.assertEqual(result['relationship_patterns'], 1)
         self.assertEqual(result['limit'], 5)
@@ -201,11 +202,11 @@ class AcceptSafeCypherTests(unittest.TestCase):
 
     def test_given_parameters_must_cover_the_query(self):
         with self.assertRaises(m.UnsafeCypher) as caught:
-            m.validate_cypher('MATCH (c:Concept {concept_id: $id}) RETURN c', {})
+            m.validate_cypher('MATCH (c:Concept {concept_id: $id}) RETURN c.concept_id AS id', {})
         self.assertIn('Missing parameter', str(caught.exception))
 
     def test_unused_parameters_are_reported_not_silently_dropped(self):
-        result = m.validate_cypher('MATCH (c:Concept {concept_id: $id}) RETURN c',
+        result = m.validate_cypher('MATCH (c:Concept {concept_id: $id}) RETURN c.concept_id AS id',
                                    {'id': 'C_join', 'unused': 1})
         self.assertEqual(result['unused_parameters'], ['unused'])
 

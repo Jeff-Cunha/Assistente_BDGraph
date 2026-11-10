@@ -268,6 +268,71 @@ def _check_relationship_patterns(tokens, max_hops):
     return len(brackets)
 
 
+def _check_unlabeled_nodes(tokens):
+    """`MATCH (n)` without a label would scan every label stored in the database.
+
+    A pattern that only reuses a variable already bound with a label is a reference, not a scan."""
+    labelled = {tokens[index + 1][1] for index in range(len(tokens) - 2)
+                if tokens[index] == ('operator', '(') and tokens[index + 1][0] == 'word'
+                and tokens[index + 2] == ('operator', ':')}
+    neighbours = {('operator', ','), ('operator', '-'), ('operator', '->'), ('operator', '<-')}
+    keywords = {'MATCH', 'OPTIONAL', 'WHERE', 'AND', 'OR'}
+    for index in range(1, len(tokens) - 2):
+        if tokens[index] != ('operator', '(') or tokens[index + 2] != ('operator', ')'):
+            continue
+        if tokens[index + 1][0] != 'word' or tokens[index + 1][1] in labelled:
+            continue
+        previous = tokens[index - 1]
+        named = previous[0] == 'word' and previous[1].upper() in keywords
+        if named or previous in neighbours:
+            _fail(f'Node pattern ({tokens[index + 1][1]}) needs a label: '
+                  f'use one of {sorted(ALLOWED_LABELS)}.')
+
+
+def _return_items(tokens):
+    """Split the last RETURN projection on top-level commas, ignoring ORDER BY/SKIP/LIMIT."""
+    positions = [index for index, (kind, value) in enumerate(tokens)
+                 if kind == 'word' and value.upper() == 'RETURN']
+    if not positions:
+        return []
+    items, current, depth = [], [], 0
+    for index in range(positions[-1] + 1, len(tokens)):
+        kind, value = tokens[index]
+        if kind == 'operator' and value in ('(', '[', '{'):
+            depth += 1
+        elif kind == 'operator' and value in (')', ']', '}'):
+            depth = max(0, depth - 1)
+        elif depth == 0 and kind == 'word' and value.upper() in ('ORDER', 'SKIP', 'LIMIT'):
+            break
+        elif depth == 0 and kind == 'operator' and value == ',':
+            items.append(current)
+            current = []
+            continue
+        current.append(tokens[index])
+    items.append(current)
+    return [item for item in items if item]
+
+
+def _check_return_projection(tokens):
+    """A returned node would expose every stored property, vectors included; a path is allowed."""
+    paths = {tokens[index][1] for index in range(len(tokens) - 2)
+             if tokens[index][0] == 'word' and tokens[index + 1] == ('operator', '=')
+             and tokens[index + 2] == ('operator', '(')}
+    for item in _return_items(tokens):
+        projection = list(item)
+        if projection and projection[0][0] == 'word' and projection[0][1].upper() == 'DISTINCT':
+            projection = projection[1:]
+        if len(projection) >= 2 and projection[-2][0] == 'word' \
+                and projection[-2][1].upper() == 'AS':
+            projection = projection[:-2]
+        if len(projection) == 1 and projection[0] == ('operator', '*'):
+            _fail('RETURN * exposes every property; list the properties instead.')
+        if len(projection) == 1 and projection[0][0] == 'word' \
+                and projection[0][1] not in paths:
+            _fail(f'Returning {projection[0][1]} would expose every property; '
+                  'list the properties or aggregate instead.')
+
+
 def _check_parameters(tokens, parameters):
     required = sorted({value[1:] for kind, value in tokens if kind == 'parameter'})
     if parameters is None:
@@ -310,10 +375,12 @@ def validate_cypher(query, parameters=None, max_hops=4, max_limit=200, default_l
         _fail('Query must be a non-empty string.')
     tokens = _scan(query)
     _check_tokens(tokens)
+    _check_unlabeled_nodes(tokens)
     labels, relationship_types, properties = _check_names(tokens)
     relationship_patterns = _check_relationship_patterns(tokens, max_hops)
     required, unused = _check_parameters(tokens, parameters)
     limit, injected = _check_limit(tokens, parameters, default_limit, max_limit)
+    _check_return_projection(tokens)
     checked = query.strip()
     final_parameters = dict(parameters or {})
     if injected:
