@@ -1,0 +1,460 @@
+{
+  "method": "local_passage_precision_pilot",
+  "model": "qwen3:8b",
+  "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+  "created_at": "2026-11-08T23:11:53.632323+00:00",
+  "runs": [
+    {
+      "passage_id": "D06_C001_P002",
+      "is_synthetic_control": false,
+      "seconds": 30.93,
+      "verification_seconds": 9.01,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage explicitly states that an SQL SELECT statement is used to retrieve data from a table, directly supporting the RETRIEVES relationship between the SQL SELECT statement and data."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "SQL SELECT statement",
+          "type": "RETRIEVES",
+          "target": "data",
+          "passage_id": "D06_C001_P002",
+          "evidence": {
+            "chunk_id": "D06_C001",
+            "quote": "To retrieve data from a table, the table is <em>queried</em>. An SQL `SELECT` statement is used to do this. The statement is divided into a select list (the part that lists the columns to be returned), a table list (the part that lists the tables from which to retrieve the data), and an optional qualification (the part that specifies any restrictions). For example, to retrieve all the rows of table `weather`, type:",
+            "start": 26,
+            "end": 444
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D06_C001_P004",
+      "is_synthetic_control": false,
+      "seconds": 16.73,
+      "verification_seconds": 5.77,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage explicitly states that '*' is a shorthand for \"all columns\", directly supporting the IS_A relationship between the two concepts."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "*",
+          "type": "IS_A",
+          "target": "all columns",
+          "passage_id": "D06_C001_P004",
+          "evidence": {
+            "chunk_id": "D06_C001",
+            "quote": "Here `*` is a shorthand for “all columns”. [<sup>\\[2\\]</sup>](https://www.postgresql.org/docs/18/tutorial-select.html#ftn.id-1.4.4.6.2.10) So the same result would be had with:",
+            "start": 481,
+            "end": 657
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D06_C001_P008",
+      "is_synthetic_control": false,
+      "seconds": 9.87,
+      "verification_seconds": 9.49,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage explicitly states that expressions can be written in the select list, directly supporting the 'SUPPORTS' relationship between the select list and expressions."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "select list",
+          "type": "SUPPORTS",
+          "target": "expressions",
+          "passage_id": "D06_C001_P008",
+          "evidence": {
+            "chunk_id": "D06_C001",
+            "quote": "You can write expressions, not just simple column references, in the select list. For example, you can do:",
+            "start": 1045,
+            "end": 1151
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D06_C001_P012",
+      "is_synthetic_control": false,
+      "seconds": 23.26,
+      "status": "abstained",
+      "relations": []
+    },
+    {
+      "passage_id": "D06_C001_P013",
+      "is_synthetic_control": false,
+      "seconds": 27.62,
+      "verification_seconds": 9.93,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage explicitly states that the WHERE clause contains a Boolean expression, directly supporting the REQUIRES relationship between the WHERE clause and Boolean expression as a required element."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "WHERE clause",
+          "type": "REQUIRES",
+          "target": "Boolean expression",
+          "passage_id": "D06_C001_P013",
+          "evidence": {
+            "chunk_id": "D06_C001",
+            "quote": "A query can be “qualified” by adding a `WHERE` clause that specifies which rows are wanted. The `WHERE` clause contains a Boolean (truth value) expression, and only rows for which the Boolean expression is true are returned. The usual Boolean operators (`AND`, `OR`, and `NOT`) are allowed in the qualification. For example, the following retrieves the weather of San Francisco on rainy days:",
+            "start": 1561,
+            "end": 1953
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D06_C001_P020",
+      "is_synthetic_control": false,
+      "seconds": 32.7,
+      "status": "rejected",
+      "error_type": "ValidationError"
+    },
+    {
+      "passage_id": "D06_C001_P025",
+      "is_synthetic_control": false,
+      "seconds": 35.29,
+      "verification_seconds": 13.34,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage states that DISTINCT and ORDER BY are used together to ensure consistent results, but it does not explicitly describe a combining relationship between them. The predicate 'COMBINES' implies an operational combination that is not directly stated in the passage. The direction from DISTINCT to ORDER BY is not explicitly supported, and the conditions/exceptions are not detailed in the passage."
+      },
+      "proposal": {
+        "source": "DISTINCT",
+        "type": "COMBINES",
+        "target": "ORDER BY",
+        "passage_id": "D06_C001_P025"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D06_C001_P027",
+      "is_synthetic_control": false,
+      "seconds": 23.5,
+      "status": "rejected",
+      "error_type": "ValidationError"
+    },
+    {
+      "passage_id": "D06_C001_P028",
+      "is_synthetic_control": false,
+      "seconds": 21.87,
+      "verification_seconds": 9.69,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": false,
+        "reason": "The passage states that in some older PostgreSQL versions, DISTINCT might make ORDER BY unnecessary, but this is not a general support relationship. The proposal incorrectly implies a direct support relationship, while the passage specifies conditional behavior (older versions, non-standard) that is not preserved in the proposal."
+      },
+      "proposal": {
+        "source": "DISTINCT",
+        "type": "SUPPORTS",
+        "target": "ORDER BY",
+        "passage_id": "D06_C001_P028"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D08_C001_P002",
+      "is_synthetic_control": false,
+      "seconds": 5.28,
+      "verification_seconds": 8.3,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage explicitly states that PostgreSQL supports aggregate functions, matching the proposal's assertion. The direction (PostgreSQL -> aggregate functions) aligns with the predicate meaning of 'model or system -> supported feature'. Both endpoints are concepts, and no conditions, negations, or exceptions are introduced in the proposal compared to the passage."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "PostgreSQL",
+          "type": "SUPPORTS",
+          "target": "aggregate functions",
+          "passage_id": "D08_C001_P002",
+          "evidence": {
+            "chunk_id": "D08_C001",
+            "quote": "Like most other relational database products, PostgreSQL supports <em>aggregate functions</em>. An aggregate function computes a single result from multiple input rows. For example, there are aggregates to compute the `count`, `sum`, `avg` (average), `max` (maximum) and `min` (minimum) over a set of rows.",
+            "start": 29,
+            "end": 335
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D08_C001_P006",
+      "is_synthetic_control": false,
+      "seconds": 12.89,
+      "status": "rejected",
+      "error_type": "ValidationError"
+    },
+    {
+      "passage_id": "D08_C001_P008",
+      "is_synthetic_control": false,
+      "seconds": 5.55,
+      "verification_seconds": 7.93,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage explicitly states that the WHERE clause is evaluated before aggregate functions like `max` in logical query processing, which directly supports the directed relationship's assertion about evaluation order."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "WHERE clause",
+          "type": "EVALUATED_BEFORE",
+          "target": "aggregate max",
+          "passage_id": "D08_C001_P008",
+          "evidence": {
+            "chunk_id": "D08_C001",
+            "quote": "but this will not work since the aggregate `max` cannot be used in the `WHERE` clause. (This restriction exists because the `WHERE` clause determines which rows will be included in the aggregate calculation; so obviously it has to be evaluated before aggregate functions are computed.) However, as is often the case the query can be restated to accomplish the desired result, here by using a <em>subquery</em>:",
+            "start": 663,
+            "end": 1073
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D08_C001_P011",
+      "is_synthetic_control": false,
+      "seconds": 44.16,
+      "status": "rejected",
+      "error_type": "ValidationError"
+    },
+    {
+      "passage_id": "D08_C001_P012",
+      "is_synthetic_control": false,
+      "seconds": 23.94,
+      "verification_seconds": 9.55,
+      "model_verification": {
+        "entailed": false,
+        "direction_correct": false,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage states aggregates are used in combination with GROUP BY clauses, but the proposal reverses the direction (GROUP BY combines aggregates instead of aggregates combining with GROUP BY)."
+      },
+      "proposal": {
+        "source": "GROUP BY",
+        "type": "COMBINES",
+        "target": "aggregates",
+        "passage_id": "D08_C001_P012"
+      },
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Semantic verifier rejected the proposal; no relation released."
+    },
+    {
+      "passage_id": "D08_C001_P015",
+      "is_synthetic_control": false,
+      "seconds": 40.79,
+      "verification_seconds": 7.22,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage explicitly states that HAVING is used to filter grouped rows, matching the proposal's clause->rows filtering relationship. The direction aligns with the passage's structure, both endpoints are concepts (clause vs. rows), and the condition (filtering) is preserved."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "HAVING",
+          "type": "FILTERS",
+          "target": "grouped rows",
+          "passage_id": "D08_C001_P015",
+          "evidence": {
+            "chunk_id": "D08_C001",
+            "quote": "which gives us one output row per city. Each aggregate result is computed over the table rows matching that city. We can filter these grouped rows using `HAVING`:",
+            "start": 1782,
+            "end": 1944
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D08_C002_P001",
+      "is_synthetic_control": false,
+      "seconds": 37.47,
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Endpoint is not a literal concept surface in this passage: source"
+    },
+    {
+      "passage_id": "D08_C002_P004",
+      "is_synthetic_control": false,
+      "seconds": 24.11,
+      "verification_seconds": 7.29,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage explicitly states that the LIKE operator is explained in Section 9.7, directly supporting the directional relationship from the section to the feature."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "Section 9.7",
+          "type": "SUPPORTS",
+          "target": "LIKE",
+          "passage_id": "D08_C002_P004",
+          "evidence": {
+            "chunk_id": "D08_C002",
+            "quote": "<table border=\"0\" summary=\"Callout list\">\n<tr>\n<td align=\"left\" valign=\"top\" width=\"5%\">\n<p><a href=\"https://www.postgresql.org/docs/18/tutorial-agg.html#co.tutorial-agg-like\">(1)</a></p>\n</td>\n<td align=\"left\" valign=\"top\">\n<p>The <code class=\"literal\">LIKE</code> operator does pattern matching and is explained in <a class=\"xref\" href=\"https://www.postgresql.org/docs/18/functions-matching.html\" title=\"9.7. Pattern Matching\">Section 9.7</a>.</p>\n</td>\n</tr>\n</table>",
+            "start": 411,
+            "end": 881
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D08_C002_P005",
+      "is_synthetic_control": false,
+      "seconds": 17.63,
+      "verification_seconds": 6.9,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage explicitly states that the HAVING clause 'always contains aggregate functions' and acknowledges that while technically allowed to omit them, it's seldom useful. This matches the REQUIRES relationship with preserved conditions and exceptions."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "HAVING clause",
+          "type": "REQUIRES",
+          "target": "aggregate functions",
+          "passage_id": "D08_C002_P005",
+          "evidence": {
+            "chunk_id": "D08_C002",
+            "quote": "It is important to understand the interaction between aggregates and SQL's `WHERE` and `HAVING` clauses. The fundamental difference between `WHERE` and `HAVING` is this: `WHERE` selects input rows before groups and aggregates are computed (thus, it controls which rows go into the aggregate computation), whereas `HAVING` selects group rows after groups and aggregates are computed. Thus, the `WHERE` clause must not contain aggregate functions; it makes no sense to try to use an aggregate to determine which rows will be inputs to the aggregates. On the other hand, the `HAVING` clause always contains aggregate functions. (Strictly speaking, you are allowed to write a `HAVING` clause that doesn't use aggregates, but it's seldom useful. The same condition could be used more efficiently at the `WHERE` stage.)",
+            "start": 883,
+            "end": 1696
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D08_C002_P006",
+      "is_synthetic_control": false,
+      "seconds": 73.45,
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Truncated response."
+    },
+    {
+      "passage_id": "D08_C002_P007",
+      "is_synthetic_control": false,
+      "seconds": 6.94,
+      "verification_seconds": 6.5,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage explicitly states that FILTER is used to select rows into an aggregate computation, matching the 'typically used in' predicate meaning."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "FILTER",
+          "type": "TYPICALLY_USED_IN",
+          "target": "aggregate computation",
+          "passage_id": "D08_C002_P007",
+          "evidence": {
+            "chunk_id": "D08_C002",
+            "quote": "Another way to select the rows that go into an aggregate computation is to use `FILTER`, which is a per-aggregate option:",
+            "start": 1973,
+            "end": 2094
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D08_C002_P010",
+      "is_synthetic_control": false,
+      "seconds": 56.36,
+      "verification_seconds": 9.09,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage explicitly describes FILTER as removing rows from the input of an aggregate function based on a condition (temp_lo below 45), directly supporting the proposal's claim about FILTER's relationship to aggregate functions through conditional row selection."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "FILTER",
+          "type": "FILTERS",
+          "target": "aggregate function",
+          "passage_id": "D08_C002_P010",
+          "evidence": {
+            "chunk_id": "D08_C002",
+            "quote": "`FILTER` is much like `WHERE`, except that it removes rows only from the input of the particular aggregate function that it is attached to. Here, the `count` aggregate counts only rows with `temp_lo` below 45; but the `max` aggregate is still applied to all rows, so it still finds the reading of 46.",
+            "start": 2347,
+            "end": 2647
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "CONTROL_1",
+      "is_synthetic_control": true,
+      "seconds": 8.03,
+      "status": "abstained",
+      "relations": []
+    },
+    {
+      "passage_id": "CONTROL_2",
+      "is_synthetic_control": true,
+      "seconds": 3.84,
+      "status": "abstained",
+      "relations": []
+    }
+  ],
+  "semantic_check_enabled": true,
+  "note": "Selected passages and labeled controls; not exhaustive or independently evaluated. The same model verifies itself; manual review remains required."
+}

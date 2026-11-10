@@ -1,0 +1,155 @@
+{
+  "note": "Revisão posterior de piloto selecionado; não é avaliação independente. Propostas originais intactas.",
+  "decisions": [
+    {
+      "passage_id": "D03_C001_P003",
+      "raw_relation_index": 0,
+      "proposal": {
+        "source": "Constraints",
+        "type": "IS_A",
+        "target": "rule",
+        "passage_id": "D03_C001_P003"
+      },
+      "review_status": "rejected",
+      "review_note": "Validação literal dos endpoints não passou: rule não é a forma rules que consta no texto; não houve reparação automática.",
+      "reviewer": "Codex",
+      "independent_review": false,
+      "raw_response_sha256": "58fd3212af633baa9ab0e2f00cd4103d0d74a2390dd4ee067032f9fe6b6199d7"
+    },
+    {
+      "passage_id": "D03_C001_P003",
+      "raw_relation_index": 1,
+      "proposal": {
+        "source": "Constraints",
+        "type": "SUPPORTS",
+        "target": "semantics",
+        "passage_id": "D03_C001_P003"
+      },
+      "review_status": "rejected",
+      "review_note": "Resultado do grupo rejeitado estruturalmente; SUPPORTS semantics também não representa a regra afirmada pela fonte.",
+      "reviewer": "Codex",
+      "independent_review": false,
+      "raw_response_sha256": "58fd3212af633baa9ab0e2f00cd4103d0d74a2390dd4ee067032f9fe6b6199d7"
+    },
+    {
+      "passage_id": "D03_C001_P008",
+      "raw_relation_index": 0,
+      "proposal": {
+        "source": "entity integrity",
+        "type": "REQUIRES",
+        "target": "primary key",
+        "passage_id": "D03_C001_P008"
+      },
+      "review_status": "accepted",
+      "review_note": "Regra explicitamente enunciada para integridade de entidade no modelo conceitual da fonte; não generaliza restrição física de todo SGBD.",
+      "reviewer": "Codex",
+      "independent_review": false,
+      "raw_response_sha256": "3ca23d2115dd745855022bfb8af579630e97e3c00e7b0216dd2abce8519f2d45"
+    },
+    {
+      "passage_id": "D03_C001_P008",
+      "raw_relation_index": 1,
+      "proposal": {
+        "source": "primary key",
+        "type": "PRESERVES",
+        "target": "entity integrity",
+        "passage_id": "D03_C001_P008"
+      },
+      "review_status": "flagged",
+      "review_note": "PRESERVES não é a relação explicitamente declarada; inverte a formulação e sugere causalidade sem preservar a exigência de ausência de nulos.",
+      "reviewer": "Codex",
+      "independent_review": false,
+      "raw_response_sha256": "3ca23d2115dd745855022bfb8af579630e97e3c00e7b0216dd2abce8519f2d45"
+    },
+    {
+      "passage_id": "D03_C001_P010",
+      "raw_relation_index": 0,
+      "proposal": {
+        "source": "Referential integrity",
+        "type": "REQUIRES",
+        "target": "foreign key",
+        "passage_id": "D03_C001_P010"
+      },
+      "review_status": "flagged",
+      "review_note": "A regra exige validade da referência ou nulo; a existência de FK não é uma exigência incondicional de integridade referencial.",
+      "reviewer": "Codex",
+      "independent_review": false,
+      "raw_response_sha256": "71a814c0c29203cfd3d0616eedde430ea329f0c9378a26518ea4e862de949246"
+    },
+    {
+      "passage_id": "D03_C001_P010",
+      "raw_relation_index": 1,
+      "proposal": {
+        "source": "Referential integrity",
+        "type": "GOVERNS",
+        "target": "correspondence between rows",
+        "passage_id": "D03_C001_P010"
+      },
+      "review_status": "flagged",
+      "review_note": "Correspondence between rows é uma expressão descritiva; granularidade e interpretação de GOVERNS precisam de revisão do esquema.",
+      "reviewer": "Codex",
+      "independent_review": false,
+      "raw_response_sha256": "71a814c0c29203cfd3d0616eedde430ea329f0c9378a26518ea4e862de949246"
+    },
+    {
+      "passage_id": "D03_C001_P014",
+      "raw_relation_index": 0,
+      "proposal": {
+        "source": "orphan record",
+        "type": "IS_A",
+        "target": "record",
+        "passage_id": "D03_C001_P014"
+      },
+      "review_status": "accepted",
+      "review_note": "Definição de orphan record como um registro com referência ausente na entidade correspondente; IS_A é uma leitura definicional direta.",
+      "reviewer": "Codex",
+      "independent_review": false,
+      "raw_response_sha256": "5916867348fc24c0e1379a364a2752ec0cee701504926d10bc1e70f3794af2a0"
+    },
+    {
+      "passage_id": "D03_C001_P014",
+      "raw_relation_index": 1,
+      "proposal": {
+        "source": "referential integrity",
+        "type": "REQUIRES",
+        "target": "enforce",
+        "passage_id": "D03_C001_P014"
+      },
+      "review_status": "flagged",
+      "review_note": "enforce é verbo, não conceito de banco de dados; a tripla não preserva a afirmação do texto.",
+      "reviewer": "Codex",
+      "independent_review": false,
+      "raw_response_sha256": "5916867348fc24c0e1379a364a2752ec0cee701504926d10bc1e70f3794af2a0"
+    },
+    {
+      "passage_id": "D07_C002_P004",
+      "raw_relation_index": 0,
+      "proposal": {
+        "source": "left outer join",
+        "type": "IS_A",
+        "target": "query",
+        "passage_id": "D07_C002_P004"
+      },
+      "review_status": "rejected",
+      "review_note": "Grupo rejeitado por endpoint não literal; tratar uma forma de junção como query também exige distinguir operação e instância de consulta.",
+      "reviewer": "Codex",
+      "independent_review": false,
+      "raw_response_sha256": "e47268cb12b23968f0ce7e19fc6a34eec7497a98c486f401ca2647154179edd9"
+    },
+    {
+      "passage_id": "D07_C002_P004",
+      "raw_relation_index": 1,
+      "proposal": {
+        "source": "left outer join",
+        "type": "GOVERNS",
+        "target": "table on the left of the join operator",
+        "passage_id": "D07_C002_P004"
+      },
+      "review_status": "rejected",
+      "review_note": "Endpoint não é substring literal da passagem; não foi reescrito para tentar passar na validação.",
+      "reviewer": "Codex",
+      "independent_review": false,
+      "raw_response_sha256": "e47268cb12b23968f0ce7e19fc6a34eec7497a98c486f401ca2647154179edd9"
+    }
+  ]
+}

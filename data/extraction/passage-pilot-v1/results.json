@@ -1,0 +1,122 @@
+{
+  "method": "local_passage_precision_pilot",
+  "model": "qwen3:8b",
+  "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+  "created_at": "2026-11-08T21:24:59.962887+00:00",
+  "runs": [
+    {
+      "passage_id": "D03_C001_P003",
+      "seconds": 29.44,
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Endpoint is not a literal concept surface in this passage: target"
+    },
+    {
+      "passage_id": "D03_C001_P008",
+      "seconds": 1.88,
+      "status": "structurally_valid_pending_review",
+      "relations": [
+        {
+          "source": "entity integrity",
+          "type": "REQUIRES",
+          "target": "primary key",
+          "passage_id": "D03_C001_P008",
+          "evidence": {
+            "chunk_id": "D03_C001",
+            "quote": "To ensure <em>entity integrity</em>, it is required that every table have a primary key. Neither the PK nor any part of it can contain null values. This is because null values for the primary key mean we cannot identify some rows. For example, in the EMPLOYEE table, Phone cannot be a primary key since some people may not have a telephone.",
+            "start": 1106,
+            "end": 1446
+          },
+          "review_status": "pending"
+        },
+        {
+          "source": "primary key",
+          "type": "PRESERVES",
+          "target": "entity integrity",
+          "passage_id": "D03_C001_P008",
+          "evidence": {
+            "chunk_id": "D03_C001",
+            "quote": "To ensure <em>entity integrity</em>, it is required that every table have a primary key. Neither the PK nor any part of it can contain null values. This is because null values for the primary key mean we cannot identify some rows. For example, in the EMPLOYEE table, Phone cannot be a primary key since some people may not have a telephone.",
+            "start": 1106,
+            "end": 1446
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D03_C001_P010",
+      "seconds": 1.94,
+      "status": "structurally_valid_pending_review",
+      "relations": [
+        {
+          "source": "Referential integrity",
+          "type": "REQUIRES",
+          "target": "foreign key",
+          "passage_id": "D03_C001_P010",
+          "evidence": {
+            "chunk_id": "D03_C001",
+            "quote": "<em>Referential integrity</em> requires that a foreign key must have a matching primary key or it must be null. This constraint is specified between two tables (parent and child); it maintains the correspondence between rows in these tables. It means the reference from a row in one table to another table must be valid.",
+            "start": 1475,
+            "end": 1795
+          },
+          "review_status": "pending"
+        },
+        {
+          "source": "Referential integrity",
+          "type": "GOVERNS",
+          "target": "correspondence between rows",
+          "passage_id": "D03_C001_P010",
+          "evidence": {
+            "chunk_id": "D03_C001",
+            "quote": "<em>Referential integrity</em> requires that a foreign key must have a matching primary key or it must be null. This constraint is specified between two tables (parent and child); it maintains the correspondence between rows in these tables. It means the reference from a row in one table to another table must be valid.",
+            "start": 1475,
+            "end": 1795
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D03_C001_P014",
+      "seconds": 1.84,
+      "status": "structurally_valid_pending_review",
+      "relations": [
+        {
+          "source": "orphan record",
+          "type": "IS_A",
+          "target": "record",
+          "passage_id": "D03_C001_P014",
+          "evidence": {
+            "chunk_id": "D03_C001",
+            "quote": "To ensure that there are no orphan records, we need to enforce referential integrity. An <em>orphan record</em> is one whose foreign key FK value is not found in the corresponding entity – the entity where the PK is located. Recall that a typical join is between a PK and FK.",
+            "start": 1991,
+            "end": 2266
+          },
+          "review_status": "pending"
+        },
+        {
+          "source": "referential integrity",
+          "type": "REQUIRES",
+          "target": "enforce",
+          "passage_id": "D03_C001_P014",
+          "evidence": {
+            "chunk_id": "D03_C001",
+            "quote": "To ensure that there are no orphan records, we need to enforce referential integrity. An <em>orphan record</em> is one whose foreign key FK value is not found in the corresponding entity – the entity where the PK is located. Recall that a typical join is between a PK and FK.",
+            "start": 1991,
+            "end": 2266
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D07_C002_P004",
+      "seconds": 1.99,
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Endpoint is not a literal concept surface in this passage: target"
+    }
+  ],
+  "note": "Selected passages; not exhaustive or independently evaluated. Semantic review remains required."
+}

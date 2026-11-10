@@ -1,0 +1,14 @@
+{
+  "inputs": [
+    {
+      "path": "data\\extraction\\rule-concepts-union-v2\\extraction.json",
+      "sha256": "9f1c366406bbd07d94e2b8f720a21f4d0c1a2fd5679ee027d89811cf23536fb1"
+    },
+    {
+      "path": "data\\extraction\\aggregate-memberships-v1\\extraction.json",
+      "sha256": "14708fbab090fb699cab6a471286798d18bccbb82bb462aff23fce21a3b90e3d"
+    }
+  ],
+  "output_sha256": "be6499c2f475c54524fdd208276adf09aaac12aa90281104ec43a9fdec9e0392",
+  "note": "Only previously reviewed model-derived outputs combined; manual sample not copied. First description retained when a concept appears twice; original descriptions remain in source files."
+}

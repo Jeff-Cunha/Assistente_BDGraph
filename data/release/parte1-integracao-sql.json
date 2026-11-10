@@ -1,0 +1,20 @@
+{
+  "release": "parte1-integracao-sql",
+  "primary_files": [
+    {
+      "path": "data/extraction/rule-knowledge-union-v1/extraction.json",
+      "sha256": "be6499c2f475c54524fdd208276adf09aaac12aa90281104ec43a9fdec9e0392"
+    },
+    {
+      "path": "data/extraction/model-knowledge-union-v2/extraction.json",
+      "sha256": "a0918dee7ff202f7eccaa3529df6f6dfea8bcc3f632f69745a455a2cfff337f2"
+    }
+  ],
+  "documents": 9,
+  "chunks": 59,
+  "unique_concepts": 88,
+  "unique_semantic_triples": 16,
+  "independent_human_review": false,
+  "optional_manual_sample": "data/extraction/sample.json",
+  "note": "Historical candidates and controls are not accepted facts. Preserve method provenance and merge shared IDs/evidence."
+}

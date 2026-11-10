@@ -12,3 +12,6 @@ work/
 data/extraction/pilot-results*/
 *.exe
 *.msi
+
+# Respostas brutas estão preservadas no ZIP de auditoria.
+*.raw.json

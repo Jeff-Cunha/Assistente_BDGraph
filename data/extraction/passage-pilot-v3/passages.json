@@ -1,0 +1,67 @@
+[
+  {
+    "passage_id": "D03_C001_P003",
+    "chunk_id": "D03_C001",
+    "start": 77,
+    "end": 442,
+    "text": "Constraints are a very important feature in a relational model. In fact, the relational model supports the well-defined theory of constraints on attributes or tables. Constraints are useful because they allow a designer to specify the semantics of data in the database. <em>Constraints</em> are the rules that force DBMSs to check that data satisfies the semantics."
+  },
+  {
+    "passage_id": "D03_C001_P008",
+    "chunk_id": "D03_C001",
+    "start": 1106,
+    "end": 1446,
+    "text": "To ensure <em>entity integrity</em>, it is required that every table have a primary key. Neither the PK nor any part of it can contain null values. This is because null values for the primary key mean we cannot identify some rows. For example, in the EMPLOYEE table, Phone cannot be a primary key since some people may not have a telephone."
+  },
+  {
+    "passage_id": "D03_C001_P010",
+    "chunk_id": "D03_C001",
+    "start": 1475,
+    "end": 1795,
+    "text": "<em>Referential integrity</em> requires that a foreign key must have a matching primary key or it must be null. This constraint is specified between two tables (parent and child); it maintains the correspondence between rows in these tables. It means the reference from a row in one table to another table must be valid."
+  },
+  {
+    "passage_id": "D03_C001_P014",
+    "chunk_id": "D03_C001",
+    "start": 1991,
+    "end": 2266,
+    "text": "To ensure that there are no orphan records, we need to enforce referential integrity. An <em>orphan record</em> is one whose foreign key FK value is not found in the corresponding entity – the entity where the PK is located. Recall that a typical join is between a PK and FK."
+  },
+  {
+    "passage_id": "D07_C002_P004",
+    "chunk_id": "D07_C002",
+    "start": 950,
+    "end": 1356,
+    "text": "This query is called a <em>left outer join</em> because the table mentioned on the left of the join operator will have each of its rows in the output at least once, whereas the table on the right will only have those rows output that match some row of the left table. When outputting a left-table row for which there is no right-table match, empty (null) values are substituted for the right-table columns."
+  },
+  {
+    "passage_id": "D07_C001_P002",
+    "chunk_id": "D07_C001",
+    "start": 30,
+    "end": 928,
+    "text": "Thus far, our queries have only accessed one table at a time. Queries can access multiple tables at once, or access the same table in such a way that multiple rows of the table are being processed at the same time. Queries that access multiple tables (or multiple instances of the same table) at one time are called <em>join</em> queries. They combine rows from one table with rows from a second table, with an expression specifying which rows are to be paired. For example, to return all the weather records together with the location of the associated city, the database needs to compare the `city` column of each row of the `weather` table with the `name` column of all rows in the `cities` table, and select the pairs of rows where these values match.[<sup>\\[4\\]</sup>](https://www.postgresql.org/docs/18/tutorial-join.html#ftn.id-1.4.4.7.3.6) This would be accomplished by the following query:"
+  },
+  {
+    "passage_id": "D07_C002_P006",
+    "chunk_id": "D07_C002",
+    "start": 1473,
+    "end": 1862,
+    "text": "We can also join a table against itself. This is called a <em>self join</em>. As an example, suppose we wish to find all the weather records that are in the temperature range of other weather records. So we need to compare the `temp_lo` and `temp_hi` columns of each `weather` row to the `temp_lo` and `temp_hi` columns of all other `weather` rows. We can do this with the following query:"
+  },
+  {
+    "passage_id": "CONTROL_1",
+    "chunk_id": "CONTROL_1",
+    "start": 0,
+    "end": 116,
+    "text": "This passage only describes the layout of a textbook page. It contains a heading, a page number, and a blank margin.",
+    "is_synthetic_control": true
+  },
+  {
+    "passage_id": "CONTROL_2",
+    "chunk_id": "CONTROL_2",
+    "start": 0,
+    "end": 136,
+    "text": "The terms primary key and foreign key appear together in this vocabulary list. No relationship or rule connecting them is asserted here.",
+    "is_synthetic_control": true
+  }
+]

@@ -1,6 +1,12 @@
+> Atualização de 09/11/2026: este texto registra uma etapa anterior. A referência atual de integração é data/release/current.json: 93 conceitos únicos, 16 relações e três arquivos principais. Consulte docs/revisao-fontes-2026-11-09.md para os resumos corrigidos e pendências resolvidas. As descrições antigas abaixo não substituem a revisão atual.
+
 # Contrato de extração e integração
 
 Versão: 0.1.0. Estado: referência revisada para a entrega inicial à parte 2; alterações posteriores devem ser combinadas entre as partes.
+
+Extensão 0.1.1: a estrutura de nós, evidências e relações permanece igual; o esquema atualizado também aceita `extraction_method=rule_candidates` para extração por regras de glossário, exigindo versão 0.1.1 nesse caso. A versão 0.1.0 e suas amostras permanecem válidas. Usar o esquema atualizado ao validar as novas saídas; não identificar extração por regras como saída de LLM. Consulte docs/revisao-glossarios.md.
+
+Extensão 0.1.2: acrescenta os tipos SQL RETRIEVES, FILTERS, GROUPS, AGGREGATES, EVALUATED_BEFORE e REMOVES_DUPLICATES. Arquivos que utilizem esses tipos precisam informar 0.1.2. As versões e os tipos anteriores continuam válidos, e o formato das propriedades não mudou. A origem rule_candidates pode usar 0.1.1 ou 0.1.2. Consulte docs/cobertura-sql.md para sentidos e limites.
 
 Este contrato define a saída da parte 1 e a entrada da ingestão da parte 2. A amostra em `data/extraction/sample.json` foi construída manualmente para validar formato e rastreabilidade; não constitui uma extração automática nem uma avaliação independente.
 

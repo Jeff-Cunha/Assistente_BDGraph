@@ -1,0 +1,14 @@
+{
+  "script_sha256": "ef560d010c3ce3204224285e7f0d7c606c0631fca7a80e1fbc9acad0966a378c",
+  "instruction_sha256": "902211835308d808406ee8daba8316910037ef265c974b71715232c6434b20d0",
+  "model": "qwen3:8b",
+  "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+  "num_ctx": 8192,
+  "num_predict": 4096,
+  "temperature": 0,
+  "seed": 42,
+  "think": true,
+  "semantic_check": true,
+  "negative_controls": true,
+  "reviewer_is_same_model": true
+}

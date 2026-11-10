@@ -1,0 +1,104 @@
+{
+  "purpose": "display_only_not_extraction_evidence",
+  "documents": [
+    {
+      "document_id": "D01",
+      "source": "corpus/processed/D01.md",
+      "source_sha256": "335b26d2f70ae4f69d668b14cc3d41e9f0f53bf2ed3689d45997b26d16fe2c49",
+      "reading_copy": "corpus/reading/D01.md",
+      "reading_sha256": "63ece4b6e5b0c6126efd4f7ee3b178e47a98e006d41aaa93120211bd2315e31a",
+      "markdown_table": 0,
+      "callout": 0,
+      "retained_unsupported_table": 0,
+      "retained_table_without_header": 0
+    },
+    {
+      "document_id": "D02",
+      "source": "corpus/processed/D02.md",
+      "source_sha256": "563d9422d328ef4caf754095e28a44ec495120c3d49c7cbb8703da158f9a43d0",
+      "reading_copy": "corpus/reading/D02.md",
+      "reading_sha256": "83f496092ce585a146d232fc1b153cbad71c48bcc5bf603a47da31fc4586e6c1",
+      "markdown_table": 0,
+      "callout": 0,
+      "retained_unsupported_table": 0,
+      "retained_table_without_header": 0
+    },
+    {
+      "document_id": "D03",
+      "source": "corpus/processed/D03.md",
+      "source_sha256": "5694f5a9b8a29a5b73fd1b16991a91e08e3ae0583844091097d721aa471944ce",
+      "reading_copy": "corpus/reading/D03.md",
+      "reading_sha256": "5a1990032a55c53d7456d9e08616524c9cb1417336ebda7a34b4dabce250f467",
+      "markdown_table": 0,
+      "callout": 0,
+      "retained_unsupported_table": 0,
+      "retained_table_without_header": 0
+    },
+    {
+      "document_id": "D04",
+      "source": "corpus/processed/D04.md",
+      "source_sha256": "9be2f5f403f7aa6ce556da658bc594eb786d88ecdbcbe15a4742b8371f63fa95",
+      "reading_copy": "corpus/reading/D04.md",
+      "reading_sha256": "a29a0d8ca473b56f75cf2614a98bf985988d5907b82ef075467d1af8fba5a823",
+      "markdown_table": 0,
+      "callout": 0,
+      "retained_unsupported_table": 0,
+      "retained_table_without_header": 0
+    },
+    {
+      "document_id": "D05",
+      "source": "corpus/processed/D05.md",
+      "source_sha256": "1f76059ca92843c17799202b4f1a7d6b5e8969a0e92635599f9b9e7c6f1a558a",
+      "reading_copy": "corpus/reading/D05.md",
+      "reading_sha256": "8747a6d1e5e91014eef8fc6d78de6017190df89e802988254d040525b025d633",
+      "markdown_table": 6,
+      "callout": 0,
+      "retained_unsupported_table": 0,
+      "retained_table_without_header": 0
+    },
+    {
+      "document_id": "D06",
+      "source": "corpus/processed/D06.md",
+      "source_sha256": "685c68576f98e2ea8c1c0497addc69f5ca5f467c2e1d1aad37ee510c54a2276a",
+      "reading_copy": "corpus/reading/D06.md",
+      "reading_sha256": "7a62a0bfc272d20314c187eae4b1c2cb61c847dc892194ad2012ddeb3419e79b",
+      "markdown_table": 0,
+      "callout": 0,
+      "retained_unsupported_table": 0,
+      "retained_table_without_header": 0
+    },
+    {
+      "document_id": "D07",
+      "source": "corpus/processed/D07.md",
+      "source_sha256": "d056c331e3f75a2cdf7778ae2f1daa86550355fc9e36a13b0e249b8ee5de9d1f",
+      "reading_copy": "corpus/reading/D07.md",
+      "reading_sha256": "a0bd26b882e23f5b6ff464950b1fe3f5d86df017be461cf03ca17a94750c8a8d",
+      "markdown_table": 0,
+      "callout": 0,
+      "retained_unsupported_table": 0,
+      "retained_table_without_header": 0
+    },
+    {
+      "document_id": "D08",
+      "source": "corpus/processed/D08.md",
+      "source_sha256": "6d549ae1ba69a7f58da71fb44c47041799990e06773c30abe0727636f7be0209",
+      "reading_copy": "corpus/reading/D08.md",
+      "reading_sha256": "011c1871d69cdd82a06cd7d3142bfc8ce97953b4350545ff675728fa11f507e8",
+      "markdown_table": 0,
+      "callout": 1,
+      "retained_unsupported_table": 0,
+      "retained_table_without_header": 0
+    },
+    {
+      "document_id": "D09",
+      "source": "corpus/processed/D09.md",
+      "source_sha256": "8ce5bdb006958304d367178047f7245d8117cf7c4906707875874844738b417b",
+      "reading_copy": "corpus/reading/D09.md",
+      "reading_sha256": "63507bb5610b382bd0e0ff514544199304235cf832435d869b9fc4a113bec6df",
+      "markdown_table": 0,
+      "callout": 0,
+      "retained_unsupported_table": 0,
+      "retained_table_without_header": 0
+    }
+  ]
+}

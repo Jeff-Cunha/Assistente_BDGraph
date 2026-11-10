@@ -1,0 +1,84 @@
+{
+  "approval_id": "user-approval-source-check-v1",
+  "date": "2026-11-09",
+  "timezone": "America/Fortaleza",
+  "reviewer": "user",
+  "statement": "Conferi e concordei com as modificações. Agora, passemos para a parte que faltou",
+  "status": "approved_modifications",
+  "applies_to_release": "parte1-revisao-fontes-v1",
+  "scope": {
+    "updated_concept_ids": [
+      "C_and",
+      "C_attribute",
+      "C_business_rule",
+      "C_composite_key",
+      "C_data",
+      "C_database_administrator",
+      "C_database_system",
+      "C_entity_integrity",
+      "C_foreign_key",
+      "C_functional_dependency",
+      "C_grouped_row",
+      "C_having",
+      "C_identifying_relationship",
+      "C_inner_join",
+      "C_integrity_constraint",
+      "C_left_outer_join",
+      "C_non_identifying_relationship",
+      "C_non_normalized_table",
+      "C_normalization",
+      "C_primary_key",
+      "C_relation",
+      "C_relational_model",
+      "C_simple_attribute",
+      "C_structured_query_language",
+      "C_table",
+      "C_third_normal_form"
+    ],
+    "new_concept_ids": [
+      "C_n_ary_relationship",
+      "C_ternary_relationship",
+      "C_fd_decomposition",
+      "C_fd_union",
+      "C_second_normal_form"
+    ],
+    "source_review": {
+      "path": "data/review/source-check-v1/review.json",
+      "sha256": "9bce04a08770331398ce6fd6eaf7d44d4e01b6d2d4040f59d98f09456e891643"
+    },
+    "primary_files": [
+      {
+        "path": "data/extraction/rule-knowledge-union-v2/extraction.json",
+        "sha256": "c29e07486d488f23228beeecf278a11e7f75ecd18071ef781e63347bb21f9baf",
+        "extraction_method": "rule_candidates",
+        "concepts": 79,
+        "relations": 5
+      },
+      {
+        "path": "data/extraction/model-knowledge-union-v3/extraction.json",
+        "sha256": "d0630f99626b5e59633df4c76deca94b3db829c65fe119ad67efd214f85f8901",
+        "extraction_method": "llm_candidates",
+        "concepts": 20,
+        "relations": 11
+      },
+      {
+        "path": "data/extraction/manual-source-review-v1/extraction.json",
+        "sha256": "2f46c6af47715f7449d9b839c707b5a10818450c45ac6bdabc95cb8a5740318a",
+        "extraction_method": "manual_reference",
+        "concepts": 5,
+        "relations": 0
+      }
+    ],
+    "reading_manifest": {
+      "path": "corpus/reading/manifest.json",
+      "sha256": "6a7ad69f8a2c836bfb5a5bc942d68f045e6347518548deb1a7f4d77a96d2a227"
+    }
+  },
+  "independent_human_review_of_entire_graph": false,
+  "excludes": [
+    "Blanket approval of all pre-existing 16 semantic relations and every unchanged concept",
+    "New P01/P03/P08 contextual decisions created after this approval",
+    "Independent evaluation of the final question-answering system"
+  ],
+  "note": "Approval explicitly supplied by the user for the modifications in the previous delivery, not inferred from an AI-generated review. Historical review documents remain unchanged as records of their date."
+}

@@ -1,0 +1,25 @@
+{
+  "provider": "ollama_local",
+  "base_url": "http://127.0.0.1:11434",
+  "server_version": "0.40.15",
+  "model": "qwen3:8b",
+  "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+  "started_at": "2026-11-08T21:00:04.695508+00:00",
+  "input_sha256": "709b99ebdc28c43f50db46c7a1c5a8e9474e4f1f518f21c02595ee6b52624075",
+  "settings": {
+    "num_ctx": 16384,
+    "num_predict": 4096,
+    "temperature": 0,
+    "seed": 42,
+    "think": false
+  },
+  "runs": [
+    {
+      "request_id": "extract_D03_C001",
+      "status": "failed_validation_or_transport",
+      "duration_seconds": 38.874,
+      "error_type": "ValueError",
+      "validation_note": "Evidence is not a literal quote in the input chunk."
+    }
+  ]
+}

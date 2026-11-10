@@ -1,0 +1,14 @@
+{
+  "inputs": [
+    {
+      "path": "data\\extraction\\d03-d07-batch-v1\\extraction-reviewed.json",
+      "sha256": "d8f0d1739d01bc8de5729224b7491a4f15d652e0378ce8b84d4cd54ec7bff6bb"
+    },
+    {
+      "path": "data\\extraction\\passage-reasoning-v1\\extraction-reviewed.json",
+      "sha256": "285921f731ba9098bd7a5b1180b9fe57ea70e0b430552e5b93bb345bf1efc1e9"
+    }
+  ],
+  "output_sha256": "954e0c4235d867a11ab4acb025913f190d19a56deb5217005a995b1c83e7159a",
+  "note": "Only previously reviewed model-derived outputs combined; manual sample not copied. First description retained when a concept appears twice; original descriptions remain in source files."
+}

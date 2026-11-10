@@ -1,0 +1,28 @@
+{
+  "format_version": "0.1.0",
+  "stage": "prepared_not_executed",
+  "documents": [
+    "D03",
+    "D07"
+  ],
+  "include_figures": false,
+  "seeded_registry": false,
+  "request_count": 8,
+  "input_chunk_ids": [
+    "D03_C001",
+    "D03_C002",
+    "D03_C003",
+    "D03_C004",
+    "D03_C005",
+    "D03_C006",
+    "D07_C001",
+    "D07_C002"
+  ],
+  "prompt_sha256": "0dbd6fd740598e8a4564c736c199c6c0339014f875509d6bc4b7c6f5185ac9a1",
+  "schema_sha256": "f6031a2fb058309ab68429b50848398d5f18c99975579e05acd34760448bcbb8",
+  "requests_sha256": "709b99ebdc28c43f50db46c7a1c5a8e9474e4f1f518f21c02595ee6b52624075",
+  "notes": [
+    "Known vocabulary seeded from a manual sample; not an independent evaluation.",
+    "No API call, generated extraction, credentials or cost incurred by this script."
+  ]
+}

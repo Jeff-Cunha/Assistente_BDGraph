@@ -1,0 +1,408 @@
+{
+  "reviewer": "Codex",
+  "independent_review": false,
+  "occurrences_sha256": "d843981ded1da4f8b7aded8b575bf0509713ef27a82f49a9a5e933847c1d975d",
+  "concepts": {
+    "C_and": {
+      "canonical_name": "AND",
+      "name_pt": "operador AND",
+      "category": "operation",
+      "description_pt": "Operador booleano permitido nas condições de seleção da fonte.",
+      "aliases": []
+    },
+    "C_as": {
+      "canonical_name": "AS",
+      "name_pt": "cláusula AS",
+      "category": "operation",
+      "description_pt": "Palavra usada para atribuir outro nome a uma coluna de saída nos exemplos.",
+      "aliases": []
+    },
+    "C_avg": {
+      "canonical_name": "avg",
+      "name_pt": "função AVG",
+      "category": "operation",
+      "description_pt": "Função de média citada pela fonte entre as funções agregadoras.",
+      "aliases": []
+    },
+    "C_count": {
+      "canonical_name": "count",
+      "name_pt": "função COUNT",
+      "category": "operation",
+      "description_pt": "Função agregadora de contagem apresentada nos exemplos com count(*).",
+      "aliases": []
+    },
+    "C_distinct": {
+      "canonical_name": "DISTINCT",
+      "name_pt": "modificador DISTINCT",
+      "category": "operation",
+      "description_pt": "Modificador usado para remover linhas duplicadas do resultado, sem garantir ordenação por si só.",
+      "aliases": []
+    },
+    "C_filter": {
+      "canonical_name": "FILTER",
+      "name_pt": "opção FILTER",
+      "category": "operation",
+      "description_pt": "Opção que seleciona entradas de uma função agregadora específica, sem filtrar necessariamente as demais.",
+      "aliases": []
+    },
+    "C_from": {
+      "canonical_name": "FROM",
+      "name_pt": "cláusula FROM",
+      "category": "operation",
+      "description_pt": "Cláusula que indica as fontes de dados nos exemplos de consulta.",
+      "aliases": []
+    },
+    "C_group_by": {
+      "canonical_name": "GROUP BY",
+      "name_pt": "cláusula GROUP BY",
+      "category": "operation",
+      "description_pt": "Cláusula usada nos exemplos para formar grupos sobre os quais agregações são calculadas.",
+      "aliases": []
+    },
+    "C_having": {
+      "canonical_name": "HAVING",
+      "name_pt": "cláusula HAVING",
+      "category": "operation",
+      "description_pt": "Cláusula que filtra linhas de grupos após o agrupamento e a agregação; não exige sempre uma função agregadora.",
+      "aliases": []
+    },
+    "C_inner_join": {
+      "canonical_name": "inner join",
+      "name_pt": "junção interna",
+      "category": "operation",
+      "description_pt": "Forma de junção identificada na comparação com as junções externas da fonte.",
+      "aliases": [
+        "inner joins"
+      ]
+    },
+    "C_join": {
+      "canonical_name": "join",
+      "name_pt": "junção",
+      "category": "operation",
+      "description_pt": "Operação que combina linhas de tabelas conforme uma expressão.",
+      "aliases": []
+    },
+    "C_left_outer_join": {
+      "canonical_name": "left outer join",
+      "name_pt": "junção externa à esquerda",
+      "category": "operation",
+      "description_pt": "Junção que preserva as linhas da tabela à esquerda, conforme a descrição da fonte.",
+      "aliases": [
+        "LEFT OUTER JOIN"
+      ]
+    },
+    "C_like": {
+      "canonical_name": "LIKE",
+      "name_pt": "operador LIKE",
+      "category": "operation",
+      "description_pt": "Operador de correspondência de padrões citado na explicação dos exemplos.",
+      "aliases": []
+    },
+    "C_max": {
+      "canonical_name": "max",
+      "name_pt": "função MAX",
+      "category": "operation",
+      "description_pt": "Função que calcula um máximo nos exemplos de agregação.",
+      "aliases": []
+    },
+    "C_min": {
+      "canonical_name": "min",
+      "name_pt": "função MIN",
+      "category": "operation",
+      "description_pt": "Função de mínimo citada pela fonte entre as funções agregadoras.",
+      "aliases": []
+    },
+    "C_not": {
+      "canonical_name": "NOT",
+      "name_pt": "operador NOT",
+      "category": "operation",
+      "description_pt": "Operador booleano permitido nas condições de seleção da fonte.",
+      "aliases": []
+    },
+    "C_or": {
+      "canonical_name": "OR",
+      "name_pt": "operador OR",
+      "category": "operation",
+      "description_pt": "Operador booleano permitido nas condições de seleção da fonte.",
+      "aliases": []
+    },
+    "C_order_by": {
+      "canonical_name": "ORDER BY",
+      "name_pt": "cláusula ORDER BY",
+      "category": "operation",
+      "description_pt": "Cláusula usada para ordenar os resultados nos exemplos.",
+      "aliases": []
+    },
+    "C_outer_join": {
+      "canonical_name": "outer join",
+      "name_pt": "junção externa",
+      "category": "operation",
+      "description_pt": "Forma de junção que representa ausência de correspondência com valores nulos, conforme os exemplos.",
+      "aliases": []
+    },
+    "C_select": {
+      "canonical_name": "SELECT",
+      "name_pt": "consulta SELECT",
+      "category": "operation",
+      "description_pt": "Consulta usada para recuperar dados de tabelas.",
+      "aliases": []
+    },
+    "C_sum": {
+      "canonical_name": "sum",
+      "name_pt": "função SUM",
+      "category": "operation",
+      "description_pt": "Função de soma citada pela fonte entre as funções agregadoras.",
+      "aliases": []
+    },
+    "C_where": {
+      "canonical_name": "WHERE",
+      "name_pt": "cláusula WHERE",
+      "category": "operation",
+      "description_pt": "Cláusula que seleciona linhas por uma condição; a fonte explica sua aplicação antes da agregação.",
+      "aliases": []
+    }
+  },
+  "review_note": "Source SQL-vocabulary occurrences extracted by rules; naming and summaries reviewed by Codex. No independent human review or SQL execution. Occurrence does not certify that an example query is valid.",
+  "decisions": [
+    {
+      "candidate_id": "D06_C001:C_select",
+      "concept_id": "C_select",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D06_C001:C_from",
+      "concept_id": "C_from",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D06_C001:C_where",
+      "concept_id": "C_where",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D06_C001:C_order_by",
+      "concept_id": "C_order_by",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D06_C001:C_distinct",
+      "concept_id": "C_distinct",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D06_C001:C_as",
+      "concept_id": "C_as",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D06_C001:C_and",
+      "concept_id": "C_and",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D06_C001:C_or",
+      "concept_id": "C_or",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D06_C001:C_not",
+      "concept_id": "C_not",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D07_C001:C_select",
+      "concept_id": "C_select",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D07_C001:C_from",
+      "concept_id": "C_from",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D07_C001:C_where",
+      "concept_id": "C_where",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D07_C001:C_join",
+      "concept_id": "C_join",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D07_C002:C_select",
+      "concept_id": "C_select",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D07_C002:C_from",
+      "concept_id": "C_from",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D07_C002:C_as",
+      "concept_id": "C_as",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D07_C002:C_and",
+      "concept_id": "C_and",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D07_C002:C_join",
+      "concept_id": "C_join",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D07_C002:C_inner_join",
+      "concept_id": "C_inner_join",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D07_C002:C_outer_join",
+      "concept_id": "C_outer_join",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D07_C002:C_left_outer_join",
+      "concept_id": "C_left_outer_join",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D08_C001:C_select",
+      "concept_id": "C_select",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D08_C001:C_from",
+      "concept_id": "C_from",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D08_C001:C_where",
+      "concept_id": "C_where",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D08_C001:C_group_by",
+      "concept_id": "C_group_by",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D08_C001:C_having",
+      "concept_id": "C_having",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D08_C001:C_count",
+      "concept_id": "C_count",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D08_C001:C_sum",
+      "concept_id": "C_sum",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D08_C001:C_avg",
+      "concept_id": "C_avg",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D08_C001:C_max",
+      "concept_id": "C_max",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D08_C001:C_min",
+      "concept_id": "C_min",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D08_C002:C_select",
+      "concept_id": "C_select",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D08_C002:C_from",
+      "concept_id": "C_from",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D08_C002:C_where",
+      "concept_id": "C_where",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D08_C002:C_group_by",
+      "concept_id": "C_group_by",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D08_C002:C_having",
+      "concept_id": "C_having",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D08_C002:C_count",
+      "concept_id": "C_count",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D08_C002:C_max",
+      "concept_id": "C_max",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D08_C002:C_filter",
+      "concept_id": "C_filter",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    },
+    {
+      "candidate_id": "D08_C002:C_like",
+      "concept_id": "C_like",
+      "decision": "accept",
+      "note": "Ocorrência e vocabulário conferidos no contexto das páginas; preservar a citação e não tratar exemplos negativos como consultas válidas."
+    }
+  ]
+}

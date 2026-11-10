@@ -1,0 +1,543 @@
+[
+  {
+    "passage_id": "D03_C001_P003",
+    "chunk_id": "D03_C001",
+    "start": 77,
+    "end": 442,
+    "text": "Constraints are a very important feature in a relational model. In fact, the relational model supports the well-defined theory of constraints on attributes or tables. Constraints are useful because they allow a designer to specify the semantics of data in the database. <em>Constraints</em> are the rules that force DBMSs to check that data satisfies the semantics."
+  },
+  {
+    "passage_id": "D03_C001_P005",
+    "chunk_id": "D03_C001",
+    "start": 465,
+    "end": 1014,
+    "text": "Domain restricts the values of attributes in the relation and is a constraint of the relational model. However, there are real-world semantics for data that cannot be specified if used only with domain constraints. We need more specific ways to state what data values are or are not allowed and which format is suitable for an attribute. For example, the Employee ID (EID) must be unique or the employee Birthdate is in the range \\[Jan 1, 1950, Jan 1, 2000\\]. Such information is provided in logical statements called <em>integrity constraints</em>."
+  },
+  {
+    "passage_id": "D03_C001_P008",
+    "chunk_id": "D03_C001",
+    "start": 1106,
+    "end": 1446,
+    "text": "To ensure <em>entity integrity</em>, it is required that every table have a primary key. Neither the PK nor any part of it can contain null values. This is because null values for the primary key mean we cannot identify some rows. For example, in the EMPLOYEE table, Phone cannot be a primary key since some people may not have a telephone."
+  },
+  {
+    "passage_id": "D03_C001_P010",
+    "chunk_id": "D03_C001",
+    "start": 1475,
+    "end": 1795,
+    "text": "<em>Referential integrity</em> requires that a foreign key must have a matching primary key or it must be null. This constraint is specified between two tables (parent and child); it maintains the correspondence between rows in these tables. It means the reference from a row in one table to another table must be valid."
+  },
+  {
+    "passage_id": "D03_C001_P014",
+    "chunk_id": "D03_C001",
+    "start": 1991,
+    "end": 2266,
+    "text": "To ensure that there are no orphan records, we need to enforce referential integrity. An <em>orphan record</em> is one whose foreign key FK value is not found in the corresponding entity – the entity where the PK is located. Recall that a typical join is between a PK and FK."
+  },
+  {
+    "passage_id": "D03_C001_P015",
+    "chunk_id": "D03_C001",
+    "start": 2268,
+    "end": 2569,
+    "text": "The referential integrity constraint states that the customer ID (CustID) in the Order table must match a valid CustID in the Customer table. Most relational databases have declarative referential integrity. In other words, when the tables are created the referential integrity constraints are set up."
+  },
+  {
+    "passage_id": "D03_C001_P019",
+    "chunk_id": "D03_C001",
+    "start": 2740,
+    "end": 3006,
+    "text": "The referential integrity constraint states that CrsCode in the Class table must match a valid CrsCode in the Course table. In this situation, it’s not enough that the CrsCode and Section in the Class table make up the PK, we must also enforce referential integrity."
+  },
+  {
+    "passage_id": "D03_C001_P020",
+    "chunk_id": "D03_C001",
+    "start": 3008,
+    "end": 3448,
+    "text": "When setting up referential integrity it is important that the PK and FK have the same data types and come from the same domain, otherwise the relational database management system (RDBMS) will not allow the join. RDBMS is a popular database system that is based on the relational model introduced by E. F. Codd of IBM’s San Jose Research Laboratory. Relational database systems are easier to use and understand than other database systems."
+  },
+  {
+    "passage_id": "D03_C002_P002",
+    "chunk_id": "D03_C002",
+    "start": 47,
+    "end": 271,
+    "text": "In Microsoft (MS) Access, referential integrity is set up by joining the PK in the Customer table to the CustID in the Order table. See Figure 9.1 for a view of how this is done on the Edit Relationships screen in MS Access."
+  },
+  {
+    "passage_id": "D03_C002_P006",
+    "chunk_id": "D03_C002",
+    "start": 605,
+    "end": 813,
+    "text": "When using Transact-SQL, the referential integrity is set when creating the Order table with the FK. Listed below are the statements showing the FK in the Order table referencing the PK in the Customer table."
+  },
+  {
+    "passage_id": "D03_C002_P010",
+    "chunk_id": "D03_C002",
+    "start": 1050,
+    "end": 1633,
+    "text": "Additional foreign key rules may be added when setting referential integrity, such as what to do with the child rows (in the Orders table) when the record with the PK, part of the parent (Customer), is deleted or changed (updated). For example, the Edit Relationships window in MS Access (see Figure 9.1) shows two additional options for FK rules: Cascade Update and Cascade Delete. If these are not selected, the system will prevent the deletion or update of PK values in the parent table (Customer table) if a child record exists. The child record is any record with a matching PK."
+  },
+  {
+    "passage_id": "D03_C002_P011",
+    "chunk_id": "D03_C002",
+    "start": 1635,
+    "end": 1875,
+    "text": "In some databases, an additional option exists when selecting the Delete option called Set to Null. In this is chosen, the PK row is deleted, but the FK in the child table is set to NULL. Though this creates an orphan row, it is acceptable."
+  },
+  {
+    "passage_id": "D03_C002_P013",
+    "chunk_id": "D03_C002",
+    "start": 1904,
+    "end": 2080,
+    "text": "Enterprise constraints – sometimes referred to as semantic constraints – are additional rules specified by users or database administrators and can be based on multiple tables."
+  },
+  {
+    "passage_id": "D03_C003_P002",
+    "chunk_id": "D03_C003",
+    "start": 19,
+    "end": 381,
+    "text": "<em>Business rules</em> are obtained from users when gathering requirements. The requirements-gathering process is very important, and its results should be verified by the user before the database design is built. If the business rules are incorrect, the design will be incorrect, and ultimately the application built will not function as expected by the users."
+  },
+  {
+    "passage_id": "D03_C003_P009",
+    "chunk_id": "D03_C003",
+    "start": 640,
+    "end": 1092,
+    "text": "Business rules are used to determine cardinality and connectivity.<em> Cardinality</em> describes the relationship between two data tables by expressing the minimum and maximum number of entity occurrences associated with one occurrence of a related entity. In Figure 9.2, you can see that cardinality is represented by the innermost markings on the relationship symbol. In this figure, the cardinality is 0 (zero) on the right and 1 (one) on the left."
+  },
+  {
+    "passage_id": "D03_C003_P012",
+    "chunk_id": "D03_C003",
+    "start": 1367,
+    "end": 1915,
+    "text": "The outermost symbol of the relationship symbol, on the other hand, represents the connectivity between the two tables.<em> </em><em>Connectivity</em> is the relationship between two tables, e.g., one to one or one to many. The only time it is zero is when the FK can be null. When it comes to participation, there are three options to the relationship between these entities: either 0 (zero), 1 (one) or many. In Figure 9.2, for example, the connectivity is 1 (one) on the outer, left-hand side of this line and many on the outer, right-hand side."
+  },
+  {
+    "passage_id": "D03_C003_P016",
+    "chunk_id": "D03_C003",
+    "start": 2145,
+    "end": 2381,
+    "text": "In Figure 9.4, both inner (representing cardinality) and outer (representing connectivity) markers are shown. The left side of this symbol is read as minimum 1 and maximum 1. On the right side, it is read as: minimum 1 and maximum many."
+  },
+  {
+    "passage_id": "D03_C004_P002",
+    "chunk_id": "D03_C004",
+    "start": 23,
+    "end": 474,
+    "text": "The line that connects two tables, in an ERD, indicates the <em>relationship type </em>between the tables<em>:</em> either identifying or non-identifying. An <em>identifying relationship</em> will have a solid line (where the PK contains the FK). A <em>non-identifying relationship</em> is indicated by a broken line and does not contain the FK in the PK. See the section in Chapter 8 that discusses weak and strong relationships for more explanation."
+  },
+  {
+    "passage_id": "D03_C004_P006",
+    "chunk_id": "D03_C004",
+    "start": 798,
+    "end": 1075,
+    "text": "In an <em>optional relationship</em>, the FK can be null or the parent table does not need to have a corresponding child table occurrence. The symbol, shown in Figure 9.6, illustrates one type with a zero and three prongs (indicating many) which is interpreted as zero OR many."
+  },
+  {
+    "passage_id": "D03_C004_P009",
+    "chunk_id": "D03_C004",
+    "start": 1237,
+    "end": 1457,
+    "text": "For example, if you look at the Order table on the right-hand side of Figure 9.7, you’ll notice that a customer doesn’t need to place an order to be a customer. In other words, the <strong>many side</strong> is optional."
+  },
+  {
+    "passage_id": "D03_C004_P011",
+    "chunk_id": "D03_C004",
+    "start": 1644,
+    "end": 1729,
+    "text": "Figure 9.7. Example usage of a zero to many optional relationship symbol, by A. Watt."
+  },
+  {
+    "passage_id": "D03_C004_P013",
+    "chunk_id": "D03_C004",
+    "start": 1799,
+    "end": 1932,
+    "text": "- Left side: The order entity must contain a minimum of one related entity in the Customer table and a maximum of one related entity."
+  },
+  {
+    "passage_id": "D03_C004_P014",
+    "chunk_id": "D03_C004",
+    "start": 1934,
+    "end": 2022,
+    "text": "- Right side: A customer can place a minimum of zero orders or a maximum of many orders."
+  },
+  {
+    "passage_id": "D03_C004_P015",
+    "chunk_id": "D03_C004",
+    "start": 2024,
+    "end": 2171,
+    "text": "Figure 9.8 shows another type of optional relationship symbol with a zero and one, meaning zero OR one.  The <strong>one side</strong> is optional."
+  },
+  {
+    "passage_id": "D03_C004_P018",
+    "chunk_id": "D03_C004",
+    "start": 2337,
+    "end": 2407,
+    "text": "Figure 9.9 gives an example of how a zero to one symbol might be used."
+  },
+  {
+    "passage_id": "D03_C004_P020",
+    "chunk_id": "D03_C004",
+    "start": 2588,
+    "end": 2672,
+    "text": "Figure 9.9. Example usage of a zero to one optional relationship symbol, by A. Watt."
+  },
+  {
+    "passage_id": "D03_C004_P022",
+    "chunk_id": "D03_C004",
+    "start": 2703,
+    "end": 2923,
+    "text": "In a <em>mandatory relationship</em>, one entity occurrence requires a corresponding entity occurrence. The symbol for this relationship shows <em>one and only one </em>as shown in Figure 9.10. The one side is mandatory."
+  },
+  {
+    "passage_id": "D03_C004_P025",
+    "chunk_id": "D03_C004",
+    "start": 3077,
+    "end": 3161,
+    "text": "See Figure 9.11 for an example of how the one and only one mandatory symbol is used."
+  },
+  {
+    "passage_id": "D03_C004_P027",
+    "chunk_id": "D03_C004",
+    "start": 3362,
+    "end": 3447,
+    "text": "Figure 9.11. Example of a one and only one mandatory relationship symbol, by A. Watt."
+  },
+  {
+    "passage_id": "D03_C004_P028",
+    "chunk_id": "D03_C004",
+    "start": 3449,
+    "end": 3573,
+    "text": "Figure 9.12 illustrates what a one to many relationship symbol looks like where the <strong>many side</strong> is mandatory."
+  },
+  {
+    "passage_id": "D03_C004_P031",
+    "chunk_id": "D03_C004",
+    "start": 3730,
+    "end": 3808,
+    "text": "Refer to Figure 9.13 for an example of how the one to many symbol may be used."
+  },
+  {
+    "passage_id": "D03_C004_P034",
+    "chunk_id": "D03_C004",
+    "start": 4093,
+    "end": 4344,
+    "text": "So far we have seen that the innermost side of a relationship symbol (on the left-side of the symbol in Figure 9.14) can have a 0 (zero) cardinality and a connectivity of many (shown on the right-side of the symbol in Figure 9.14), or one (not shown)."
+  },
+  {
+    "passage_id": "D03_C004_P037",
+    "chunk_id": "D03_C004",
+    "start": 4506,
+    "end": 4618,
+    "text": "However, it cannot have a connectivity of 0 (zero), as displayed in Figure 9.15. The connectivity can only be 1."
+  },
+  {
+    "passage_id": "D03_C004_P040",
+    "chunk_id": "D03_C004",
+    "start": 4781,
+    "end": 4970,
+    "text": "The connectivity symbols show maximums. So if you think about it logically, if the connectivity symbol on the left side shows 0 (zero), then there would be no connection between the tables."
+  },
+  {
+    "passage_id": "D03_C004_P041",
+    "chunk_id": "D03_C004",
+    "start": 4972,
+    "end": 5057,
+    "text": "The way to read a relationship symbol, such as the one in Figure 9.16, is as follows."
+  },
+  {
+    "passage_id": "D03_C005_P001",
+    "chunk_id": "D03_C005",
+    "start": 0,
+    "end": 113,
+    "text": "- The CustID in the Order table must also be found in the Customer table a minimum of 0 and a maximum of 1 times."
+  },
+  {
+    "passage_id": "D03_C005_P003",
+    "chunk_id": "D03_C005",
+    "start": 178,
+    "end": 336,
+    "text": "- The left-most 1 (right before the 0 representing connectivity) says that if there is a CustID in the Order table, it can only be in the Customer table once."
+  },
+  {
+    "passage_id": "D03_C005_P004",
+    "chunk_id": "D03_C005",
+    "start": 338,
+    "end": 411,
+    "text": "- When you see the 0 symbol for cardinality, you can assume two things: T"
+  },
+  {
+    "passage_id": "D03_C005_P006",
+    "chunk_id": "D03_C005",
+    "start": 463,
+    "end": 536,
+    "text": "  2. the FK is not part of the PK since PKs must not contain null values."
+  },
+  {
+    "passage_id": "D03_C005_P008",
+    "chunk_id": "D03_C005",
+    "start": 707,
+    "end": 793,
+    "text": "Figure 9.16. The relationship between a Customer table and an Order table, by A. Watt."
+  },
+  {
+    "passage_id": "D03_C005_P011",
+    "chunk_id": "D03_C005",
+    "start": 929,
+    "end": 1072,
+    "text": "<strong>cardinality</strong>: expresses the minimum and maximum number of entity occurrences associated with one occurrence of a related entity"
+  },
+  {
+    "passage_id": "D03_C005_P014",
+    "chunk_id": "D03_C005",
+    "start": 1276,
+    "end": 1425,
+    "text": "<strong>entity integrity</strong>: requires that every table have a primary key; neither the primary key, nor any part of it, can contain null values"
+  },
+  {
+    "passage_id": "D03_C005_P015",
+    "chunk_id": "D03_C005",
+    "start": 1427,
+    "end": 1553,
+    "text": "<strong>identifying relationship</strong>: where the primary key contains the foreign key; indicated in an ERD by a solid line"
+  },
+  {
+    "passage_id": "D03_C005_P016",
+    "chunk_id": "D03_C005",
+    "start": 1555,
+    "end": 1710,
+    "text": "<strong>integrity constraints</strong>: logical statements that state what data values are or are not allowed and which format is suitable for an attribute"
+  },
+  {
+    "passage_id": "D03_C005_P018",
+    "chunk_id": "D03_C005",
+    "start": 1819,
+    "end": 1955,
+    "text": "<strong>non-identifying relationship</strong>: does not contain the foreign key in the primary key; indicated in an ERD by a dotted line"
+  },
+  {
+    "passage_id": "D03_C005_P019",
+    "chunk_id": "D03_C005",
+    "start": 1957,
+    "end": 2096,
+    "text": "<strong>optional relationship</strong>: the FK can be null or the parent table does not need to have a corresponding child table occurrence"
+  },
+  {
+    "passage_id": "D03_C005_P020",
+    "chunk_id": "D03_C005",
+    "start": 2098,
+    "end": 2249,
+    "text": "<strong>orphan record</strong>: a record whose foreign key value is not found in the corresponding entity – the entity where the primary key is located"
+  },
+  {
+    "passage_id": "D03_C005_P021",
+    "chunk_id": "D03_C005",
+    "start": 2251,
+    "end": 2370,
+    "text": "<strong>referential integrity</strong>: requires that a foreign key must have a matching primary key or it must be null"
+  },
+  {
+    "passage_id": "D03_C005_P022",
+    "chunk_id": "D03_C005",
+    "start": 2372,
+    "end": 2554,
+    "text": "<strong>relational database management system (RDBMS)</strong>: a popular database system based on the relational model introduced by E. F. Codd of IBM’s San Jose Research Laboratory"
+  },
+  {
+    "passage_id": "D03_C005_P023",
+    "chunk_id": "D03_C005",
+    "start": 2556,
+    "end": 2757,
+    "text": "<strong>relationship type</strong>: the type of relationship between two tables in an ERD (either identifying or non-identifying); this relationship is indicated by a line drawn between the two tables."
+  },
+  {
+    "passage_id": "D03_C006_P003",
+    "chunk_id": "D03_C006",
+    "start": 97,
+    "end": 433,
+    "text": "The swim club database in Figure 9.17 has been designed to hold information about students who are enrolled in swim classes. The following information is stored: students, enrollment, swim classes, pools where classes are held, instructors for the classes, and various levels of swim classes. Use Figure 9.17 to answer questions 1 to 5."
+  },
+  {
+    "passage_id": "D03_C006_P006",
+    "chunk_id": "D03_C006",
+    "start": 635,
+    "end": 729,
+    "text": "The primary keys are identified below. The following data types are defined in the SQL Server."
+  },
+  {
+    "passage_id": "D03_C006_P007",
+    "chunk_id": "D03_C006",
+    "start": 731,
+    "end": 828,
+    "text": "<strong>tblLevels </strong>  \n Level – Identity PK  \n ClassName – text 20 – nulls are not allowed"
+  },
+  {
+    "passage_id": "D03_C006_P008",
+    "chunk_id": "D03_C006",
+    "start": 830,
+    "end": 944,
+    "text": "<strong>tblPool</strong>  \n Pool – Identity PK  \n PoolName – text 20 – nulls are not allowed  \n Location – text 30"
+  },
+  {
+    "passage_id": "D03_C006_P009",
+    "chunk_id": "D03_C006",
+    "start": 946,
+    "end": 1125,
+    "text": "<strong>tblStaff</strong>  \n StaffID – Identity PK  \n FirstName – text 20  \n MiddleInitial – text 3  \n LastName – text 30  \n Suffix – text 3  \n Salaried – Bit  \n PayAmount – money"
+  },
+  {
+    "passage_id": "D03_C006_P010",
+    "chunk_id": "D03_C006",
+    "start": 1127,
+    "end": 1414,
+    "text": "<strong>tblClasses</strong>  \n LessonIndex – Identity PK  \n Level – Integer FK  \n SectionID – Integer  \n Semester – TinyInt  \n Days – text 20  \n Time – datetime (formatted for time)  \n Pool – Integer FK  \n Instructor – Integer FK  \n Limit – TinyInt  \n Enrolled – TinyInt  \n Price – money"
+  },
+  {
+    "passage_id": "D03_C006_P011",
+    "chunk_id": "D03_C006",
+    "start": 1416,
+    "end": 1614,
+    "text": "<strong>tblEnrollment</strong>  \n LessonIndex – Integer FK  \n SID – Integer FK (LessonIndex and SID) Primary Key  \n Status – text 30  \n Charged – bit  \n AmountPaid – money  \n DateEnrolled – datetime"
+  },
+  {
+    "passage_id": "D03_C006_P012",
+    "chunk_id": "D03_C006",
+    "start": 1616,
+    "end": 1878,
+    "text": "<strong>tblStudents</strong>  \n SID – Identity PK  \n FirstName – text 20  \n MiddleInitial – text 3  \n LastName – text 30  \n Suffix – text 3  \n Birthday – datetime  \n LocalStreet – text 30  \n LocalCity – text 20  \n LocalPostalCode – text 6  \n LocalPhone – text 10"
+  },
+  {
+    "passage_id": "D03_C006_P013",
+    "chunk_id": "D03_C006",
+    "start": 1880,
+    "end": 2021,
+    "text": "Implement this schema in SQL Server or access (you will need to pick comparable data types). Submit a screenshot of your ERD in the database."
+  },
+  {
+    "passage_id": "D03_C006_P014",
+    "chunk_id": "D03_C006",
+    "start": 2023,
+    "end": 2155,
+    "text": "1. Explain the relationship rules for each relationship (e.g., tblEnrollment and tblStudents: A student can enroll in many classes)."
+  },
+  {
+    "passage_id": "D03_C006_P023",
+    "chunk_id": "D03_C006",
+    "start": 2615,
+    "end": 2765,
+    "text": "   - The class must always be associated with an existing level.\n3. Which tables are weak and which tables are strong (covered in an earlier chapter)?"
+  },
+  {
+    "passage_id": "D07_C001_P002",
+    "chunk_id": "D07_C001",
+    "start": 30,
+    "end": 928,
+    "text": "Thus far, our queries have only accessed one table at a time. Queries can access multiple tables at once, or access the same table in such a way that multiple rows of the table are being processed at the same time. Queries that access multiple tables (or multiple instances of the same table) at one time are called <em>join</em> queries. They combine rows from one table with rows from a second table, with an expression specifying which rows are to be paired. For example, to return all the weather records together with the location of the associated city, the database needs to compare the `city` column of each row of the `weather` table with the `name` column of all rows in the `cities` table, and select the pairs of rows where these values match.[<sup>\\[4\\]</sup>](https://www.postgresql.org/docs/18/tutorial-join.html#ftn.id-1.4.4.7.3.6) This would be accomplished by the following query:"
+  },
+  {
+    "passage_id": "D07_C001_P006",
+    "chunk_id": "D07_C001",
+    "start": 1388,
+    "end": 1621,
+    "text": "- There is no result row for the city of Hayward. This is because there is no matching entry in the `cities` table for Hayward, so the join ignores the unmatched rows in the `weather` table. We will see shortly how this can be fixed."
+  },
+  {
+    "passage_id": "D07_C001_P007",
+    "chunk_id": "D07_C001",
+    "start": 1623,
+    "end": 1902,
+    "text": "- There are two columns containing the city name. This is correct because the lists of columns from the `weather` and `cities` tables are concatenated. In practice this is undesirable, though, so you will probably want to list the output columns explicitly rather than using `*`:"
+  },
+  {
+    "passage_id": "D07_C001_P008",
+    "chunk_id": "D07_C001",
+    "start": 1904,
+    "end": 2019,
+    "text": "  ```sql\n  SELECT city, temp_lo, temp_hi, prcp, date, location\n      FROM weather JOIN cities ON city = name;\n  ```"
+  },
+  {
+    "passage_id": "D07_C001_P009",
+    "chunk_id": "D07_C001",
+    "start": 2021,
+    "end": 2261,
+    "text": "Since the columns all had different names, the parser automatically found which table they belong to. If there were duplicate column names in the two tables you'd need to <em>qualify</em> the column names to show which one you meant, as in:"
+  },
+  {
+    "passage_id": "D07_C001_P011",
+    "chunk_id": "D07_C001",
+    "start": 2441,
+    "end": 2613,
+    "text": "It is widely considered good style to qualify all column names in a join query, so that the query won't fail if a duplicate column name is later added to one of the tables."
+  },
+  {
+    "passage_id": "D07_C001_P012",
+    "chunk_id": "D07_C001",
+    "start": 2615,
+    "end": 2687,
+    "text": "Join queries of the kind seen thus far can also be written in this form:"
+  },
+  {
+    "passage_id": "D07_C001_P014",
+    "chunk_id": "D07_C001",
+    "start": 2758,
+    "end": 3292,
+    "text": "This syntax pre-dates the `JOIN`/`ON` syntax, which was introduced in SQL-92. The tables are simply listed in the `FROM` clause, and the comparison expression is added to the `WHERE` clause. The results from this older implicit syntax and the newer explicit `JOIN`/`ON` syntax are identical. But for a reader of the query, the explicit syntax makes its meaning easier to understand: The join condition is introduced by its own key word whereas previously the condition was mixed into the `WHERE` clause together with other conditions."
+  },
+  {
+    "passage_id": "D07_C002_P001",
+    "chunk_id": "D07_C002",
+    "start": 0,
+    "end": 429,
+    "text": "Now we will figure out how we can get the Hayward records back in. What we want the query to do is to scan the `weather` table and for each row to find the matching `cities` row(s). If no matching row is found we want some “empty values” to be substituted for the `cities` table's columns. This kind of query is called an <em>outer join</em>. (The joins we have seen so far are <em>inner joins</em>.) The command looks like this:"
+  },
+  {
+    "passage_id": "D07_C002_P004",
+    "chunk_id": "D07_C002",
+    "start": 950,
+    "end": 1356,
+    "text": "This query is called a <em>left outer join</em> because the table mentioned on the left of the join operator will have each of its rows in the output at least once, whereas the table on the right will only have those rows output that match some row of the left table. When outputting a left-table row for which there is no right-table match, empty (null) values are substituted for the right-table columns."
+  },
+  {
+    "passage_id": "D07_C002_P005",
+    "chunk_id": "D07_C002",
+    "start": 1358,
+    "end": 1471,
+    "text": "<strong>Exercise: </strong> There are also right outer joins and full outer joins. Try to find out what those do."
+  },
+  {
+    "passage_id": "D07_C002_P006",
+    "chunk_id": "D07_C002",
+    "start": 1473,
+    "end": 1862,
+    "text": "We can also join a table against itself. This is called a <em>self join</em>. As an example, suppose we wish to find all the weather records that are in the temperature range of other weather records. So we need to compare the `temp_lo` and `temp_hi` columns of each `weather` row to the `temp_lo` and `temp_hi` columns of all other `weather` rows. We can do this with the following query:"
+  },
+  {
+    "passage_id": "D07_C002_P009",
+    "chunk_id": "D07_C002",
+    "start": 2336,
+    "end": 2540,
+    "text": "Here we have relabeled the weather table as `w1` and `w2` to be able to distinguish the left and right side of the join. You can also use these kinds of aliases in other queries to save some typing, e.g.:"
+  },
+  {
+    "passage_id": "D07_C002_P012",
+    "chunk_id": "D07_C002",
+    "start": 2681,
+    "end": 2946,
+    "text": "[<sup>\\[4\\]</sup>](https://www.postgresql.org/docs/18/tutorial-join.html#id-1.4.4.7.3.6) This is only a conceptual model. The join is usually performed in a more efficient manner than actually comparing each possible pair of rows, but this is invisible to the user."
+  },
+  {
+    "passage_id": "CONTROL_1",
+    "chunk_id": "CONTROL_1",
+    "start": 0,
+    "end": 116,
+    "text": "This passage only describes the layout of a textbook page. It contains a heading, a page number, and a blank margin.",
+    "is_synthetic_control": true
+  },
+  {
+    "passage_id": "CONTROL_2",
+    "chunk_id": "CONTROL_2",
+    "start": 0,
+    "end": 136,
+    "text": "The terms primary key and foreign key appear together in this vocabulary list. No relationship or rule connecting them is asserted here.",
+    "is_synthetic_control": true
+  }
+]

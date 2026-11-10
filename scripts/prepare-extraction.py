@@ -30,6 +30,8 @@ def main():
     parser.add_argument('--documents', nargs='+', default=['D03', 'D07'])
     parser.add_argument('--include-figures', action='store_true',
                         help='Opt in to supplements; unresolved visual details still require review.')
+    parser.add_argument('--no-registry', action='store_true', help='Extract only from the text without seeded concepts.')
+    parser.add_argument('--prompt', type=Path, default=ROOT / 'docs/prompt-extracao.md')
     parser.add_argument('--output', type=Path, default=ROOT / 'data/extraction/pilot-inputs')
     args = parser.parse_args()
     output = args.output.resolve()
@@ -42,13 +44,15 @@ def main():
     if missing:
         parser.error(f'Unknown document IDs: {sorted(missing)}')
     selected = [c for c in chunks.values() if c['document_id'] in args.documents]
-    prompt = (ROOT / 'docs/prompt-extracao.md').read_text(encoding='utf-8-sig')
+    prompt = args.prompt.read_text(encoding='utf-8-sig')
     schema_path = ROOT / 'schemas/extraction-candidates.schema.json'
     schema = json.loads(schema_path.read_text(encoding='utf-8-sig'))
     sample = json.loads((ROOT / 'data/extraction/sample.json').read_text(encoding='utf-8-sig'))
     # Vocabulary only: don't expose reference answers or their supporting quotes.
     registry = [{k: c[k] for k in ('concept_id', 'canonical_name', 'name_pt', 'aliases')}
                 for c in sample['concepts']]
+    if args.no_registry:
+        registry = []
     records = []
     for chunk in selected:
         record = {
@@ -74,6 +78,7 @@ def main():
     manifest = {
         'format_version': '0.1.0', 'stage': 'prepared_not_executed',
         'documents': args.documents, 'include_figures': args.include_figures,
+        'seeded_registry': not args.no_registry,
         'request_count': len(records),
         'input_chunk_ids': [r['input']['chunk_id'] for r in records],
         'prompt_sha256': hashlib.sha256(prompt.encode('utf-8')).hexdigest(),

@@ -1,0 +1,185 @@
+{
+  "schema_version": "0.1.1",
+  "extraction_method": "rule_candidates",
+  "input_chunk_ids": [
+    "D08_C001"
+  ],
+  "concepts": [
+    {
+      "concept_id": "C_count",
+      "canonical_name": "count",
+      "name_pt": "função COUNT",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Função agregadora de contagem apresentada nos exemplos com count(*).",
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "Like most other relational database products, PostgreSQL supports <em>aggregate functions</em>. An aggregate function computes a single result from multiple input rows. For example, there are aggregates to compute the `count`, `sum`, `avg` (average), `max` (maximum) and `min` (minimum) over a set of rows."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source enumeration detected by rule and explicitly reviewed by Codex; no independent human review."
+    },
+    {
+      "concept_id": "C_sum",
+      "canonical_name": "sum",
+      "name_pt": "função SUM",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Função de soma citada pela fonte entre as funções agregadoras.",
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "Like most other relational database products, PostgreSQL supports <em>aggregate functions</em>. An aggregate function computes a single result from multiple input rows. For example, there are aggregates to compute the `count`, `sum`, `avg` (average), `max` (maximum) and `min` (minimum) over a set of rows."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source enumeration detected by rule and explicitly reviewed by Codex; no independent human review."
+    },
+    {
+      "concept_id": "C_avg",
+      "canonical_name": "avg",
+      "name_pt": "função AVG",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Função de média citada pela fonte entre as funções agregadoras.",
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "Like most other relational database products, PostgreSQL supports <em>aggregate functions</em>. An aggregate function computes a single result from multiple input rows. For example, there are aggregates to compute the `count`, `sum`, `avg` (average), `max` (maximum) and `min` (minimum) over a set of rows."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source enumeration detected by rule and explicitly reviewed by Codex; no independent human review."
+    },
+    {
+      "concept_id": "C_max",
+      "canonical_name": "max",
+      "name_pt": "função MAX",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Função que calcula um máximo nos exemplos de agregação.",
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "Like most other relational database products, PostgreSQL supports <em>aggregate functions</em>. An aggregate function computes a single result from multiple input rows. For example, there are aggregates to compute the `count`, `sum`, `avg` (average), `max` (maximum) and `min` (minimum) over a set of rows."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source enumeration detected by rule and explicitly reviewed by Codex; no independent human review."
+    },
+    {
+      "concept_id": "C_min",
+      "canonical_name": "min",
+      "name_pt": "função MIN",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Função de mínimo citada pela fonte entre as funções agregadoras.",
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "Like most other relational database products, PostgreSQL supports <em>aggregate functions</em>. An aggregate function computes a single result from multiple input rows. For example, there are aggregates to compute the `count`, `sum`, `avg` (average), `max` (maximum) and `min` (minimum) over a set of rows."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Source enumeration detected by rule and explicitly reviewed by Codex; no independent human review."
+    },
+    {
+      "concept_id": "C_aggregate_function",
+      "canonical_name": "aggregate function",
+      "name_pt": "função agregadora",
+      "aliases": [
+        "aggregate functions",
+        "aggregates"
+      ],
+      "category": "operation",
+      "description_pt": "Função que calcula um resultado a partir de múltiplas linhas de entrada.",
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "Like most other relational database products, PostgreSQL supports <em>aggregate functions</em>. An aggregate function computes a single result from multiple input rows. For example, there are aggregates to compute the `count`, `sum`, `avg` (average), `max` (maximum) and `min` (minimum) over a set of rows."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Definition and function list explicitly provided by the source; Portuguese summary curated by Codex."
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "R_rule_count_is_a_aggregate_function",
+      "source": "C_count",
+      "type": "IS_A",
+      "target": "C_aggregate_function",
+      "assertion_kind": "explicit",
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "Like most other relational database products, PostgreSQL supports <em>aggregate functions</em>. An aggregate function computes a single result from multiple input rows. For example, there are aggregates to compute the `count`, `sum`, `avg` (average), `max` (maximum) and `min` (minimum) over a set of rows."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Function is listed as an aggregate in the source paragraph. Rule-derived, not generated by an LLM. No query execution or claim of complete API coverage."
+    },
+    {
+      "relation_id": "R_rule_sum_is_a_aggregate_function",
+      "source": "C_sum",
+      "type": "IS_A",
+      "target": "C_aggregate_function",
+      "assertion_kind": "explicit",
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "Like most other relational database products, PostgreSQL supports <em>aggregate functions</em>. An aggregate function computes a single result from multiple input rows. For example, there are aggregates to compute the `count`, `sum`, `avg` (average), `max` (maximum) and `min` (minimum) over a set of rows."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Function is listed as an aggregate in the source paragraph. Rule-derived, not generated by an LLM. No query execution or claim of complete API coverage."
+    },
+    {
+      "relation_id": "R_rule_avg_is_a_aggregate_function",
+      "source": "C_avg",
+      "type": "IS_A",
+      "target": "C_aggregate_function",
+      "assertion_kind": "explicit",
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "Like most other relational database products, PostgreSQL supports <em>aggregate functions</em>. An aggregate function computes a single result from multiple input rows. For example, there are aggregates to compute the `count`, `sum`, `avg` (average), `max` (maximum) and `min` (minimum) over a set of rows."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Function is listed as an aggregate in the source paragraph. Rule-derived, not generated by an LLM. No query execution or claim of complete API coverage."
+    },
+    {
+      "relation_id": "R_rule_max_is_a_aggregate_function",
+      "source": "C_max",
+      "type": "IS_A",
+      "target": "C_aggregate_function",
+      "assertion_kind": "explicit",
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "Like most other relational database products, PostgreSQL supports <em>aggregate functions</em>. An aggregate function computes a single result from multiple input rows. For example, there are aggregates to compute the `count`, `sum`, `avg` (average), `max` (maximum) and `min` (minimum) over a set of rows."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Function is listed as an aggregate in the source paragraph. Rule-derived, not generated by an LLM. No query execution or claim of complete API coverage."
+    },
+    {
+      "relation_id": "R_rule_min_is_a_aggregate_function",
+      "source": "C_min",
+      "type": "IS_A",
+      "target": "C_aggregate_function",
+      "assertion_kind": "explicit",
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "Like most other relational database products, PostgreSQL supports <em>aggregate functions</em>. An aggregate function computes a single result from multiple input rows. For example, there are aggregates to compute the `count`, `sum`, `avg` (average), `max` (maximum) and `min` (minimum) over a set of rows."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Function is listed as an aggregate in the source paragraph. Rule-derived, not generated by an LLM. No query execution or claim of complete API coverage."
+    }
+  ]
+}

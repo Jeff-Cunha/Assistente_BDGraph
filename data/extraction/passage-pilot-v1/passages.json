@@ -1,0 +1,37 @@
+[
+  {
+    "passage_id": "D03_C001_P003",
+    "chunk_id": "D03_C001",
+    "start": 77,
+    "end": 442,
+    "text": "Constraints are a very important feature in a relational model. In fact, the relational model supports the well-defined theory of constraints on attributes or tables. Constraints are useful because they allow a designer to specify the semantics of data in the database. <em>Constraints</em> are the rules that force DBMSs to check that data satisfies the semantics."
+  },
+  {
+    "passage_id": "D03_C001_P008",
+    "chunk_id": "D03_C001",
+    "start": 1106,
+    "end": 1446,
+    "text": "To ensure <em>entity integrity</em>, it is required that every table have a primary key. Neither the PK nor any part of it can contain null values. This is because null values for the primary key mean we cannot identify some rows. For example, in the EMPLOYEE table, Phone cannot be a primary key since some people may not have a telephone."
+  },
+  {
+    "passage_id": "D03_C001_P010",
+    "chunk_id": "D03_C001",
+    "start": 1475,
+    "end": 1795,
+    "text": "<em>Referential integrity</em> requires that a foreign key must have a matching primary key or it must be null. This constraint is specified between two tables (parent and child); it maintains the correspondence between rows in these tables. It means the reference from a row in one table to another table must be valid."
+  },
+  {
+    "passage_id": "D03_C001_P014",
+    "chunk_id": "D03_C001",
+    "start": 1991,
+    "end": 2266,
+    "text": "To ensure that there are no orphan records, we need to enforce referential integrity. An <em>orphan record</em> is one whose foreign key FK value is not found in the corresponding entity – the entity where the PK is located. Recall that a typical join is between a PK and FK."
+  },
+  {
+    "passage_id": "D07_C002_P004",
+    "chunk_id": "D07_C002",
+    "start": 950,
+    "end": 1356,
+    "text": "This query is called a <em>left outer join</em> because the table mentioned on the left of the join operator will have each of its rows in the output at least once, whereas the table on the right will only have those rows output that match some row of the left table. When outputting a left-table row for which there is no right-table match, empty (null) values are substituted for the right-table columns."
+  }
+]

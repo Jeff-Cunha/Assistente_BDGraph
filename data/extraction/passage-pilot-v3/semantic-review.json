@@ -1,0 +1,77 @@
+{
+  "note": "Revisão por Codex, não independente. Controles sintéticos separados do corpus.",
+  "decisions": [
+    {
+      "passage_id": "D03_C001_P003",
+      "pipeline_status": "rejected",
+      "decision": "excluded",
+      "reviewer": "Codex",
+      "independent_review": false,
+      "note": "Mantida fora da saída revisada; consultar decisão estrutural, política ou verificação em results.json."
+    },
+    {
+      "passage_id": "D03_C001_P008",
+      "pipeline_status": "passed_model_check_pending_review",
+      "decision": "accepted",
+      "reviewer": "Codex",
+      "independent_review": false,
+      "note": "Proposta conferida por Codex contra o texto e a direção do predicado; sem revisão humana independente."
+    },
+    {
+      "passage_id": "D03_C001_P010",
+      "pipeline_status": "rejected",
+      "decision": "excluded",
+      "reviewer": "Codex",
+      "independent_review": false,
+      "note": "Mantida fora da saída revisada; consultar decisão estrutural, política ou verificação em results.json."
+    },
+    {
+      "passage_id": "D03_C001_P014",
+      "pipeline_status": "rejected",
+      "decision": "excluded",
+      "reviewer": "Codex",
+      "independent_review": false,
+      "note": "Mantida fora da saída revisada; consultar decisão estrutural, política ou verificação em results.json."
+    },
+    {
+      "passage_id": "D07_C002_P004",
+      "pipeline_status": "rejected",
+      "decision": "excluded",
+      "reviewer": "Codex",
+      "independent_review": false,
+      "note": "Mantida fora da saída revisada; consultar decisão estrutural, política ou verificação em results.json."
+    },
+    {
+      "passage_id": "D07_C001_P002",
+      "pipeline_status": "passed_model_check_pending_review",
+      "decision": "accepted",
+      "reviewer": "Codex",
+      "independent_review": false,
+      "note": "Proposta conferida por Codex contra o texto e a direção do predicado; sem revisão humana independente."
+    },
+    {
+      "passage_id": "D07_C002_P006",
+      "pipeline_status": "rejected",
+      "decision": "excluded",
+      "reviewer": "Codex",
+      "independent_review": false,
+      "note": "A verificação do mesmo modelo recusou self join IS_A join e sugeriu inverter a direção. Revisão por Codex identifica essa justificativa como inadequada: é um exemplo de possível falso negativo. Não foi reinserida automaticamente."
+    },
+    {
+      "passage_id": "CONTROL_1",
+      "pipeline_status": "rejected",
+      "decision": "excluded",
+      "reviewer": "Codex",
+      "independent_review": false,
+      "note": "Mantida fora da saída revisada; consultar decisão estrutural, política ou verificação em results.json."
+    },
+    {
+      "passage_id": "CONTROL_2",
+      "pipeline_status": "abstained",
+      "decision": "excluded",
+      "reviewer": "Codex",
+      "independent_review": false,
+      "note": "Mantida fora da saída revisada; consultar decisão estrutural, política ou verificação em results.json."
+    }
+  ]
+}

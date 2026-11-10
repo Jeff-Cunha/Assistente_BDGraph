@@ -1,0 +1,57 @@
+{
+  "documents": [
+    "D03",
+    "D07"
+  ],
+  "chunks": [
+    {
+      "chunk_id": "D03_C001",
+      "characters": 3448,
+      "selected_passages": 8,
+      "selected_characters": 2856
+    },
+    {
+      "chunk_id": "D03_C002",
+      "characters": 2355,
+      "selected_passages": 5,
+      "selected_characters": 1431
+    },
+    {
+      "chunk_id": "D03_C003",
+      "characters": 2535,
+      "selected_passages": 4,
+      "selected_characters": 1598
+    },
+    {
+      "chunk_id": "D03_C004",
+      "characters": 5057,
+      "selected_passages": 18,
+      "selected_characters": 2783
+    },
+    {
+      "chunk_id": "D03_C005",
+      "characters": 2757,
+      "selected_passages": 15,
+      "selected_characters": 2004
+    },
+    {
+      "chunk_id": "D03_C006",
+      "characters": 2926,
+      "selected_passages": 11,
+      "selected_characters": 1990
+    },
+    {
+      "chunk_id": "D07_C001",
+      "characters": 3292,
+      "selected_passages": 8,
+      "selected_characters": 2543
+    },
+    {
+      "chunk_id": "D07_C002",
+      "characters": 2946,
+      "selected_passages": 6,
+      "selected_characters": 1806
+    }
+  ],
+  "policy": "Page paragraphs with at least 15 whitespace-delimited words, excluding headings, opening fences and image-link paragraphs. Not exhaustive concept coverage; figure supplements excluded."
+}

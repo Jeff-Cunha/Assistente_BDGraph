@@ -1,0 +1,14 @@
+{
+  "inputs": [
+    {
+      "path": "data\\extraction\\glossary-v3\\concepts-reviewed.json",
+      "sha256": "e78f47ab22120dd59c42cf6f432270427ee5e17722129892f68345495561d4a9"
+    },
+    {
+      "path": "data\\extraction\\sql-vocabulary-v1\\concepts-reviewed.json",
+      "sha256": "2746b58c19bdedb89848fcb0f917351d09e52cca28ae3fed939d647408adad51"
+    }
+  ],
+  "output_sha256": "0b05cfea2865e5be9235cde48a41eb75334312901993bbb7ea0bd0a62087ca6d",
+  "note": "Only previously reviewed model-derived outputs combined; manual sample not copied. First description retained when a concept appears twice; original descriptions remain in source files."
+}

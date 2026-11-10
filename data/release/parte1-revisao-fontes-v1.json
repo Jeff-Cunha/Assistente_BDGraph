@@ -1,0 +1,38 @@
+{
+  "release": "parte1-revisao-fontes-v1",
+  "date": "2026-11-09",
+  "previous_release": "parte1-integracao-sql",
+  "primary_files": [
+    {
+      "path": "data/extraction/rule-knowledge-union-v2/extraction.json",
+      "sha256": "c29e07486d488f23228beeecf278a11e7f75ecd18071ef781e63347bb21f9baf",
+      "extraction_method": "rule_candidates",
+      "concepts": 79,
+      "relations": 5
+    },
+    {
+      "path": "data/extraction/model-knowledge-union-v3/extraction.json",
+      "sha256": "d0630f99626b5e59633df4c76deca94b3db829c65fe119ad67efd214f85f8901",
+      "extraction_method": "llm_candidates",
+      "concepts": 20,
+      "relations": 11
+    },
+    {
+      "path": "data/extraction/manual-source-review-v1/extraction.json",
+      "sha256": "2f46c6af47715f7449d9b839c707b5a10818450c45ac6bdabc95cb8a5740318a",
+      "extraction_method": "manual_reference",
+      "concepts": 5,
+      "relations": 0
+    }
+  ],
+  "documents": 9,
+  "chunks": 59,
+  "unique_concepts": 93,
+  "unique_semantic_triples": 16,
+  "independent_human_review": false,
+  "review": "data/review/source-check-v1/review.json",
+  "source_cautions": "data/review/source-check-v1/source-cautions.json",
+  "reading_manifest": "corpus/reading/manifest.json",
+  "optional_manual_sample": "data/extraction/sample.json",
+  "note": "Historical candidates, controls and previous versions are not additional accepted facts. Load only these three primary_files, deduplicate IDs/triples, retain methods and evidence. Five new concepts are manual source curation assisted by AI; no new LLM extraction or human approval was performed."
+}

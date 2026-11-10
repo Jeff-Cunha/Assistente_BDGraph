@@ -1,0 +1,299 @@
+{
+  "schema_version": "0.1.2",
+  "extraction_method": "llm_candidates",
+  "input_chunk_ids": [
+    "D06_C001",
+    "D08_C001",
+    "D08_C002"
+  ],
+  "concepts": [
+    {
+      "concept_id": "C_select",
+      "canonical_name": "SELECT",
+      "name_pt": "consulta SELECT",
+      "aliases": [
+        "SELECT statement",
+        "SQL SELECT statement"
+      ],
+      "category": "operation",
+      "description_pt": "Consulta usada para recuperar dados de tabelas.",
+      "evidence": [
+        {
+          "chunk_id": "D06_C001",
+          "quote": "To retrieve data from a table, the table is <em>queried</em>. An SQL `SELECT` statement is used to do this. The statement is divided into a select list (the part that lists the columns to be returned), a table list (the part that lists the tables from which to retrieve the data), and an optional qualification (the part that specifies any restrictions). For example, to retrieve all the rows of table `weather`, type:"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Model proposal reviewed by Codex; names and translations curated. No independent human review."
+    },
+    {
+      "concept_id": "C_data",
+      "canonical_name": "data",
+      "name_pt": "dados",
+      "aliases": [],
+      "category": "general",
+      "description_pt": "Dados recuperados por uma consulta SELECT a partir das tabelas indicadas e das condições aplicáveis.",
+      "evidence": [
+        {
+          "chunk_id": "D06_C001",
+          "quote": "To retrieve data from a table, the table is <em>queried</em>. An SQL `SELECT` statement is used to do this. The statement is divided into a select list (the part that lists the columns to be returned), a table list (the part that lists the tables from which to retrieve the data), and an optional qualification (the part that specifies any restrictions). For example, to retrieve all the rows of table `weather`, type:"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Model proposal reviewed by Codex; names and translations curated. No independent human review."
+    },
+    {
+      "concept_id": "C_where",
+      "canonical_name": "WHERE",
+      "name_pt": "cláusula WHERE",
+      "aliases": [
+        "WHERE clause"
+      ],
+      "category": "operation",
+      "description_pt": "Cláusula que seleciona linhas por uma condição; a fonte explica sua aplicação antes da agregação.",
+      "evidence": [
+        {
+          "chunk_id": "D06_C001",
+          "quote": "A query can be “qualified” by adding a `WHERE` clause that specifies which rows are wanted. The `WHERE` clause contains a Boolean (truth value) expression, and only rows for which the Boolean expression is true are returned. The usual Boolean operators (`AND`, `OR`, and `NOT`) are allowed in the qualification. For example, the following retrieves the weather of San Francisco on rainy days:"
+        },
+        {
+          "chunk_id": "D08_C001",
+          "quote": "but this will not work since the aggregate `max` cannot be used in the `WHERE` clause. (This restriction exists because the `WHERE` clause determines which rows will be included in the aggregate calculation; so obviously it has to be evaluated before aggregate functions are computed.) However, as is often the case the query can be restated to accomplish the desired result, here by using a <em>subquery</em>:"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Model proposal reviewed by Codex; names and translations curated. No independent human review."
+    },
+    {
+      "concept_id": "C_boolean_expression",
+      "canonical_name": "boolean expression",
+      "name_pt": "expressão booleana",
+      "aliases": [
+        "Boolean expression"
+      ],
+      "category": "structure",
+      "description_pt": "Expressão de valor lógico utilizada para selecionar linhas na cláusula WHERE.",
+      "evidence": [
+        {
+          "chunk_id": "D06_C001",
+          "quote": "A query can be “qualified” by adding a `WHERE` clause that specifies which rows are wanted. The `WHERE` clause contains a Boolean (truth value) expression, and only rows for which the Boolean expression is true are returned. The usual Boolean operators (`AND`, `OR`, and `NOT`) are allowed in the qualification. For example, the following retrieves the weather of San Francisco on rainy days:"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Model proposal reviewed by Codex; names and translations curated. No independent human review."
+    },
+    {
+      "concept_id": "C_postgresql",
+      "canonical_name": "PostgreSQL",
+      "name_pt": "PostgreSQL",
+      "aliases": [],
+      "category": "general",
+      "description_pt": "Sistema de banco de dados citado na documentação-base como oferecendo funções agregadoras.",
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "Like most other relational database products, PostgreSQL supports <em>aggregate functions</em>. An aggregate function computes a single result from multiple input rows. For example, there are aggregates to compute the `count`, `sum`, `avg` (average), `max` (maximum) and `min` (minimum) over a set of rows."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Model proposal reviewed by Codex; names and translations curated. No independent human review."
+    },
+    {
+      "concept_id": "C_aggregate_function",
+      "canonical_name": "aggregate function",
+      "name_pt": "função agregadora",
+      "aliases": [
+        "aggregate functions",
+        "aggregates"
+      ],
+      "category": "operation",
+      "description_pt": "Função que calcula um resultado a partir de múltiplas linhas de entrada.",
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "Like most other relational database products, PostgreSQL supports <em>aggregate functions</em>. An aggregate function computes a single result from multiple input rows. For example, there are aggregates to compute the `count`, `sum`, `avg` (average), `max` (maximum) and `min` (minimum) over a set of rows."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Model proposal reviewed by Codex; names and translations curated. No independent human review."
+    },
+    {
+      "concept_id": "C_max",
+      "canonical_name": "max",
+      "name_pt": "função MAX",
+      "aliases": [
+        "aggregate max"
+      ],
+      "category": "operation",
+      "description_pt": "Função que calcula um máximo nos exemplos de agregação.",
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "but this will not work since the aggregate `max` cannot be used in the `WHERE` clause. (This restriction exists because the `WHERE` clause determines which rows will be included in the aggregate calculation; so obviously it has to be evaluated before aggregate functions are computed.) However, as is often the case the query can be restated to accomplish the desired result, here by using a <em>subquery</em>:"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Model proposal reviewed by Codex; names and translations curated. No independent human review."
+    },
+    {
+      "concept_id": "C_having",
+      "canonical_name": "HAVING",
+      "name_pt": "cláusula HAVING",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Cláusula que filtra linhas de grupos após o agrupamento e a agregação; não exige sempre uma função agregadora.",
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "which gives us one output row per city. Each aggregate result is computed over the table rows matching that city. We can filter these grouped rows using `HAVING`:"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Model proposal reviewed by Codex; names and translations curated. No independent human review."
+    },
+    {
+      "concept_id": "C_grouped_row",
+      "canonical_name": "grouped row",
+      "name_pt": "linha do resultado agrupado",
+      "aliases": [
+        "grouped rows"
+      ],
+      "category": "structure",
+      "description_pt": "Linha do resultado agrupado à qual a cláusula HAVING pode aplicar um filtro.",
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "which gives us one output row per city. Each aggregate result is computed over the table rows matching that city. We can filter these grouped rows using `HAVING`:"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Model proposal reviewed by Codex; names and translations curated. No independent human review."
+    },
+    {
+      "concept_id": "C_filter",
+      "canonical_name": "FILTER",
+      "name_pt": "opção FILTER",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Opção que seleciona entradas de uma função agregadora específica, sem filtrar necessariamente as demais.",
+      "evidence": [
+        {
+          "chunk_id": "D08_C002",
+          "quote": "Another way to select the rows that go into an aggregate computation is to use `FILTER`, which is a per-aggregate option:"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Model proposal reviewed by Codex; names and translations curated. No independent human review."
+    },
+    {
+      "concept_id": "C_aggregation",
+      "canonical_name": "aggregation",
+      "name_pt": "agregação",
+      "aliases": [
+        "aggregate computation"
+      ],
+      "category": "operation",
+      "description_pt": "Cálculo agregado sobre as entradas de uma função; a opção FILTER pode selecionar as entradas de uma agregação específica.",
+      "evidence": [
+        {
+          "chunk_id": "D08_C002",
+          "quote": "Another way to select the rows that go into an aggregate computation is to use `FILTER`, which is a per-aggregate option:"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Model proposal reviewed by Codex; names and translations curated. No independent human review."
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "R_batch_b2091d38d0732041",
+      "source": "C_select",
+      "type": "RETRIEVES",
+      "target": "C_data",
+      "assertion_kind": "explicit",
+      "evidence": [
+        {
+          "chunk_id": "D06_C001",
+          "quote": "To retrieve data from a table, the table is <em>queried</em>. An SQL `SELECT` statement is used to do this. The statement is divided into a select list (the part that lists the columns to be returned), a table list (the part that lists the tables from which to retrieve the data), and an optional qualification (the part that specifies any restrictions). For example, to retrieve all the rows of table `weather`, type:"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "SELECT recupera dados; a relação não afirma recuperação de todas as linhas nem dispensa filtros. Conferência por Codex, sem revisão humana independente."
+    },
+    {
+      "relation_id": "R_batch_67ebbd94c983a11b",
+      "source": "C_where",
+      "type": "REQUIRES",
+      "target": "C_boolean_expression",
+      "assertion_kind": "explicit",
+      "evidence": [
+        {
+          "chunk_id": "D06_C001",
+          "quote": "A query can be “qualified” by adding a `WHERE` clause that specifies which rows are wanted. The `WHERE` clause contains a Boolean (truth value) expression, and only rows for which the Boolean expression is true are returned. The usual Boolean operators (`AND`, `OR`, and `NOT`) are allowed in the qualification. For example, the following retrieves the weather of San Francisco on rainy days:"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "A própria cláusula WHERE contém a expressão lógica. Não significa que toda consulta precise de WHERE. Conferência por Codex, sem revisão humana independente."
+    },
+    {
+      "relation_id": "R_batch_e505b1669f4b08a0",
+      "source": "C_postgresql",
+      "type": "SUPPORTS",
+      "target": "C_aggregate_function",
+      "assertion_kind": "explicit",
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "Like most other relational database products, PostgreSQL supports <em>aggregate functions</em>. An aggregate function computes a single result from multiple input rows. For example, there are aggregates to compute the `count`, `sum`, `avg` (average), `max` (maximum) and `min` (minimum) over a set of rows."
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Suporte explicitamente afirmado na documentação. Não se generaliza a outros SGBDs. Conferência por Codex, sem revisão humana independente."
+    },
+    {
+      "relation_id": "R_batch_88835cfb81dd44ab",
+      "source": "C_where",
+      "type": "EVALUATED_BEFORE",
+      "target": "C_max",
+      "assertion_kind": "explicit",
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "but this will not work since the aggregate `max` cannot be used in the `WHERE` clause. (This restriction exists because the `WHERE` clause determines which rows will be included in the aggregate calculation; so obviously it has to be evaluated before aggregate functions are computed.) However, as is often the case the query can be restated to accomplish the desired result, here by using a <em>subquery</em>:"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "Ordem lógica no mesmo nível de consulta: seleção por WHERE precede cálculo agregado. Não é garantia de ordem física de execução e não proíbe uma subconsulta independente de calcular seu próprio agregado. Conferência por Codex, sem revisão humana independente."
+    },
+    {
+      "relation_id": "R_batch_a3521b8f3daabde0",
+      "source": "C_having",
+      "type": "FILTERS",
+      "target": "C_grouped_row",
+      "assertion_kind": "explicit",
+      "evidence": [
+        {
+          "chunk_id": "D08_C001",
+          "quote": "which gives us one output row per city. Each aggregate result is computed over the table rows matching that city. We can filter these grouped rows using `HAVING`:"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "HAVING filtra o resultado agrupado. A relação não exige uso obrigatório de função agregadora na cláusula. Conferência por Codex, sem revisão humana independente."
+    },
+    {
+      "relation_id": "R_batch_b6b31f5a7df0639e",
+      "source": "C_filter",
+      "type": "TYPICALLY_USED_IN",
+      "target": "C_aggregation",
+      "assertion_kind": "explicit",
+      "evidence": [
+        {
+          "chunk_id": "D08_C002",
+          "quote": "Another way to select the rows that go into an aggregate computation is to use `FILTER`, which is a per-aggregate option:"
+        }
+      ],
+      "review_status": "accepted",
+      "review_note": "FILTER é opção por agregador, não requisito de toda agregação. Seu uso não equivale a filtrar globalmente as entradas de todas as funções. Conferência por Codex, sem revisão humana independente."
+    }
+  ]
+}

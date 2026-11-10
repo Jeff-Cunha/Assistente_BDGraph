@@ -1,0 +1,69 @@
+{
+  "reviewer": "Codex",
+  "independent_review": false,
+  "chunk_id": "D08_C001",
+  "chunk_sha256": "d3e1e4eda01e91291f38a6e9b4777727f404ca682096949e15a3ab3ef790a931",
+  "start": 29,
+  "end": 335,
+  "approved_function_names": [
+    "count",
+    "sum",
+    "avg",
+    "max",
+    "min"
+  ],
+  "function_concepts": {
+    "count": {
+      "concept_id": "C_count",
+      "canonical_name": "count",
+      "name_pt": "função COUNT",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Função agregadora de contagem apresentada nos exemplos com count(*)."
+    },
+    "sum": {
+      "concept_id": "C_sum",
+      "canonical_name": "sum",
+      "name_pt": "função SUM",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Função de soma citada pela fonte entre as funções agregadoras."
+    },
+    "avg": {
+      "concept_id": "C_avg",
+      "canonical_name": "avg",
+      "name_pt": "função AVG",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Função de média citada pela fonte entre as funções agregadoras."
+    },
+    "max": {
+      "concept_id": "C_max",
+      "canonical_name": "max",
+      "name_pt": "função MAX",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Função que calcula um máximo nos exemplos de agregação."
+    },
+    "min": {
+      "concept_id": "C_min",
+      "canonical_name": "min",
+      "name_pt": "função MIN",
+      "aliases": [],
+      "category": "operation",
+      "description_pt": "Função de mínimo citada pela fonte entre as funções agregadoras."
+    }
+  },
+  "aggregate_concept": {
+    "concept_id": "C_aggregate_function",
+    "canonical_name": "aggregate function",
+    "name_pt": "função agregadora",
+    "aliases": [
+      "aggregate functions",
+      "aggregates"
+    ],
+    "category": "operation",
+    "description_pt": "Função que calcula um resultado a partir de múltiplas linhas de entrada."
+  },
+  "note": "Lista explícita de funções no parágrafo; classificação revisada, não generalizada de uma consulta de exemplo."
+}

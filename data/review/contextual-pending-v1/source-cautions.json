@@ -1,0 +1,66 @@
+{
+  "review_id": "contextual-pending-v1",
+  "independent_human_review": false,
+  "notes": [
+    {
+      "id": "S01",
+      "type": "ambiguous_abbreviation",
+      "evidence_refs": [
+        "fd_exception"
+      ],
+      "action": "FD normalmente significa functional dependency; na legenda da Figura 12.1 significa full dependency. Não resolver a sigla sem contexto."
+    },
+    {
+      "id": "S02",
+      "type": "source_equivalence_project_separation",
+      "evidence_refs": [
+        "table_rows_columns"
+      ],
+      "action": "D09 equipara relation, table e file. P08 fechado como remissão contextual de file para C_relation, restrita a D09. Não é definição de arquivo físico nem autorização para fundir tabela e relação.",
+      "disposition": "resolved_as_source_scoped_cross_reference"
+    },
+    {
+      "id": "S03",
+      "type": "source_equivalence_project_separation",
+      "evidence_refs": [
+        "simple_single"
+      ],
+      "action": "D02 equipara simple e single-valued. P03 fechado como remissão contextual a C_simple_attribute, restrita a D02; não criar equivalência global nem fundir nós automaticamente.",
+      "disposition": "resolved_as_source_scoped_cross_reference"
+    },
+    {
+      "id": "S04",
+      "type": "source_conceptual_risk",
+      "evidence_refs": [
+        "augmentation_d04",
+        "augmentation_second_claim",
+        "second_normal_form"
+      ],
+      "action": "Não exportar aumentação como sinônimo de dependência parcial. A fonte mistura regra de inferência e dependência parcial; revisão conceitual necessária."
+    },
+    {
+      "id": "S05",
+      "type": "source_example_risk",
+      "evidence_refs": [
+        "reflexivity_example"
+      ],
+      "action": "Exemplo PartNo/NT123 requer revisão; não utilizar para criar novos fatos sobre reflexividade."
+    },
+    {
+      "id": "S06",
+      "type": "contextual_equivalence",
+      "evidence_refs": [
+        "enterprise_constraints"
+      ],
+      "action": "D03 aproxima enterprise constraints e semantic constraints. Conceito ainda não adicionado; não confundir automaticamente com semantic rule ou business rule."
+    }
+  ],
+  "original_issues": "corpus/metadata/figure_source_issues.json",
+  "partial_transcriptions": [
+    "D02_F008",
+    "D09_F003"
+  ],
+  "previous_review": "data/review/source-check-v1/source-cautions.json",
+  "evidence_references": "data/review/source-check-v1/review.json",
+  "contextual_registry": "data/normalization/contextual-aliases-v1.json"
+}

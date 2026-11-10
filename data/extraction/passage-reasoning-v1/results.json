@@ -1,0 +1,170 @@
+{
+  "method": "local_passage_precision_pilot",
+  "model": "qwen3:8b",
+  "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+  "created_at": "2026-11-08T22:06:04.634835+00:00",
+  "runs": [
+    {
+      "passage_id": "D03_C001_P003",
+      "is_synthetic_control": false,
+      "seconds": 17.14,
+      "verification_seconds": 7.05,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage explicitly states that constraints are a very important feature in the relational model and that the relational model supports constraints on attributes or tables, directly supporting the 'model or system -> supported feature' relationship."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "relational model",
+          "type": "SUPPORTS",
+          "target": "constraints",
+          "passage_id": "D03_C001_P003",
+          "evidence": {
+            "chunk_id": "D03_C001",
+            "quote": "Constraints are a very important feature in a relational model. In fact, the relational model supports the well-defined theory of constraints on attributes or tables. Constraints are useful because they allow a designer to specify the semantics of data in the database. <em>Constraints</em> are the rules that force DBMSs to check that data satisfies the semantics.",
+            "start": 77,
+            "end": 442
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D03_C001_P008",
+      "is_synthetic_control": false,
+      "seconds": 8.61,
+      "verification_seconds": 8.0,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage explicitly states that entity integrity requires every table to have a primary key, with exceptions preserved (e.g., Phone cannot be PK due to possible null values)."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "entity integrity",
+          "type": "REQUIRES",
+          "target": "primary key",
+          "passage_id": "D03_C001_P008",
+          "evidence": {
+            "chunk_id": "D03_C001",
+            "quote": "To ensure <em>entity integrity</em>, it is required that every table have a primary key. Neither the PK nor any part of it can contain null values. This is because null values for the primary key mean we cannot identify some rows. For example, in the EMPLOYEE table, Phone cannot be a primary key since some people may not have a telephone.",
+            "start": 1106,
+            "end": 1446
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D03_C001_P010",
+      "is_synthetic_control": false,
+      "seconds": 9.82,
+      "proposal": {
+        "source": "referential integrity",
+        "type": "REQUIRES",
+        "target": "foreign key",
+        "passage_id": "D03_C001_P010"
+      },
+      "precision_policy_flag": "REQUIRES with a subordinate proposition must be reviewed as a statement with conditions, not flattened into a requirement that the target exists.",
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Qualified requirement needs manual review; no relation released."
+    },
+    {
+      "passage_id": "D03_C001_P014",
+      "is_synthetic_control": false,
+      "seconds": 60.94,
+      "verification_seconds": 10.27,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage explicitly states that enforcing referential integrity is required to ensure no orphan records, directly supporting the proposed relationship."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "referential integrity",
+          "type": "REQUIRES",
+          "target": "no orphan records",
+          "passage_id": "D03_C001_P014",
+          "evidence": {
+            "chunk_id": "D03_C001",
+            "quote": "To ensure that there are no orphan records, we need to enforce referential integrity. An <em>orphan record</em> is one whose foreign key FK value is not found in the corresponding entity – the entity where the PK is located. Recall that a typical join is between a PK and FK.",
+            "start": 1991,
+            "end": 2266
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "D07_C002_P004",
+      "is_synthetic_control": false,
+      "seconds": 23.78,
+      "status": "rejected",
+      "error_type": "ValidationError"
+    },
+    {
+      "passage_id": "D07_C001_P002",
+      "is_synthetic_control": false,
+      "seconds": 73.48,
+      "status": "rejected",
+      "error_type": "ValueError",
+      "note": "Truncated response."
+    },
+    {
+      "passage_id": "D07_C002_P006",
+      "is_synthetic_control": false,
+      "seconds": 11.63,
+      "verification_seconds": 6.73,
+      "model_verification": {
+        "entailed": true,
+        "direction_correct": true,
+        "endpoints_are_concepts": true,
+        "conditions_preserved": true,
+        "reason": "The passage explicitly describes a self join as a specific type of join, matching the IS_A relationship between the concepts 'self join' and 'join'."
+      },
+      "status": "passed_model_check_pending_review",
+      "relations": [
+        {
+          "source": "self join",
+          "type": "IS_A",
+          "target": "join",
+          "passage_id": "D07_C002_P006",
+          "evidence": {
+            "chunk_id": "D07_C002",
+            "quote": "We can also join a table against itself. This is called a <em>self join</em>. As an example, suppose we wish to find all the weather records that are in the temperature range of other weather records. So we need to compare the `temp_lo` and `temp_hi` columns of each `weather` row to the `temp_lo` and `temp_hi` columns of all other `weather` rows. We can do this with the following query:",
+            "start": 1473,
+            "end": 1862
+          },
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "passage_id": "CONTROL_1",
+      "is_synthetic_control": true,
+      "seconds": 9.7,
+      "status": "abstained",
+      "relations": []
+    },
+    {
+      "passage_id": "CONTROL_2",
+      "is_synthetic_control": true,
+      "seconds": 4.62,
+      "status": "abstained",
+      "relations": []
+    }
+  ],
+  "semantic_check_enabled": true,
+  "note": "Selected passages and labeled controls; not exhaustive or independently evaluated. The same model verifies itself; manual review remains required."
+}
