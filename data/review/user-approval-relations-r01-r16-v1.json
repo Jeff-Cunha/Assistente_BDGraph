@@ -1,0 +1,132 @@
+{
+  "approval_id": "user-approval-relations-r01-r16-v1",
+  "date": "2026-11-09",
+  "reviewer": "user",
+  "statement": "Concordo também",
+  "context": "Resposta à confirmação da revisão das relações R01–R16 apresentadas neste chat.",
+  "status": "approved_relations",
+  "release": "parte1-pendencias-contextuais-v1",
+  "primary_files": [
+    {
+      "path": "data/extraction/rule-knowledge-union-v2/extraction.json",
+      "sha256": "c29e07486d488f23228beeecf278a11e7f75ecd18071ef781e63347bb21f9baf",
+      "extraction_method": "rule_candidates",
+      "concepts": 79,
+      "relations": 5
+    },
+    {
+      "path": "data/extraction/model-knowledge-union-v3/extraction.json",
+      "sha256": "d0630f99626b5e59633df4c76deca94b3db829c65fe119ad67efd214f85f8901",
+      "extraction_method": "llm_candidates",
+      "concepts": 20,
+      "relations": 11
+    },
+    {
+      "path": "data/extraction/manual-source-review-v1/extraction.json",
+      "sha256": "2f46c6af47715f7449d9b839c707b5a10818450c45ac6bdabc95cb8a5740318a",
+      "extraction_method": "manual_reference",
+      "concepts": 5,
+      "relations": 0
+    }
+  ],
+  "approved_relations": [
+    {
+      "chat_item": "R01",
+      "source": "C_avg",
+      "type": "IS_A",
+      "target": "C_aggregate_function"
+    },
+    {
+      "chat_item": "R02",
+      "source": "C_count",
+      "type": "IS_A",
+      "target": "C_aggregate_function"
+    },
+    {
+      "chat_item": "R03",
+      "source": "C_max",
+      "type": "IS_A",
+      "target": "C_aggregate_function"
+    },
+    {
+      "chat_item": "R04",
+      "source": "C_min",
+      "type": "IS_A",
+      "target": "C_aggregate_function"
+    },
+    {
+      "chat_item": "R05",
+      "source": "C_sum",
+      "type": "IS_A",
+      "target": "C_aggregate_function"
+    },
+    {
+      "chat_item": "R06",
+      "source": "C_relational_dbms",
+      "type": "IS_A",
+      "target": "C_database_system"
+    },
+    {
+      "chat_item": "R07",
+      "source": "C_where",
+      "type": "REQUIRES",
+      "target": "C_boolean_expression"
+    },
+    {
+      "chat_item": "R08",
+      "source": "C_self_join",
+      "type": "IS_A",
+      "target": "C_join"
+    },
+    {
+      "chat_item": "R09",
+      "source": "C_where",
+      "type": "EVALUATED_BEFORE",
+      "target": "C_max"
+    },
+    {
+      "chat_item": "R10",
+      "source": "C_having",
+      "type": "FILTERS",
+      "target": "C_grouped_row"
+    },
+    {
+      "chat_item": "R11",
+      "source": "C_select",
+      "type": "RETRIEVES",
+      "target": "C_data"
+    },
+    {
+      "chat_item": "R12",
+      "source": "C_filter",
+      "type": "TYPICALLY_USED_IN",
+      "target": "C_aggregation"
+    },
+    {
+      "chat_item": "R13",
+      "source": "C_postgresql",
+      "type": "SUPPORTS",
+      "target": "C_aggregate_function"
+    },
+    {
+      "chat_item": "R14",
+      "source": "C_join",
+      "type": "COMBINES",
+      "target": "C_row"
+    },
+    {
+      "chat_item": "R15",
+      "source": "C_relational_model",
+      "type": "SUPPORTS",
+      "target": "C_constraint"
+    },
+    {
+      "chat_item": "R16",
+      "source": "C_entity_integrity",
+      "type": "REQUIRES",
+      "target": "C_primary_key"
+    }
+  ],
+  "qualifications": "Aprovação inclui as condições e exceções apresentadas na revisão: WHERE opcional na consulta; ordem lógica no mesmo nível em R09; HAVING sem obrigação universal de agregados; FILTER opcional e por agregador; JOIN sem exigência universal de FK; integridade de entidade no escopo conceitual da fonte.",
+  "note": "Aprovação da amostra de 16 relações; não constitui avaliação independente do sistema completo nem aceite de P2 ao contrato. Dados e evidências não foram alterados."
+}
