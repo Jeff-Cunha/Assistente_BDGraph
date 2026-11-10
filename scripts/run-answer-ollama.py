@@ -22,6 +22,9 @@ spec.loader.exec_module(grounding)
 spec = importlib.util.spec_from_file_location('guard_cypher', ROOT / 'scripts/guard-cypher.py')
 guard = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(guard)
+spec = importlib.util.spec_from_file_location('neo4j_executor', ROOT / 'scripts/neo4j-executor.py')
+executor = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(executor)
 
 BASE_URL = 'http://127.0.0.1:11434'
 MAX_EVIDENCE = 20
@@ -88,9 +91,32 @@ def graph_block(plan_path, max_hops):
     return {'cypher': compiled['cypher'], 'parameters': compiled['parameters']}
 
 
+def resolve_graph(parser, args, plan):
+    """Execute the validated plan against Neo4j and turn the paths into a bundle."""
+    try:
+        config = executor.load_config()
+        driver = executor.connect(config)
+        try:
+            database = config['NEO4J_DATABASE']
+            executed = executor.execute_plan(driver, plan, database, args.db_timeout, args.max_hops)
+            metadata = executor.chunk_metadata(
+                driver, executor.evidence_chunk_ids(executed['rows']), database, args.db_timeout)
+        finally:
+            driver.close()
+    except executor.ExecutorError as exc:
+        parser.error(str(exc))
+    graph = {'cypher': executed['cypher'], 'parameters': executed['parameters'],
+             'paths': executed['rows']}
+    return graph, executor.bundle_from_paths(args.question, executed['rows'], metadata)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--bundle', type=Path, required=True)
+    parser.add_argument('--bundle', type=Path,
+                        help='Evidence bundle produced by retrieval; omit when using --neo4j.')
+    parser.add_argument('--neo4j', action='store_true',
+                        help='Build the bundle from the graph instead of reading --bundle.')
+    parser.add_argument('--question', help='Question to answer in --neo4j mode.')
     parser.add_argument('--output', type=Path, default=ROOT / 'work/llm-answer-run')
     parser.add_argument('--plan', type=Path, help='Query plan compiled into the graph block.')
     parser.add_argument('--replay', type=Path, help='Reuse a saved model response; no API call.')
@@ -98,6 +124,7 @@ def main():
     parser.add_argument('--context', type=int, default=16384)
     parser.add_argument('--output-tokens', type=int, default=2048)
     parser.add_argument('--timeout', type=int, default=240)
+    parser.add_argument('--db-timeout', type=float, default=executor.DEFAULT_TIMEOUT)
     parser.add_argument('--max-hops', type=int, default=4)
     parser.add_argument('--no-corpus', action='store_true',
                         help='Skip literal quote checking against corpus/chunks.')
@@ -105,22 +132,40 @@ def main():
     args = parser.parse_args()
     if min(args.context, args.output_tokens, args.timeout, args.max_hops) <= 0:
         parser.error('Numeric limits must be positive.')
+    if args.db_timeout <= 0:
+        parser.error('Database timeout must be positive.')
     if args.output_tokens >= args.context:
         parser.error('Output budget must be smaller than the total context.')
-    bundle_bytes = args.bundle.read_bytes()
-    bundle = grounding.normalize_bundle(json.loads(bundle_bytes.decode('utf-8-sig')))
-    prompt = build_prompt(bundle)
-    try:
-        graph = graph_block(args.plan, args.max_hops)
-    except (guard.InvalidPlan, guard.UnsafeCypher) as exc:
-        parser.error(f'Invalid query plan: {exc}')
-
+    if bool(args.bundle) == bool(args.neo4j):
+        parser.error('Use exactly one of --bundle or --neo4j.')
+    if args.neo4j and (not args.question or not args.plan):
+        parser.error('--neo4j needs --question and --plan: the graph query comes from a plan.')
+    plan = json.loads(args.plan.read_text(encoding='utf-8')) if args.plan else None
     model = {'provider': 'ollama_local', 'model': args.model, 'model_digest': None,
              'settings': {'num_ctx': args.context, 'num_predict': args.output_tokens,
                           'temperature': 0, 'seed': 42, 'think': False}}
     chunk_texts = None if args.no_corpus else grounding.load_corpus_texts()
+    if args.neo4j and args.dry_run:
+        try:
+            compiled = guard.compile_plan(plan, max_hops=args.max_hops)
+        except (guard.InvalidPlan, guard.UnsafeCypher) as exc:
+            parser.error(f'Invalid query plan: {exc}')
+        print(f'Dry run OK (grafo): plano válido com {compiled["hops"]} salto(s); '
+              'nenhuma consulta ao banco e nenhuma chamada de modelo.')
+        print(compiled['cypher'])
+        return
+    if args.neo4j:
+        graph, bundle = resolve_graph(parser, args, plan)
+    else:
+        try:
+            graph = graph_block(args.plan, args.max_hops)
+        except (guard.InvalidPlan, guard.UnsafeCypher) as exc:
+            parser.error(f'Invalid query plan: {exc}')
+        bundle = json.loads(args.bundle.read_text(encoding='utf-8-sig'))
+    bundle_bytes = json.dumps(bundle, ensure_ascii=False, sort_keys=True).encode('utf-8')
     if args.dry_run:
-        print(f'Dry run OK: {len(bundle["evidence"])} evidence item(s), model={args.model}, '
+        prompt = build_prompt(grounding.normalize_bundle(bundle))
+        print(f'Dry run OK: {len(bundle.get("evidence", []))} evidence item(s), model={args.model}, '
               f'prompt_sha256={prompt["prompt_sha256"][:16]}; no call.')
         return
     output = args.output.resolve()
@@ -128,6 +173,18 @@ def main():
         parser.error('Output must remain inside the project.')
     if output.exists() and any(output.iterdir()):
         parser.error('Choose a new output directory; existing runs are preserved.')
+    if not bundle.get('evidence'):
+        answer = grounding.abstention_response(
+            bundle.get('question') or args.question or 'Pergunta sem texto',
+            'Nenhuma evidência foi recuperada para esta pergunta; o modelo não foi chamado.',
+            graph=graph, model=model)
+        output.mkdir(parents=True, exist_ok=True)
+        (output / 'answer.json').write_text(
+            json.dumps(answer, ensure_ascii=False, indent=2), encoding='utf-8')
+        print('status: abstained (sem evidência)')
+        return
+    bundle = grounding.normalize_bundle(bundle)
+    prompt = build_prompt(bundle)
     output.mkdir(parents=True, exist_ok=True)
     manifest = {
         'provider': 'ollama_local', 'base_url': BASE_URL, 'model': args.model,

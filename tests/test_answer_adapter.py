@@ -146,5 +146,120 @@ class ReplayTests(unittest.TestCase):
         self.assertFalse(self.output.exists())
 
 
+class GraphModeTests(unittest.TestCase):
+    """No database: the driver is faked, but compilation, mapping and validation are real."""
+
+    def setUp(self):
+        self.output = ROOT / 'work' / 'test-answer-graph'
+        shutil.rmtree(self.output, ignore_errors=True)
+
+    def tearDown(self):
+        shutil.rmtree(self.output, ignore_errors=True)
+
+    def fake_driver(self):
+        quote = 'a foreign key must have a matching primary key'
+        path_row = {
+            'nodes': [{'label': 'Concept', 'id': 'C_referential_integrity',
+                       'name': 'integridade referencial', 'name_pt': 'integridade referencial',
+                       'canonical_name': 'referential integrity'},
+                      {'label': 'Concept', 'id': 'C_foreign_key', 'name': 'chave estrangeira',
+                       'name_pt': 'chave estrangeira', 'canonical_name': 'foreign key'}],
+            'relationships': [{'type': 'GOVERNS', 'relation_id': 'R_sample_003',
+                               'source': 'C_referential_integrity', 'target': 'C_foreign_key',
+                               'review_status': 'accepted', 'assertion_kind': 'explicit',
+                               'evidence_chunk_ids': ['D03_C001'],
+                               'evidence_quotes_json': json.dumps(
+                                   [{'chunk_id': 'D03_C001', 'quote': quote}])}],
+        }
+        metadata_row = {'chunk_id': 'D03_C001', 'document_id': 'D03',
+                        'title': 'Chapter 9 Integrity Rules and Constraints',
+                        'source_url': 'https://example.org/d03', 'section_path': ['Chapter 9']}
+
+        class Driver:
+            def __init__(self):
+                self.calls = []
+
+            def execute_query(self, query, parameters=None, **kwargs):
+                self.calls.append(query)
+                return [metadata_row] if '$chunk_ids' in query else [path_row]
+
+            def close(self):
+                pass
+
+        return Driver()
+
+    def test_dry_run_compiles_the_plan_without_touching_the_database(self):
+        text = run(['--neo4j', '--question', 'Pergunta?', '--plan', str(PLAN), '--dry-run'])
+        self.assertIn('Dry run OK (grafo)', text)
+        self.assertIn('LIMIT $limit', text)
+        self.assertFalse(self.output.exists())
+
+    def test_mode_selection_is_explicit(self):
+        with self.assertRaises(SystemExit) as caught:
+            run(['--bundle', str(BUNDLE), '--neo4j', '--question', 'P', '--plan', str(PLAN)])
+        self.assertEqual(caught.exception.code, 2)
+        with self.assertRaises(SystemExit) as caught:
+            run(['--neo4j'])
+        self.assertEqual(caught.exception.code, 2)
+
+    def test_configuration_errors_are_reported_without_a_traceback(self):
+        with mock.patch.object(m.executor, 'load_config',
+                              side_effect=m.executor.ExecutorError('Configure NEO4J_PASSWORD')):
+            with self.assertRaises(SystemExit) as caught:
+                run(['--neo4j', '--question', 'P', '--plan', str(PLAN),
+                     '--output', str(self.output)])
+        self.assertEqual(caught.exception.code, 2)
+
+    def test_graph_run_produces_a_grounded_answer(self):
+        driver = self.fake_driver()
+        reply = ROOT / 'work' / 'test-graph-response.json'
+        reply.write_text(json.dumps({
+            'answered': True,
+            'answer_pt': 'A integridade referencial governa a chave estrangeira.',
+            'claims': [{'text': 'A integridade referencial governa a chave estrangeira.',
+                        'evidence_ids': ['E1']}],
+            'notes': ''}), encoding='utf-8')
+        try:
+            with mock.patch.object(m.executor, 'load_config',
+                                  return_value={'NEO4J_URI': 'bolt://x', 'NEO4J_USER': 'neo4j',
+                                                'NEO4J_PASSWORD': 'secret',
+                                                'NEO4J_DATABASE': 'neo4j'}), \
+                    mock.patch.object(m.executor, 'connect', return_value=driver):
+                text = run(['--neo4j', '--question',
+                            'Como a integridade referencial se relaciona?',
+                            '--plan', str(PLAN), '--replay', str(reply),
+                            '--output', str(self.output)])
+        finally:
+            reply.unlink()
+        self.assertIn('status: answered', text)
+        answer = json.loads((self.output / 'answer.json').read_text(encoding='utf-8'))
+        Draft202012Validator(SCHEMA).validate(answer)
+        self.assertEqual(answer['citations'][0]['chunk_id'], 'D03_C001')
+        self.assertEqual(answer['citations'][0]['source_url'], 'https://example.org/d03')
+        self.assertEqual(answer['graph']['parameters']['id_0'], 'C_referential_integrity')
+        self.assertEqual(len(driver.calls), 2)      # path query + chunk metadata
+
+    def test_graph_run_without_evidence_abstains_instead_of_answering(self):
+        class EmptyDriver:
+            def execute_query(self, query, parameters=None, **kwargs):
+                return [{'nodes': [], 'relationships': []}] if '$chunk_ids' not in query else []
+
+            def close(self):
+                pass
+
+        with mock.patch.object(m.executor, 'load_config',
+                              return_value={'NEO4J_URI': 'bolt://x', 'NEO4J_USER': 'neo4j',
+                                            'NEO4J_PASSWORD': 'secret',
+                                            'NEO4J_DATABASE': 'neo4j'}), \
+                mock.patch.object(m.executor, 'connect', return_value=EmptyDriver()):
+            text = run(['--neo4j', '--question', 'Pergunta sem base', '--plan', str(PLAN),
+                        '--output', str(self.output)])
+        self.assertIn('abstained', text)
+        answer = json.loads((self.output / 'answer.json').read_text(encoding='utf-8'))
+        Draft202012Validator(SCHEMA).validate(answer)
+        self.assertFalse(answer['answered'])
+        self.assertEqual(answer['support']['level'], 'insufficient')
+
+
 if __name__ == '__main__':
     unittest.main()

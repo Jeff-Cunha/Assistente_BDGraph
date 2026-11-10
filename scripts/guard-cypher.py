@@ -17,20 +17,28 @@ ALLOWED_PROPERTIES = {
     'Concept': frozenset({
         'concept_id', 'canonical_name', 'name_pt', 'aliases', 'category',
         'description_pt', 'review_status', 'review_note', 'assertion_kind',
-        'evidence_chunk_ids', 'evidence_quotes_json', 'extraction_method',
+        'evidence_chunk_ids', 'evidence_quotes_json', 'extraction_methods',
+        'provenance_json',
     }),
     'Chunk': frozenset({
         'chunk_id', 'document_id', 'text', 'content_type', 'language',
-        'section_path', 'source_url', 'word_count', 'figure_ids',
+        'section_path', 'source_url', 'word_count', 'chunk_index', 'figure_ids',
         'parent_chunk_ids', 'transcription_status', 'uncertainties',
         'source_issue_ids', 'supplement_id',
     }),
     'Document': frozenset({
         'document_id', 'title', 'source_url', 'language', 'version',
-        'collected_at',
+        'collected_at', 'authors', 'license_name', 'license_url',
+        'attributions_and_notices', 'quality_status',
     }),
 }
-ALL_PROPERTIES = frozenset().union(*ALLOWED_PROPERTIES.values())
+# Whitelist of what a generated query may read, not of everything the graph stores:
+# Chunk.embedding and the *_json blobs that duplicate other properties stay out on purpose.
+RELATIONSHIP_PROPERTIES = frozenset({
+    'relation_id', 'relation_ids', 'assertion_kind', 'review_status', 'review_note',
+    'extraction_methods', 'evidence_chunk_ids', 'evidence_quotes_json', 'provenance_json',
+})
+ALL_PROPERTIES = frozenset().union(*ALLOWED_PROPERTIES.values()) | RELATIONSHIP_PROPERTIES
 
 STRUCTURAL_RELATION_TYPES = frozenset({'CONTAINS', 'SUPPLEMENTS', 'MENTIONS'})
 SEMANTIC_RELATION_TYPES = frozenset({
@@ -400,10 +408,13 @@ def _project(side, with_evidence):
     if side == 'nodes':
         return ('[x IN nodes(p) | {label: head(labels(x)), '
                 'id: coalesce(x.concept_id, x.chunk_id, x.document_id), '
-                'name: coalesce(x.name_pt, x.canonical_name, x.title, x.content_type)}] AS nodes')
+                'name: coalesce(x.name_pt, x.canonical_name, x.title, x.content_type), '
+                'name_pt: x.name_pt, canonical_name: x.canonical_name}] AS nodes')
     if with_evidence:
-        return ('[x IN relationships(p) | {type: type(x), review_status: x.review_status, '
-                'assertion_kind: x.assertion_kind, evidence_chunk_ids: x.evidence_chunk_ids, '
+        return ('[x IN relationships(p) | {type: type(x), relation_id: x.relation_id, '
+                'source: startNode(x).concept_id, target: endNode(x).concept_id, '
+                'review_status: x.review_status, assertion_kind: x.assertion_kind, '
+                'evidence_chunk_ids: x.evidence_chunk_ids, '
                 'evidence_quotes_json: x.evidence_quotes_json}] AS relationships')
     return '[x IN relationships(p) | type(x)] AS relationship_types'
 

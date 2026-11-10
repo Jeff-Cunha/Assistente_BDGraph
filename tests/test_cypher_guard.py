@@ -50,6 +50,29 @@ class CompilePlanTests(unittest.TestCase):
         self.assertEqual(result['hops'], 4)
         self.assertIn('(n4:Concept)', result['cypher'])
 
+    def test_evidence_projection_identifies_each_relationship(self):
+        query = m.compile_plan(plan())['cypher']
+        self.assertIn('relation_id: x.relation_id', query)
+        self.assertIn('source: startNode(x).concept_id', query)
+        self.assertIn('target: endNode(x).concept_id', query)
+        self.assertIn('canonical_name: x.canonical_name', query)
+
+    def test_whitelist_matches_the_properties_the_graph_stores(self):
+        stored = {'concept_id', 'canonical_name', 'name_pt', 'aliases', 'category',
+                  'description_pt', 'review_status', 'review_note', 'extraction_methods',
+                  'evidence_chunk_ids', 'evidence_quotes_json', 'provenance_json'}
+        self.assertLessEqual(stored, m.ALLOWED_PROPERTIES['Concept'])
+        self.assertLessEqual({'relation_id', 'relation_ids'}, m.RELATIONSHIP_PROPERTIES)
+        self.assertIn('attributions_and_notices', m.ALLOWED_PROPERTIES['Document'])
+        # Vectors are stored on chunks but a generated query must never read them.
+        self.assertNotIn('embedding', m.ALL_PROPERTIES)
+        self.assertNotIn('extraction_method', m.ALL_PROPERTIES)
+
+    def test_relationship_properties_are_readable(self):
+        result = m.validate_cypher('MATCH (a:Concept)-[r:IS_A]->(b:Concept) '
+                                   'RETURN r.relation_id AS id, r.relation_ids AS ids')
+        self.assertEqual(result['properties'], ['relation_id', 'relation_ids'])
+
     def test_evidence_projection_can_be_disabled(self):
         query = m.compile_plan(plan(include_evidence=False))['cypher']
         self.assertIn('relationship_types', query)

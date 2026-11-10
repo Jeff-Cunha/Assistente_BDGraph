@@ -347,6 +347,19 @@ def abstention(bundle, reason, dropped=None, graph=None, model=None):
                           ABSTENTION_PT, support, graph, model)
 
 
+def abstention_response(question, reason, graph=None, model=None):
+    """Abstain when retrieval produced no evidence at all, without calling a model."""
+    minimal = {
+        'question': (question or '').strip() or 'Pergunta sem texto',
+        'language': 'pt-BR',
+        'retrieval': {'strategy': 'graph', 'channels': [], 'graph_executed': False,
+                      'max_hops': None},
+        'concepts': [],
+        'evidence': [],
+    }
+    return abstention(minimal, reason, graph=graph, model=model)
+
+
 def evaluate(bundle, raw, chunk_texts=None, graph=None, model=None):
     """Full pipeline: normalise the bundle, verify the model answer, score support, assemble."""
     bundle = normalize_bundle(bundle)

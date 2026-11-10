@@ -4,9 +4,10 @@ Esta parte conecta o modelo de linguagem às evidências recuperadas. Ela não b
 não calcula embeddings e não desenha a interface: recebe evidências da parte 3, devolve uma
 resposta com citações e um nível de sustentação calculado por regras.
 
-Estado: implementado e testado com dados reais de extração e com o corpus. A execução real do
-modelo local (`qwen3:8b` via Ollama) ainda não foi feita nesta parte; os testes usam `--dry-run`
-e `--replay`, sem chamada de rede.
+Estado: implementado e testado com dados reais de extração, com o corpus e contra a API do
+driver do Neo4j (com driver falso nos testes). A execução real do modelo local (`qwen3:8b` via
+Ollama) e a execução contra uma instância Neo4j no ar ainda não foram feitas nesta parte; os
+testes usam `--dry-run`, `--replay` e um driver falso, sem chamada de rede.
 
 ## Fluxo
 
@@ -26,10 +27,12 @@ Arquivos desta parte:
 | Arquivo | Papel |
 |---|---|
 | `scripts/guard-cypher.py` | Compila plano de consulta e valida Cypher somente-leitura. |
+| `scripts/neo4j-executor.py` | Executa a consulta compilada em modo leitura e monta o pacote de evidências. |
 | `scripts/answer-grounding.py` | Verifica a resposta, resolve citações e calcula a sustentação. |
 | `scripts/run-answer-ollama.py` | Adaptador Ollama: prompt, chamada, validação e manifesto. |
 | `schemas/answer.schema.json` | Contrato de saída consumido pela interface. |
 | `data/llm/exemplos/` | Bundle e resposta ilustrativa para executar sem Neo4j e sem modelo. |
+| `tests/test_cypher_guard.py`, `tests/test_neo4j_executor.py`, `tests/test_answer_grounding.py`, `tests/test_answer_adapter.py` | 78 testes desta parte. |
 
 ## Entrada: pacote de evidências da parte 3
 
@@ -146,6 +149,39 @@ três tipos por salto, todos do vocabulário permitido; `limit` entre 1 e 200. C
 A consulta compilada é validada por esse mesmo verificador antes de ser devolvida, e a
 validação também devolve quais rótulos, relações e propriedades foram usados.
 
+A projeção devolvida pelo plano compilado traz `nodes` (`label`, `id`, `name`, `name_pt`,
+`canonical_name`) e `relationships` (`type`, `relation_id`, `source`, `target`,
+`review_status`, `assertion_kind`, `evidence_chunk_ids`, `evidence_quotes_json`). Com isso a
+interface desenha o subgrafo e mostra a evidência de cada aresta sem consulta adicional.
+
+A lista de propriedades permitidas é a das propriedades que consultas geradas **podem** ler, não
+a de tudo o que o grafo guarda: `Chunk.embedding` e os campos `*_json` que duplicam outras
+propriedades ficam de fora de propósito.
+
+## Execução no Neo4j
+
+`scripts/neo4j-executor.py` executa a consulta compilada e transforma os caminhos em pacote de
+evidências. Nenhuma consulta chega ao banco sem passar pelo verificador antes.
+
+- **Modo leitura obrigatório:** toda execução usa `execute_query(..., routing_=READ)`. A edição
+  Community não tem usuários somente-leitura, então esta é a barreira do banco; se algo tentar
+  escrever, o servidor recusa com `Neo.ClientError.Statement.AccessMode` e o executor traduz
+  isso em erro explícito.
+- **Limites:** `LIMIT` sempre parametrizado, orçamento de saltos do plano e `--db-timeout`
+  (padrão 10 s) aplicado no servidor.
+- **Configuração:** `NEO4J_URI`, `NEO4J_USER`, `NEO4J_PASSWORD` e `NEO4J_DATABASE`, lidos do
+  ambiente ou do `.env` local; variáveis de ambiente têm precedência. Senha ausente é erro
+  explícito, e `redact()` nunca devolve a senha.
+- **Duas consultas:** uma de caminho (a compilada do plano) e outra para resolver `chunk_id`,
+  `document_id`, `source_url`, `section_path` e título dos trechos citados.
+- **Evidência sem reparo:** a citação vem de `evidence_quotes_json`, gravada pela parte 2. JSON
+  inválido ou item sem `chunk_id`/`quote` interrompe com erro; nada é reescrito nem traduzido.
+- **Sem caminho, sem resposta:** se o grafo não devolver evidência, o adaptador grava uma
+  abstenção e **não chama o modelo**.
+
+Requer o driver do Neo4j (`requirements-neo4j.txt`, da parte 2). O executor importa o driver
+dentro das funções, então o restante desta parte continua funcionando sem ele.
+
 ## Resposta fundamentada
 
 O prompt (`run-answer-ollama.py`) recebe pergunta, citações e nomes de conceitos — nunca URLs,
@@ -196,11 +232,26 @@ python scripts/run-answer-ollama.py --bundle data/llm/exemplos/caminho-integrida
     --replay data/llm/exemplos/resposta-ilustrativa.json --output work/exemplo-execucao
 ```
 
-Com o Ollama aberto e `qwen3:8b` instalado:
+Com o Ollama aberto e `qwen3:8b` instalado, a partir do Neo4j:
 
 ```powershell
-python scripts/run-answer-ollama.py --bundle data/llm/SEU_PACOTE.json --plan data/llm/SEU_PLANO.json
+# 1. confere a conexão e as contagens do grafo
+python scripts/neo4j-executor.py --plan data/llm/exemplos/plano-integridade-join.json `
+    --question "..." --check
+
+# 2. monta o pacote de evidências a partir dos caminhos do grafo
+python scripts/neo4j-executor.py --plan data/llm/exemplos/plano-integridade-join.json `
+    --question "Como a integridade referencial se relaciona com chaves estrangeiras?" `
+    --output work/bundle.json
+
+# 3. executa o plano direto no adaptador, sem arquivo intermediário
+python scripts/run-answer-ollama.py --neo4j `
+    --question "Como a integridade referencial se relaciona com chaves estrangeiras?" `
+    --plan data/llm/exemplos/plano-integridade-join.json
 ```
+
+Em `--neo4j`, `--dry-run` valida e imprime o Cypher compilado sem abrir conexão. Usar `--bundle`
+com um arquivo continua sendo o caminho de integração com a parte 3.
 
 Cada execução grava `answer.json`, `model-response.json`, `manifest.json` (modelo, digest,
 versão do servidor, parâmetros, hash do pacote e do prompt, status, tempos e tokens) e, quando
@@ -217,17 +268,21 @@ python -m pip install -r requirements-extraction.txt
 python -m unittest discover -s tests -p "test_*.py" -v
 ```
 
-Os 55 testes desta parte passam junto com o restante da suíte do repositório (120 testes na
-base atual): 23 do verificador de Cypher, 21 da fundamentação e 11 do adaptador. Os testes usam
-dados sintéticos e o corpus real, mas não avaliam a qualidade do modelo — isso depende da
-execução com o Ollama e da avaliação da parte 6.
+Os 78 testes desta parte passam junto com o restante da suíte do repositório (143 testes na
+base atual): 26 do verificador de Cypher, 15 do executor, 21 da fundamentação e 16 do adaptador.
+Os testes usam dados sintéticos, um driver falso e o corpus real, mas não avaliam a qualidade do
+modelo — isso depende da execução com o Ollama e da avaliação da parte 6.
 
 ## O que esta parte precisa das outras
 
-- **Parte 2:** usuário Neo4j somente-leitura para executar a consulta compilada; confirmação de
-  que as propriedades do grafo são as do contrato.
-- **Parte 3:** o pacote de evidências acima, incluindo `review_status` e `origin` por item; e a
-  decisão do modelo de embeddings, para perguntas em português alcançarem trechos em inglês.
+- **Parte 2 (entregue):** esquema com três labels, unicidade por ID, índices de propriedade e
+  fulltext, ingestão idempotente com evidência por aresta. Confirmado por execução de
+  `ingest --dry-run`: 9 documentos, 59 trechos, 93 conceitos, 16 relações (23 com a amostra).
+  A barreira de escrita é `routing_=READ`, não um usuário só-leitura, porque a Community não tem
+  RBAC; esta parte já usa esse modo.
+- **Parte 3:** o pacote de evidências descrito acima, incluindo `review_status` e `origin` por
+  item; o modelo e a dimensão dos embeddings, para o índice vetorial e para perguntas em
+  português alcançarem trechos em inglês.
 - **Parte 5:** consumir `schemas/answer.schema.json`; a tela precisa exibir `support.reasons` e
   `limitations`, não apenas o rótulo do nível.
 - **Parte 6:** as perguntas de avaliação definem quais caminhos multi-hop precisam existir no
@@ -237,13 +292,21 @@ execução com o Ollama e da avaliação da parte 6.
 
 - A execução real do `qwen3:8b` para respostas ainda não foi feita; a qualidade da fundamentação
   com esse modelo é desconhecida e precisa de avaliação independente.
-- O grafo entregue pela parte 1 tem 88 conceitos e 16 relações. A cadeia de quatro saltos usada
-  como exemplo existe apenas na amostra manual (`data/extraction/sample.json`, marcada como
-  opcional em `data/release/current.json`); não está nas duas saídas indicadas como principais.
-  Sem mais relações aprovadas, perguntas multi-hop do conjunto de avaliação não terão caminho.
+- **Nenhuma resposta foi produzida a partir do banco real.** A ingestão da parte 2 existe e foi
+  validada em `--dry-run`, e o executor desta parte está testado com driver falso, mas não há
+  instância Neo4j verificada neste ambiente (sem Docker instalado).
+- **Índice vetorial não existe** — depende do modelo e da dimensão que a parte 3 ainda vai
+  definir. O comando está pronto e comentado em `db/schema.cypher` (parte 2).
+- **GDS/APOC não estão habilitados**; o algoritmo de grafo da parte 3 precisará do plugin ou de
+  uma implementação própria.
+- O grafo carregado tem 16 relações nos arquivos principais. A cadeia de quatro saltos usada
+  como exemplo depende de `--include-sample` (amostra manual); sem ela, só há dois caminhos de
+  dois saltos, ambos dentro de um documento. Sem mais relações aprovadas, perguntas multi-hop do
+  conjunto de avaliação não terão caminho.
 - O verificador cobre as regras listadas acima; não é um parser completo de Cypher. A proteção
-  real depende também de o usuário do banco ser somente-leitura.
+  real depende também do `routing_=READ` do executor e da conferência de texto pelo verificador —
+  as duas coisas, não uma só.
 - Perguntas em português dependem do casamento bilíngue da parte 3; traduzir citações é proibido
   e reduz a cobertura textual.
-- A ingestão no Neo4j, a recuperação híbrida e a interface ainda não existem, então nenhuma
-  resposta foi produzida a partir do banco real.
+- A recuperação híbrida e a interface ainda não existem; o modo `--neo4j` é uma recuperação
+  apenas pelo grafo, usada para validar a integração, e não substitui a parte 3.
