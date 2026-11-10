@@ -1,0 +1,128 @@
+{
+  "question": "Como a integridade referencial se relaciona com chaves estrangeiras e com o uso típico dessas chaves em junções?",
+  "language": "pt-BR",
+  "retrieval": {
+    "strategy": "hybrid",
+    "channels": [
+      "graph",
+      "vector"
+    ],
+    "graph_executed": true,
+    "max_hops": 4
+  },
+  "concepts": [
+    {
+      "concept_id": "C_referential_integrity",
+      "canonical_name": "referential integrity",
+      "name_pt": "integridade referencial"
+    },
+    {
+      "concept_id": "C_foreign_key",
+      "canonical_name": "foreign key",
+      "name_pt": "chave estrangeira"
+    },
+    {
+      "concept_id": "C_join",
+      "canonical_name": "join",
+      "name_pt": "junção"
+    },
+    {
+      "concept_id": "C_outer_join",
+      "canonical_name": "outer join",
+      "name_pt": "junção externa"
+    },
+    {
+      "concept_id": "C_left_outer_join",
+      "canonical_name": "left outer join",
+      "name_pt": "junção externa à esquerda"
+    }
+  ],
+  "evidence": [
+    {
+      "chunk_id": "D03_C001",
+      "document_id": "D03",
+      "title": "Chapter 9 Integrity Rules and Constraints",
+      "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-9-integrity-rules-and-constraints/",
+      "section_path": [
+        "Chapter 9 Integrity Rules and Constraints"
+      ],
+      "quote": "<em>Referential integrity</em> requires that a foreign key must have a matching primary key or it must be null. This constraint is specified between two tables (parent and child); it maintains the correspondence between rows in these tables. It means the reference from a row in one table to another table must be valid.",
+      "review_status": "accepted",
+      "origin": "graph",
+      "relation": {
+        "relation_id": "R_sample_003",
+        "type": "GOVERNS",
+        "source": "C_referential_integrity",
+        "target": "C_foreign_key"
+      }
+    },
+    {
+      "chunk_id": "D03_C001",
+      "document_id": "D03",
+      "title": "Chapter 9 Integrity Rules and Constraints",
+      "source_url": "https://opentextbc.ca/dbdesign01/chapter/chapter-9-integrity-rules-and-constraints/",
+      "section_path": [
+        "Chapter 9 Integrity Rules and Constraints"
+      ],
+      "quote": "Recall that a typical join is between a PK and FK.",
+      "review_status": "accepted",
+      "origin": "graph",
+      "relation": {
+        "relation_id": "R_sample_004",
+        "type": "TYPICALLY_USED_IN",
+        "source": "C_foreign_key",
+        "target": "C_join"
+      }
+    },
+    {
+      "chunk_id": "D07_C002",
+      "document_id": "D07",
+      "title": "2.6. Joins Between Tables",
+      "source_url": "https://www.postgresql.org/docs/18/tutorial-join.html",
+      "section_path": [
+        "2.6. Joins Between Tables"
+      ],
+      "quote": "Now we will figure out how we can get the Hayward records back in. What we want the query to do is to scan the `weather` table and for each row to find the matching `cities` row(s). If no matching row is found we want some “empty values” to be substituted for the `cities` table's columns. This kind of query is called an <em>outer join</em>. (The joins we have seen so far are <em>inner joins</em>.)",
+      "review_status": "accepted",
+      "origin": "graph",
+      "relation": {
+        "relation_id": "R_sample_008",
+        "type": "HAS_FORM",
+        "source": "C_join",
+        "target": "C_outer_join"
+      }
+    },
+    {
+      "chunk_id": "D07_C002",
+      "document_id": "D07",
+      "title": "2.6. Joins Between Tables",
+      "source_url": "https://www.postgresql.org/docs/18/tutorial-join.html",
+      "section_path": [
+        "2.6. Joins Between Tables"
+      ],
+      "quote": "This kind of query is called an <em>outer join</em>. (The joins we have seen so far are <em>inner joins</em>.) The command looks like this:\n\n```sql\nSELECT *\n    FROM weather LEFT OUTER JOIN cities ON weather.city = cities.name;\n```\n\n```text\n     city      | temp_lo | temp_hi | prcp |    date    |     name      | location\n---------------+---------+---------+------+------------+---------------+-----------\n Hayward       |      37 |      54 |      | 1994-11-29 |               |\n San Francisco |      46 |      50 | 0.25 | 1994-11-27 | San Francisco | (-194,53)\n San Francisco |      43 |      57 |    0 | 1994-11-29 | San Francisco | (-194,53)\n(3 rows)\n```\n\nThis query is called a <em>left outer join</em>",
+      "review_status": "accepted",
+      "origin": "graph",
+      "relation": {
+        "relation_id": "R_sample_009",
+        "type": "HAS_FORM",
+        "source": "C_outer_join",
+        "target": "C_left_outer_join"
+      }
+    },
+    {
+      "chunk_id": "D07_C001",
+      "document_id": "D07",
+      "title": "2.6. Joins Between Tables",
+      "source_url": "https://www.postgresql.org/docs/18/tutorial-join.html",
+      "section_path": [
+        "2.6. Joins Between Tables"
+      ],
+      "quote": "They combine rows from one table with rows from a second table, with an expression specifying which rows are to be paired.",
+      "review_status": "accepted",
+      "origin": "vector",
+      "relation": null
+    }
+  ],
+  "_provenance": "Exemplo construído a partir da amostra manual revisada (data/extraction/sample.json) e do corpus. Não é saída automática da recuperação da parte 3 nem do grafo Neo4j."
+}
