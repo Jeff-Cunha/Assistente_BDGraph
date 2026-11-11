@@ -13,13 +13,22 @@ from __future__ import annotations
 
 import argparse
 import json
+import logging
 import math
 import os
 import re
 import unicodedata
+import warnings
 from collections import Counter, OrderedDict, deque
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Set, Tuple
+
+# Suprime avisos desnecessários do HuggingFace e PyTorch no terminal
+warnings.filterwarnings('ignore')
+os.environ['TOKENIZERS_PARALLELISM'] = 'false'
+os.environ['HF_HUB_DISABLE_SYMLINKS_WARNING'] = '1'
+logging.getLogger('huggingface_hub').setLevel(logging.ERROR)
+logging.getLogger('sentence_transformers').setLevel(logging.ERROR)
 
 ROOT = Path(__file__).resolve().parents[1]
 CORPUS_CHUNKS = ROOT / 'corpus/chunks/chunks.jsonl'
