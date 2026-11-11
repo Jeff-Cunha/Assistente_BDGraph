@@ -72,8 +72,8 @@ A preparação do corpus preserva os documentos originais, exemplos SQL, metadad
 - [x] Revisão de 26 resumos/contextos e inclusão de cinco conceitos, com aprovação do usuário registrada.
 - [x] Remissões contextuais de esquema ER, monovalorado e arquivo, sem fusão automática de conceitos.
 - [ ] Ampliação da cobertura de relações e avaliação humana independente.
-- [ ] Configuração e ingestão no Neo4j.
-- [ ] Recuperação híbrida e consultas multi-hop.
+- [x] Configuração e ingestão no Neo4j (Parte 2).
+- [x] Recuperação híbrida, embeddings multilíngues e consultas multi-hop (Parte 3).
 - [ ] Integração com LLM.
 - [ ] Interface e visualização.
 - [ ] Avaliação, artigo técnico e apresentação.
