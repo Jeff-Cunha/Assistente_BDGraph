@@ -73,7 +73,7 @@ A preparação do corpus preserva os documentos originais, exemplos SQL, metadad
 - [x] Remissões contextuais de esquema ER, monovalorado e arquivo, sem fusão automática de conceitos.
 - [ ] Ampliação da cobertura de relações e avaliação humana independente.
 - [x] Configuração e ingestão no Neo4j — esquema, ingestão idempotente e verificação.
-- [ ] Recuperação híbrida e consultas multi-hop.
+- [x] Recuperação híbrida, embeddings multilíngues e consultas multi-hop — `scripts/retrieval.py`.
 - [x] Integração com LLM — Cypher compilado, respostas com fontes e nível de sustentação.
 - [x] Interface e visualização — página de consulta com fontes, consulta Cypher e subgrafo
       interativo (`app/`), testada sem banco e sem modelo.
