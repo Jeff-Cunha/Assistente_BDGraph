@@ -18,6 +18,23 @@ As notas equivalentes estão nos comentários de cada slide do `slides.pptx`.
 | 11 | O que este resultado não prova | 0:40 | Os quatro limites, sem rodeio |
 | 12 | Roteiro de três minutos | 2:00 | A demonstração ao vivo |
 
+## Como regenerar o deck e conferir o visual
+
+```bash
+python docs/apresentacao/gerar-slides.py          # regrava slides.pptx a partir do script
+```
+
+Para ver o resultado sem PowerPoint (foi assim que este deck foi conferido):
+
+```bash
+"C:\tools\libreoffice-dl\ext\program\soffice.exe" --headless --norestore \
+  -env:UserInstallation=file:///C:/tools/libreoffice-dl/profile \
+  --convert-to pdf --outdir docs/apresentacao docs/apresentacao/slides.pptx
+```
+
+O LibreOffice está **extraído, não instalado**: veio do `.msi` oficial (26.8.3) com `msiexec /a`,
+ocupa 1,6 GB em `C:\tools\libreoffice-dl` e não mexe no Windows. Para remover, apague a pasta.
+
 ## Antes de começar (checklist de 2 minutos)
 
 ```bash

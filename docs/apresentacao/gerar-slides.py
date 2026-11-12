@@ -143,7 +143,7 @@ def s01_capa(prs):
     text(s, LEFT, 6.5, 6.4, 0.5, [
         ('Tendências em Ciência da Computação · UNIPÊ', SANS, 12, MUTED)])
     text(s, W - RIGHT - 3.4, 5.55, 3.4, 1.0, [
-        ('Apresentação e demonstração\nao vivo no fim', SANS, 12, MUTED, False, True)],
+        ('Apresentação e demonstração\nnovembro de 2026', SANS, 12, MUTED, False, True)],
          align=PP_ALIGN.RIGHT, line=1.3)
     notes(s, 'Abrir dizendo o que o trabalho entrega: um assistente que responde sobre bancos de dados '
              'citando literalmente o trecho do documento. Cada afirmação da resposta carrega o '
@@ -296,18 +296,18 @@ def s06_hibrida(prs):
         ('Travessia até 4 saltos · caminho mais curto\ncentralidade de grau', SANS, 15, INK)], line=1.35)
     text(s, LEFT + 5.95, 3.62, 4.6, 0.6, [
         ('cada aresta carrega a citação que a sustenta', SANS, 12, MUTED, False, True)], line=1.25)
-    text(s, W / 2 - 1.5, 4.5, 3.0, 0.5, [('fusão por RRF · k = 60', SANS, 14, ACCENT, True)],
+    text(s, W / 2 - 1.5, 4.48, 3.0, 0.42, [('fusão por RRF · k = 60', SANS, 14, ACCENT, True)],
          align=PP_ALIGN.CENTER)
-    rule(s, 4.86, left=LEFT, width=TEXT_W, color=LINE)
+    rule(s, 5.02, left=LEFT, width=TEXT_W, color=LINE)
     modos = [('vector', 'só vetor', 'linha de base do RAG'),
              ('hybrid', 'vetor + grafo', 'o GraphRAG do trabalho'),
              ('graph', 'plano Cypher', 'executa no Neo4j')]
     left = LEFT
     largura = (TEXT_W - 0.4) / 3
     for nome, oque, nota in modos:
-        text(s, left, 5.05, largura - 0.3, 0.35, [(nome, SERIF, 17, INK, True)])
-        text(s, left, 5.42, largura - 0.3, 0.35, [(oque, SANS, 13, INK)])
-        text(s, left, 5.75, largura - 0.3, 0.5, [(nota, SANS, 11.5, MUTED)], line=1.2)
+        text(s, left, 5.14, largura - 0.3, 0.35, [(nome, SERIF, 17, INK, True)])
+        text(s, left, 5.5, largura - 0.3, 0.35, [(oque, SANS, 13, INK)])
+        text(s, left, 5.82, largura - 0.3, 0.5, [(nota, SANS, 11.5, MUTED)], line=1.2)
         left += largura
     footer(s, 6)
     notes(s, 'A fusão por ranks é o que permite somar dois canais sem calibrar escores: o vetor entra '
@@ -393,17 +393,17 @@ def s09_interface(prs):
     header(s, 'Interface', 'A resposta inteira numa tela')
     if SHOT.exists():
         from PIL import Image
-        recorte = Image.open(SHOT).crop((0, 0, 1920, 742))     # resposta, painel e subgrafo
+        recorte = Image.open(SHOT).crop((336, 178, 1920, 902))   # pergunta, resposta, subgrafo, painel
         buffer = BytesIO()
         recorte.save(buffer, format='PNG')
         buffer.seek(0)
-        max_w, max_h = TEXT_W, 4.28
+        max_w, max_h = TEXT_W, 4.2
         ratio = recorte.size[0] / recorte.size[1]
         largura = min(max_w, max_h * ratio)
         altura = largura / ratio
         s.shapes.add_picture(buffer, Inches(LEFT + (TEXT_W - largura) / 2), Inches(2.12),
                              width=Inches(largura), height=Inches(altura))
-    text(s, LEFT, 6.35, TEXT_W, 0.5, [
+    text(s, LEFT, 6.52, TEXT_W, 0.5, [
         ('Execução real: 210,9 s, cobertura 100%, duas afirmações com evidência, '
          'zero citação não verificada.', SANS, 12, MUTED, False, True)])
     footer(s, 9)
@@ -471,8 +471,6 @@ def s10_avaliacao(prs):
             text(s, x, top, larguras[j], 0.35,
                  [(celula, SERIF if 0 < i and j == 0 else SANS, 12, cor, negrito)])
             x += larguras[j]
-        if i == 0:
-            rule(s, top + 0.3, left=x0, width=sum(larguras), color=LINE)
         top += 0.42
     card(s, 8.75, 4.35, 3.4, 1.35, fill=WHITE)
     text(s, 9.0, 4.5, 2.9, 0.3, [('MULTI-HOP', SANS, 10, MUTED, True)])
