@@ -78,6 +78,34 @@ def concepts(driver, database_name):
             for row in rows if row.get('id')]
 
 
+_FULLTEXT_UNSAFE = re.compile(r'[^\w\s]+', re.UNICODE)
+
+
+def fulltext_query(text):
+    """Lucene syntax free text: words only, so a user's punctuation cannot break the query."""
+    words = [w for w in _FULLTEXT_UNSAFE.sub(' ', text or '').split() if len(w) > 1]
+    return ' OR '.join(words[:8])
+
+
+def search_concepts(driver, database_name, text, limit=6):
+    """Concepts found by the fulltext index over names, aliases and the Portuguese name.
+
+    This is the index declared in db/schema.cypher as `concept_names`: it ignores accents and
+    ranks the names the question shares with the graph. It is used when the lexical ranking of
+    the planner finds nothing, so the screen can still offer a term that exists.
+    """
+    query = fulltext_query(text)
+    if not query:
+        return []
+    rows = read(driver, database_name,
+                "CALL db.index.fulltext.queryNodes('concept_names', $q) "
+                "YIELD node, score RETURN node.concept_id AS id, node.name_pt AS pt, "
+                "node.canonical_name AS en, score ORDER BY score DESC LIMIT $limit",
+                {'q': query, 'limit': int(limit)})
+    return [{'id': row['id'], 'name_pt': row.get('pt') or row.get('en'),
+             'score': round(float(row.get('score') or 0), 3)} for row in rows if row.get('id')]
+
+
 def graph_stats(driver, database_name):
     rows = read(driver, database_name,
                 'MATCH (n) RETURN head(labels(n)) AS label, count(*) AS total', {})

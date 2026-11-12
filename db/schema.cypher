@@ -23,11 +23,13 @@ CREATE FULLTEXT INDEX concept_names IF NOT EXISTS
 FOR (c:Concept) ON EACH [c.canonical_name, c.name_pt, c.aliases]
 OPTIONS {indexConfig: {`fulltext.analyzer`: 'standard-folding'}};
 
-// Texto dos trechos (evidências originais, em inglês).
-CREATE FULLTEXT INDEX chunk_text IF NOT EXISTS
-FOR (c:Chunk) ON EACH [c.text];
-
 // --- Índice vetorial (Pessoa 3: paraphrase-multilingual-MiniLM-L12-v2, dimensão 384) ---
 CREATE VECTOR INDEX chunk_embedding IF NOT EXISTS
 FOR (c:Chunk) ON (c.embedding)
 OPTIONS {indexConfig: {`vector.dimensions`: 384, `vector.similarity_function`: 'cosine'}};
+
+// --- Migração: índice removido do esquema ---
+// O índice fulltext sobre o texto dos trechos existia na primeira versão e nunca foi usado:
+// a busca nos trechos é vetorial (chunk_embedding). Em bancos criados antes desta mudança,
+// apague-o com o comando abaixo (rede de segurança para a preparação dos dados, não para consulta).
+// DROP INDEX chunk_text IF EXISTS;

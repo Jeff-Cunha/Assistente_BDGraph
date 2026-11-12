@@ -4,13 +4,14 @@ Projeto acadêmico da disciplina **Tendências em Ciência da Computação**, de
 
 O objetivo é construir um assistente de perguntas e respostas sobre bancos de dados utilizando **GraphRAG/KAG**, **Neo4j** e **modelos de linguagem (LLMs)**, com respostas fundamentadas em documentos e visualização das evidências utilizadas.
 
-> Projeto em desenvolvimento. As funcionalidades descritas como previstas ainda serão implementadas.
+> Sistema completo e avaliado: extração, grafo no Neo4j, recuperação híbrida, interface e comparação
+> com RAG vetorial. Pendentes apenas a apresentação e a licença do código, listadas no fim.
 
 ## Objetivo
 
 Investigar como a combinação de recuperação textual e grafos de conhecimento pode apoiar respostas rastreáveis e reduzir afirmações sem sustentação documental.
 
-O sistema deverá conectar informações distribuídas entre documentos, permitindo responder perguntas que exijam percorrer múltiplos relacionamentos.
+O sistema conecta informações distribuídas entre documentos e responde perguntas que exigem percorrer múltiplos relacionamentos, abstraindo-se corretamente quando o corpus não cobre a pergunta.
 
 ## Escopo da primeira versão
 
@@ -19,7 +20,7 @@ O sistema deverá conectar informações distribuídas entre documentos, permiti
 - **Normalização:** dependências funcionais e formas normais até a 3FN.
 - **SQL básico:** SELECT, FROM, WHERE, JOIN, GROUP BY, HAVING e funções de agregação.
 
-## Funcionalidades previstas
+## Funcionalidades
 
 - Extração automática de entidades e relações a partir dos documentos.
 - Resolução de entidades para tratar nomes equivalentes e evitar duplicidades.
@@ -32,7 +33,7 @@ O sistema deverá conectar informações distribuídas entre documentos, permiti
 - Tratamento de perguntas sem evidências suficientes.
 - Interface com visualização interativa do subgrafo, fontes, consulta Cypher e indicador de confiança com significado documentado.
 
-## Arquitetura prevista
+## Arquitetura
 
 ```mermaid
 flowchart TD
@@ -78,7 +79,8 @@ A preparação do corpus preserva os documentos originais, exemplos SQL, metadad
 - [x] Interface e visualização — página de consulta com fontes, consulta Cypher e subgrafo
       interativo (`app/`), testada sem banco e sem modelo.
 - [x] Avaliação com 15 perguntas e comparação GraphRAG/KAG vs. RAG vetorial — 60% contra 93%.
-- [ ] Artigo consolidado e apresentação.
+- [x] Artigo consolidado em formato SBC, com resultado da avaliação — `docs/artigo/artigo.pdf`.
+- [ ] Apresentação e roteiro da demonstração.
 
 ## Organização do trabalho
 
@@ -95,14 +97,37 @@ Todos os integrantes contribuirão com documentação, testes, artigo e apresent
 
 ## Tecnologias
 
-**Definidas pelo projeto:**
-- Neo4j e Cypher.
-- Modelo de linguagem.
-- Modelo de embeddings.
+**Em uso:**
+- Neo4j 5.26 Community e Cypher.
+- `qwen3:8b` no Ollama (`qwen3:4b` é a alternativa mais rápida, com qualidade menor).
+- `paraphrase-multilingual-MiniLM-L12-v2`, 384 dimensões, similaridade de cosseno.
+- Interface FastAPI e uma página HTML/CSS/JS própria, sem dependência de CDN.
 
-Os scripts de preparação e extração usam Python. Ollama e Qwen3 8B foram usados para a extração local. O adaptador Gemini continua disponível, mas as tentativas iniciais não produziram extração validada. A escolha final dos modelos, embeddings e interface permanece em aberto.
+Os scripts de preparação e extração usam Python. Ollama e Qwen3 8B foram usados para a extração local.
+O adaptador Gemini continua disponível, mas as tentativas iniciais não produziram extração validada.
 
-## Instalação e execução
+## Reprodução do zero
+
+Requisitos: Python 3.10 ou superior, Docker (ou um Neo4j 5.x local) e Ollama com o modelo baixado
+(`ollama pull qwen3:8b`).
+
+```bash
+cp .env.example .env                      # preencha NEO4J_PASSWORD (mínimo 8 caracteres)
+docker compose up -d                      # Neo4j em localhost:7474 (Browser) e :7687 (Bolt)
+python -m pip install -r requirements-extraction.txt
+python -m pip install -r requirements-neo4j.txt -r requirements-retrieval.txt -r requirements-interface.txt
+python scripts/neo4j_ingest.py schema                          # restrições e índices
+python scripts/neo4j_ingest.py ingest --include-sample         # grava e verifica as contagens
+python scripts/retrieval.py ingest-embeddings                  # 59 vetores no índice vetorial
+python -m uvicorn app.interface:app --host 127.0.0.1 --port 8000
+```
+
+Abrir `http://127.0.0.1:8000` e perguntar. O modo `hybrid` não precisa do Neo4j no ar; o modo
+`graph` precisa. Para refazer a avaliação: `python scripts/run-avaliacao.py --out work/avaliacao/rodada1`.
+Testes: `python -m pytest -q` — na versão atual, **210 passam** e 2 são pulados (exigem
+`NEO4J_TEST=1` com o banco no ar).
+
+## Conferir os dados da extração
 
 Para conferir a amostra manual (PowerShell 7):
 
@@ -110,12 +135,7 @@ Para conferir a amostra manual (PowerShell 7):
 pwsh -NoProfile -File scripts/validate-extraction.ps1
 ```
 
-Para testar a consolidação (Python 3.10 ou superior):
-
-```powershell
-python -m pip install -r requirements-extraction.txt
-python -m unittest discover -s tests -p "test_*.py" -v
-```
+A consolidação é exercitada pela suíte inteira (`python -m pytest -q`).
 
 A amostra inicial contém 12 conceitos e 9 relações e permanece identificada como manual. As saídas atuais de regras e LLM foram executadas e revisadas separadamente; a extração ainda não é exaustiva.
 
@@ -128,7 +148,9 @@ A amostra inicial contém 12 conceitos e 9 relações e permanece identificada c
 - [Configuração da API Gemini](docs/configuracao-gemini.md)
 - [ZIP da entrega inicial para a parte 2](outputs/parte1-para-parte2.zip)
 
-No estado atual, ainda não há um assistente executável. O corpus e sua documentação já estão incluídos. O Neo4j e a aplicação ainda precisam ser implementados.
+A saída da extração é consumida pela ingestão: os três arquivos principais de
+`data/release/current.json` são a fonte do grafo (93 conceitos, 16 relações; 23 com a amostra
+opcional).
 
 Senhas, credenciais do Neo4j e chaves de API não devem ser versionadas. As configurações necessárias serão exemplificadas em um arquivo `.env.example`, sem valores secretos.
 
@@ -168,13 +190,17 @@ pwsh -NoProfile -File scripts/validate-extraction.ps1 -ExtractionPath data/extra
 python scripts/resolve-contextual-alias.py --term "file" --chunk D09_C003
 ```
 
-Os **65 testes passaram**. Os hashes, IDs e evidências literais dos três arquivos foram conferidos. Permanecem problemas nas fontes, duas transcrições parciais e cobertura limitada de relações. Não há comprovação experimental de redução de alucinações nem ingestão no Neo4j concluída.
+A suíte inteira soma **210 testes**, com 2 pulados (dependem de `NEO4J_TEST=1`). Os hashes, IDs e
+evidências literais dos três arquivos foram conferidos. Permanecem problemas nas fontes, duas
+transcrições parciais e cobertura limitada de relações. A ingestão no Neo4j foi executada e
+verificada, e a comparação com RAG vetorial está medida logo abaixo.
 
 ## Parte 4: LLM, Cypher e respostas fundamentadas
 
-Estado: implementado e testado sem banco e sem modelo; a execução real do modelo e do Neo4j ainda
-está pendente. Contrato completo em [docs/contrato-llm.md](docs/contrato-llm.md) e rascunho da
-seção do artigo em [docs/artigo-parte4.md](docs/artigo-parte4.md).
+Estado: implementado, testado sem banco e sem modelo, e executado de ponta a ponta com o Neo4j 5.26
+e o `qwen3:8b` — 45 execuções medidas na avaliação. Contrato completo em
+[docs/contrato-llm.md](docs/contrato-llm.md) e seção do artigo em
+[docs/artigo-parte4.md](docs/artigo-parte4.md).
 
 - Geração e validação segura de Cypher: o modelo escolhe um plano em vocabulário fechado e o
   sistema compila, ou valida Cypher livre contra rótulos, tipos, propriedades, orçamento de saltos

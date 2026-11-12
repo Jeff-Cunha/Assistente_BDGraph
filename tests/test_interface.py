@@ -74,6 +74,15 @@ class RankingTest(unittest.TestCase):
         self.assertEqual(planner.PlanError('x', ['a']).suggestions, ['a'])
 
 
+class FulltextQueryTest(unittest.TestCase):
+    def test_lucene_syntax_is_stripped_from_the_question(self):
+        self.assertEqual(engine.fulltext_query('o que é "chave" (primária)?'),
+                         'que OR chave OR primária')
+
+    def test_a_question_without_words_asks_nothing(self):
+        self.assertEqual(engine.fulltext_query('?? !!'), '')
+
+
 class QuoteTest(unittest.TestCase):
     TEXT = ('Uma chave primária identifica a linha. Uma chave estrangeira aponta '
             'para outra tabela.')
@@ -248,6 +257,18 @@ class InterfaceTest(unittest.TestCase):
             body = self.client.get('/api/health').json()
         self.assertTrue(body['neo4j']['online'])
         self.assertEqual(body['model_default'], 'qwen3:8b')
+
+    def test_fulltext_index_supplies_suggestions_when_names_do_not_match(self):
+        @contextlib.contextmanager
+        def fake_database():
+            yield (None, 'neo4j')
+
+        with unittest.mock.patch.object(engine, 'database', fake_database),              unittest.mock.patch.object(engine, 'concepts', return_value=CATALOG),              unittest.mock.patch.object(engine, 'search_concepts',
+                                        return_value=[{'id': 'C_join', 'name_pt': 'junção',
+                                                       'score': 2.5}]):
+            body = self.client.get('/api/suggest',
+                                   params={'q': 'relacionamento entre tabelas'}).json()
+        self.assertEqual([item['id'] for item in body['suggestions']], ['C_join'])
 
     def test_suggestions_use_the_graph_vocabulary(self):
         @contextlib.contextmanager
