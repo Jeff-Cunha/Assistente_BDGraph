@@ -80,7 +80,7 @@ A preparação do corpus preserva os documentos originais, exemplos SQL, metadad
       interativo (`app/`), testada sem banco e sem modelo.
 - [x] Avaliação com 15 perguntas e comparação GraphRAG/KAG vs. RAG vetorial — 60% contra 93%.
 - [x] Artigo consolidado em formato SBC, com resultado da avaliação — `docs/artigo/artigo.pdf`.
-- [ ] Apresentação e roteiro da demonstração.
+- [x] Apresentação em 12 slides e roteiro da demonstração — `docs/apresentacao/`.
 
 ## Organização do trabalho
 
