@@ -35,6 +35,7 @@ Abrir `http://127.0.0.1:8000`. A senha do banco vem do `.env` do projeto, como n
 | Subgrafo | `answer.graph.paths` | nós e arestas do caminho percorrido, com a citação de cada aresta |
 | Consulta | `answer.graph.cypher` + `parameters` | exatamente o que foi executado no banco |
 | Leitura da pergunta | `answer.reading` | qual conceito foi reconhecido e por que aquele caminho |
+| Modo de recuperação | `answer.mode`, `answer.graph.channels` | híbrida (vetor + grafo) ou grafo (plano Cypher) |
 | Limitações | `answer.limitations` | o que o indicador não significa |
 
 O contrato consumido é o mesmo `answer.json` da parte 4 (`schemas/answer.schema.json`): a
@@ -63,7 +64,21 @@ navegador ──POST /api/ask──► interface.py ──fila──► engine.a
 | `app/static/fonts/` | fontes servidas localmente; a tela não depende de CDN |
 | `tests/test_interface.py` | 17 testes sem banco e sem modelo |
 
-## 4. Decisões
+## 4. Modos de recuperação
+
+O seletor da lateral escolhe de onde vêm as evidências:
+
+| Modo | O que faz | Precisa de Neo4j? | Mostra Cypher? |
+|---|---|---|---|
+| `hybrid` (padrão) | `scripts/retrieval.py` da parte 3: busca vetorial sobre os 59 trechos somada à travessia do grafo por fusão de ranks, com caminho mais curto e centralidade de grau | não | não |
+| `graph` | plano de consulta validado contra o Neo4j, com reserva por trecho quando o conceito não tem aresta | sim | sim |
+
+O modo híbrido carrega um codificador de frases na primeira pergunta (`sentence-transformers`,
+dependência de `requirements-retrieval.txt`) e usa `data/retrieval/chunk_embeddings.json`, já
+versionado. No modo híbrido o subgrafo é montado a partir das relações realmente usadas pelo
+pacote de evidências, com a citação de cada aresta.
+
+## 5. Decisões
 
 - **Um trabalho por vez.** O modelo local responde em ~2 min nesta máquina; uma fila com um
   único worker evita duas gerações concorrentes disputando a GPU. A página faz polling a cada
@@ -82,7 +97,7 @@ navegador ──POST /api/ask──► interface.py ──fila──► engine.a
   modelo fora do ar geram estados distintos na tela, nunca um texto entremeado.
 - **Sem CDN.** Fontes locais e grafo desenhado em SVG puro: a demonstração funciona sem internet.
 
-## 5. Endpoints
+## 6. Endpoints
 
 | Método | Rota | Resposta |
 |---|---|---|
@@ -91,14 +106,14 @@ navegador ──POST /api/ask──► interface.py ──fila──► engine.a
 | `GET` | `/api/models` | modelos locais disponíveis (nuvem é recusada) |
 | `GET` | `/api/concepts` | os 93 conceitos do grafo |
 | `GET` | `/api/suggest?q=` | conceitos que casam com o texto digitado |
-| `POST` | `/api/ask` | `{question, model?}` → `{job_id, model}` |
+| `POST` | `/api/ask` | `{question, mode?, model?}` → `{job_id, model}` |
 | `GET` | `/api/job/{id}` | `status`, `step`, `answer` ou `message`/`suggestions` |
 | `GET` | `/api/runs` | execuções salvas, mais recente primeiro |
 | `GET` | `/api/runs/{id}` | `answer.json` da execução |
 
 Estados de trabalho: `queued`, `running`, `done`, `unmatched`, `rejected`, `error`.
 
-## 6. Testes
+## 7. Testes
 
 ```bash
 python -m pytest -q tests/test_interface.py     # 17 testes, sem banco e sem modelo
@@ -109,7 +124,7 @@ corte literal da citação, plano de reserva aceito pelo guard, página servida,
 recusada, pergunta sem correspondência mantendo sugestões, falha do modelo exposta, saúde dos
 dois serviços e sugestões usando o vocabulário do grafo.
 
-## 7. Problema conhecido: credencial do git neste computador
+## 8. Problema conhecido: credencial do git neste computador
 
 O OpenBot injeta em cada comando do git um helper de credencial para `github.com`
 (`GIT_CONFIG_COUNT`/`GIT_CONFIG_KEY_*`) que devolve o token do **app do OpenBot**. Esse app não
@@ -132,7 +147,7 @@ GIT_CONFIG_COUNT=0 GIT_TERMINAL_PROMPT=0 git \
 
 Em outra máquina, sem OpenBot, `git push` normal funciona e nada disso é necessário.
 
-## 8. Limites conhecidos
+## 9. Limites conhecidos
 
 - Cada pergunta custa ~2 min com `qwen3:8b` na GTX 1650 (4 GB). `qwen3:4b` responde mais rápido
   com qualidade menor; o seletor da tela lista o que estiver instalado.
@@ -141,3 +156,5 @@ Em outra máquina, sem OpenBot, `git push` normal funciona e nada disso é neces
 - Trabalhos ficam em memória: reiniciar o servidor perde a fila, mas não as execuções salvas em
   `work/interface-runs/`.
 - A tela não tem autenticação e escuta apenas em `127.0.0.1`.
+- O modo híbrido depende de `sentence-transformers`; sem ele, a interface responde em modo grafo
+  e reporta o erro em vez de degradar em silêncio.

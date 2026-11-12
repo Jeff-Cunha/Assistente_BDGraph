@@ -4,6 +4,7 @@ No test here needs Neo4j or the model: the graph is replaced by a fixed catalog 
 answer by a recorded one, so a broken screen is caught without waiting two minutes.
 """
 import contextlib
+import json
 from pathlib import Path
 import sys
 import time
@@ -103,6 +104,54 @@ class FallbackPlanTest(unittest.TestCase):
             planner.text_plan('primary key; DROP')
 
 
+class HybridGraphTest(unittest.TestCase):
+    """A hybrid bundle has no path query; the plate is built from the relations it used."""
+
+    BUNDLE = {
+        'question': 'Como a integridade referencial se relaciona com chaves estrangeiras?',
+        'retrieval': {'strategy': 'hybrid', 'channels': ['graph', 'vector'],
+                      'graph_executed': True, 'max_hops': 3,
+                      'graph_algorithm': 'shortest_path + degree_centrality'},
+        'concepts': [{'concept_id': 'C_referential_integrity', 'name_pt': 'integridade referencial',
+                      'canonical_name': 'referential integrity'}],
+        'evidence': [
+            {'chunk_id': 'D03_C001', 'origin': 'graph', 'review_status': 'accepted',
+             'quote': 'Referential integrity requires a foreign key.',
+             'relation': {'relation_id': 'R01', 'type': 'TYPICALLY_USED_IN',
+                          'source': 'C_referential_integrity', 'target': 'C_foreign_key'}},
+            {'chunk_id': 'D03_C001', 'origin': 'graph', 'review_status': 'accepted',
+             'quote': 'duplicated relation',
+             'relation': {'relation_id': 'R01', 'type': 'TYPICALLY_USED_IN',
+                          'source': 'C_referential_integrity', 'target': 'C_foreign_key'}},
+            {'chunk_id': 'D07_C002', 'origin': 'vector', 'review_status': 'accepted',
+             'quote': 'A join between two tables.', 'relation': None},
+        ],
+    }
+
+    def test_plate_comes_from_the_relations(self):
+        graph = engine.bundle_graph(self.BUNDLE)
+        self.assertIsNone(graph['cypher'])
+        self.assertEqual(graph['mode'], 'hybrid')
+        self.assertEqual(len(graph['paths']), 1)          # the repeated relation is drawn once
+        nodes = graph['paths'][0]['nodes']
+        self.assertEqual([node['id'] for node in nodes],
+                         ['C_referential_integrity', 'C_foreign_key'])
+        self.assertEqual(nodes[0]['name'], 'integridade referencial')
+        self.assertEqual(nodes[1]['name'], 'C_foreign_key')   # unknown id falls back to itself
+        self.assertEqual(graph['origins'], ['graph', 'vector'])
+        self.assertEqual(graph['channels'], ['graph', 'vector'])
+
+    def test_each_edge_carries_its_quote(self):
+        graph = engine.bundle_graph(self.BUNDLE)
+        quotes = json.loads(graph['paths'][0]['relationships'][0]['evidence_quotes_json'])
+        self.assertEqual(quotes, [{'chunk_id': 'D03_C001',
+                                   'quote': 'Referential integrity requires a foreign key.'}])
+
+    def test_bundle_without_relations_draws_nothing(self):
+        graph = engine.bundle_graph({'concepts': [], 'evidence': [{'quote': 'x', 'relation': None}]})
+        self.assertEqual(graph['paths'], [])
+
+
 class InterfaceTest(unittest.TestCase):
     def setUp(self):
         self.client = TestClient(interface.app)
@@ -115,6 +164,45 @@ class InterfaceTest(unittest.TestCase):
 
     def test_short_question_is_refused(self):
         self.assertEqual(self.client.post('/api/ask', json={'question': 'a'}).status_code, 422)
+
+    def test_unknown_retrieval_mode_is_refused(self):
+        response = self.client.post('/api/ask', json={'question': 'O que e juncao?',
+                                                      'mode': 'magia'})
+        self.assertEqual(response.status_code, 422)
+        self.assertIn('hybrid', response.json()['detail'])
+
+    def test_mode_reaches_the_engine(self):
+        calls = {}
+
+        def fake(question, model=None, mode=None, on_step=None):
+            calls.update(model=model, mode=mode)
+            return dict(ANSWER)
+
+        with unittest.mock.patch.object(engine, 'answer_question', side_effect=fake),              unittest.mock.patch.object(engine, 'save_run', return_value=Path('x')):
+            job_id = self.client.post('/api/ask', json={'question': 'O que e juncao?',
+                                                        'mode': 'graph',
+                                                        'model': 'qwen3:8b'}).json()['job_id']
+            self._wait(job_id)
+        self.assertEqual(calls['mode'], 'graph')
+
+    def test_hybrid_is_the_default_mode(self):
+        posted = {}
+
+        def fake(question, model=None, mode=None, on_step=None):
+            posted['mode'] = mode
+            return dict(ANSWER)
+
+        with unittest.mock.patch.object(engine, 'answer_question', side_effect=fake),              unittest.mock.patch.object(engine, 'save_run', return_value=Path('x')):
+            job_id = self.client.post('/api/ask', json={'question': 'O que e juncao?'}).json()['job_id']
+            self._wait(job_id)
+        self.assertEqual(posted['mode'], engine.MODE_HYBRID)
+
+    def test_health_reports_the_modes(self):
+        report = {'neo4j': {'online': True}, 'ollama': {'online': True, 'models': []}}
+        with unittest.mock.patch.object(engine, 'health', return_value=report),              unittest.mock.patch.object(engine, 'ollama_status',
+                                        return_value={'online': True, 'models': []}):
+            body = self.client.get('/api/health').json()
+        self.assertEqual(body['modes'], ['hybrid', 'graph'])
 
     def test_missing_job_is_404(self):
         self.assertEqual(self.client.get('/api/job/nao-existe').status_code, 404)

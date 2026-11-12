@@ -31,6 +31,7 @@ PREFERRED_MODELS = ('qwen3:8b', 'qwen3:4b')
 class Question(BaseModel):
     question: str = Field(min_length=3, max_length=400)
     model: str | None = None
+    mode: str = engine.MODE_HYBRID
 
 
 def default_model():
@@ -45,7 +46,7 @@ def _now():
     return datetime.now(timezone.utc).isoformat()
 
 
-def _work(job_id, question, model):
+def _work(job_id, question, model, mode):
     job = JOBS[job_id]
 
     def step(label):
@@ -54,7 +55,7 @@ def _work(job_id, question, model):
 
     job.update(status='running', started_at=_now(), step='Preparando a consulta')
     try:
-        answer = engine.answer_question(question, model=model, on_step=step)
+        answer = engine.answer_question(question, model=model, mode=mode, on_step=step)
         job['file'] = str(engine.save_run(job_id, answer))
         job.update(status='done', step='Concluído', answer=answer)
     except planner.PlanError as exc:
@@ -81,6 +82,7 @@ def index():
 def health():
     report = engine.health()
     report['model_default'] = default_model()
+    report['modes'] = list(engine.MODES)
     return report
 
 
@@ -122,11 +124,15 @@ def ask(body: Question):
     question = body.question.strip()
     if len(question) < 3:
         raise HTTPException(status_code=422, detail='Pergunta curta demais.')
+    if body.mode not in engine.MODES:
+        raise HTTPException(status_code=422,
+                            detail=f'Modo invalido: use um de {list(engine.MODES)}.')
     job_id = uuid.uuid4().hex[:12]
     JOBS[job_id] = {'job_id': job_id, 'question': question,
-                    'model': body.model or default_model(), 'status': 'queued',
+                    'model': body.model or default_model(), 'mode': body.mode,
+                    'status': 'queued',
                     'step': 'Na fila', 'created_at': _now(), 'updated_at': _now()}
-    POOL.submit(_work, job_id, question, JOBS[job_id]['model'])
+    POOL.submit(_work, job_id, question, JOBS[job_id]['model'], body.mode)
     return {'job_id': job_id, 'model': JOBS[job_id]['model']}
 
 

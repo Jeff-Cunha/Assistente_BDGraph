@@ -28,6 +28,13 @@
         placeholder="Quais relações ligam integridade referencial a chaves estrangeiras?"></textarea>
       <div class="ask__suggest" id="suggest" hidden></div>
       <div class="ask__foot">
+        <label class="label label--inline" for="mode">Recuperação</label>
+        <select id="mode" name="mode">
+          <option value="hybrid" selected>híbrida (vetor + grafo)</option>
+          <option value="graph">grafo (plano Cypher)</option>
+        </select>
+      </div>
+      <div class="ask__foot">
         <label class="label label--inline" for="model">Modelo</label>
         <select id="model" name="model"></select>
         <button type="submit" id="submit">Consultar</button>
@@ -51,9 +58,10 @@
 
     <section class="block block--note">
       <h2 class="label">Como funciona</h2>
-      <p>A pergunta é ligada a um conceito do grafo; os saltos vêm de um caminho que existe
-      no Neo4j. O modelo responde só com as evidências recuperadas, e cada citação é conferida
-      contra o texto original.</p>
+      <p>Na recuperação <em>híbrida</em>, a pergunta é buscada por vetor e também percorre o
+      grafo. No modo <em>grafo</em>, ela é ligada a um conceito e os saltos vêm de um caminho
+      que existe no Neo4j. O modelo responde só com as evidências recuperadas, e cada citação
+      é conferida contra o texto original.</p>
     </section>
   </aside>
 

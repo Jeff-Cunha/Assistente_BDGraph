@@ -214,6 +214,8 @@ python -m uvicorn app.interface:app --host 127.0.0.1 --port 8000   # abrir http:
   revalidado pelo `guard-cypher.py` da parte 4 (`app/planner.py`).
 - Fila de um trabalho por vez, com estados distintos para `done`, `unmatched`, `rejected` e
   `error` — recusa aparece como recusa (`app/interface.py`).
+- Dois modos de recuperação no seletor da tela: **híbrido** (vetor + grafo, `scripts/retrieval.py`,
+  não exige Neo4j no ar) e **grafo** (plano de consulta validado, mostra o Cypher executado).
 - Apresentação de afirmações com identificador de evidência, painel de sustentação, citações
   literais por documento, Cypher executado e subgrafo em SVG, sem dependência de CDN
   (`app/static/`).
