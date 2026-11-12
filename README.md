@@ -75,7 +75,8 @@ A preparação do corpus preserva os documentos originais, exemplos SQL, metadad
 - [ ] Configuração e ingestão no Neo4j.
 - [ ] Recuperação híbrida e consultas multi-hop.
 - [ ] Integração com LLM.
-- [ ] Interface e visualização.
+- [x] Interface e visualização — página de consulta com fontes, consulta Cypher e subgrafo
+      interativo (`app/`), testada sem banco e sem modelo.
 - [ ] Avaliação, artigo técnico e apresentação.
 
 ## Organização do trabalho
@@ -194,6 +195,27 @@ python scripts/run-answer-ollama.py --bundle data/llm/exemplos/caminho-integrida
 python scripts/neo4j-executor.py --plan data/llm/exemplos/plano-integridade-join.json `
     --question "..." --check
 ```
+
+## Parte 5: Interface e visualização
+
+Estado: implementada e testada com o grafo da parte 2 no ar; a pergunta livre é convertida em
+plano validado e a tela mostra resposta, fontes, consulta Cypher e subgrafo. Guia completo em
+[docs/interface-parte5.md](docs/interface-parte5.md) e seção do artigo em
+[docs/artigo-parte5.md](docs/artigo-parte5.md).
+
+```bash
+python -m pip install -r requirements-interface.txt
+python -m uvicorn app.interface:app --host 127.0.0.1 --port 8000   # abrir http://127.0.0.1:8000
+```
+
+- Pergunta livre → plano de consulta construído a partir de um caminho que existe no grafo,
+  revalidado pelo `guard-cypher.py` da parte 4 (`app/planner.py`).
+- Fila de um trabalho por vez, com estados distintos para `done`, `unmatched`, `rejected` e
+  `error` — recusa aparece como recusa (`app/interface.py`).
+- Apresentação de afirmações com identificador de evidência, painel de sustentação, citações
+  literais por documento, Cypher executado e subgrafo em SVG, sem dependência de CDN
+  (`app/static/`).
+- 17 testes sem banco e sem modelo (`tests/test_interface.py`).
 
 ## Avaliação planejada
 
