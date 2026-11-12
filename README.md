@@ -77,7 +77,8 @@ A preparação do corpus preserva os documentos originais, exemplos SQL, metadad
 - [x] Integração com LLM — Cypher compilado, respostas com fontes e nível de sustentação.
 - [x] Interface e visualização — página de consulta com fontes, consulta Cypher e subgrafo
       interativo (`app/`), testada sem banco e sem modelo.
-- [ ] Avaliação, artigo técnico e apresentação.
+- [x] Avaliação com 15 perguntas e comparação GraphRAG/KAG vs. RAG vetorial — 60% contra 93%.
+- [ ] Artigo consolidado e apresentação.
 
 ## Organização do trabalho
 
@@ -221,15 +222,39 @@ python -m uvicorn app.interface:app --host 127.0.0.1 --port 8000   # abrir http:
   (`app/static/`).
 - 17 testes sem banco e sem modelo (`tests/test_interface.py`).
 
-## Avaliação planejada
+## Avaliação
 
-A avaliação utilizará perguntas com respostas e evidências esperadas, incluindo:
+Conjunto de **15 perguntas** em `data/avaliacao/perguntas.jsonl`: 5 conceituais, 5 multi-hop
+(caminhos que existem no grafo) e 5 sem resposta no corpus. Cada pergunta traz o gabarito de
+conceitos e de documentos de origem, derivado das evidências das relações do grafo — nunca das
+respostas.
 
-- Perguntas conceituais simples.
-- Perguntas que exigem múltiplos relacionamentos.
-- Perguntas sem resposta na base documental.
+```bash
+python scripts/run-avaliacao.py --out work/avaliacao/rodada1                        # três modos
+python scripts/run-avaliacao.py --out work/avaliacao/rodada1 --modes vector,hybrid  # comparação
+python scripts/run-avaliacao.py --dry-run --only Q01,Q11                            # só o encanamento
+```
 
-Serão analisadas a correção das respostas, a recuperação das evidências e a rastreabilidade. Está prevista uma comparação com recuperação exclusivamente vetorial.
+Três modos são comparados com o **mesmo modelo, o mesmo prompt e as mesmas regras de
+verificação**, variando apenas a recuperação:
+
+| Modo | Recuperação |
+|---|---|
+| `vector` | só busca vetorial sobre os 59 trechos (baseline RAG) |
+| `hybrid` | busca vetorial + travessia do grafo (GraphRAG/KAG) |
+| `graph` | plano de consulta Cypher validado executado no Neo4j |
+
+Acerto, aplicado igualmente aos três: pergunta com resposta exige `answered`, ao menos um
+documento esperado entre as fontes citadas e nenhuma citação não verificada; pergunta sem
+resposta exige abstenção. Nível de sustentação e cobertura são reportados à parte, porque medem
+outra coisa. Os resultados de cada rodada ficam em `work/avaliacao/<rodada>/` (`resultados.csv`
+e `resumo.md`).
+
+Rodada de 12/11/2026 (45 execuções, `qwen3:8b`): **`vector` 9/15 (60%)**, **`hybrid` 14/15
+(93%)** e **`graph` 14/15 (93%)**; no grupo multi-hop, 1/5 contra 4/5 e 5/5; abstenção correta
+5/5 nos três modos e nenhuma citação não verificada. Método, tabelas por pergunta e ameaças à
+validade em [docs/avaliacao.md](docs/avaliacao.md); seção do artigo em
+[docs/artigo-parte6.md](docs/artigo-parte6.md).
 
 ## Entregas
 

@@ -304,22 +304,15 @@ def _graph_context(question, max_hops, db_timeout, seen):
         return bundle, graph, reading, plan
 
 
-def answer_question(question, model='qwen3:8b', mode=MODE_HYBRID, max_hops=MAX_EVIDENCE_HOPS,
-                    top_k=5, timeout=900, db_timeout=10.0, output_tokens=2048, context=16384,
-                    on_step=None):
-    """Retrieve, ask the model and verify. Returns the contract answer.
+def answer_from_evidence(question, bundle, model='qwen3:8b', graph=None, reading=None,
+                         plan=None, mode=None, timeout=900, output_tokens=2048, context=16384,
+                         on_step=None):
+    """Ask the model about an already retrieved bundle and verify the answer.
 
-    `mode` chooses the retrieval: hybrid (parte 3, vector plus graph) or graph (a validated
-    query plan). `on_step` receives short labels so the screen can show where the run is."""
+    Kept separate from retrieval so an evaluation can feed the same bundle builder the
+    interface uses, and so a comparison can vary only the retrieval step."""
     started = time.monotonic()
     seen = on_step or (lambda label: None)
-    if mode == MODE_GRAPH:
-        bundle, graph, reading, plan = _graph_context(question, max_hops, db_timeout, seen)
-    elif mode == MODE_HYBRID:
-        bundle, graph, reading, plan = _hybrid_context(question, top_k, max_hops, seen)
-    else:
-        raise EngineError(f'Modo de recupera\u00e7\u00e3o desconhecido: {mode}')
-
     model_info = {'provider': 'ollama_local', 'model': model, 'model_digest': None,
                   'settings': {'num_ctx': context, 'num_predict': output_tokens,
                                'temperature': 0, 'seed': 42, 'think': False}}
@@ -345,10 +338,29 @@ def answer_question(question, model='qwen3:8b', mode=MODE_HYBRID, max_hops=MAX_E
     if plan is not None:
         answer['plan'] = plan
     answer['mode'] = mode
-    answer['reading'] = reading
+    answer['reading'] = reading or {'strategy': mode or 'desconhecida'}
     answer['elapsed_seconds'] = round(time.monotonic() - started, 1)
     answer['answered_at'] = datetime.now(timezone.utc).isoformat()
     return answer
+
+
+def answer_question(question, model='qwen3:8b', mode=MODE_HYBRID, max_hops=MAX_EVIDENCE_HOPS,
+                    top_k=5, timeout=900, db_timeout=10.0, output_tokens=2048, context=16384,
+                    on_step=None):
+    """Retrieve, ask the model and verify. Returns the contract answer.
+
+    `mode` chooses the retrieval: hybrid (parte 3, vector plus graph) or graph (a validated
+    query plan). `on_step` receives short labels so the screen can show where the run is."""
+    seen = on_step or (lambda label: None)
+    if mode == MODE_GRAPH:
+        bundle, graph, reading, plan = _graph_context(question, max_hops, db_timeout, seen)
+    elif mode == MODE_HYBRID:
+        bundle, graph, reading, plan = _hybrid_context(question, top_k, max_hops, seen)
+    else:
+        raise EngineError(f'Modo de recupera\u00e7\u00e3o desconhecido: {mode}')
+    return answer_from_evidence(question, bundle, model=model, graph=graph, reading=reading,
+                                plan=plan, mode=mode, timeout=timeout,
+                                output_tokens=output_tokens, context=context, on_step=seen)
 
 
 def save_run(job_id, answer):
