@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assistente BD Graph — dossiê de consulta</title>
+<link rel="stylesheet" href="/static/fonts.css">
+<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="masthead">
+  <div class="masthead__title">
+    <p class="label">Assistente de banco de dados · GraphRAG</p>
+    <h1>Dossiê de <em>consulta</em></h1>
+  </div>
+  <div class="masthead__status" id="status" aria-live="polite">
+    <span class="pill" data-state="idle"><i class="dot"></i> carregando estado</span>
+  </div>
+</header>
+
+<main class="sheet">
+  <aside class="rail">
+    <form id="ask" class="ask" autocomplete="off">
+      <label class="label" for="question">Pergunta</label>
+      <textarea id="question" name="question" rows="3" maxlength="400"
+        placeholder="Quais relações ligam integridade referencial a chaves estrangeiras?"></textarea>
+      <div class="ask__suggest" id="suggest" hidden></div>
+      <div class="ask__foot">
+        <label class="label label--inline" for="model">Modelo</label>
+        <select id="model" name="model"></select>
+        <button type="submit" id="submit">Consultar</button>
+      </div>
+    </form>
+
+    <section class="block">
+      <h2 class="label">Perguntas de exemplo</h2>
+      <ul class="examples" id="examples">
+        <li><button type="button">Quais relações ligam integridade referencial a chaves estrangeiras?</button></li>
+        <li><button type="button">Qual a relação entre junção e junção externa?</button></li>
+        <li><button type="button">O que é chave primária?</button></li>
+        <li><button type="button">O que são axiomas de Armstrong?</button></li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2 class="label">Execuções salvas</h2>
+      <ul class="runs" id="runs"><li class="muted">nenhuma ainda</li></ul>
+    </section>
+
+    <section class="block block--note">
+      <h2 class="label">Como funciona</h2>
+      <p>A pergunta é ligada a um conceito do grafo; os saltos vêm de um caminho que existe
+      no Neo4j. O modelo responde só com as evidências recuperadas, e cada citação é conferida
+      contra o texto original.</p>
+    </section>
+  </aside>
+
+  <section class="canvas" id="canvas" aria-live="polite">
+    <div class="empty" id="empty">
+      <p class="empty__mark">§</p>
+      <p class="empty__text">Faça uma pergunta ao grafo. A resposta traz a citação literal de
+      cada afirmação, o nível de sustentação, a consulta Cypher que foi executada e o subgrafo
+      percorrido.</p>
+    </div>
+
+    <div class="progress" id="progress" hidden>
+      <div class="progress__head">
+        <span class="label" id="progress-step">Na fila</span>
+        <span class="mono" id="progress-time">0s</span>
+      </div>
+      <div class="progress__bar"><i></i></div>
+      <p class="progress__hint">O modelo local leva cerca de dois minutos por pergunta.</p>
+    </div>
+
+    <div class="ticket" id="ticket" hidden></div>
+  </section>
+</main>
+
+<footer class="colophon">
+  <span>Neo4j <span id="col-neo4j">—</span></span>
+  <span>Ollama <span id="col-ollama">—</span></span>
+  <span>corpus <span id="col-corpus">—</span></span>
+  <span class="colophon__right">respostas verificadas contra as evidências; nada é reescrito</span>
+</footer>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
