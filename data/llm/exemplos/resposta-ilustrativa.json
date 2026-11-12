@@ -1,0 +1,23 @@
+{
+  "answered": true,
+  "answer_pt": "A integridade referencial é a regra que governa a chave estrangeira: uma chave estrangeira precisa ter uma chave primária correspondente ou ser nula. As chaves estrangeiras são tipicamente empregadas em junções. O JOIN combina linhas de tabelas relacionadas. O outer join é uma forma de JOIN e o left outer join é uma forma de outer join.",
+  "claims": [
+    {
+      "text": "A integridade referencial governa a chave estrangeira, que precisa corresponder a uma chave primária ou ser nula.",
+      "evidence_ids": ["E1"]
+    },
+    {
+      "text": "Chaves estrangeiras são tipicamente usadas em junções.",
+      "evidence_ids": ["E2"]
+    },
+    {
+      "text": "JOIN combina linhas de tabelas relacionadas.",
+      "evidence_ids": ["E5"]
+    },
+    {
+      "text": "Outer join é uma forma de JOIN e left outer join é uma forma de outer join.",
+      "evidence_ids": ["E3", "E4"]
+    }
+  ],
+  "notes": ""
+}

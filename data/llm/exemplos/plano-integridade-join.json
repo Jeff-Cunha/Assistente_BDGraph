@@ -1,0 +1,11 @@
+{
+  "start": {"label": "Concept", "id": "C_referential_integrity"},
+  "hops": [
+    {"direction": "out", "types": ["GOVERNS"], "target_label": "Concept"},
+    {"direction": "out", "types": ["TYPICALLY_USED_IN"], "target_label": "Concept"},
+    {"direction": "out", "types": ["HAS_FORM"], "target_label": "Concept"},
+    {"direction": "out", "types": ["HAS_FORM"], "target_label": "Concept"}
+  ],
+  "include_evidence": true,
+  "limit": 10
+}

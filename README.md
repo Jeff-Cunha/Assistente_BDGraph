@@ -72,9 +72,9 @@ A preparação do corpus preserva os documentos originais, exemplos SQL, metadad
 - [x] Revisão de 26 resumos/contextos e inclusão de cinco conceitos, com aprovação do usuário registrada.
 - [x] Remissões contextuais de esquema ER, monovalorado e arquivo, sem fusão automática de conceitos.
 - [ ] Ampliação da cobertura de relações e avaliação humana independente.
-- [ ] Configuração e ingestão no Neo4j.
+- [x] Configuração e ingestão no Neo4j — esquema, ingestão idempotente e verificação.
 - [ ] Recuperação híbrida e consultas multi-hop.
-- [ ] Integração com LLM.
+- [x] Integração com LLM — Cypher compilado, respostas com fontes e nível de sustentação.
 - [ ] Interface e visualização.
 - [ ] Avaliação, artigo técnico e apresentação.
 
@@ -167,6 +167,35 @@ python scripts/resolve-contextual-alias.py --term "file" --chunk D09_C003
 ```
 
 Os **65 testes passaram**. Os hashes, IDs e evidências literais dos três arquivos foram conferidos. Permanecem problemas nas fontes, duas transcrições parciais e cobertura limitada de relações. Não há comprovação experimental de redução de alucinações nem ingestão no Neo4j concluída.
+
+## Parte 4: LLM, Cypher e respostas fundamentadas
+
+Estado: implementado e testado sem banco e sem modelo; a execução real do modelo e do Neo4j ainda
+está pendente. Contrato completo em [docs/contrato-llm.md](docs/contrato-llm.md) e rascunho da
+seção do artigo em [docs/artigo-parte4.md](docs/artigo-parte4.md).
+
+- Geração e validação segura de Cypher: o modelo escolhe um plano em vocabulário fechado e o
+  sistema compila, ou valida Cypher livre contra rótulos, tipos, propriedades, orçamento de saltos
+  e `LIMIT` obrigatório (`scripts/guard-cypher.py`).
+- Conjunto de 38 casos de contorno em `data/llm/testes/cypher-ataques.jsonl` (32 recusas
+  obrigatórias, 5 controles e 1 limite conhecido registrado), executado por
+  `tests/test_cypher_redteam.py`.
+- Execução em modo leitura (`routing_=READ`) e montagem do pacote de evidências a partir dos
+  caminhos do grafo (`scripts/neo4j-executor.py`).
+- Respostas com citação por afirmação, fontes resolvidas em trecho e URL, recusa explícita de
+  citação inventada e nível de sustentação calculado por regras, não pelo modelo
+  (`scripts/answer-grounding.py`).
+- Adaptador do modelo local com `--bundle`, `--neo4j`, `--replay` e `--dry-run`
+  (`scripts/run-answer-ollama.py`); sem evidência recuperada, abstém-se sem chamar o modelo.
+
+```powershell
+# sem modelo e sem banco: valida o prompt e o Cypher compilado
+python scripts/run-answer-ollama.py --bundle data/llm/exemplos/caminho-integridade-join.json --dry-run
+
+# com o Neo4j da parte 2 no ar: confere a conexão e as contagens
+python scripts/neo4j-executor.py --plan data/llm/exemplos/plano-integridade-join.json `
+    --question "..." --check
+```
 
 ## Avaliação planejada
 
