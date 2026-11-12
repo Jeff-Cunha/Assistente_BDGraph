@@ -119,6 +119,8 @@ A amostra inicial contém 12 conceitos e 9 relações e permanece identificada c
 
 - [Entrega para a parte 2 e critérios de ingestão](docs/entrega-parte1-para-parte2.md)
 - [Contrato de dados](docs/contrato-extracao.md)
+- [Modelo do grafo e ingestão no Neo4j](docs/modelo-grafo.md)
+- [O que a parte 2 entrega para as partes 3, 4, 5 e 6](docs/handoff-parte2.md)
 - [Preparação e qualidade do corpus](corpus/README.md)
 - [Consolidação das extrações](docs/consolidacao-extracao.md)
 - [Configuração da API Gemini](docs/configuracao-gemini.md)

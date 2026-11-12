@@ -1,0 +1,28 @@
+# Neo4j local para o Assistente_BDGraph.
+#
+# Uso (na raiz do repositório):
+#   1. cp .env.example .env   e preencha NEO4J_PASSWORD (mínimo 8 caracteres)
+#   2. docker compose up -d
+#   3. Abra http://localhost:7474  (usuário: neo4j)
+#
+# Para apagar o banco e recomeçar do zero:  docker compose down -v
+#
+# As portas ficam presas a 127.0.0.1: só este computador acessa o banco.
+# A senha vem do .env, que NÃO é versionado.
+services:
+  neo4j:
+    image: neo4j:5.26-community
+    container_name: assistente-bdgraph-neo4j
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:7474:7474"   # Neo4j Browser (HTTP)
+      - "127.0.0.1:7687:7687"   # Bolt (usado pelo driver Python)
+    environment:
+      NEO4J_AUTH: "neo4j/${NEO4J_PASSWORD:?Defina NEO4J_PASSWORD no arquivo .env}"
+      # Plugins opcionais, só ative se a Pessoa 3 decidir usar GDS/APOC:
+      # NEO4J_PLUGINS: '["graph-data-science"]'
+    volumes:
+      - neo4j_data:/data
+
+volumes:
+  neo4j_data:
