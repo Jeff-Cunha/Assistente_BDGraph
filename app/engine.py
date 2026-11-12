@@ -21,7 +21,6 @@ import urllib.request
 ROOT = Path(__file__).resolve().parents[1]
 RUNS = ROOT / 'work' / 'interface-runs'
 OLLAMA_BASE = 'http://127.0.0.1:11434'
-MAX_EVIDENCE_HOPS = 3
 
 
 def _load(name: str, filename: str):
@@ -35,6 +34,10 @@ executor = _load('neo4j_executor', 'neo4j-executor.py')
 guard = _load('guard_cypher', 'guard-cypher.py')
 grounding = _load('answer_grounding', 'answer-grounding.py')
 run_answer = _load('run_answer_ollama', 'run-answer-ollama.py')
+
+# O orçamento de saltos tem uma fonte só: o guard da parte 4. A interface e a avaliação
+# não repetem o número, para uma mudança no guard não deixar dois tetos diferentes.
+MAX_EVIDENCE_HOPS = guard.DEFAULT_MAX_HOPS
 
 _CORPUS = None
 
@@ -80,10 +83,24 @@ def concepts(driver, database_name):
 
 _FULLTEXT_UNSAFE = re.compile(r'[^\w\s]+', re.UNICODE)
 
+# Palavras que aparecem em quase todo nome do grafo ("sistema de banco de dados"): mantê-las
+# faz uma pergunta fora do corpus casar um conceito por acidente, e a sugestão vira ruído.
+_STOPWORDS = frozenset('''
+a o as os um uma uns umas de da do das dos em no na nos nas por para com sem que qual quais
+como quando onde e ou se ao aos a aos às é sao ser esta estao seu sua seus suas este esta esse
+essa isso isto entre sobre mais menos muito nao sim ja tambem mas tem ha
+the an of in on to for with and or is are what which how does do that this be by at from
+'''.split())
+
 
 def fulltext_query(text):
-    """Lucene syntax free text: words only, so a user's punctuation cannot break the query."""
-    words = [w for w in _FULLTEXT_UNSAFE.sub(' ', text or '').split() if len(w) > 1]
+    """Words only, without stopwords: punctuation cannot break the Lucene query, and a
+    question outside the corpus does not match a concept on a word such as "de"."""
+    words = []
+    for word in _FULLTEXT_UNSAFE.sub(' ', text or '').split():
+        word = word.lower()
+        if len(word) > 2 and word not in _STOPWORDS and word not in words:
+            words.append(word)
     return ' OR '.join(words[:8])
 
 

@@ -14,7 +14,6 @@ from __future__ import annotations
 import argparse
 import json
 import logging
-import math
 import os
 import re
 import unicodedata
@@ -635,6 +634,8 @@ def main():
     p_search.add_argument('--top-k', type=int, default=5, help='Quantidade de trechos a recuperar')
     p_search.add_argument('--max-hops', type=int, default=4, help='Máximo de saltos na travessia de grafo')
     p_search.add_argument('--output', help='Caminho para salvar o bundle JSON de evidências')
+    p_search.add_argument('--neo4j', action='store_true',
+                          help='Usa o índice vetorial nativo do Neo4j (aproximado) em vez dos vetores em memória')
 
     args = parser.parse_args()
 
@@ -648,7 +649,27 @@ def main():
 
     elif args.command == 'search':
         retriever = HybridRetriever(ROOT)
-        bundle = retriever.retrieve(args.query, top_k=args.top_k, max_hops=args.max_hops)
+        session = None
+        driver = None
+        if args.neo4j:
+            # Consulta o índice vetorial nativo (`chunk_embedding`) em vez dos vetores versionados.
+            # A busca no Neo4j é aproximada (HNSW); a versão em memória é exata. O padrão é a exata.
+            import neo4j
+            from dotenv import load_dotenv
+            load_dotenv(ROOT / '.env')
+            driver = neo4j.GraphDatabase.driver(
+                os.environ.get('NEO4J_URI', 'bolt://localhost:7687'),
+                auth=(os.environ.get('NEO4J_USER', 'neo4j'),
+                      os.environ.get('NEO4J_PASSWORD', 'password')))
+            session = driver.session(database=os.environ.get('NEO4J_DATABASE', 'neo4j'))
+        try:
+            bundle = retriever.retrieve(args.query, top_k=args.top_k,
+                                        max_hops=args.max_hops, session=session)
+        finally:
+            if session is not None:
+                session.close()
+            if driver is not None:
+                driver.close()
         errs = validate_retrieval_bundle(bundle, retriever.texts)
         if errs:
             print(f"Atenção na validação do bundle: {errs}")

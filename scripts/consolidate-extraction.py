@@ -1,6 +1,5 @@
 """Consolidate validated per-chunk candidates conservatively, without model/API calls."""
 import argparse
-import copy
 import hashlib
 import json
 from pathlib import Path

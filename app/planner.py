@@ -164,7 +164,7 @@ STRUCTURAL_FALLBACK = {'start': {'label': 'Concept', 'id': None},
                        'include_evidence': False, 'limit': 6}
 
 
-def text_plan(concept_id, max_hops=3):
+def text_plan(concept_id, max_hops=engine.MAX_EVIDENCE_HOPS):
     """Structural plan used when the concept has no semantic relation to walk.
 
     It reads the chunks that mention the concept; the quotes come from the stored text of
@@ -176,7 +176,7 @@ def text_plan(concept_id, max_hops=3):
     return engine.guard.validate_plan(plan, max_hops=max_hops)
 
 
-def build_plan(driver, database_name, question, max_hops=3, limit=12):
+def build_plan(driver, database_name, question, max_hops=engine.MAX_EVIDENCE_HOPS, limit=12):
     """Return (plan, reading) where reading explains the choice to the person asking."""
     catalog = engine.concepts(driver, database_name)
     ranked = rank_concepts(question, catalog)

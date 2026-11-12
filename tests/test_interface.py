@@ -77,7 +77,15 @@ class RankingTest(unittest.TestCase):
 class FulltextQueryTest(unittest.TestCase):
     def test_lucene_syntax_is_stripped_from_the_question(self):
         self.assertEqual(engine.fulltext_query('o que é "chave" (primária)?'),
-                         'que OR chave OR primária')
+                         'chave OR primária')
+
+    def test_stopwords_do_not_make_a_foreign_question_match_a_concept(self):
+        # "de" aparece em "sistema de banco de dados": sem stopwords, a receita casaria o grafo.
+        self.assertEqual(engine.fulltext_query('receita de bolo de cenoura'),
+                         'receita OR bolo OR cenoura')
+
+    def test_repeated_words_are_asked_once(self):
+        self.assertEqual(engine.fulltext_query('junção, junção e junções'), 'junção OR junções')
 
     def test_a_question_without_words_asks_nothing(self):
         self.assertEqual(engine.fulltext_query('?? !!'), '')
