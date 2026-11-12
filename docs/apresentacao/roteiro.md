@@ -1,21 +1,22 @@
-# Roteiro da apresentação — 11 min 25 s
+# Roteiro da apresentação — 10 min 55 s
 
-12 slides. Os tempos abaixo somam **685 s (11 min 25 s)**, deixando folga no limite de 12.
-As notas equivalentes estão nos comentários de cada slide do `slides.pptx`.
+12 slides, **655 s**. Este arquivo é operacional: tempos, checklist e perguntas prováveis.
+A fala palavra por palavra está em [`roteiro-fala.md`](roteiro-fala.md); as notas do apresentador
+estão nos comentários de cada slide do `slides.pptx`.
 
 | # | Slide | Tempo | O que precisa sair da boca |
 |---|---|---:|---|
-| 1 | Capa | 0:20 | O que o trabalho entrega, em uma frase: respostas sobre banco de dados com fonte conferível |
-| 2 | Fluência não é rastreabilidade | 0:50 | Os três problemas: sem fonte não se confere; similaridade não é cadeia de fatos; alucinação |
-| 3 | Como isso virou requisito | 0:40 | A frase da pergunta de projeto e as três obrigações que ela cria |
-| 4 | Quatro pilares | 0:55 | O desenho do enunciado e as duas decisões próprias: o modelo não escreve Cypher; o nível não vem do modelo |
+| 1 | Capa | 0:30 | O que o trabalho entrega, em uma frase: respostas sobre banco de dados com fonte conferível |
+| 2 | Fluência não é rastreabilidade | 0:45 | Os três problemas: sem fonte não se confere; similaridade não é cadeia de fatos; alucinação |
+| 3 | Como isso virou requisito | 0:35 | A frase da pergunta de projeto e as três obrigações que ela cria |
+| 4 | Quatro pilares | 0:40 | O desenho do enunciado e as duas decisões próprias: o modelo não escreve Cypher; o nível não vem do modelo |
 | 5 | O que entrou, com número | 0:45 | 9 / 59 / 93 / 23 / 134 / 6 e o gargalo das relações dito de frente |
-| 6 | Dois canais, uma lista | 1:10 | Vetor resolve idioma, grafo resolve cadeia; RRF soma sem calibrar; os três modos |
-| 7 | O modelo não escreve Cypher | 0:55 | Plano em vocabulário fechado, compilação, guard; 38 casos de ataque |
-| 8 | Cada afirmação aponta para o texto | 0:55 | Citação verificada literalmente; nível por regra; high/medium/low/insufficient |
+| 6 | Dois canais, uma lista | 1:00 | Vetor resolve idioma, grafo resolve cadeia; RRF soma sem calibrar; os três modos |
+| 7 | O modelo não escreve Cypher | 0:50 | Plano em vocabulário fechado, compilação, guard; 38 casos de ataque |
+| 8 | Cada afirmação aponta para o texto | 0:50 | Citação verificada literalmente; nível por regra; high/medium/low/insufficient |
 | 9 | A resposta inteira numa tela | 0:55 | Percorrer a tela da esquerda para a direita, apontando cada prova |
 | 10 | 45 execuções | 1:20 | O gráfico, o 1/5 → 4/5 → 5/5 e a abstenção 5/5 |
-| 11 | O que este resultado não prova | 0:40 | Os quatro limites, sem rodeio |
+| 11 | O que este resultado não prova | 0:45 | Os quatro limites, sem rodeio |
 | 12 | Roteiro de três minutos | 2:00 | A demonstração ao vivo |
 
 ## Como regenerar o deck e conferir o visual
