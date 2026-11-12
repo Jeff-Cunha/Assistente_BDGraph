@@ -93,7 +93,8 @@ def read_rows(driver, query, parameters, database, timeout=DEFAULT_TIMEOUT):
         raise ExecutorError(f'Consulta rejeitada pelo Neo4j: {exc.code}.') from None
 
 
-def execute_plan(driver, plan, database, timeout=DEFAULT_TIMEOUT, max_hops=4, max_limit=200):
+def execute_plan(driver, plan, database, timeout=DEFAULT_TIMEOUT,
+                 max_hops=guard.DEFAULT_MAX_HOPS, max_limit=200):
     """Compile a validated plan, then execute it as a read-only statement."""
     compiled = guard.compile_plan(plan, max_hops=max_hops, max_limit=max_limit)
     rows = read_rows(driver, compiled['cypher'], compiled['parameters'], database, timeout)
@@ -189,7 +190,7 @@ def main():
     parser.add_argument('--question', required=True)
     parser.add_argument('--output', type=Path, default=ROOT / 'work/graph-bundle.json')
     parser.add_argument('--timeout', type=float, default=DEFAULT_TIMEOUT)
-    parser.add_argument('--max-hops', type=int, default=4)
+    parser.add_argument('--max-hops', type=int, default=guard.DEFAULT_MAX_HOPS)
     parser.add_argument('--check', action='store_true',
                         help='Only verify connectivity and node counts; no bundle is written.')
     args = parser.parse_args()

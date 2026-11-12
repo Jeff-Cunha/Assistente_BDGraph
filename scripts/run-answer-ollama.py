@@ -125,7 +125,7 @@ def main():
     parser.add_argument('--output-tokens', type=int, default=2048)
     parser.add_argument('--timeout', type=int, default=240)
     parser.add_argument('--db-timeout', type=float, default=executor.DEFAULT_TIMEOUT)
-    parser.add_argument('--max-hops', type=int, default=4)
+    parser.add_argument('--max-hops', type=int, default=guard.DEFAULT_MAX_HOPS)
     parser.add_argument('--no-corpus', action='store_true',
                         help='Skip literal quote checking against corpus/chunks.')
     parser.add_argument('--dry-run', action='store_true')

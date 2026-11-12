@@ -48,7 +48,7 @@ da ordem recebida, e são os únicos identificadores que o modelo pode citar.
     "strategy": "hybrid",
     "channels": ["vector", "graph"],
     "graph_executed": true,
-    "max_hops": 4
+    "max_hops": 3
   },
   "concepts": [
     {"concept_id": "C_foreign_key", "canonical_name": "foreign key", "name_pt": "chave estrangeira"}
@@ -123,6 +123,11 @@ Regras do plano: `start.label` em `Document`, `Chunk`, `Concept`; `id` no format
 (`C_...`, `D03_C001`, `D01`); 1 a `max_hops` saltos; `direction` em `out`, `in`, `both`; até
 três tipos por salto, todos do vocabulário permitido; `limit` entre 1 e 200. Campo desconhecido
 é recusado, não ignorado.
+
+O orçamento de saltos é **um só número**, `DEFAULT_MAX_HOPS = 4`, em `scripts/guard-cypher.py`.
+Ele vale para o plano, a validação de Cypher livre, o executor e os adaptadores; um plano de
+cinco saltos só passa com `--max-hops 5` explícito. Nenhum exemplo do repositório pode exigir
+isso — `tests/test_plan_examples.py` falha se algum exigir.
 
 ### Cypher livre (alternativa validada)
 
@@ -308,19 +313,20 @@ modelo — isso depende da execução com o Ollama e da avaliação da parte 6.
 
 ## Pendências conhecidas
 
-- A execução real do `qwen3:8b` para respostas ainda não foi feita; a qualidade da fundamentação
-  com esse modelo é desconhecida e precisa de avaliação independente.
-- **Nenhuma resposta foi produzida a partir do banco real.** A ingestão da parte 2 existe e foi
-  validada em `--dry-run`, e o executor desta parte está testado com driver falso, mas não há
-  instância Neo4j verificada neste ambiente (sem Docker instalado).
+- **Execução feita, mas com uma pergunta e duas execuções.** O caminho completo foi exercitado
+  contra Neo4j 5.26.33 e Ollama 0.40.16 com `qwen3:8b`. A mesma pergunta e a mesma consulta
+  produziram `high` em 92,3 s (3 afirmações, citações de D03 e D07) e `medium` em 99,6 s (2
+  afirmações, só D03). O caminho recuperado foi idêntico nos dois casos: o nível mudou porque o
+  modelo citou evidências diferentes. Distribuição de acertos, abstenções e tempo por pergunta
+  exige o conjunto de avaliação da parte 6; duas respostas não medem qualidade.
 - **Índice vetorial não existe** — depende do modelo e da dimensão que a parte 3 ainda vai
   definir. O comando está pronto e comentado em `db/schema.cypher` (parte 2).
 - **GDS/APOC não estão habilitados**; o algoritmo de grafo da parte 3 precisará do plugin ou de
   uma implementação própria.
-- O grafo carregado tem 16 relações nos arquivos principais. A cadeia de quatro saltos usada
-  como exemplo depende de `--include-sample` (amostra manual); sem ela, só há dois caminhos de
-  dois saltos, ambos dentro de um documento. Sem mais relações aprovadas, perguntas multi-hop do
-  conjunto de avaliação não terão caminho.
+- A ingestão foi executada no Neo4j local: 23 de 23 triplas, 134 `MENTIONS`, 3 restrições de
+  unicidade e todos os índices `ONLINE`. O grafo tem 23 relações semânticas, e o exemplo
+  `plano-integridade-join.json` percorre quatro saltos dentro do orçamento padrão. Sem mais
+  relações aprovadas, perguntas multi-hop do conjunto de avaliação podem não ter caminho.
 - O verificador cobre as regras listadas acima; não é um parser completo de Cypher. A proteção
   real depende também do `routing_=READ` do executor e da conferência de texto pelo verificador —
   as duas coisas, não uma só.
