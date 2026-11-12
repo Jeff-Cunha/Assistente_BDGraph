@@ -48,7 +48,25 @@ O plano resultante é validado pelo `guard-cypher.py` da parte 4 antes de qualqu
 Como os saltos são copiados de caminhos reais do banco, a mesma pergunta produz sempre a mesma
 consulta, e o texto do usuário nunca entra na sintaxe.
 
-### 3.2 Execução assíncrona com estados
+### 3.2 Dois modos de recuperação, escolhidos na tela
+
+| Modo | Recuperação | Dependências | Mostra Cypher |
+|---|---|---|---|
+| `hybrid` (padrão) | busca vetorial sobre os 59 trechos, somada à travessia do grafo por fusão de ranks, caminho mais curto e centralidade de grau (parte 3) | `sentence-transformers` + `chunk_embeddings.json` | não |
+| `graph` | plano de consulta validado executado no Neo4j, com reserva por trecho | Neo4j | sim |
+
+Isso resolve a lacuna mais séria da primeira versão: o requisito de **recuperação híbrida** e de
+**algoritmo de grafo** passou a existir no sistema que roda, e não apenas no código da parte 3.
+O modo híbrido funciona sem o banco no ar, porque a parte 3 lê o grafo dos arquivos de
+integração; o modo grafo continua sendo o único que exercita as restrições e os índices do
+Neo4j.
+
+Execução medida no modo híbrido pela interface: 108,5 s, 2 afirmações sustentadas, cobertura 1,0,
+sustentação `medium` (uma única fonte citada pelo modelo), canais `graph + vector` e três origens
+de evidência (`concept`, `graph`, `vector`), com o subgrafo desenhado a partir das duas relações
+que o pacote realmente usou.
+
+### 3.3 Execução assíncrona com estados
 
 `POST /api/ask` devolve um identificador e o trabalho entra numa fila com **um único worker**,
 porque duas gerações simultâneas disputam a mesma GPU. A página consulta o estado a cada 1,8 s
@@ -66,7 +84,7 @@ Estados terminais são distintos de propósito:
 
 Nenhum desses casos é suavizado em texto: uma recusa aparece como recusa.
 
-### 3.3 Apresentação
+### 3.4 Apresentação
 
 A tela mostra, na mesma dobra: a resposta em português; cada afirmação com o marcador da
 evidência que a sustenta; o painel de sustentação (nível, cobertura, trechos, documentos,

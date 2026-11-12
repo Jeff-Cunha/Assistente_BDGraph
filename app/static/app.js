@@ -132,7 +132,8 @@ async function ask(question) {
     const response = await fetch('/api/ask', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ question, model: $('#model').value }),
+      body: JSON.stringify({ question, model: $('#model').value,
+                            mode: $('#mode') ? $('#mode').value : 'hybrid' }),
     });
     if (!response.ok) {
       const detail = await response.json().catch(() => ({}));
@@ -327,6 +328,20 @@ function render(answer, jobId = '') {
       }
       pane.append(quotes);
     }
+    right.append(pane);
+  }
+
+  if (answer.graph && !answer.graph.cypher) {
+    const pane = el('section', { class: 'pane' });
+    pane.append(el('h3', { class: 'label' }, 'Recuperação'));
+    const graph = answer.graph;
+    const line = el('p', { class: 'params' },
+      `modo: ${esc(answer.mode || graph.mode || 'híbrido')} · canais: ${esc((graph.channels || []).join(' + ') || '—')}`
+      + (graph.graph_algorithm ? ` · grafo: ${esc(graph.graph_algorithm)}` : '')
+      + (graph.origins ? ` · origens: ${esc(graph.origins.join(', '))}` : ''));
+    pane.append(line);
+    pane.append(el('p', { class: 'params' },
+      'Este modo não usa plano Cypher: as evidências vêm da busca vetorial e da travessia do grafo.'));
     right.append(pane);
   }
 

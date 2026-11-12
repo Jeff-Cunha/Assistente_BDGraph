@@ -27,10 +27,7 @@ OPTIONS {indexConfig: {`fulltext.analyzer`: 'standard-folding'}};
 CREATE FULLTEXT INDEX chunk_text IF NOT EXISTS
 FOR (c:Chunk) ON EACH [c.text];
 
-// --- Índice vetorial: NÃO criado aqui de propósito ---
-// Depende do modelo de embeddings e da dimensão, que a Pessoa 3 ainda vai definir.
-// Quando definirem, o comando será (trocar <DIM> pela dimensão do modelo):
-//
-//   CREATE VECTOR INDEX chunk_embedding IF NOT EXISTS
-//   FOR (c:Chunk) ON (c.embedding)
-//   OPTIONS {indexConfig: {`vector.dimensions`: <DIM>, `vector.similarity_function`: 'cosine'}};
+// --- Índice vetorial (Pessoa 3: paraphrase-multilingual-MiniLM-L12-v2, dimensão 384) ---
+CREATE VECTOR INDEX chunk_embedding IF NOT EXISTS
+FOR (c:Chunk) ON (c.embedding)
+OPTIONS {indexConfig: {`vector.dimensions`: 384, `vector.similarity_function`: 'cosine'}};
