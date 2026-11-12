@@ -175,8 +175,10 @@ ingestão idempotente e preserva a citação literal.
 A ingestão (`scripts/neo4j_ingest.py`) roda em uma única transação, com `MERGE` por identificador
 e `SET +=` para propriedades, de modo que uma segunda execução não duplica nem apaga — inclusive
 propriedades criadas por outras etapas, como `embedding`. Três restrições de unicidade
-(`document_id`, `chunk_id`, `concept_id`) e sete índices, entre eles um índice de texto sobre
-nomes em inglês, português e aliases que ignora acentos.
+(`document_id`, `chunk_id`, `concept_id`), quatro índices de propriedade, um índice vetorial e um
+índice de texto sobre nomes em inglês, português e aliases que ignora acentos. Esse índice de texto
+não é decorativo: é ele que liga a pergunta aos conceitos quando nenhum nome casa palavra por
+palavra, e é o que a tela usa para sugerir um termo que existe no grafo.
 
 Medido no Neo4j local, com a amostra opcional incluída:
 

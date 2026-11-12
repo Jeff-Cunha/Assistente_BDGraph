@@ -76,7 +76,7 @@ Testes com banco: `NEO4J_TEST=1 python -m unittest tests.test_neo4j_ingest -v` (
 
 ## Índices
 
-Restrições: `document_id_unique`, `chunk_id_unique`, `concept_id_unique`. Propriedade: `chunk_document_id`, `chunk_content_type`, `concept_category`, `concept_canonical_name`. Texto: `concept_names` (nome em inglês, em português e aliases; ignora acentos) e `chunk_text`.
+Restrições: `document_id_unique`, `chunk_id_unique`, `concept_id_unique`. Propriedade: `chunk_document_id`, `chunk_content_type`, `concept_category`, `concept_canonical_name`. Texto: `concept_names` (nome em inglês, em português e aliases; ignora acentos; usado pela interface para sugerir conceitos). Vetorial: `chunk_embedding`.
 
 **Índice vetorial: ainda não criado.** Depende do modelo de embeddings e da dimensão, a combinar com a parte 3. O comando está comentado no fim de `db/schema.cypher`. Não foram criados embeddings nem fixada uma dimensão.
 

@@ -40,7 +40,7 @@ REVIEW_RANK = {'flagged': 0, 'pending': 1, 'accepted': 2}  # vale o "mais fraco"
 REQUIRED_CONSTRAINTS = ('document_id_unique', 'chunk_id_unique', 'concept_id_unique')
 REQUIRED_INDEXES = (
     'chunk_document_id', 'chunk_content_type', 'concept_category',
-    'concept_canonical_name', 'concept_names', 'chunk_text',
+    'concept_canonical_name', 'concept_names',
 )
 
 

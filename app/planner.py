@@ -181,11 +181,18 @@ def build_plan(driver, database_name, question, max_hops=3, limit=12):
     catalog = engine.concepts(driver, database_name)
     ranked = rank_concepts(question, catalog)
     if not ranked:
+        # Nothing matched by name: the fulltext index over names and aliases (concept_names)
+        # supplies the suggestions. The question is still refused, never answered from here.
+        try:
+            names = [row['name_pt'] for row
+                     in engine.search_concepts(driver, database_name, question, limit=6)
+                     if row.get('name_pt')]
+        except Exception:      # a suggestion must never turn into a failure of the question
+            names = []
         raise PlanError(
             'Nenhum conceito do grafo aparece nessa pergunta. Use um dos termos do grafo, '
             'como "integridade referencial", "chave estrangeira" ou "junção".',
-            suggestions=[item['name_pt'] for item in rank_concepts(
-                question, catalog)[:6]] or [c['name_pt'] for c in catalog[:6]])
+            suggestions=names or [c['name_pt'] for c in catalog[:6]])
 
     primary = ranked[0]
     reading = {'matched': ranked[:4], 'strategy': 'single-concept',

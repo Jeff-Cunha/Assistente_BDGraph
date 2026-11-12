@@ -19,7 +19,7 @@ Tamanho atual: 9 Document, 59 Chunk, 93 Concept, 23 relações semânticas (com 
 - **Texto para embeddings:** `Chunk.text` (59 trechos: 31 `page_text` e 28 `figure_transcription`). Em inglês, com HTML inline preservado.
 - **Índice vetorial ainda não existe.** Precisamos que você decida modelo e dimensão. Depois rodamos o comando comentado no fim de `db/schema.cypher`, com `Chunk.embedding`.
 - **Reingestão não apaga `embedding`**: pode gravar os vetores e rodar `ingest` de novo sem perdê-los (testado).
-- **Busca de conceito por nome** (inglês, português ou alias; ignora acentos): `CALL db.index.fulltext.queryNodes('concept_names', 'restricao')`. Busca textual nos trechos: índice `chunk_text`.
+- **Busca de conceito por nome** (inglês, português ou alias; ignora acentos): `CALL db.index.fulltext.queryNodes('concept_names', 'restricao')`, usada pela interface para sugerir conceitos quando o nome não casa palavra por palavra. O texto dos trechos não tem índice fulltext: a busca neles é vetorial (`chunk_embedding`).
 - **Multi-hop com evidência por aresta:** cada relação semântica tem `evidence_chunk_ids`; consulta 4 do arquivo de exemplos.
 - **Algoritmo de grafo:** a edição Community suporta o plugin GDS (há uma linha comentada em `docker-compose.yml`), mas o grafo ainda é pequeno e esparso (23 relações). Avise se for usar GDS.
 

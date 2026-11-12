@@ -1,45 +1,57 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[12pt]{article}
+
+\usepackage{sbc-template}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[brazilian]{babel}
-\usepackage{mathptmx}
-\usepackage[top=3cm,bottom=2.5cm,left=3cm,right=2.5cm]{geometry}
 \usepackage{booktabs}
-\usepackage{microtype}
-\usepackage{url}
-\usepackage[hidelinks]{hyperref}
 \usepackage{enumitem}
 \setlist{itemsep=2pt,topsep=4pt}
-\usepackage{titlesec}
-\titlespacing*{\section}{0pt}{12pt}{6pt}
-\titlespacing*{\subsection}{0pt}{10pt}{4pt}
+\sloppy
 
-\title{\vspace{-1.2cm}\textbf{Assistente de banco de dados com GraphRAG: extração de
-conhecimento, grafo no Neo4j, recuperação híbrida e respostas fundamentadas}}
-\author{Autor 1, Autor 2, Autor 3, Autor 4, Autor 5, Autor 6\\
-\small Instituição --- Curso --- Disciplina de Banco de Dados\\
-\small \texttt{preencher com os nomes e o e-mail de cada integrante}}
-\date{}
+\title{Assistente de banco de dados com GraphRAG: extração de
+conhecimento, grafo no Neo4j, recuperação híbrida e
+respostas fundamentadas}
+
+% Preencher: nomes completos, instituição, curso e e-mails dos seis integrantes.
+\author{Autor 1\inst{1}, Autor 2\inst{1}, Autor 3\inst{1}, Autor 4\inst{1},
+  Autor 5\inst{1}, Autor 6\inst{1}}
+
+\address{Instituição --- Curso de Bacharelado em Ciência da Computação\\
+  Disciplina: Tendências em Ciência da Computação\\
+  \email{preencher com o e-mail de cada integrante}}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-\noindent Assistentes que respondem perguntas sobre bancos de dados precisam de mais que
-fluência: precisam de rastreabilidade. Este trabalho descreve um assistente que extrai conceitos
-e relações de nove capítulos de material didático sobre bancos de dados relacionais e SQL,
-armazena esse conhecimento em um grafo no Neo4j, recupera evidências por busca vetorial e por
-travessia de grafo, e gera respostas em português com citação literal por afirmação e um nível de
-sustentação calculado por regras, nunca pelo modelo. O sistema é avaliado em 15 perguntas: o modo
-híbrido (vetor e grafo) acerta 93\% contra 60\% da busca puramente vetorial, diferença concentrada
-nas perguntas que exigem dois ou mais relacionamentos (4 de 5 contra 1 de 5). Os três modos
-abstiveram-se corretamente em todas as cinco perguntas fora do corpus, e nenhuma das 43 respostas
-produzidas trouxe citação não verificada.
+Assistants that answer questions about databases need more than fluency: they need traceability.
+This work describes an assistant that extracts concepts and relations from nine chapters of open
+didactic material on relational databases and SQL, stores that knowledge in a Neo4j graph,
+retrieves evidence through vector search and graph traversal, and generates answers in Portuguese
+with a literal citation per statement and a support level computed by rules, never by the model.
+The system is evaluated on 15 questions: the hybrid mode (vector plus graph) answers 93\% correctly,
+against 60\% for pure vector search, a difference concentrated on questions that require two or more
+relationships (4 of 5 against 1 of 5). All three modes abstained correctly on the five questions
+outside the corpus, and none of the 43 answers produced carried an unverified citation.
+\end{abstract}
+
+\begin{resumo}
+Assistentes que respondem perguntas sobre bancos de dados precisam de mais que fluência: precisam
+de rastreabilidade. Este trabalho descreve um assistente que extrai conceitos e relações de nove
+capítulos de material didático sobre bancos de dados relacionais e SQL, armazena esse conhecimento
+em um grafo no Neo4j, recupera evidências por busca vetorial e por travessia de grafo, e gera
+respostas em português com citação literal por afirmação e um nível de sustentação calculado por
+regras, nunca pelo modelo. O sistema é avaliado em 15 perguntas: o modo híbrido (vetor e grafo)
+acerta 93\% contra 60\% da busca puramente vetorial, diferença concentrada nas perguntas que exigem
+dois ou mais relacionamentos (4 de 5 contra 1 de 5). Os três modos abstiveram-se corretamente em
+todas as cinco perguntas fora do corpus, e nenhuma das 43 respostas produzidas trouxe citação não
+verificada.
 
 \vspace{4pt}
 \noindent \textbf{Palavras-chave:} GraphRAG; KAG; Neo4j; recuperação híbrida; fundamentação de
 respostas; LLM.
-\end{abstract}
+\end{resumo}
 
 \section{Introdução}
 
@@ -103,11 +115,13 @@ de seção e URL de origem.
 
 \subsection{Extração}
 
-Três métodos, declarados por conceito e por relação:
+Três métodos, declarados por conceito e por relação (Tabela~\ref{tab:metodos}):
 
 \begin{table}[h]
 \centering
-\small
+\caption{Métodos de extração e volume por arquivo.}
+\label{tab:metodos}
+\footnotesize
 \begin{tabular}{@{}llrr@{}}
 \toprule
 Arquivo & Método & Conceitos & Relações \\
@@ -157,12 +171,16 @@ mantém a ingestão idempotente e preserva a citação literal.
 A ingestão roda em uma única transação, com \texttt{MERGE} por identificador e \texttt{SET +=}
 para propriedades, de modo que uma segunda execução não duplica nem apaga --- inclusive
 propriedades criadas por outras etapas, como o vetor de \emph{embedding}. Três restrições de
-unicidade e sete índices, entre eles um índice de texto sobre nomes em inglês, português e
-aliases que ignora acentos.
+unicidade, quatro índices de propriedade, um índice vetorial e um índice de texto sobre nomes
+em inglês, português e aliases que ignora acentos. Esse índice de texto não é decorativo: é ele
+que liga a pergunta aos conceitos quando nenhum nome casa palavra por palavra, e é o que a tela
+usa para sugerir um termo que existe no grafo. A Tabela~\ref{tab:carga} resume as contagens por carga.
 
 \begin{table}[h]
 \centering
-\small
+\caption{Contagens por carga no grafo.}
+\label{tab:carga}
+\footnotesize
 \begin{tabular}{@{}lrrrrr@{}}
 \toprule
 Carga & Document & Chunk & Concept & MENTIONS & Rel. semânticas \\
@@ -205,8 +223,12 @@ vetorial nativo no Neo4j.
 
 \subsection{Modos de recuperação}
 
+Os três modos avaliados diferem apenas na recuperação (Tabela~\ref{tab:modos}).
+
 \begin{table}[h]
 \centering
+\caption{Modos de recuperação comparados na avaliação.}
+\label{tab:modos}
 \small
 \begin{tabular}{@{}lll@{}}
 \toprule
@@ -245,6 +267,8 @@ sustentação por regras.
 
 \begin{table}[h]
 \centering
+\caption{Regras do nível de sustentação.}
+\label{tab:niveis}
 \small
 \begin{tabular}{@{}ll@{}}
 \toprule
@@ -296,10 +320,12 @@ são usados; muda apenas a recuperação.
 \subsection{Resultados}
 
 Quarenta e cinco execuções (15 perguntas em 3 modos), 2 falhas de verificação e nenhuma citação
-não verificada.
+não verificada (Tabela~\ref{tab:resultados}).
 
 \begin{table}[h]
 \centering
+\caption{Resultados das 45 execuções, 15 perguntas em 3 modos.}
+\label{tab:resultados}
 \small
 \begin{tabular}{@{}lrrrrrr@{}}
 \toprule
@@ -312,8 +338,12 @@ Modo & Corretas & Acerto & Doc.\ esperado & Abstenção & Nível alto & Tempo \\
 \end{tabular}
 \end{table}
 
+O acerto por grupo de pergunta está na Tabela~\ref{tab:grupos}.
+
 \begin{table}[h]
 \centering
+\caption{Acerto por grupo de pergunta.}
+\label{tab:grupos}
 \small
 \begin{tabular}{@{}lrrr@{}}
 \toprule

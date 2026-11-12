@@ -109,14 +109,24 @@ def suggest(q: str = ''):
     try:
         with engine.database() as (driver, database_name):
             catalog = engine.concepts(driver, database_name)
+            ranked = planner.rank_concepts(q, catalog)
+            if ranked:
+                # While someone types, the concept that explains more of what was typed comes
+                # first: "chave prim" offers "chave primária" before the bare concept "chave".
+                ordered = sorted(ranked,
+                                 key=lambda item: (-item['covered'], -item['terms'],
+                                                   -item['score']))[:6]
+            else:
+                # Nothing matched by name: the fulltext index over names and aliases still
+                # answers, so an unexpected wording is not met with an empty list.
+                known = {item['id']: item for item in catalog}
+                ordered = [dict(known[row['id']], score=row['score'])
+                           for row in engine.search_concepts(driver, database_name, q)
+                           if row['id'] in known]
     except engine.EngineError as exc:
         raise HTTPException(status_code=503, detail=str(exc)) from None
-    ranked = planner.rank_concepts(q, catalog)
-    # While someone types, the concept that explains more of what was typed comes first,
-    # so "chave prim" offers "chave primária" before the bare concept "chave".
-    ordered = sorted(ranked, key=lambda item: (-item['covered'], -item['terms'], -item['score']))
     return {'suggestions': [{'id': item['id'], 'name_pt': item['name_pt'],
-                             'score': item['score']} for item in ordered[:6]]}
+                             'score': item['score']} for item in ordered]}
 
 
 @app.post('/api/ask')
