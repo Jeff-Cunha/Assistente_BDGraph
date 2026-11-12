@@ -125,6 +125,24 @@ class RetrievalUnitTests(unittest.TestCase):
             self.assertIn('source', ev['relation'])
             self.assertIn('target', ev['relation'])
 
+    def test_vector_index_replaces_the_in_memory_vectors(self):
+        """Com sessão do Neo4j, a busca vetorial vem de `chunk_embedding` (o caminho do --neo4j)."""
+        class FakeSession:
+            def __init__(self):
+                self.queries = []
+
+            def run(self, query, **params):
+                self.queries.append((query, params))
+                return iter([{'chunk_id': 'D08_C001', 'score': 0.9},
+                             {'chunk_id': 'D06_C001', 'score': 0.8}])
+
+        session = FakeSession()
+        bundle = self.retriever.retrieve('O que é uma função agregadora?', top_k=3,
+                                         max_hops=4, session=session)
+        self.assertIn('chunk_embedding', session.queries[0][0])
+        self.assertEqual(session.queries[0][1]['k'], 6)      # top_k * 2, como no caminho em memória
+        self.assertIn('D08_C001', [ev['chunk_id'] for ev in bundle['evidence']])
+
     def test_section_path_is_flat_list_of_strings(self):
         """Verifica que o campo section_path é sempre List[str], nunca lista aninhada."""
         bundle = self.retriever.retrieve("O que é um banco de dados?", top_k=5)
