@@ -1,10 +1,20 @@
 # Assistente de banco de dados com GraphRAG: extração de conhecimento, grafo no Neo4j, recuperação híbrida e respostas fundamentadas
 
 > **Status deste documento.** Versão consolidada das seis etapas do projeto, escrita a partir dos
-> documentos técnicos de cada parte e das medidas feitas nesta máquina. Autoria, afiliação e o
-> formato final (SBC ou IEEE) ainda precisam ser preenchidos pelo grupo. Todos os números
-> marcados como medidos foram obtidos com Neo4j 5.26.33, Ollama 0.40.16 e `qwen3:8b` em uma
-> GTX 1650 com 4 GB e 23 GB de RAM.
+> documentos técnicos de cada parte e das medidas feitas nesta máquina. O PDF é gerado no template
+> SBC (`artigo.tex`). Todos os números marcados como medidos foram obtidos com Neo4j 5.26.33,
+> Ollama 0.40.16 e `qwen3:8b` em uma GTX 1650 com 4 GB e 23 GB de RAM.
+
+**Autores:** João Pedro Coutinho Nóbrega, Lucas Bezerra Ribeiro Coutinho, Jefferson Coutinho da
+Cunha Filho, Matheus Oliveira Aquino Leal Rodrigues, Ramon Sávio Fontes Rocha e Adijair Pinto Viana
+Gonçalves de Araújo.
+
+Centro Universitário de João Pessoa (UNIPÊ) — Curso de Bacharelado em Ciência da Computação —
+Disciplina: Tendências em Ciência da Computação.
+
+`j.nobrega@cs.unipe.edu.br`, `l.coutinho@cs.unipe.edu.br`, `jefferson.filho@cs.unipe.edu.br`,
+`matheus.rodrigues@cs.unipe.edu.br`, `ramon.savio@cs.unipe.edu.br`,
+`adijair.araujo@cs.unipe.edu.br`.
 
 ## Resumo
 
