@@ -109,7 +109,30 @@ corte literal da citação, plano de reserva aceito pelo guard, página servida,
 recusada, pergunta sem correspondência mantendo sugestões, falha do modelo exposta, saúde dos
 dois serviços e sugestões usando o vocabulário do grafo.
 
-## 7. Limites conhecidos
+## 7. Problema conhecido: credencial do git neste computador
+
+O OpenBot injeta em cada comando do git um helper de credencial para `github.com`
+(`GIT_CONFIG_COUNT`/`GIT_CONFIG_KEY_*`) que devolve o token do **app do OpenBot**. Esse app não
+tem este repositório liberado, então `git push` falha com:
+
+```
+remote: Write access to repository not granted.
+fatal: ... The requested URL returned error: 403
+```
+
+A permissão da conta está correta (`permissions.push: true` na API); o problema é qual
+credencial o git usa. Para empurrar com o token pessoal gravado no cofre do OpenBot:
+
+```bash
+GIT_CONFIG_COUNT=0 GIT_TERMINAL_PROMPT=0 git \
+  -c credential.helper='!f() { test "$1" = get || exit 0; echo username=x-access-token; \
+  printf "password=%s\n" "$(cat "/c/Users/Jotapê/AppData/Roaming/OpenBot/agent-api-keys/.vault/GITHUB_TOKEN")"; }; f' \
+  push -u origin entrega/parte5-interface
+```
+
+Em outra máquina, sem OpenBot, `git push` normal funciona e nada disso é necessário.
+
+## 8. Limites conhecidos
 
 - Cada pergunta custa ~2 min com `qwen3:8b` na GTX 1650 (4 GB). `qwen3:4b` responde mais rápido
   com qualidade menor; o seletor da tela lista o que estiver instalado.
