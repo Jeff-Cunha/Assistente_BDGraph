@@ -11,6 +11,10 @@ import json
 from pathlib import Path
 import re
 
+# Hop budget: one number for the plan, the free-Cypher check, the executor and the
+# adapters. Kept small because every extra hop multiplies the paths the database returns.
+DEFAULT_MAX_HOPS = 4
+
 ALLOWED_LABELS = frozenset({'Concept', 'Chunk', 'Document'})
 
 ALLOWED_PROPERTIES = {
@@ -369,7 +373,8 @@ def _check_limit(tokens, parameters, default_limit, max_limit):
     _fail('LIMIT must be an integer or a $parameter.')
 
 
-def validate_cypher(query, parameters=None, max_hops=4, max_limit=200, default_limit=25):
+def validate_cypher(query, parameters=None, max_hops=DEFAULT_MAX_HOPS, max_limit=200,
+                    default_limit=25):
     """Validate free-form read-only Cypher and return the checked query with its parameters."""
     if not isinstance(query, str) or not query.strip():
         _fail('Query must be a non-empty string.')
@@ -427,7 +432,7 @@ def _require_keys(mapping, keys, required, what):
         raise InvalidPlan(f'Missing field(s) in {what}: {missing}.')
 
 
-def validate_plan(plan, max_hops=3, max_limit=200, default_limit=25):
+def validate_plan(plan, max_hops=DEFAULT_MAX_HOPS, max_limit=200, default_limit=25):
     """Check the restricted plan format a model is allowed to produce."""
     _require_keys(plan, PLAN_KEYS, {'start', 'hops'}, 'plan')
     _require_keys(plan['start'], START_KEYS, {'label', 'id'}, 'plan.start')
@@ -486,7 +491,7 @@ def _project(side, with_evidence):
     return '[x IN relationships(p) | type(x)] AS relationship_types'
 
 
-def compile_plan(plan, max_hops=3, default_limit=25, max_limit=200):
+def compile_plan(plan, max_hops=DEFAULT_MAX_HOPS, default_limit=25, max_limit=200):
     """Compile a validated plan into one deterministic, parameterised path query.
     Only identifiers already checked against fixed lists reach the query text, so the
     result is reproducible, loggable and independent of how the model phrased anything."""
@@ -524,7 +529,7 @@ def main():
     source.add_argument('--plan', type=Path, help='JSON query plan to compile.')
     source.add_argument('--cypher', type=Path, help='Cypher file to validate.')
     parser.add_argument('--parameters', type=Path, help='JSON object with query parameters.')
-    parser.add_argument('--max-hops', type=int, default=3)
+    parser.add_argument('--max-hops', type=int, default=DEFAULT_MAX_HOPS)
     parser.add_argument('--max-limit', type=int, default=200)
     args = parser.parse_args()
     if args.max_hops <= 0 or args.max_limit <= 0:
@@ -539,7 +544,7 @@ def main():
             output = {'query': result['cypher'], 'parameters': result['parameters']}
         else:
             checked = validate_cypher(args.cypher.read_text(encoding='utf-8'), parameters,
-                                      max_hops=max(args.max_hops, 4), max_limit=args.max_limit)
+                                      max_hops=args.max_hops, max_limit=args.max_limit)
             output = {'query': checked['query'], 'parameters': checked['parameters']}
     except (UnsafeCypher, InvalidPlan) as exc:
         print(f'REJECTED: {exc}')

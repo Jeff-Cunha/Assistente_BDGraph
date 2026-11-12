@@ -46,7 +46,7 @@ o mesmo princípio se aplica aqui.
 
 ### 3.1 Geração por plano, não por texto
 
-O modelo recebe a pergunta e devolve um objeto JSON com nó inicial, até três saltos (direção e
+O modelo recebe a pergunta e devolve um objeto JSON com nó inicial, até quatro saltos (direção e
 tipos de relação) e um limite de linhas. Todos esses valores vêm de listas fechadas: três rótulos
 (`Document`, `Chunk`, `Concept`), dezessete tipos de relação (três estruturais, oito semânticos
 iniciais e seis introduzidos pela cobertura SQL) e identificadores com formato fixo
@@ -158,25 +158,33 @@ da regra correspondente e todos os 5 controles são aceitos. Uma verificação i
 "esperado" confirma que nenhum caso contendo escrita, procedimento, `embedding`, `.password` ou
 `RETURN *` é aceito.
 
-**Suíte de testes.** A parte 4 contribui com 85 testes automatizados em 150 do repositório, sem
+**Suíte de testes.** A parte 4 contribui com 90 testes automatizados em 155 do repositório, sem
 necessidade de banco, de modelo ou de rede: 26 do verificador, 4 do conjunto de ataques, 15 do
-executor, 21 da fundamentação e 19 do adaptador.
+executor, 21 da fundamentação, 19 do adaptador e 5 dos planos de exemplo.
 
 **Dados disponíveis.** O grafo carregado pela etapa de modelagem tem 9 documentos, 59 trechos, 93
-conceitos e 16 relações semânticas nos arquivos principais (23 quando a amostra manual é
-incluída); a ingestão foi validada em modo de simulação, com conferência de hash e de citação
-literal.
+conceitos e 23 relações semânticas; a ingestão foi executada contra Neo4j 5.26.33 local, com 23
+de 23 triplas, 134 `MENTIONS`, 3 restrições de unicidade e todos os índices `ONLINE`.
 
-**PENDENTE — execução com o modelo.** A qualidade das respostas do `qwen3:8b` não foi medida
-nesta etapa: exige o modelo instalado, e os resultados devem incluir (i) número de respostas
-aceitas, recusadas e abstenções, (ii) distribuição dos níveis de sustentação, (iii) concordância
-entre citações do modelo e evidências fornecidas e (iv) tempo por resposta. Apresentar esses
-números sem a execução seria inventá-los.
+**Execução com o modelo (uma pergunta, duas execuções).** Com `qwen3:8b` no Ollama 0.40.16 local,
+a pergunta do exemplo foi respondida nas duas vezes em que rodou, com resultados diferentes:
 
-**PENDENTE — execução contra o banco.** A consulta compilada de quatro saltos foi verificada
-quanto a sintaxe e contrato, e o executor foi testado com um driver simulado, mas não houve
-execução contra uma instância Neo4j real neste ambiente. O caminho documentado existe e é
-reproduzível por terceiros.
+| Execução | Tempo | Tokens de saída | Nível | Afirmações | Documentos citados |
+|---|---|---|---|---|---|
+| 1 | 92,3 s | 256 | `high` | 3 | D03, D07 |
+| 2 | 99,6 s | 214 | `medium` | 2 | D03 |
+
+A consulta compilada e o caminho recuperado foram **idênticos** nas duas execuções — uma aresta
+de cada tipo, um único caminho. O que mudou foi quais evidências o modelo citou: na primeira ele
+usou também a citação de D07, na segunda ficou em D03. Como o nível é calculado sobre as citações
+verificadas, e não sobre o que foi recuperado, a mesma pergunta pode oscilar entre `high` e
+`medium`. Isso é uma propriedade do indicador, não um defeito: ele mede a resposta entregue.
+Distribuição de aceitas, recusadas e abstenções exige o conjunto de avaliação da parte 6.
+
+**Execução contra o banco.** O caminho completo foi exercitado contra Neo4j 5.26.33 real: plano
+compilado, execução em modo leitura, evidências por aresta e resposta verificada. O orçamento de
+saltos é um único número (`DEFAULT_MAX_HOPS = 4`) no guard, no executor e nos adaptadores, e
+`tests/test_plan_examples.py` garante que nenhum exemplo do repositório exija mais do que isso.
 
 **PENDENTE — comparação GraphRAG versus RAG vetorial.** Compete à etapa de avaliação; esta seção
 fornece o formato de saída (resposta, citações, nível) necessário para a comparação.
@@ -197,9 +205,11 @@ semântico com parâmetro), o que documenta o limite em vez de escondê-lo.
 rótulos, tipos e propriedades mudam, e o verificador precisa ser reconfigurado — o que é
 justamente o que se espera de uma proteção por contrato.
 
-**Ausência de medidas com modelo.** Sem a execução com o modelo, não há afirmação sobre taxa de
-alucinação, concordância de citações ou tempo. É a lacuna mais séria desta seção no estado atual e
-está marcada como pendente em vez de preenchida com estimativa.
+**Amostra de duas execuções.** Há uma pergunta executada de ponta a ponta, duas vezes, não uma
+avaliação. Duas respostas não sustentam afirmação sobre taxa de alucinação nem sobre tempo médio.
+A variação de nível entre as duas execuções, com o mesmo caminho recuperado, mostra também que o
+indicador depende do comportamento do modelo ao citar — o que reforça a necessidade do conjunto de
+avaliação da parte 6.
 
 ## 7. Limitações e continuidade
 
