@@ -256,6 +256,20 @@ Rodada de 12/11/2026 (45 execuções, `qwen3:8b`): **`vector` 9/15 (60%)**, **`h
 validade em [docs/avaliacao.md](docs/avaliacao.md); seção do artigo em
 [docs/artigo-parte6.md](docs/artigo-parte6.md).
 
+## Artigo
+
+Versão consolidada das seis etapas em [docs/artigo/artigo.md](docs/artigo/artigo.md) (Markdown,
+para revisão) e [docs/artigo/artigo.pdf](docs/artigo/artigo.pdf) (7 páginas, compilado do
+`artigo.tex` com `pdflatex`). As seções por etapa continuam em `docs/artigo-parte4.md`,
+`docs/artigo-parte5.md`, `docs/artigo-parte6.md` e nos documentos técnicos das partes 1 a 3.
+
+**Pendente:** nomes, afiliação e e-mail dos integrantes (marcados como `Autor 1..6` no `.tex`) e a
+escolha do formato final, SBC ou IEEE.
+
+```bash
+cd docs/artigo && pdflatex artigo.tex && pdflatex artigo.tex   # duas passadas pelas referências
+```
+
 ## Entregas
 
 - Código-fonte e instruções de execução.

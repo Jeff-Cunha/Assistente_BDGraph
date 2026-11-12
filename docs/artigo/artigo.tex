@@ -1,0 +1,399 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazilian]{babel}
+\usepackage{mathptmx}
+\usepackage[top=3cm,bottom=2.5cm,left=3cm,right=2.5cm]{geometry}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\setlist{itemsep=2pt,topsep=4pt}
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+\titlespacing*{\subsection}{0pt}{10pt}{4pt}
+
+\title{\vspace{-1.2cm}\textbf{Assistente de banco de dados com GraphRAG: extração de
+conhecimento, grafo no Neo4j, recuperação híbrida e respostas fundamentadas}}
+\author{Autor 1, Autor 2, Autor 3, Autor 4, Autor 5, Autor 6\\
+\small Instituição --- Curso --- Disciplina de Banco de Dados\\
+\small \texttt{preencher com os nomes e o e-mail de cada integrante}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent Assistentes que respondem perguntas sobre bancos de dados precisam de mais que
+fluência: precisam de rastreabilidade. Este trabalho descreve um assistente que extrai conceitos
+e relações de nove capítulos de material didático sobre bancos de dados relacionais e SQL,
+armazena esse conhecimento em um grafo no Neo4j, recupera evidências por busca vetorial e por
+travessia de grafo, e gera respostas em português com citação literal por afirmação e um nível de
+sustentação calculado por regras, nunca pelo modelo. O sistema é avaliado em 15 perguntas: o modo
+híbrido (vetor e grafo) acerta 93\% contra 60\% da busca puramente vetorial, diferença concentrada
+nas perguntas que exigem dois ou mais relacionamentos (4 de 5 contra 1 de 5). Os três modos
+abstiveram-se corretamente em todas as cinco perguntas fora do corpus, e nenhuma das 43 respostas
+produzidas trouxe citação não verificada.
+
+\vspace{4pt}
+\noindent \textbf{Palavras-chave:} GraphRAG; KAG; Neo4j; recuperação híbrida; fundamentação de
+respostas; LLM.
+\end{abstract}
+
+\section{Introdução}
+
+Modelos de linguagem respondem com fluência sobre bancos de dados e SQL, mas fluência não é
+rastreabilidade. Em contexto de ensino e de documentação técnica, uma resposta sem fonte
+verificável tem o mesmo valor que uma resposta ausente: não se pode conferir, e não se pode
+ensinar a conferir.
+
+O projeto parte de uma pergunta prática --- \emph{a pergunta feita na interface consegue ser
+respondida com informação de dois documentos reais, com fonte verificável e visualização do
+grafo?} --- e a trata como restrição de projeto, não como aspiração. O sistema foi construído em
+seis etapas encadeadas: extração de conhecimento do corpus, modelagem e ingestão em um grafo,
+recuperação híbrida, geração validada por LLM, interface com visualização e avaliação comparativa.
+
+As contribuições são: (i) um contrato de extração com vocabulário fechado de rótulos, tipos de
+relação e propriedades, que permite validar automaticamente tudo o que entra no grafo; (ii) uma
+recuperação híbrida que soma busca vetorial multilíngue e travessia de grafo por fusão de ranks,
+com caminho mais curto e centralidade de grau; (iii) uma camada de geração em que o modelo
+\emph{não} escreve Cypher: ele escolhe um plano em vocabulário fechado, e o sistema compila e
+valida a consulta; (iv) uma verificação de resposta que confere cada citação contra o texto
+original do corpus e calcula o nível de sustentação por regras explícitas; e (v) uma avaliação
+comparativa com 15 perguntas, medida nos três modos de recuperação.
+
+\section{Fundamentação e trabalhos relacionados}
+
+\textbf{RAG.} A geração aumentada por recuperação \cite{lewis2020} combina um índice de passagens
+com um modelo gerador, reduzindo a dependência de conhecimento paramétrico. A limitação que motiva
+este trabalho é conhecida: a similaridade textual recupera passagens \emph{parecidas} com a
+pergunta, não a cadeia de fatos que a responde.
+
+\textbf{GraphRAG e KAG.} Abordagens que organizam o corpus em grafo \cite{edge2024} mostram ganho
+em perguntas que exigem agregar informação dispersa. A ideia central adotada aqui é a mesma ---
+conhecimento estruturado como intermediário --- com uma diferença de escopo: empregamos um grafo
+\emph{curado e com evidência por aresta}, em vez de um grafo construído inteiramente pelo modelo,
+o que permite verificar cada afirmação contra o texto de origem.
+
+\textbf{Fundamentação e abstenção.} A literatura sobre alucinação \cite{ji2023} distingue erros de
+fato de erros de formato e recomenda verificação externa. Nossa verificação é mecânica: a citação
+precisa existir literalmente no trecho, e a resposta que cita identificador inexistente é
+recusada.
+
+\textbf{Fusão de rankings.} O \emph{Reciprocal Rank Fusion} \cite{cormack2009} combina rankings de
+recuperadores distintos sem calibrar escores, e é usado aqui para unir busca vetorial e evidências
+de grafo. O modelo de dados segue o grafo de propriedades \cite{robinson2015}, com três rótulos,
+relações tipadas, índices de texto e um índice vetorial nativo do Neo4j 5.
+
+\section{Corpus e extração de conhecimento}
+
+\subsection{Corpus}
+
+Nove documentos em inglês, de material didático aberto de banco de dados relacional e da
+documentação do PostgreSQL, com autores, licença e URL preservados por documento: D01 (conceitos
+fundamentais), D02 (modelo ER), D03 (integridade e restrições), D04 (dependências funcionais), D05
+(normalização), D06 (consulta e filtro), D07 (junções), D08 (funções de agregação) e D09 (modelo
+relacional).
+
+O corpus foi dividido em \textbf{59 trechos}: 31 trechos de texto de página e 28 suplementos que
+transcrevem figuras essenciais, marcados com estado de transcrição e incertezas declaradas, para
+que nenhuma transcrição seja confundida com texto original. Cada trecho carrega documento, caminho
+de seção e URL de origem.
+
+\subsection{Extração}
+
+Três métodos, declarados por conceito e por relação:
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{@{}llrr@{}}
+\toprule
+Arquivo & Método & Conceitos & Relações \\
+\midrule
+\texttt{rule-knowledge-union-v2} & regras sobre o texto, com curadoria & 79 & 5 \\
+\texttt{model-knowledge-union-v3} & proposta de LLM local, com curadoria & 20 & 11 \\
+\texttt{manual-source-review-v1} & curadoria manual assistida por IA & 5 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Os três arquivos somam \textbf{93 conceitos únicos} e \textbf{16 triplas semânticas}; com a amostra
+manual opcional, \textbf{23 triplas}. Cada conceito tem nome canônico em inglês, nome em português,
+aliases, descrição, estado de revisão e as citações que o sustentam. Cada relação carrega os
+identificadores dos trechos de evidência e as citações literais correspondentes: a unidade de
+verificação de todo o sistema é a aresta com evidência, não o documento.
+
+Identificadores são estáveis e independentes do nome (\texttt{C\_\ldots} para conceitos,
+\texttt{D03\_C001} para trechos, \texttt{D0n} para documentos). Nome nunca é identidade, o que
+evita fundir conceitos por semelhança de rótulo.
+
+\subsection{Limites desta etapa}
+
+A cobertura de relações é o gargalo do projeto. Vinte e três triplas semânticas para 93 conceitos
+significam que a maioria dos conceitos não participa de nenhum caminho multi-hop. Dos três
+métodos, apenas o de regras e o de LLM produzem relações, e nenhum foi validado por revisão humana
+independente: o registro é de aprovação do próprio grupo.
+
+\section{Modelagem e ingestão no Neo4j}
+
+\subsection{Modelo}
+
+Três rótulos, cada um com identificador único e estável, e relações estruturais separadas das
+semânticas. Estruturais: \texttt{CONTAINS} (Documento para Trecho), \texttt{SUPPLEMENTS} (figura
+para trecho-pai) e \texttt{MENTIONS} (Trecho para Conceito). Semânticas, em vocabulário fechado de
+14 tipos: \texttt{IS\_A}, \texttt{SUPPORTS}, \texttt{REQUIRES}, \texttt{GOVERNS},
+\texttt{TYPICALLY\_USED\_IN}, \texttt{COMBINES}, \texttt{HAS\_FORM}, \texttt{PRESERVES},
+\texttt{RETRIEVES}, \texttt{FILTERS}, \texttt{GROUPS}, \texttt{AGGREGATES},
+\texttt{EVALUATED\_BEFORE} e \texttt{REMOVES\_DUPLICATES}.
+
+O Neo4j armazena apenas valores simples, então objetos e listas aninhadas (evidências, licença,
+caminhos de seção) ficam como texto JSON em propriedades terminadas em \texttt{\_json}, o que
+mantém a ingestão idempotente e preserva a citação literal.
+
+\subsection{Ingestão e garantias}
+
+A ingestão roda em uma única transação, com \texttt{MERGE} por identificador e \texttt{SET +=}
+para propriedades, de modo que uma segunda execução não duplica nem apaga --- inclusive
+propriedades criadas por outras etapas, como o vetor de \emph{embedding}. Três restrições de
+unicidade e sete índices, entre eles um índice de texto sobre nomes em inglês, português e
+aliases que ignora acentos.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Carga & Document & Chunk & Concept & MENTIONS & Rel. semânticas \\
+\midrule
+3 arquivos principais & 9 & 59 & 93 & 130 & 16 \\
+com a amostra opcional & 9 & 59 & 93 & 134 & 23 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Uma verificação automática confere o banco contra os arquivos entregues: contagens, ausência de
+referência inválida, presença de caminho de dois saltos com evidência por aresta e ausência de
+\texttt{REQUIRES} onde a fonte diz ``tipicamente''.
+
+\section{Recuperação híbrida}
+
+\subsection{Embeddings}
+
+Modelo \texttt{paraphrase-multilingual-MiniLM-L12-v2}, 384 dimensões, similaridade de cosseno. A
+escolha responde ao descompasso de idioma do projeto: o corpus é em inglês e as perguntas em
+português. Os 59 vetores estão pré-computados e versionados, e o mesmo modelo cria um índice
+vetorial nativo no Neo4j.
+
+\subsection{Componentes}
+
+\begin{enumerate}
+\item \textbf{Vinculação de conceitos.} A pergunta é comparada com os 93 conceitos (nome em
+  inglês, em português e aliases) após normalização sem acento e sem plural.
+\item \textbf{Travessia multi-hop.} A partir das sementes, o sistema percorre as relações
+  semânticas até um orçamento de saltos, carregando de cada aresta a citação que a sustenta.
+\item \textbf{Caminho mais curto.} Quando a pergunta envolve dois conceitos, o caminho mínimo
+  entre eles define a cadeia a percorrer --- é o que liga documentos distintos, como D03 e D07 na
+  cadeia integridade referencial, chave estrangeira, junção, junção externa, junção externa à
+  esquerda.
+\item \textbf{Centralidade de grau.} Pondera os conceitos do subgrafo para priorizar nós de maior
+  conectividade contextual.
+\item \textbf{Fusão por RRF.} Os rankings vetorial e de grafo são combinados por uma soma de
+  recíprocos das posições, com constante 60, o que soma os dois canais sem calibrar escores.
+\end{enumerate}
+
+\subsection{Modos de recuperação}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+Modo & Recuperação & Depende de \\
+\midrule
+\texttt{vector} & busca vetorial sobre os 59 trechos (\emph{top\_k} = 5) & embeddings \\
+\texttt{hybrid} & vetorial, travessia, caminho mais curto e centralidade, por RRF & idem \\
+\texttt{graph} & plano de consulta Cypher validado, executado no Neo4j & grafo ingerido \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Geração validada com LLM}
+
+\subsection{O modelo não escreve a consulta}
+
+O modelo recebe a pergunta e devolve um \emph{plano} em vocabulário fechado: nó inicial, direção,
+tipos de relação e limite. O sistema compila esse plano em uma única consulta de caminho,
+parametrizada. Toda identificação --- rótulo, tipo, propriedade, identificador --- é conferida
+contra listas fixas antes de chegar ao Cypher, de modo que texto do modelo nunca vira sintaxe.
+
+O orçamento de saltos é um único número (\texttt{DEFAULT\_MAX\_HOPS = 4}) compartilhado pelo
+validador, pelo executor e pelos adaptadores. Cypher livre existe como alternativa, validado por
+regras: uma única instrução, nenhum comentário, nenhuma string literal (valores só por parâmetro),
+nenhum comando de escrita ou procedimento de extensão, todo padrão de nó rotulado,
+\texttt{RETURN} projetado e \texttt{LIMIT} obrigatório. Um conjunto de 38 casos de contorno (32
+recusas obrigatórias, 5 controles e um limite conhecido) é executado a cada rodada de testes.
+
+\subsection{Resposta fundamentada}
+
+O modelo recebe as evidências com identificadores (E1 \ldots\ En), nunca URLs, e devolve
+afirmações, cada uma citando identificadores. O sistema então recusa citação de identificador
+inexistente, confere se a citação existe \emph{literalmente} no texto do trecho, descarta
+afirmações sem evidência, resolve cada citação em trecho, seção e URL, e calcula o nível de
+sustentação por regras.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+Nível & Critério \\
+\midrule
+\texttt{high} & citações aceitas, de ao menos dois trechos e dois documentos \\
+\texttt{medium} & um único trecho, um único documento, ou citação não conferida \\
+\texttt{low} & evidência pendente ou sinalizada, ou afirmação descartada \\
+\texttt{insufficient} & nenhuma afirmação sobreviveu à verificação \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+O modelo é proibido de informar confiança: o nível é calculado fora dele, sobre as citações
+efetivamente devolvidas.
+
+\section{Interface e visualização}
+
+A aplicação apresenta, na mesma tela: a resposta em português; cada afirmação com o marcador da
+evidência que a sustenta; o painel de sustentação (nível, cobertura, trechos, documentos, citações
+não verificadas e as razões); o subgrafo percorrido; as fontes com link; as citações literais; e a
+consulta Cypher executada com seus parâmetros.
+
+O subgrafo é desenhado em SVG com layout por distância na travessia, determinístico: a mesma
+resposta sempre produz a mesma figura. No modo híbrido, o grafo é montado a partir das relações que
+o pacote de evidências realmente usou, e a tela informa canais e origens em vez de exibir um
+Cypher que não foi executado.
+
+Como a geração local leva de um a dois minutos por resposta, a execução é assíncrona: a requisição
+devolve um identificador de trabalho e a página acompanha o passo corrente. Estados terminais são
+distintos de propósito --- respondido, sem correspondência no grafo, resposta recusada pela
+verificação e falha de serviço --- e nenhum deles é suavizado em texto.
+
+\section{Avaliação}
+
+\subsection{Desenho}
+
+Quinze perguntas em três grupos de cinco: conceituais, multi-hop e sem resposta no corpus. Cada
+pergunta tem gabarito de conceitos e de documentos, \emph{derivado das evidências das relações do
+grafo} --- nunca das respostas do sistema. As perguntas multi-hop foram escolhidas entre caminhos
+que existem, e um teste automatizado confere que cada par consecutivo da cadeia tem aresta de um
+salto.
+
+O critério de acerto é mecânico e idêntico nos três modos: pergunta com resposta exige resposta
+entregue, ao menos um documento esperado entre as fontes citadas e nenhuma citação não verificada;
+pergunta sem resposta exige abstenção. O mesmo modelo, prompt, orçamento de tokens e verificador
+são usados; muda apenas a recuperação.
+
+\subsection{Resultados}
+
+Quarenta e cinco execuções (15 perguntas em 3 modos), 2 falhas de verificação e nenhuma citação
+não verificada.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+Modo & Corretas & Acerto & Doc.\ esperado & Abstenção & Nível alto & Tempo \\
+\midrule
+\texttt{vector} & 9/15 & 60\% & 4/10 & 5/5 & 0 & 65 s \\
+\texttt{hybrid} & 14/15 & \textbf{93\%} & 9/10 & 5/5 & 5 & 71 s \\
+\texttt{graph} & 14/15 & \textbf{93\%} & 9/10 & 5/5 & 1 & 51 s \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Grupo & \texttt{vector} & \texttt{hybrid} & \texttt{graph} \\
+\midrule
+conceitual (5) & 3/5 & 5/5 & 4/5 \\
+multi-hop (5) & 1/5 & 4/5 & 5/5 \\
+sem resposta (5) & 5/5 & 5/5 & 5/5 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Análise}
+
+\textbf{A diferença aparece exatamente onde a arquitetura promete.} No grupo multi-hop o baseline
+vetorial acerta 1 de 5; o híbrido, 4 de 5; o modo de plano, 5 de 5. Em três dessas perguntas o
+baseline recebeu trechos sobre o assunto e mesmo assim absteve-se: um trecho isolado não responde
+a uma pergunta que exige ligar dois conceitos. É precisamente o que a travessia do grafo
+acrescenta, e é a evidência que justifica a complexidade da arquitetura.
+
+\textbf{Abstenção é 5 de 5 nos três modos.} Nenhum modo respondeu pergunta fora do corpus. No modo
+de plano a recusa acontece antes do modelo: se nenhum conceito da pergunta existe no grafo, o
+modelo não é chamado, o que também explica o menor tempo médio.
+
+\textbf{O modo de plano iguala o acerto e troca diversidade por velocidade.} Ele produz uma única
+resposta \texttt{high}, contra cinco do híbrido, porque um caminho tende a citar um documento só.
+
+\textbf{Duas falhas de verificação, do mesmo tipo.} Em duas células o modelo devolveu abstenção
+acompanhada de afirmações com evidência, e o verificador recusou. A resposta foi barrada em vez de
+entregue inconsistente; para o critério, conta como não acerto.
+
+\section{Ameaças à validade}
+
+\textbf{Cobertura da extração.} Vinte e três relações semânticas condicionam tudo: a maior parte
+das perguntas multi-hop possíveis não tem caminho no grafo, e as perguntas da avaliação usam
+praticamente todos os caminhos disponíveis.
+
+\textbf{Circularidade parcial do gabarito.} Os documentos esperados vêm das evidências do grafo, o
+que favorece os modos que usam o grafo por construção. O critério também não julga a correção do
+\emph{texto} da resposta, apenas a fonte citada e a literalidade da citação.
+
+\textbf{Tamanho da amostra.} Quinze perguntas significam 6,7 pontos percentuais por pergunta, e
+cada célula foi executada uma única vez. A mesma pergunta, com a mesma consulta, já produziu
+níveis diferentes em execuções repetidas, porque o nível depende de quais evidências o modelo cita.
+
+\textbf{Uma correção de gabarito declarada.} A pergunta Q09 passou a aceitar o documento D08 além
+do D06 depois da primeira rodada, porque D08 também explica \texttt{WHERE}. Sem a correção,
+\texttt{vector} teria 8/15 e os outros dois 13/15: a conclusão não muda.
+
+\textbf{Revisão humana.} Nenhuma etapa teve revisão humana independente dos fatos extraídos, o que
+enfraquece a premissa de que as arestas do grafo estão corretas.
+
+\textbf{Um modelo, uma máquina.} \texttt{qwen3:8b} em CPU parcial; outro modelo mudaria os
+números. A verificação das citações, não.
+
+\section{Conclusão e continuidade}
+
+O sistema cumpre o objetivo inicial: uma pergunta em português é respondida com informação de
+documentos distintos, com citação literal por afirmação, nível de sustentação calculado por regras
+e visualização do subgrafo percorrido. A comparação com RAG puramente vetorial mostra ganho
+concentrado nas perguntas que exigem mais de um relacionamento --- 4 de 5 contra 1 de 5 --- e
+nenhum modo respondeu pergunta fora do corpus.
+
+Três continuidades se destacam: ampliar a extração de relações, que é o fator limitante de
+cobertura; repetir a avaliação três vezes por célula e reportar média e dispersão; e substituir o
+gabarito derivado do grafo por um gabarito anotado por pessoa, o que permitiria julgar a correção
+do texto e não apenas a procedência da fonte.
+
+\begin{thebibliography}{9}
+\bibitem{lewis2020} LEWIS, P. et al. Retrieval-augmented generation for knowledge-intensive NLP
+tasks. In: \emph{Advances in Neural Information Processing Systems (NeurIPS)}, 2020.
+\bibitem{edge2024} EDGE, D. et al. From local to global: a graph RAG approach to query-focused
+summarization. \emph{arXiv preprint arXiv:2404.16130}, 2024.
+\bibitem{cormack2009} CORMACK, G. V.; CLARKE, C. L. A.; BUETTCHER, S. Reciprocal rank fusion
+outperforms Condorcet and individual rank learning methods. In: \emph{Proceedings of SIGIR}, 2009.
+p. 758--759.
+\bibitem{ji2023} JI, Z. et al. Survey of hallucination in natural language generation.
+\emph{ACM Computing Surveys}, v. 55, n. 12, p. 1--38, 2023.
+\bibitem{robinson2015} ROBINSON, I.; WEBBER, J.; EIFREM, E. \emph{Graph Databases}. 2. ed.
+Sebastopol: O'Reilly Media, 2015.
+\end{thebibliography}
+
+\end{document}
